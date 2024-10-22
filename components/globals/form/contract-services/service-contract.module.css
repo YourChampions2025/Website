@@ -1,0 +1,49 @@
+.serviceContractFormContainer {
+  width: 100%;
+  height: fit-content;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.serviceContractFormContent {
+  max-width: 485px;
+  gap: 48px;
+
+  display: flex;
+  flex-direction: column;
+  height: 150vh;
+}
+
+.textForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.textForm h2 {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -1.68px;
+  text-transform: uppercase;
+  /* font-family: "Instrument Sans"; */
+
+  color: #fff;
+}
+
+.textForm p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.4px;
+  /* font-family: "Instrument Sans"; */
+
+  color: #8d8d8d;
+}
+.stickyContainer {
+  position: sticky;
+  top: 2rem;
+  right: 0;
+  width: 100%;
+  max-width: 485px;
+  z-index: 1000;
+}

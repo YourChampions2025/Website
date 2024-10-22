@@ -1,0 +1,19 @@
+.loadMoreContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 46px;
+
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -1.44px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  /* font-family: "Instrument Sans"; */
+
+  color: #2de046;
+  border-bottom: 1px solid #083376;
+}

@@ -1,0 +1,24 @@
+.testimonialsGridContainer {
+  display: grid;
+  grid-template-columns: 1020px 1fr;
+  padding: 48px;
+  box-sizing: border-box;
+
+  border-top: 1px solid #083376;
+  border-bottom: 1px solid #083376;
+}
+.testimonialsGridContainer > div:first-child {
+  border-right: 1px solid #083376;
+  box-sizing: content-box;
+}
+.testimonialsGridContainer > div:last-child {
+  padding-left: 20px;
+}
+
+.loadMore {
+  display: flex;
+  aliggn-items: center;
+  justify-content: center;
+
+  padding: 46px;
+}
