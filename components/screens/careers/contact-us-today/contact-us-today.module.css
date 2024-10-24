@@ -1,0 +1,35 @@
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  /* font-family: "Instrument Sans"; */
+  margin-top: 14px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.descriptionContentLinks {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+  gap: 4px;
+}
+.descriptionContentLinks span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  /* font-family: "Instrument Sans"; */
+  color: #fff;
+}
+
+.linkUnderline {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  /* font-family: "Instrument Sans"; */
+  text-decoration: underline;
+  color: #fff;
+}
