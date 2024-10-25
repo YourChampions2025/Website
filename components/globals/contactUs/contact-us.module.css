@@ -1,0 +1,107 @@
+.contactUsContainer {
+  width: 100%;
+  height: fit-content;
+}
+
+.contactUsHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contactUsHeader {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.contactUsHeader h2 {
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 132%;
+  padding: 45px 48px;
+  letter-spacing: -3.2px;
+  text-align: end;
+  text-transform: capitalize;
+  font-family: "Instrument Serif";
+
+  color: #fff;
+}
+
+.contactUsHeader span {
+  width: 100%;
+  height: 1px;
+  background: #083376;
+}
+
+.gridContainer {
+  height: 800px;
+
+  display: grid;
+  grid-template-columns: 915px 1fr;
+  position: relative;
+}
+.gridContainer > :first-child {
+  padding: 100px 48px;
+}
+
+.firstContainer {
+  position: relative;
+}
+
+.firstContent {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 20px;
+  gap: 28px;
+  border-left: 1px solid #083376;
+}
+
+.firstContent > :first-child {
+  margin-bottom: 6px;
+}
+
+.firstContent h4 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.56px;
+  /* font-family: "Instrument Sans"; */
+
+  color: #fff;
+}
+
+.firstContent p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  /* font-family: "Instrument Sans"; */
+
+  color: #fff;
+}
+
+.imagePosition {
+  max-width: 100%;
+  height: 340px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  z-index: 50;
+}
+
+.detailsPosition {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 20;
+}
+
+.secondContainer {
+  padding: 110px 100px;
+  border-left: 1px solid #083376;
+}

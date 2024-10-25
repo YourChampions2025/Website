@@ -5,9 +5,35 @@ import PreviewCard from "@/components/globals/preview-card/preview-card";
 
 function ContactUsToday() {
   return (
-    <div>
-      <div>
-        <div>label</div>
+    <div className={styles.contactUsTodayContainer}>
+      <div className={styles.contactUsTodayContent}>
+        <div className={styles.w}>
+          <p>
+            Our clients deserve the best, most compassionate legal
+            representation. That’s why our firm is always open to adding
+            quality, energetic, client-oriented team attorneys and support
+            staff, such as legal assistants and paralegals. Fischer Redavid PLLC
+            is a results-driven law firm. Quality legal representation leads to
+            quality results.
+          </p>
+          <p>
+            But quality customer service leads to a better experience for a
+            human being who is going through a uniquely stressful situation and
+            loss. Our clients and their families deserve top-notch service. 
+          </p>
+          <p>
+            Frequent communication, attention, and support are our formula for
+            success, and we adhere to that formula daily.
+          </p>
+          <p>
+            We are not a “large” firm. That’s by design. Our focus is on quality
+            over quantity: more frequent touchpoints with clients, more time
+            spent per file. If you’re an attorney who wants more time to
+            deep-dive into cases and you’re passionate about expanding your
+            knowledge base, delivering quality work product, and trying more
+            cases to verdict, we want to know about you.
+          </p>
+        </div>
         <div>
           <PreviewCard title="Contact Us Today">
             <p className={styles.description}>
@@ -24,17 +50,17 @@ function ContactUsToday() {
             </p>
             <div className={styles.descriptionContentLinks}>
               <p className={styles.description}>Attorneys:</p>
-              <span>Litigation Associate</span>
+              <li>Litigation Associate</li>
               <Link href="/" className={styles.linkUnderline}>
-                For More Information
+                <li>For More Information</li>
               </Link>
-              <span>Prelitigation Associate</span>
+              <li>Prelitigation Associate</li>
             </div>
 
             <div className={styles.descriptionContentLinks}>
               <p className={styles.description}>Support Staff:</p>
-              <span>Prelitigation Case Manager</span>
-              <span>Litigation Paralegal or Legal Assistant</span>
+              <li>Prelitigation Case Manager</li>
+              <li>Litigation Paralegal or Legal Assistant</li>
             </div>
 
             <p>

@@ -5,7 +5,8 @@
 }
 
 .footerContent {
-  /* max-width:  */
+  max-width: 1600px;
+  margin: 0 auto;
   padding: 60px 48px;
   position: relative;
 }
@@ -195,7 +196,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  max-width: 1600px;
+  margin: 0 auto;
   padding: 33px 47px;
 }
 

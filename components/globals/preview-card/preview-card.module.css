@@ -29,13 +29,13 @@
   line-height: 132%;
   letter-spacing: -0.56px;
   text-transform: uppercase;
-  font-family: "Instrument Sans";
+  /* font-family: "Instrument Sans"; */
 
   color: #fff;
 }
 
 .PreviewCardDescription {
-  max-width: 650px;
+  max-width: 600px;
 
   margin-top: auto;
   align-self: flex-end;
