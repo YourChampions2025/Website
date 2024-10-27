@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@types/swiper": "^6.0.0",
+    "classnames": "^2.5.1",
+    "framer-motion": "^11.11.10",
     "next": "15.0.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
