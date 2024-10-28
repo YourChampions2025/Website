@@ -7,6 +7,7 @@
 .homeBookContent {
   max-width: 1600px;
   height: 467px;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: row;

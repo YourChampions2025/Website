@@ -5,13 +5,13 @@
 
 .contentContainer {
   max-width: 1600px;
+  margin: 0 auto;
+
   display: flex;
   flex-direction: column;
 }
 
 .content {
-  max-width: 1600px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -120,7 +120,6 @@
   justify-content: flex-end;
 }
 .faqMedia {
-  margin-right: 32px;
   max-width: 788px;
   max-height: 701px;
 }
