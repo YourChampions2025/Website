@@ -1,0 +1,50 @@
+.contentSwitcherContainer {
+  width: 100%;
+  height: fit-content;
+}
+
+.contentSwitcherContent {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buttonSwitch {
+  width: 800px;
+  height: 88px;
+
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -1.12px;
+  text-transform: capitalize;
+  font-family: "Instrument Sans";
+
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 2px solid #083376;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonSwitch span {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.72px;
+  text-transform: capitalize;
+  /* font-family: "Instrument Sans"; */
+}
+
+.buttonSwitch.active {
+  color: #fff;
+  border-bottom: 2px solid #2de046;
+}
+
+.buttonSwitch:not(.active):hover {
+}
