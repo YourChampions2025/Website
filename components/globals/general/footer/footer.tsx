@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,6 +11,7 @@ import georgiaMap from "@/public/images/georgia-office.png";
 import footerDetails from "@/public/images/footer-details.png";
 
 import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
+import { usePathname } from "next/navigation";
 
 const footerLink = [
   {
@@ -93,12 +95,22 @@ const officeAddress = [
 ];
 
 function Footer() {
+  const pathname = usePathname();
+
+  const isStudio = pathname.includes("/studio");
+
+  if (isStudio) return null;
+
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerContent}>
         <div className={styles.headerWrapper}>
           {footerLink.map((dataLink) => (
-            <Link href={dataLink.href} className={styles.headerLink}>
+            <Link
+              key={dataLink.label}
+              href={dataLink.href}
+              className={styles.headerLink}
+            >
               {dataLink.label}
               <span className={styles.split}>/</span>
             </Link>
@@ -159,10 +171,9 @@ function Footer() {
             </div>
           </div>
           <span className={styles.verticalSeparatorLine} />
-          {/* <div>img </div> */}
           <div className={styles.officesWrapper}>
             {officeAddress.map((officeData) => (
-              <div className={styles.officesContent}>
+              <div key={officeData.title} className={styles.officesContent}>
                 <h4 className={styles.officeTitle}>{officeData.title}</h4>
                 <p className={styles.officeAddress}>{officeData.address}</p>
                 <Link className={styles.officelinkMaps} href={officeData.href}>
