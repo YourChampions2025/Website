@@ -1,7 +1,9 @@
 import React from "react";
-
-function Navbar() {
-  return <div>Navbar</div>;
+interface NavbarProps {
+  navbarTitle: string;
+}
+function Navbar({ navbarTitle }: NavbarProps) {
+  return <div>{navbarTitle}</div>;
 }
 
 export default Navbar;
