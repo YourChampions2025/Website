@@ -1,0 +1,99 @@
+.practiceAreasSection {
+  border-top: 1px solid #083376;
+}
+.practiceAreasContainer {
+  width: 100%;
+  height: fit-content;
+  
+}
+
+.practiceAreasContent {
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+}
+
+.practiceAreasHeaderWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #083376;
+  padding: 45px 48px;
+
+}
+.headerTitle { 
+  font-size: 84px;
+  font-weight: 400;
+  letter-spacing: 0.84px;
+  text-transform: capitalize;
+  font-family: "Instrument Serif";
+
+  color: #FFF;
+}
+
+.itemContaiter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 48px 60px;
+  gap: 24px;
+}
+
+.linksContainer {
+  position: relative;
+  max-width: 485px
+
+}
+
+.imageDetails {
+  width: 485px;
+  height: 526px;
+
+  position: relative; 
+  z-index: 20;
+}
+
+.labelContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  right: 0; 
+
+  gap: 14px;
+  padding-left: 30px;
+  padding-bottom: 70px;
+
+  z-index: 100;
+}
+
+.labelTitle {
+font-size: 28px;
+font-weight: 500;
+line-height: 132%; 
+letter-spacing: -0.56px;
+font-family: "Instrument Sans";
+
+color: #FFF;
+}
+
+.linkDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  font-family: "Instrument Sans";
+
+  color: #FFF;
+}
+
+.arrowIcon {
+  margin-left: -10px;     
+}

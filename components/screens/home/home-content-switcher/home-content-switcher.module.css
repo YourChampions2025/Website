@@ -28,7 +28,9 @@
   color: #fff;
   cursor: pointer;
   border-bottom: 2px solid #083376;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .buttonSwitch span {
@@ -46,5 +48,58 @@
   border-bottom: 2px solid #2de046;
 }
 
-.buttonSwitch:not(.active):hover {
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 68px;
+  padding: 100px 175px;
+}
+
+.imageContainer {
+  width: 700px;
+  height: 420px;
+}
+
+.textsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.titleSwitch {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 0.42px;
+  text-transform: capitalize;
+
+  color: #fff;
+}
+.titleSwitch span {
+  color: #2de046;
+}
+
+.descriptionSwitch {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+
+  color: #fff;
+}
+
+.homeAboutButton {
+  width: 220px;
+  height: 48px;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+  /* font-family: "Instrument Sans"; */
+
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.2);
 }

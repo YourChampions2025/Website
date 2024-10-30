@@ -1,5 +1,8 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
+import imageToggle from "@/public/images/faq.png";
+//!the image will later be replaced by a video
 import styles from "./home-content-switcher.module.css";
 
 function ContentSwitcher() {
@@ -30,9 +33,51 @@ function ContentSwitcher() {
         </div>
         <div className={styles.contentDisplay}>
           {selectedContent === "clients" ? (
-            <div>Informações para Clientes</div>
+            <div className={styles.contentWrapper}>
+              <Image
+                alt=""
+                src={imageToggle}
+                className={styles.imageContainer}
+              />
+              <div className={styles.textsContainer}>
+                <h2 className={styles.titleSwitch}>
+                  We don’t follow a <span>one-size-fits-all playbook.</span>
+                </h2>
+                <h6 className={styles.descriptionSwitch}>
+                  We have a deep bench and our personal injury team is stacked
+                  with interdisciplinary talent. We constantly explore new ways
+                  to tackle complex legal challenges. We leverage cutting-edge
+                  technology and employ creative trial strategies to stay ahead
+                  of the curve and maximize your results.
+                </h6>
+                <button className={styles.homeAboutButton}>
+                  Get in touch now{" "}
+                </button>{" "}
+              </div>
+            </div>
           ) : (
-            <div>Informações para Attorneys</div>
+            <div className={styles.contentWrapper}>
+              <Image
+                alt=""
+                src={imageToggle}
+                className={styles.imageContainer}
+              />
+              <div className={styles.textsContainer}>
+                <h2 className={styles.titleSwitch}>
+                  We don’t just stand out from other personal injury{" "}
+                  <span>firms—we set the standard.</span>
+                </h2>
+                <h6 className={styles.descriptionSwitch}>
+                  When complex or high-stakes personal injury cases arise, we’re
+                  the team other attorneys rely on for guidance, collaboration,
+                  or to take over entirely. Why? Because we deliver what many
+                  others can't. We’re impossible to beat.
+                </h6>
+                <button className={styles.homeAboutButton}>
+                  Get in touch now{" "}
+                </button>{" "}
+              </div>
+            </div>
           )}
         </div>
       </div>

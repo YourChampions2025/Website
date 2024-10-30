@@ -1,18 +1,12 @@
-import { MdArticle } from "react-icons/md";
+import { MdWork } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "blogs",
-  title: "Blogs",
+  name: "practiceAreas",
+  title: "Practice Areas",
   type: "document",
-  icon: MdArticle,
+  icon: MdWork,
   fields: [
-    defineField({
-      name: "date",
-      title: "Date",
-      type: "date",
-      validation: (Rule) => Rule.required().error("Date is required"),
-    }),
     defineField({
       name: "image",
       title: "Image",
@@ -44,23 +38,18 @@ export default defineType({
       validation: (Rule) => Rule.required().error("Description is required"),
     }),
     defineField({
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "categoriesForBlogs" }] }],
-      validation: (Rule) =>
-        Rule.required().error("At least one category is required"),
-    }),
-    defineField({
-      name: "author",
-      title: "Author",
-      type: "string",
-    }),
-    defineField({
       name: "content",
       title: "Content",
       type: "array",
-      of: [defineArrayMember({ type: "block" })],
+      of: [
+        defineArrayMember({ type: "block" }),
+        defineArrayMember({
+          type: "object",
+          name: "callToAction",
+          title: "Call to Action",
+          fields: [],
+        }),
+      ],
       validation: (Rule) => Rule.required().error("Content is required"),
     }),
   ],
