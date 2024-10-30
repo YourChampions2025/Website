@@ -5,7 +5,6 @@ import React from "react";
 import TestimonialsCustomers from "@/components/screens/testimonials/testimonialsCustomers/testimonials-customers";
 import ServiceContractForm from "@/components/globals/form/contract-services/service-contract";
 import LoadMore from "@/components/globals/buttons/load-more/load-more";
-import Footer from "@/components/globals/footer/footer";
 import LearnMore from "@/components/globals/learn-more/learn-more";
 
 function Testimonials() {
