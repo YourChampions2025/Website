@@ -1,20 +1,27 @@
-import ContactUs from "@/components/globals/contactUs/contact-us";
-import Header from "@/components/globals/header/header";
-import FrequentQuestions from "@/components/screens/home/FAQ/frequent-questions";
+import WeGetResults from "@/components/globals/general/we-get-results/we-get-results";
+import FrequentQuestions from "@/components/screens/home/frequent-questions/frequent-questions";
 import HomeAboutUs from "@/components/screens/home/home-about-us/home-about-us";
 import HomeBook from "@/components/screens/home/home-book/home-book";
 import ContentSwitcher from "@/components/screens/home/home-content-switcher/home-content-switcher";
+import HomeGraduates from "@/components/screens/home/home-graduates/home-graduates";
+import HomePracticeAreas from "@/components/screens/home/home-practice-areas/home-practice-areas";
+import HomeStrategies from "@/components/screens/home/home-strategies/home-strategies";
+import HomeTestimonials from "@/components/screens/home/home-testimonials/home-testimonials";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-
+    <main>
+      {/**home */}
       <HomeAboutUs />
       <ContentSwitcher />
+      <HomeGraduates />
+      <WeGetResults />
+      <HomeStrategies />
+      <HomeTestimonials />
+      <HomePracticeAreas />
       <HomeBook />
       <FrequentQuestions />
-      <ContactUs />
-    </div>
+      {/**resources */}
+    </main>
   );
 }
