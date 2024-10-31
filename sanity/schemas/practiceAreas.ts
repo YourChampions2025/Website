@@ -47,7 +47,15 @@ export default defineType({
           type: "object",
           name: "callToAction",
           title: "Call to Action",
-          fields: [],
+          fields: [
+            {
+              name: "label",
+              type: "string",
+              title: "Label",
+              readOnly: true,
+              initialValue: "Call to action",
+            },
+          ],
         }),
       ],
       validation: (Rule) => Rule.required().error("Content is required"),
