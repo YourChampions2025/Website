@@ -1,7 +1,83 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import styles from "./home-hero.module.css";
+import { BiVolumeMute } from "react-icons/bi";
+import { AiOutlineSound } from "react-icons/ai";
+import reloadIcon from "@/public/images/reload.svg";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import CustomButton from "@/components/globals/forms/custom-button/custom-button";
+import { FaArrowAltCircleDown } from "react-icons/fa";
 
-function HomeHero() {
-  return <div>HomeHero</div>;
+interface HomeHeroProps {
+  imageUrl?: string;
 }
 
-export default HomeHero;
+export default function HomeHero({
+  imageUrl = "/images/contact-us-image.png",
+}: HomeHeroProps) {
+  const arrowCount = 3;
+  const [isMuted, setIsMuted] = useState(true);
+
+  function toggleMute() {
+    setIsMuted(!isMuted);
+  }
+  return (
+    <div className={styles.container}>
+      <img src={imageUrl} alt="resources-slug-hero" className={styles.image} />
+      <div className={styles.overlay} />
+
+      <div className={styles.heroContainer}>
+        <div className={styles.heroContent}>
+          <h2 className={styles.heroTitle}>
+            Fischer <span>Redavid</span>
+          </h2>
+
+          <div className={styles.subtitleContainer}>
+            <h4 className={styles.heroSubtitle}>
+              Uncommon. Unrelenting. Unapologetic.
+            </h4>
+            <div className={styles.subtitleDetails} />
+          </div>
+
+          <span className={styles.heroDescription}>
+            We’re an aggressive team of powerful advocates with a single-minded
+            goal. Uncompromised justice.
+          </span>
+
+          <div className={styles.buttonsContainer}>
+            <CustomButton color="blue" size="small">
+              Get in touch now
+            </CustomButton>
+
+            <button className={styles.buttonResults}>
+              <p> Our Results</p>
+              {[...Array(arrowCount)].map((_, index) => (
+                <MdKeyboardDoubleArrowRight
+                  key={index}
+                  size={14}
+                  color="#1055C1"
+                />
+              ))}
+            </button>
+          </div>
+
+          <div className={styles.buttonsVideo}>
+            <button className={styles.soundButton} onClick={toggleMute}>
+              {isMuted ? (
+                <BiVolumeMute size={20} />
+              ) : (
+                <AiOutlineSound size={20} />
+              )}
+            </button>
+            <button className={styles.reloadButton}>
+              <FaArrowAltCircleDown />
+            </button>
+          </div>
+
+          <div className={styles.sliderContainer}>slider</div>
+        </div>
+      </div>
+    </div>
+  );
+}

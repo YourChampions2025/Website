@@ -1,0 +1,36 @@
+.pageHeaderContainer {
+  width: 100%;
+  height: fit-content;
+
+  padding: 108px 16px 72px;
+}
+
+.pageHeaderWrapper {
+  max-width: 1500px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pageHeaderTitle {
+  font-size: 86px;
+  font-weight: 400;
+  font-family: var(--font-instrument-serif);
+  text-transform: capitalize;
+}
+
+.pageHeaderDescription {
+  max-width: 292px;
+  width: 100%;
+
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: calc(26px * -0.02);
+  text-transform: uppercase;
+  text-wrap: balance;
+  text-align: right;
+}
