@@ -1,20 +1,19 @@
-import React from "react";
-import Header from "@/components/globals/header/header";
-import Navbar from "@/components/globals/navbar/navbar";
-import LocationsDetails from "../../components/screens/locations/locations-details/location-details";
-import ContactUs from "../../components/globals/contactUs/contact-us";
+import PageHeader from "@/components/globals/layout/page-header/page-header";
+import LearnMoreSection from "@/components/globals/general/learn-more-section/learn-more-section";
+import ContactUs from "@/components/globals/general/contact-us/contact-us";
+import LocationsHero from "@/components/screens/locations/locations-hero/locations-hero";
 
 function Locations() {
   return (
-    <div>
-      <Header />
-      <Navbar
-        navbarTitle="areas we serve"
-        navbarDescription="view our office locations"
+    <main className="pt-[162px]">
+      <PageHeader
+        title="areas we serve"
+        description="view our office locations"
       />
-      <LocationsDetails />
-      <ContactUs />
-    </div>
+      <LocationsHero />
+      <LearnMoreSection hasBorderTop />
+      <ContactUs hasBorderTop />
+    </main>
   );
 }
 
