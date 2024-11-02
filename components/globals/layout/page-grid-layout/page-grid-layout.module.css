@@ -1,0 +1,42 @@
+.sectionBorder {
+  border-top: 1px solid #083376;
+  border-bottom: 1px solid #083376;
+}
+
+.gridContainer {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 63.68fr 36.32fr;
+}
+
+.mainContentWrapper {
+  width: 100%;
+  padding: 48px 16px;
+}
+
+.mainContentInner {
+  max-width: 923px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideContentWrapper {
+  width: 100%;
+  padding: 48px 16px;
+  border-left: 1px solid #083376;
+  position: relative;
+}
+
+.sideContentInner {
+  max-width: 485px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 48px;
+}

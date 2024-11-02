@@ -1,0 +1,64 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.podcastWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.introText {
+  color: #cecece;
+  font-size: 18px;
+}
+
+.cardContainer {
+  width: 100%;
+  height: fit-content;
+  padding: 40px;
+  background-color: #1a1b21;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.videoContainer {
+  width: 100%;
+  height: fit-content;
+  aspect-ratio: 16/9;
+  background-color: rgba(128, 128, 128, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.videoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.episodeInfo {
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.episodeNumber {
+  font-size: 16px;
+  letter-spacing: calc(16px * -0.02);
+  text-transform: uppercase;
+  color: #2de046;
+}
+
+.title {
+  font-size: 28px;
+  letter-spacing: calc(28px * -0.02);
+  font-weight: 500;
+}

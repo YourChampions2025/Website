@@ -1,33 +1,23 @@
-import Header from "@/components/globals/header/header";
-import Navbar from "@/components/globals/navbar/navbar";
-import styles from "./testimonial.module.css";
-import React from "react";
-import TestimonialsCustomers from "@/components/screens/testimonials/testimonialsCustomers/testimonials-customers";
-import ServiceContractForm from "@/components/globals/form/contract-services/service-contract";
-import LoadMore from "@/components/globals/buttons/load-more/load-more";
-import LearnMore from "@/components/globals/learn-more/learn-more";
+import LearnMoreSection from "@/components/globals/general/learn-more-section/learn-more-section";
+import LoadMoreDynamicData from "@/components/globals/general/load-more-dynamic-data/load-more-dynamic-data";
+import PageGridLayout from "@/components/globals/layout/page-grid-layout/page-grid-layout";
+import PageHeader from "@/components/globals/layout/page-header/page-header";
+import MainContentTestimonials from "@/components/screens/testimonials/main-content-testimonials/main-content-testimonials";
+import SideContentTestimonials from "@/components/screens/testimonials/side-content-testimonials/side-content-testimonials";
 
-function Testimonials() {
+export default function TestimonialsPage() {
   return (
-    <div>
-      <Header />
-      <Navbar
-        navbarTitle="testimonials"
-        navbarDescription="Hear Our Clients, Call Today"
+    <main className="pt-[162px]">
+      <PageHeader
+        title="testimonials"
+        description="Hear Our Clients, Call Today"
       />
-
-      <div className={styles.testimonialsGridContainer}>
-        <div>
-          <TestimonialsCustomers />
-        </div>
-        <div>
-          <ServiceContractForm />
-        </div>
-      </div>
-      <LoadMore textButton="load more testimonials" />
-      <LearnMore />
-    </div>
+      <PageGridLayout
+        mainContent={<MainContentTestimonials />}
+        sideContent={<SideContentTestimonials />}
+      />
+      <LoadMoreDynamicData>load more testimonials</LoadMoreDynamicData>
+      <LearnMoreSection />
+    </main>
   );
 }
-
-export default Testimonials;
