@@ -1,29 +1,19 @@
-import React from "react";
-import Header from "@/components/globals/header/header";
-import Navbar from "@/components/globals/navbar/navbar";
-import ContactUsToday from "@/components/screens/careers/contact-us-today/contact-us-today";
-import ServiceContractForm from "@/components/globals/form/contract-services/service-contract";
+import PageHeader from "@/components/globals/layout/page-header/page-header";
+import PageGridLayout from "@/components/globals/layout/page-grid-layout/page-grid-layout";
+import MainContentCareers from "@/components/screens/careers/main-content-careers/main-content-careers";
+import SideContentCareers from "@/components/screens/careers/side-content-careers/side-content-careers";
+import LearnMoreSection from "@/components/globals/general/learn-more-section/learn-more-section";
 
-import styles from "./careers.module.css";
 function Careers() {
   return (
-    <div>
-      <Header />
-      <Navbar
-        navbarTitle="careers"
-        navbarDescription="Join Our
-        Client-Centric Team"
+    <main className="pt-[162px]">
+      <PageHeader title="careers" description="Join Our Client-Centric Team" />
+      <PageGridLayout
+        mainContent={<MainContentCareers />}
+        sideContent={<SideContentCareers />}
       />
-
-      <div className={styles.careersGridContainer}>
-        <div>
-          <ContactUsToday />
-        </div>
-        <div>
-          <ServiceContractForm />
-        </div>
-      </div>
-    </div>
+      <LearnMoreSection />
+    </main>
   );
 }
 

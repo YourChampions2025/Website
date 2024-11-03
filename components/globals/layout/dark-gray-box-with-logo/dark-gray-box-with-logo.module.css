@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  margin-top: 56px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1b21;
+  gap: 56px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: calc(28px * -0.02);
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 96px;
+  height: fit-content;
+  object-fit: contain;
+}

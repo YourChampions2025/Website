@@ -151,17 +151,18 @@
 
 .reloadButton {
   display: flex;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   padding: 6px;
   justify-content: center;
   align-items: center;
   gap: 10px;
 
-  border-radius: 18px;
+  border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: #1a1b21;
 }
+
 .sliderContainer {
   display: flex;
   flex-direction: row;

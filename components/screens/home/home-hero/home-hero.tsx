@@ -1,13 +1,11 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./home-hero.module.css";
 import { BiVolumeMute } from "react-icons/bi";
 import { AiOutlineSound } from "react-icons/ai";
-import reloadIcon from "@/public/images/reload.svg";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
-import { FaArrowAltCircleDown } from "react-icons/fa";
+import { TbReload } from "react-icons/tb";
 
 interface HomeHeroProps {
   imageUrl?: string;
@@ -71,7 +69,7 @@ export default function HomeHero({
               )}
             </button>
             <button className={styles.reloadButton}>
-              <FaArrowAltCircleDown />
+              <TbReload size={20} />
             </button>
           </div>
 
