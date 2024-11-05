@@ -11,6 +11,10 @@
   grid-template-columns: 63.68fr 36.32fr;
 }
 
+.reverse {
+  grid-template-columns: 36.32fr 63.68fr;
+}
+
 .mainContentWrapper {
   width: 100%;
   padding: 48px 16px;
@@ -39,4 +43,8 @@
   flex-direction: column;
   position: sticky;
   top: 48px;
+}
+
+.sideContentInnerReverse {
+  max-width: 800px;
 }

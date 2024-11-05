@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.helpSection {
+  width: 100%;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.helpTitle {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: calc(32px * -0.02);
+}
+
+.linksContainer {
+  display: flex;
+  margin-top: 32px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.link {
+  transition: all 0.3s;
+}
+
+.mainLink {
+  color: white;
+  font-size: 24px;
+}
+
+.secondaryLink {
+  color: #8d8d8d;
+  font-size: 20px;
+}
