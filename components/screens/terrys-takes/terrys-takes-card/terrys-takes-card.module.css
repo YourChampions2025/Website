@@ -1,0 +1,86 @@
+.terrysTakesCardContainer {
+  width: 100%;
+  height: fit-content;
+}
+
+.terrysTakesCardContent {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.terrysTakesCard {
+  max-width: 536px;
+  height: 420px;
+  gap: 24px;
+  padding: 60px 48px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #083376;
+}
+
+.date {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  font-family: "Instrument Sans";
+
+  color: #2de046;
+}
+
+.header {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  font-family: "Instrument Sans";
+
+  color: #8d8d8d;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.52px;
+  font-family: "Instrument Sans";
+
+  color: #fff;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  font-family: "Instrument Sans";
+
+  color: #8d8d8d;
+}
+
+.linkDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+
+  text-transform: uppercase;
+  text-decoration-line: underline;
+  font-family: "Instrument Sans";
+
+  color: #fff;
+}
+
+.arrowIcon {
+  margin-left: -10px;
+}

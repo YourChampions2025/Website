@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.introText {
+  color: #cecece;
+  font-size: 18px;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: calc(28px * -0.02);
+}
+
+.sectionText {
+  color: #cecece;
+  font-size: 18px;
+}
+
+.contactInfo {
+  max-width: 590px;
+  width: 100%;
+  margin-left: auto;
+  font-size: 24px;
+  letter-spacing: calc(24px * -0.02);
+  text-align: right;
+}
