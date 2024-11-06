@@ -5,7 +5,22 @@ import testimonials from "./schemas/testimonials";
 import results from "./schemas/results";
 import profiles from "./schemas/profiles";
 import practiceAreas from "./schemas/practiceAreas";
+import videoCenter from "./schemas/videoCenter";
+import otherAreas from "./schemas/otherAreas";
+import otherSubAreas from "./schemas/otherSubAreas";
+import locations from "./schemas/locations";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [categories, blogs, testimonials, results, profiles, practiceAreas],
+  types: [
+    categories,
+    blogs,
+    testimonials,
+    results,
+    profiles,
+    practiceAreas,
+    videoCenter,
+    locations,
+    otherAreas,
+    otherSubAreas,
+  ],
 };
