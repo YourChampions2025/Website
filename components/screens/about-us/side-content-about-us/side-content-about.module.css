@@ -1,0 +1,109 @@
+.sidecontainerAboutUs {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.sidecontentAboutUs {
+  max-width: 1170px;
+}
+
+.imageDetails {
+  position: absolute;
+  top: -48px;
+  right: -20rem;
+  z-index: 20;
+}
+
+.imageFirmContainer {
+  max-width: 686px;
+  height: 526px;
+}
+
+.firmDetails {
+  position: absolute;
+  max-width: 382px;
+  height: 234px;
+  right: -40px;
+  top: 260px;
+  z-index: 80;
+}
+
+.theFirmContentent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.firmTitle {
+  color: #fff;
+  font-family: "Instrument Serif";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.64px;
+}
+
+.firmDescription {
+  color: #8d8d8d;
+  font-family: "Instrument Sans";
+  font-size: clamp(14px, 2.45vw, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 82px;
+  gap: 8px;
+
+  color: #fff;
+  font-size: clamp(14px, 2.45vw, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  text-transform: uppercase;
+  font-family: "Instrument Sans";
+  text-decoration-line: underline;
+}
+
+.imagesContent {
+  grid-gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+}
+
+@media (max-width: 980px) {
+  .imagesContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 681px) {
+  .firmDetails {
+    display: none;
+  }
+  .imageFirmContainer {
+    max-width: 560px;
+    height: 526px;
+  }
+}
+
+@media (max-width: 540px) {
+  .imageFirmContainer {
+    display: none;
+  }
+
+  .theFirmContentent {
+    gap: 14px;
+  }
+}
