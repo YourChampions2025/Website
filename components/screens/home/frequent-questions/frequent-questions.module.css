@@ -1,6 +1,7 @@
 .sectionContainer {
   width: 100%;
   height: fit-content;
+  border-bottom: 1px solid #083376;
 }
 
 .contentContainer {
@@ -30,7 +31,8 @@
   line-height: 132%;
   letter-spacing: 0.84px;
   text-transform: capitalize;
-  /* font-family: "Instrument Serif"; */
+  font-family: "Instrument Serif";
+
   color: #fff;
 }
 
@@ -56,7 +58,6 @@
     rgba(255, 255, 255, 0) 0.99%,
     rgba(255, 255, 255, 0.15) 98.86%
   );
-
 }
 
 .questionHeader {
@@ -78,17 +79,16 @@
   font-size: 24px;
   text-transform: capitalize;
   font-family: "Instrument Sans";
-
 }
 
 .questionTextClosed {
-font-size: 20px;
-font-weight: 400;
-line-height: 132%; 
-letter-spacing: -0.4px;
-font-family: "Instrument Sans";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.4px;
+  font-family: "Instrument Sans";
 
-color: #FFF;
+  color: #fff;
 }
 
 .questionClosed {
@@ -98,7 +98,6 @@ color: #FFF;
 
 .questionOpen {
   font-size: 32px;
-
 }
 .iconClosed {
   font-size: 32px;
@@ -110,7 +109,6 @@ color: #FFF;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  
 }
 
 .answerText {
@@ -131,6 +129,7 @@ color: #FFF;
   display: flex;
   justify-content: flex-end;
 }
+
 .faqMedia {
   max-width: 788px;
   max-height: 701px;

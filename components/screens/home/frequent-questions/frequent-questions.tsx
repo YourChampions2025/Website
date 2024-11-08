@@ -4,8 +4,8 @@ import classNames from "classnames";
 import React, { useState } from "react";
 import styles from "./frequent-questions.module.css";
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
-import faqImage from "@/public/images/faq.png";
 import Collapse from "@/components/globals/general/collapse/collapse";
+import faqImage from "@/public/images/frequently-questions.png";
 
 const questionsAndAnswers = [
   {
@@ -63,12 +63,20 @@ function FrequentQuestions() {
                       isOpen ? styles.questionOpen : styles.questionClosed
                     )}
                   >
-                    <h3 className={classNames(
-                      styles.questionText,
-                      isOpen ? styles.questionText : styles.questionTextClosed)}>{question}</h3>
-                    <span className={classNames(
-                      styles.iconContainer,
-                      isOpen ? styles.iconOpen : styles.iconClosed)}>
+                    <h3
+                      className={classNames(
+                        styles.questionText,
+                        isOpen ? styles.questionText : styles.questionTextClosed
+                      )}
+                    >
+                      {question}
+                    </h3>
+                    <span
+                      className={classNames(
+                        styles.iconContainer,
+                        isOpen ? styles.iconOpen : styles.iconClosed
+                      )}
+                    >
                       {isOpen ? <IoIosArrowDropup /> : <IoIosArrowDropdown />}
                     </span>
                   </div>

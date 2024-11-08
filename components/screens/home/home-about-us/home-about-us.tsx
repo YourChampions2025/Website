@@ -7,7 +7,7 @@ function HomeAboutUs() {
   return (
     <div className={styles.homeAboutUsContainer}>
       <div className={styles.homeAboutUsContent}>
-        <Image alt="" src={imageAbout} />
+        <Image alt="" src={imageAbout} className={styles.imageAbout} />
 
         <div className={styles.homeAboutUsText}>
           <div className={styles.aboutUs}>

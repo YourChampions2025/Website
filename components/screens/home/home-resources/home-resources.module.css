@@ -1,0 +1,62 @@
+.homeResourcesContainer {
+  width: 100%;
+  height: fit-content;
+  border-bottom: 1px solid #083376;
+}
+
+.homeResourcesContent {
+  max-width: 1600px;
+  padding: 80px 48px;
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.headingContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 0.84px;
+  text-transform: capitalize;
+  font-family: "Instrument Serif";
+  color: #fff;
+}
+
+.linkDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+
+  text-transform: uppercase;
+  text-decoration-line: underline;
+  font-family: "Instrument Sans";
+
+  color: #fff;
+}
+
+.swiper {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: flex-end;
+  padding-bottom: 42px;
+  padding-top: 100px;
+}
+
+.imageDetails {
+  position: absolute;
+  bottom: 22px;
+  left: -10px;
+}

@@ -14,10 +14,15 @@ function HomeBook() {
             <span>Book</span>
           </h2>
           <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id
-            nisl placerat, sodales quam a, ultricies mauris. Cras egestas
-            bibendum felis, eu hendrerit ligula auctor vel. Integer molestie
-            elit quis ornare euismod.
+            In 2024, Jordan Redavid, along with other thought leaders in the
+            aquatic safety industry, co-authored the book Retention Pond Safety:
+            Practices and Principles, writing a chapter on the legal
+            implications of drowning cases involving retention and detention
+            ponds. In it, Jordan offers insight into ways these ponds can be
+            made more safe, why and how drownings happen in them, what causes of
+            action and against whom might be available, how some courts have
+            treated drowning lawsuits, and the most common defenses that he has
+            seen raised by at-fault parties. 
           </p>
           <button className={styles.homeBookButton}>learn more </button>
         </div>

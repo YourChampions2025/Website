@@ -7,6 +7,7 @@ import ContentSwitcher from "@/components/screens/home/home-content-switcher/hom
 import HomeGraduates from "@/components/screens/home/home-graduates/home-graduates";
 import HomeHero from "@/components/screens/home/home-hero/home-hero";
 import HomePracticeAreas from "@/components/screens/home/home-practice-areas/home-practice-areas";
+import HomeResources from "@/components/screens/home/home-resources/home-resources";
 import HomeStrategies from "@/components/screens/home/home-strategies/home-strategies";
 import HomeTestimonials from "@/components/screens/home/home-testimonials/home-testimonials";
 
@@ -23,7 +24,7 @@ export default function Home() {
       <HomePracticeAreas />
       <HomeBook />
       <FrequentQuestions />
-      {/**resources */}
+      <HomeResources />
       <ContactUs />
     </main>
   );
