@@ -33,6 +33,10 @@ export const courtOptions = [
   { title: "4th DCA", value: "4th-dca" },
   { title: "5th DCA", value: "5th-dca" },
   { title: "6th DCA", value: "6th-dca" },
+  {
+    title: "General",
+    value: "general",
+  },
   { title: "Georgia Court of Appeals", value: "georgia-court-of-appeals" },
   { title: "Georgia Supreme Court", value: "georgia-supreme-court" },
   { title: "Supreme Court of Florida", value: "supreme-court-of-florida" },
@@ -107,6 +111,10 @@ export const categoriesOptions = [
   },
   { title: "Florida Civil Rights Claim", value: "florida-civil-rights-claim" },
   { title: "Forum", value: "forum" },
+  {
+    title: "General",
+    value: "general",
+  },
   { title: "Hearsay", value: "hearsay" },
   { title: "Impact Rule", value: "impact-rule" },
   {
