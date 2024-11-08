@@ -72,8 +72,6 @@ export default defineType({
       options: {
         list: categoriesOptions,
       },
-      validation: (Rule) =>
-        Rule.required().min(1).error("At least one category is required"),
     }),
 
     defineField({
