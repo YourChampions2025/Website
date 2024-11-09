@@ -59,7 +59,6 @@ export default defineType({
       options: {
         list: courtOptions,
       },
-      validation: (Rule) => Rule.required().error("Court is required"),
     }),
 
     defineField({
