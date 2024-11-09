@@ -102,3 +102,9 @@
     gap: 57px;
   }
 }
+
+@media (max-width: 520px) {
+  .imageAbout {
+    display: none;
+  }
+}

@@ -17,7 +17,7 @@
 }
 
 .pageHeaderTitle {
-  font-size: 86px;
+  font-size: clamp(68px, 6vw, 86px);
   font-weight: 400;
   font-family: var(--font-instrument-serif);
   text-transform: capitalize;
@@ -27,10 +27,32 @@
   max-width: 292px;
   width: 100%;
 
-  font-size: 26px;
+  font-size: clamp(18px, 1.82vw, 26px);
   font-weight: 400;
   letter-spacing: calc(26px * -0.02);
   text-transform: uppercase;
   text-wrap: balance;
   text-align: right;
+}
+
+@media (max-width: 625px) {
+  .pageHeaderContainer {
+    padding: 108px 16px 72px;
+  }
+
+  .pageHeaderWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pageHeaderTitle {
+    align-self: flex-start;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  .pageHeaderDescription {
+    align-self: flex-end;
+    text-align: right;
+  }
 }

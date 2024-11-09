@@ -22,7 +22,7 @@
   padding: 45px 48px;
 }
 .headerTitle {
-  font-size: 84px;
+  font-size: clamp(64px, 7.11vw, 84px);
   font-weight: 400;
   letter-spacing: 0.84px;
   text-transform: capitalize;
@@ -66,7 +66,7 @@
 }
 
 .labelTitle {
-  font-size: 28px;
+  font-size: clamp(18px, 2.43vw, 28px);
   font-weight: 500;
   line-height: 132%;
   letter-spacing: -0.56px;
@@ -92,4 +92,31 @@
 
 .arrowIcon {
   margin-left: -10px;
+}
+
+@media (max-width: 998px) {
+  .itemContaiter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imageDetails {
+    width: 450px;
+    height: 456px;
+  }
+}
+
+@media (max-width: 586px) {
+  .practiceAreasHeaderWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imageDetails {
+    width: 350px;
+    height: 356px;
+  }
 }

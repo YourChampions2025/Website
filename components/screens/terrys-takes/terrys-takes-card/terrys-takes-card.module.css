@@ -12,9 +12,9 @@
 
 .terrysTakesCard {
   max-width: 536px;
-  height: 420px;
-  gap: 24px;
-  padding: 60px 48px;
+  height: auto;
+  gap: clamp(14px, 1.8vw, 24px);
+  padding: clamp(42px, 4.52vw, 60px) 48px;
 
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
 }
 
 .date {
-  font-size: 16px;
+  font-size: clamp(12px, 2.28vw, 16px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: -0.32px;
@@ -34,7 +34,7 @@
 }
 
 .header {
-  font-size: 16px;
+  font-size: clamp(12px, 2.28vw, 16px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: -0.32px;
@@ -45,7 +45,7 @@
 }
 
 .title {
-  font-size: 26px;
+  font-size: clamp(20px, 1.82vw, 26px);
   font-weight: 500;
   line-height: 132%;
   letter-spacing: -0.52px;
@@ -55,7 +55,7 @@
 }
 
 .description {
-  font-size: 18px;
+  font-size: clamp(14px, 1.45vw, 18px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: -0.36px;
@@ -69,7 +69,7 @@
   flex-direction: row;
   align-items: center;
 
-  font-size: 18px;
+  font-size: clamp(14px, 1.45vw, 18px);
   font-weight: 500;
   line-height: 132%;
   letter-spacing: -0.36px;
@@ -83,4 +83,30 @@
 
 .arrowIcon {
   margin-left: -10px;
+}
+
+@media (max-width: 950px) {
+  .terrysTakesCardContent {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .terrysTakesCard {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .terrysTakesCard {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terrysTakesCard {
+    max-width: 380px;
+  }
 }

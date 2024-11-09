@@ -29,7 +29,7 @@
 }
 
 .locationTitle {
-  font-size: 46px;
+  font-size: clamp(32px, 5.69vw, 46px);
   letter-spacing: calc(46px * -0.04);
   text-transform: uppercase;
   color: white;
@@ -49,7 +49,7 @@
   text-transform: uppercase;
   color: white;
   font-weight: 500;
-  font-size: 18px;
+  font-size: clamp(16px, 1.17vw, 18px);
   text-decoration: underline;
 }
 
@@ -57,4 +57,45 @@
   color: #2de046;
   flex-shrink: 0;
   transform: rotate(90deg);
+}
+@media (max-width: 1370px) {
+  .locationCard {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 32px;
+  }
+}
+
+@media (max-width: 950px) {
+  .innerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+  .locationCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 526px) {
+  .locationCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    width: 100%;
+    height: fit-content;
+    /* padding: 0 16px 160px; */
+    padding: 10px 42px;
+  }
 }

@@ -13,7 +13,7 @@
 
 .introText {
   color: #cecece;
-  font-size: 18px;
+  font-size: clamp(16px, 1.71vw, 18px);
 }
 
 .section {
@@ -25,7 +25,7 @@
 }
 
 .sectionTitle {
-  font-size: 28px;
+  font-size: clamp(20px, 4.32vw, 28px);
   font-weight: 500;
   letter-spacing: calc(28px * -0.02);
 }
@@ -39,7 +39,7 @@
   max-width: 590px;
   width: 100%;
   margin-left: auto;
-  font-size: 24px;
+  font-size: clamp(18px, 4.32vw, 24px);
   letter-spacing: calc(24px * -0.02);
   text-align: right;
 }

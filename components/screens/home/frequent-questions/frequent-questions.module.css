@@ -26,7 +26,7 @@
 
   width: 100%;
 
-  font-size: 84px;
+  font-size: clamp(64px, 7.11vw, 84px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: 0.84px;
@@ -135,6 +135,13 @@
   max-height: 701px;
 }
 
+@media (max-width: 1387px) {
+  .faqMedia {
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+
 @media (max-width: 1024px) {
   .contentContainer {
     flex-direction: column;
@@ -144,5 +151,18 @@
 
   .questionsContainer {
     margin: 0 auto;
+  }
+  .faqMedia {
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 950px) {
+  .faqMedia {
+    display: none;
+  }
+  .heading {
+    padding-bottom: 32px;
   }
 }

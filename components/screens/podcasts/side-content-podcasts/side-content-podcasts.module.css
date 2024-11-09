@@ -5,7 +5,7 @@
 }
 
 .heading {
-  font-size: 42px;
+  font-size: clamp(32px, 2.36vw, 42px);
   text-transform: uppercase;
   letter-spacing: calc(42px * -0.04);
   text-wrap: pretty;
@@ -30,4 +30,14 @@
   width: fit-content;
   height: 64px;
   object-fit: contain;
+}
+
+@media (max-width: 625px) {
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .image {
+    max-width: 180px;
+  }
 }

@@ -170,6 +170,7 @@ function Footer() {
               </div>
             </div>
           </div>
+
           <span className={styles.verticalSeparatorLine} />
           <div className={styles.officesWrapper}>
             {officeAddress.map((officeData) => (
@@ -179,7 +180,11 @@ function Footer() {
                 <Link className={styles.officelinkMaps} href={officeData.href}>
                   GET DIRECTIONS
                 </Link>
-                <Image src={officeData.image} alt="" />
+                <Image
+                  src={officeData.image}
+                  alt=""
+                  className={styles.mapDetails}
+                />
               </div>
             ))}
           </div>

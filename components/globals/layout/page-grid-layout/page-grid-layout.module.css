@@ -48,3 +48,13 @@
 .sideContentInnerReverse {
   max-width: 800px;
 }
+
+@media (max-width: 900px) {
+  .gridContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .sideContentWrapper {
+    border: none;
+  }
+}

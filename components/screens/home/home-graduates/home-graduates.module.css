@@ -11,14 +11,14 @@
 
 .homeGraduatesWrapper {
   display: flex;
-  flex-directio: row;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding-left: 42px;
 }
 
 .textGraduates h2 {
-  font-size: 26px;
+  font-size: clamp(18px, 1.82vw, 26px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: -0.52px;
@@ -27,11 +27,24 @@
   color: #8d8d8d;
 }
 
-
 .imageGraduates {
   width: 182px;
   height: 182px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+}
+
+@media (max-width: 720px) {
+  .homeGraduatesWrapper {
+    height: 182px;
+    padding: 42px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageGraduates {
+    display: none;
+  }
 }

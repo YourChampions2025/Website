@@ -13,5 +13,5 @@
 
 .articleText {
   color: #cecece;
-  font-size: 18px;
+  font-size: clamp(14px, 1.81vw, 18px);
 }

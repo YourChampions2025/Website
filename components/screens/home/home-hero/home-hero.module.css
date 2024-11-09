@@ -35,7 +35,7 @@
 }
 
 .heroContent {
-  padding-left: 94px;
+  padding-left: clamp(42px, 13.05vw, 94px);
 
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@
 .heroTitle {
   color: #fff;
   font-family: "Instrument Serif";
-  font-size: 122px;
+  font-size: clamp(60px, 10.16vw, 122px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: 1.22px;
@@ -60,7 +60,7 @@
   margin-bottom: 12px;
 
   color: #fff;
-  font-size: 42px;
+  font-size: clamp(32px, 3.68vw, 42px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: 0.42px;
@@ -83,7 +83,7 @@
 }
 
 .heroDescription {
-  font-size: 22px;
+  font-size: clamp(16px, 1.83vw, 22px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: -0.44px;
@@ -170,4 +170,28 @@
   gap: 100px;
   height: 67px;
   width: 100%;
+}
+
+@media (max-width: 720px) {
+  .subtitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 2px;
+  }
+  .subtitleDetails {
+    margin-bottom: 8px;
+  }
+  .heroSubtitle {
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 464px) {
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
