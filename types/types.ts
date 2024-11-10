@@ -74,3 +74,13 @@ export interface BlogProps {
     slug: string;
   };
 }
+
+export interface VideoCenterProps {
+  title: string;
+  slug: string;
+  date: string;
+  category: string;
+  episodeNumber?: number;
+  url?: string;
+  videoUrl?: string;
+}

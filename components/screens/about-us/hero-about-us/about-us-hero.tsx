@@ -1,16 +1,20 @@
 import React from "react";
 import styles from "./about-us-hero.module.css";
+import LogoOne from "@/public/images/slider-home-one.png";
+import LogoSlider from "@/components/globals/general/logo-slider/logo-slider";
 
-interface AboutUsHeroProps {
-  imageUrl?: string;
-}
+const LOGOS_ONE = [LogoOne, LogoOne, LogoOne];
 
-export default function AboutUsHero({
-  imageUrl = "/images/contact-us-image.png",
-}: AboutUsHeroProps) {
+export default function AboutUsHero() {
   return (
     <div className={styles.container}>
-      <img src={imageUrl} alt="resources-slug-hero" className={styles.image} />
+      <video
+        src="/videos/home-hero.mp4"
+        className={styles.image}
+        autoPlay
+        muted
+        loop
+      />
       <div className={styles.overlay} />
 
       <div className={styles.aboutContainer}>
@@ -22,6 +26,10 @@ export default function AboutUsHero({
             Meet our firm, our attorneys and staff
           </p>
         </div>
+      </div>
+
+      <div className="w-full h-fit relative z-50 pointer-events-none">
+        <LogoSlider logos={LOGOS_ONE} />
       </div>
     </div>
   );

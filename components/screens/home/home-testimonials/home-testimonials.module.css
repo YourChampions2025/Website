@@ -1,22 +1,20 @@
 .homeTestimonialsContainer {
   width: 100%;
   height: fit-content;
-}
 
-.homeTestimonialsContent {
-  max-width: 1600px;
-  margin: 0 auto;
-
-  padding: 80px 48px;
+  padding: 80px 0;
 
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 64px;
 }
 
-.homeTestimonialsHeader {
+.homeTestimonialsContent {
+  max-width: 1503px;
+  width: 100%;
+  margin: 0 auto;
+
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
@@ -34,42 +32,13 @@
   color: #fff;
 }
 
-.testimonialContainers {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 12px;
-}
-
 .testimonialsComponent {
+  max-width: 504px;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
-
   gap: 32px;
-  height: 540px;
-  max-width: 504px;
-  padding: 48px 60px;
-}
-
-.userInitials {
-  width: 74px;
-  height: 74px;
-  padding: 28px 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: clamp(16px, 1.83vw, 22px);
-  font-weight: 500;
-  line-height: 132%;
-  letter-spacing: -0.44px;
-  text-transform: uppercase;
-  font-family: "Instrument Sans";
-
-  color: #8d8d8d;
-  border-radius: 37px;
-  background: linear-gradient(0deg, #1a1b21 0%, #1a1b21 100%), #d9d9d9;
 }
 
 .testimonialsTitle {
@@ -116,59 +85,4 @@
   flex-direction: row;
 
   gap: 4px;
-}
-
-@media (max-width: 586px) {
-  .homeTestimonialsHeader {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    flex-direction: column;
-  }
-
-  .headerTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-  }
-
-  .testimonialContainers {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .testimonialsComponent {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .testimonialsTitle {
-    max-width: 350px;
-  }
-  .avaluation {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 32px;
-  }
-}
-
-@media (max-width: 500px) {
-  .homeTestimonialsHeader {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    flex-direction: column;
-  }
-
-  .headerTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 400px;
-  }
 }

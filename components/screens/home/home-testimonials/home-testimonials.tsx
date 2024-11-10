@@ -1,66 +1,52 @@
 "use client";
+
 import React from "react";
 import { FaStar } from "react-icons/fa6";
 import styles from "./home-testimonials.module.css";
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { TestimonialProps } from "@/types/types";
+import PortableTextComponent from "@/components/globals/general/portable-text-component/portable-text-component";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const homeTestimonials = [
-  {
-    initials: "MF",
-    titleEvaluation:
-      '"Fischer Redavid Law firm provided thoughtful, honest care with specialized legal support."',
-    evaluation:
-      "My friend was in a terrible accident and Fischer Redavid was compassionate, helpful, and available from the beginning. During a time that was traumatic for his family. Fischer Redavid Law firm provided thoughtful, honest care with specialized legal support. I would recommend them.",
-    customerName: "mark",
-  },
-  {
-    initials: "DO",
-    titleEvaluation: '"I truly recommend John & Abigail."',
-    evaluation:
-      "I truly recommend John & Abigail. They helped me so much with my case and kept me updated throughout the whole process until everything was taken care of. I felt at ease during the whole process. They were very efficient and got the job done. I’m very happy with the outcome of this case thanks, guys.",
-    customerName: "Danny O.",
-  },
-  {
-    initials: "PS",
-    titleEvaluation:
-      '"I would absolutely work with them again in a heartbeat."',
-    evaluation:
-      "John Fischer and his team get right to work. They know the law and how to apply it. Due to their hard work, a client that I referred received the policy limits and was compensated for their injuries! 5 stars!!",
-    customerName: "Pushkar M. Singh, Esq.",
-  },
-];
+interface HomeTestimonialsProps {
+  testimonials: TestimonialProps[];
+}
 
-function HomeTestimonials() {
-  const router = useRouter();
-
-  const handleTestimonials = () => {
-    router.push("/testimonials");
-  };
+function HomeTestimonials({ testimonials }: HomeTestimonialsProps) {
   return (
     <div className={styles.homeTestimonialsContainer}>
       <div className={styles.homeTestimonialsContent}>
-        <div className={styles.homeTestimonialsHeader}>
-          <h2 className={styles.headerTitle}>
-            the results speak for themselves
-          </h2>
-          <CustomButton color="blue" size="small" onClick={handleTestimonials}>
+        <h2 className={styles.headerTitle}>the results speak for themselves</h2>
+
+        <Link href="/testimonials">
+          <CustomButton color="blue" size="medium">
             explore all testimonials
           </CustomButton>
-        </div>
+        </Link>
+      </div>
 
-        <div className={styles.testimonialContainers}>
-          {homeTestimonials.map((testimonials, i) => (
-            <div className={styles.testimonialsComponent} key={i}>
-              <div className={styles.userInitials}>{testimonials.initials}</div>
-              <h4 className={styles.testimonialsTitle}>
-                {testimonials.titleEvaluation}
-              </h4>
-              <p className={styles.testimonalDescription}>
-                {testimonials.evaluation}
-              </p>
+      <Swiper
+        spaceBetween={96}
+        grabCursor
+        loop
+        slidesPerView="auto"
+        className="!max-w-full !w-full !pl-4 2xl:!pl-[calc((100vw-1503px)/2)]"
+      >
+        {[...testimonials, ...testimonials].map((testimonial, index) => (
+          <SwiperSlide
+            key={index}
+            className="!max-w-[clamp(320px,40.46vw,437px)] !w-full"
+          >
+            <div className={styles.testimonialsComponent}>
+              <h4 className={styles.testimonialsTitle}>{testimonial.quote}</h4>
+
+              <div className={styles.testimonalDescription}>
+                <PortableTextComponent content={testimonial.testimony} />
+              </div>
+
               <div className={styles.avaluation}>
-                <p>{testimonials.customerName}</p>
+                <p>{testimonial.name}</p>
                 <div className={styles.starContainer}>
                   {Array.from({ length: 5 }).map((_, index) => (
                     <span key={index}>
@@ -70,9 +56,9 @@ function HomeTestimonials() {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }

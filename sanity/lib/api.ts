@@ -6,6 +6,8 @@ import {
   getFilteredBlogsQuery,
   getFilteredCasesQuery,
   getFilteredResultsQuery,
+  getLatestTestimonialsQuery,
+  getPodcastsQuery,
 } from "./queries";
 
 export const getFilteredResults = async (
@@ -83,6 +85,22 @@ export const getArticleBySlug = async (slug: string) => {
 
 export const getAllTestimonials = async () => {
   const data = await client.fetch(getAllTestimonialsQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getLatestTestimonials = async () => {
+  const data = await client.fetch(getLatestTestimonialsQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getPodcasts = async () => {
+  const data = await client.fetch(getPodcastsQuery);
 
   if (!data) return undefined;
 

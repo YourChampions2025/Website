@@ -1,44 +1,49 @@
 .container {
   width: 100%;
-  min-height: 820px;
-  height: 100%;
+
   position: relative;
 }
 
 .image {
   width: 100%;
   height: 100%;
+
   position: absolute;
   inset: 0;
+
   object-fit: cover;
 }
 
 .overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+
   position: absolute;
   inset: 0;
   z-index: 10;
 }
 
 .heroContainer {
-  position: absolute;
-  top: 265px;
-
   width: 100%;
   height: 100%;
-  max-width: 920px;
-  max-height: 400px;
 
+  padding: 260px 16px 32px;
+
+  position: relative;
   z-index: 50;
 }
 
 .heroContent {
-  padding-left: clamp(42px, 13.05vw, 94px);
+  max-width: 1504px;
+  width: 100%;
+
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .heroTitle {
@@ -47,7 +52,7 @@
   font-size: clamp(60px, 10.16vw, 122px);
   font-weight: 400;
   line-height: 132%;
-  letter-spacing: 1.22px;
+  letter-spacing: calc(clamp(60px, 10.16vw, 122px)*0.01);
   text-transform: capitalize;
 }
 
@@ -57,8 +62,6 @@
 }
 
 .heroSubtitle {
-  margin-bottom: 12px;
-
   color: #fff;
   font-size: clamp(32px, 3.68vw, 42px);
   font-weight: 400;
@@ -70,7 +73,6 @@
 
 .subtitleContainer {
   display: flex;
-  flex-direction: row;
   align-items: center;
 
   gap: 18px;
@@ -83,6 +85,11 @@
 }
 
 .heroDescription {
+  max-width: 706px;
+  width: 100%;
+
+  margin-top: 12px;
+
   font-size: clamp(16px, 1.83vw, 22px);
   font-weight: 400;
   line-height: 132%;
@@ -96,9 +103,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 24px;
 
-  margin-top: 24px;
+  margin: 24px 0;
+
   gap: 18px;
 }
 
@@ -108,14 +115,10 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0.5rem 1.5rem;
-  /* gap: 10px; */
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 132%;
-  letter-spacing: -0.28px;
+  padding: 1rem 3rem;
+  font-size: 16px;
+  letter-spacing: calc(16px * -0.02);
   text-transform: uppercase;
-  font-family: "Instrument Sans";
 
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -123,7 +126,8 @@
 
   cursor: pointer;
 }
-.buttonResults > *:first-child {
+
+.buttonResults>*:first-child {
   margin-right: 8px;
 }
 
@@ -136,13 +140,13 @@
 }
 
 .soundButton {
-  display: flex;
   width: 36px;
   height: 36px;
   padding: 6px;
+
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 
   border-radius: 50%;
   border: 1px solid #2de046;
@@ -150,26 +154,17 @@
 }
 
 .reloadButton {
-  display: flex;
   width: 42px;
   height: 42px;
   padding: 6px;
+
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: #1a1b21;
-}
-
-.sliderContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 100px;
-  height: 67px;
-  width: 100%;
 }
 
 @media (max-width: 720px) {
@@ -179,12 +174,6 @@
     align-items: flex-start;
 
     gap: 2px;
-  }
-  .subtitleDetails {
-    margin-bottom: 8px;
-  }
-  .heroSubtitle {
-    margin-bottom: 2px;
   }
 }
 

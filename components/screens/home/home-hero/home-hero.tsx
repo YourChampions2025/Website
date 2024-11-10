@@ -1,23 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./home-hero.module.css";
+import CustomButton from "@/components/globals/forms/custom-button/custom-button";
+import { TbReload } from "react-icons/tb";
 import { BiVolumeMute } from "react-icons/bi";
 import { AiOutlineSound } from "react-icons/ai";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import CustomButton from "@/components/globals/forms/custom-button/custom-button";
-import { TbReload } from "react-icons/tb";
 import { useRouter } from "next/navigation";
+import LogoSlider from "@/components/globals/general/logo-slider/logo-slider";
+import LogoOne from "@/public/images/slider-home-one.png";
+import LogoTwo from "@/public/images/slider-home-two.png";
 
-interface HomeHeroProps {
-  imageUrl?: string;
-}
+const LOGOS_ONE = [LogoOne, LogoOne, LogoOne];
+const LOGOS_TWO = [LogoTwo, LogoTwo, LogoTwo];
 
-export default function HomeHero({
-  imageUrl = "/images/contact-us-image.png",
-}: HomeHeroProps) {
-  const arrowCount = 3;
-  const [isMuted, setIsMuted] = useState(true);
+export default function HomeHero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const router = useRouter();
+  const [isMuted, setIsMuted] = useState(true);
 
   function handleButtonResults() {
     router.push("/results");
@@ -31,11 +31,30 @@ export default function HomeHero({
   };
 
   function toggleMute() {
-    setIsMuted(!isMuted);
+    if (videoRef.current) {
+      const newMuteState = !videoRef.current.muted;
+      videoRef.current.muted = newMuteState;
+      setIsMuted(newMuteState);
+    }
   }
+
+  function handleReloadVideo() {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  }
+
   return (
     <div className={styles.container}>
-      <img src={imageUrl} alt="resources-slug-hero" className={styles.image} />
+      <video
+        ref={videoRef}
+        src="/videos/home-hero.mp4"
+        className={styles.image}
+        autoPlay
+        muted
+        loop
+      />
       <div className={styles.overlay} />
 
       <div className={styles.heroContainer}>
@@ -59,7 +78,7 @@ export default function HomeHero({
           <div className={styles.buttonsContainer}>
             <CustomButton
               color="blue"
-              size="small"
+              size="medium"
               onClick={handleScrollToContactUs}
             >
               Get in touch now
@@ -70,11 +89,12 @@ export default function HomeHero({
               onClick={handleButtonResults}
             >
               <p> Our Results</p>
-              {[...Array(arrowCount)].map((_, index) => (
+              {[...Array(3)].map((_, index) => (
                 <MdKeyboardDoubleArrowRight
                   key={index}
-                  size={14}
+                  size={20}
                   color="#1055C1"
+                  className="flex-shrink-0"
                 />
               ))}
             </button>
@@ -88,13 +108,16 @@ export default function HomeHero({
                 <AiOutlineSound size={20} />
               )}
             </button>
-            <button className={styles.reloadButton}>
+            <button className={styles.reloadButton} onClick={handleReloadVideo}>
               <TbReload size={20} />
             </button>
           </div>
-
-          <div className={styles.sliderContainer}>slider</div>
         </div>
+      </div>
+
+      <div className="w-full h-fit relative z-50 pointer-events-none">
+        <LogoSlider logos={LOGOS_ONE} />
+        <LogoSlider logos={LOGOS_TWO} reverseDirection />
       </div>
     </div>
   );

@@ -32,6 +32,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.logo-slider .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
 #results-container::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
@@ -49,7 +53,7 @@ body::-webkit-scrollbar {
 #portable-text-wrapper h5,
 #portable-text-wrapper h6 {
   color: white !important;
-  font-weight: 400;
+  font-weight: 500 !important;
 }
 
 #portable-text-wrapper h1 {
@@ -87,14 +91,15 @@ body::-webkit-scrollbar {
 }
 
 #portable-text-wrapper p {
-  font-size: clamp(14px, 1.48vw, 16px);
+  font-size: clamp(14px, 1.66vw, 18px);
   padding: clamp(4px, 0.74vw, 8px) 0 clamp(8px, 1.11vw, 12px);
   color: #CECECE;
   opacity: 0.8;
 }
 
-#portable-text-wrapper b {
-  font-weight: 700;
+#portable-text-wrapper b,
+#portable-text-wrapper strong {
+  font-weight: 500 !important;
 }
 
 #portable-text-wrapper img {

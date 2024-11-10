@@ -130,3 +130,21 @@ export const getAllTestimonialsQuery = groq`
     name
   }
 `;
+
+export const getLatestTestimonialsQuery = groq`
+  *[_type == "testimonials"] | order(_createdAt desc) [0..5] {
+    quote,
+    testimony,
+    name
+  }
+`;
+
+export const getPodcastsQuery = groq`
+  *[_type == "videoCenter" && category == "Podcast"] {
+    title,
+    "slug": slug.current,
+    date,
+    episodeNumber,
+    url
+  }
+`;

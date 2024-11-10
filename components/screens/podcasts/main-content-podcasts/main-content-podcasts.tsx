@@ -1,4 +1,7 @@
+"use client";
+import { VideoCenterProps } from "@/types/types";
 import styles from "./main-content-podcasts.module.css";
+import ReactPlayer from "react-player/youtube";
 
 interface PodcastCardProps {
   url?: string;
@@ -6,26 +9,32 @@ interface PodcastCardProps {
   episodeNumber?: number;
 }
 
-function PodcastCard({
-  url = "",
-  title = "Protecting Clients from Fraud - With Guest Sean McCleary",
-  episodeNumber = 1,
-}: PodcastCardProps) {
+function PodcastCard({ url, title, episodeNumber = 1 }: PodcastCardProps) {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.videoContainer}>
-        {url && <img src={url} alt={title} className={styles.videoImage} />}
+        {url && (
+          <ReactPlayer url={url} className={styles.videoImage} controls />
+        )}
       </div>
 
       <div className={styles.episodeInfo}>
-        <p className={styles.episodeNumber}>EPISODE {episodeNumber}</p>
-        <h6 className={styles.title}>{title}</h6>
+        {episodeNumber && (
+          <p className={styles.episodeNumber}>EPISODE {episodeNumber}</p>
+        )}
+        {title && <h6 className={styles.title}>{title}</h6>}
       </div>
     </div>
   );
 }
 
-export default function MainContentPodcasts() {
+interface MainContentPodcastsProps {
+  podcasts: VideoCenterProps[];
+}
+
+export default function MainContentPodcasts({
+  podcasts,
+}: MainContentPodcastsProps) {
   return (
     <div className={styles.container}>
       <div className={styles.podcastWrapper}>
@@ -46,8 +55,13 @@ export default function MainContentPodcasts() {
           Justice podcast on your favorite streaming service today.
         </p>
 
-        {Array.from({ length: 10 }).map((_, index) => (
-          <PodcastCard key={index} />
+        {podcasts?.map((podcast, index) => (
+          <PodcastCard
+            key={index}
+            episodeNumber={podcast.episodeNumber}
+            title={podcast.title}
+            url={podcast.url}
+          />
         ))}
       </div>
     </div>
