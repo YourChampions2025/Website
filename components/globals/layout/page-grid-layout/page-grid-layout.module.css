@@ -15,6 +15,9 @@
   grid-template-columns: 36.32fr 63.68fr;
 }
 
+.identical {
+  grid-template-columns: 1fr 1fr;
+}
 .mainContentWrapper {
   width: 100%;
   padding: 48px 16px;
@@ -45,6 +48,9 @@
   top: 48px;
 }
 
+.sideContentIdentical {
+  max-width: 800px;
+}
 .sideContentInnerReverse {
   max-width: 800px;
 }
