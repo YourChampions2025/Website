@@ -9,28 +9,32 @@ import { motion } from "framer-motion";
 import classNames from "classnames";
 import { linksSlideUp, logoSlideUp, navBarHeight } from "./header-animation";
 import Link from "next/link";
-import { MdArrowOutward, MdMailOutline, MdPhone } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 
 const mobilelinks = [
   {
+    href: "/",
+    label: "home",
+  },
+  {
+    href: "/about-us",
     label: "about us",
-    href: "",
   },
   {
+    href: "/practice-areas",
     label: "practice areas",
-    href: "",
   },
   {
+    href: "/resources",
     label: "resources",
-    href: "",
   },
   {
+    href: "/locations",
     label: "locations",
-    href: "",
   },
   {
+    href: "/results",
     label: "results",
-    href: "",
   },
 ];
 function HeaderMobile() {

@@ -12,6 +12,7 @@ import footerDetails from "@/public/images/footer-details.png";
 
 import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
 import { usePathname } from "next/navigation";
+import { locationsDatas } from "@/utils/constants";
 
 const footerLink = [
   {
@@ -19,24 +20,24 @@ const footerLink = [
     label: "home",
   },
   {
-    href: "/",
+    href: "/about-us",
     label: "about us",
   },
   {
-    href: "/",
+    href: "/practice-areas",
     label: "practice areas",
   },
   {
-    href: "/",
+    href: "/resources",
     label: "resources",
   },
   {
-    href: "/",
+    href: "/locations",
     label: "locations",
   },
   {
-    href: "/",
-    label: "results ",
+    href: "/results",
+    label: "results",
   },
 ];
 
@@ -70,27 +71,6 @@ const socialLinks = [
     href: "/",
     label: "Google Business",
     icon: <FaGoogle size={24} color="#1055C1" />,
-  },
-];
-
-const officeAddress = [
-  {
-    title: "florida office",
-    address: "3325 Hollywood Blvd, #500 Hollywood, FL 33021",
-    href: "/",
-    image: floridaMap,
-  },
-  {
-    title: "Georgia Office",
-    address: "3975 Roswell Road NE, Suite 3 Atlanta, GA 30342",
-    href: "/",
-    image: georgiaMap,
-  },
-  {
-    title: "U.S. Virgin Islands Office",
-    address: "15-B Norre Gade St Thomas, 00804",
-    href: "/",
-    image: virginMap,
   },
 ];
 
@@ -173,17 +153,23 @@ function Footer() {
 
           <span className={styles.verticalSeparatorLine} />
           <div className={styles.officesWrapper}>
-            {officeAddress.map((officeData) => (
+            {locationsDatas.map((officeData) => (
               <div key={officeData.title} className={styles.officesContent}>
                 <h4 className={styles.officeTitle}>{officeData.title}</h4>
-                <p className={styles.officeAddress}>{officeData.address}</p>
+                <span
+                  className={styles.officeAddress}
+                  dangerouslySetInnerHTML={{ __html: officeData.address }}
+                />
                 <Link className={styles.officelinkMaps} href={officeData.href}>
                   GET DIRECTIONS
                 </Link>
-                <Image
-                  src={officeData.image}
-                  alt=""
+                <iframe
+                  src={officeData.iframeUrl}
                   className={styles.mapDetails}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Fischer Redavid PLLC ${officeData.title}`}
                 />
               </div>
             ))}
