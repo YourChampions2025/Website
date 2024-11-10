@@ -4,7 +4,6 @@ import styles from "./home-resources.module.css";
 import Link from "next/link";
 import { RiArrowDropRightFill } from "react-icons/ri";
 import resourcesDetails from "@/public/images/resources.svg";
-import OverviewCard from "../../blog/index/overview-card/overview-card";
 import Image from "next/image";
 
 function HomeResources() {
@@ -26,10 +25,10 @@ function HomeResources() {
         <div className={styles.swiper}>swiper</div>
 
         <Image alt="" src={resourcesDetails} className={styles.imageDetails} />
-
+        {/* 
         <div>
           <OverviewCard isHome={true} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
