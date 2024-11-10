@@ -30,3 +30,14 @@
   color: #cecece;
   font-size: clamp(14px, 2.45vw, 18px);
 }
+
+.categories {
+  font-size: clamp(14px, 2.45vw, 18px);
+  color: #7A868E;
+  text-transform: uppercase;
+}
+
+.categories a {
+  color: #7A868E;
+  text-decoration: underline;
+}

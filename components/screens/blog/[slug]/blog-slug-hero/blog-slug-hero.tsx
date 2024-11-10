@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./blog-slug-hero.module.css";
+import Image from "next/image";
+
 interface BlogSlugHeroProps {
   imageUrl?: string;
 }
@@ -9,7 +11,13 @@ export default function BlogSlugHero({
 }: BlogSlugHeroProps) {
   return (
     <div className={styles.container}>
-      <img src={imageUrl} alt="resources-slug-hero" className={styles.image} />
+      <Image
+        width={1920}
+        height={1080}
+        src={imageUrl}
+        alt="Image for blog slug hero component"
+        className={styles.image}
+      />
       <div className={styles.overlay} />
     </div>
   );

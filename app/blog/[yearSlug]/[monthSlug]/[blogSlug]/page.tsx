@@ -4,16 +4,30 @@ import BlogPrevBackNextButtons from "@/components/screens/blog/[slug]/blog-prev-
 import BlogSlugHero from "@/components/screens/blog/[slug]/blog-slug-hero/blog-slug-hero";
 import MainContentBlogSlug from "@/components/screens/blog/[slug]/main-content-blog-slug/main-content-blog-slug";
 import SideContentBlogSlug from "@/components/screens/blog/[slug]/side-content-blog-slug/side-content-blog-slug";
+import { getArticleBySlug } from "@/sanity/lib/api";
+import { BlogProps } from "@/types/types";
 
-export default function BlogSlugPage() {
+export default async function BlogSlugPage({
+  params,
+}: {
+  params: Promise<{
+    blogSlug: string;
+    monthSlug: string;
+    yearSlug: string;
+  }>;
+}) {
+  const { blogSlug, monthSlug, yearSlug } = await params;
+
+  const { blog }: { blog: BlogProps } = await getArticleBySlug(blogSlug);
+
   return (
     <main>
-      <BlogSlugHero />
+      <BlogSlugHero imageUrl={blog?.imageUrl} />
       <PageGridLayout
-        mainContent={<MainContentBlogSlug />}
+        mainContent={<MainContentBlogSlug blog={blog} />}
         sideContent={<SideContentBlogSlug />}
       />
-      <BlogPrevBackNextButtons />
+      <BlogPrevBackNextButtons prev={blog?.prev} next={blog?.next} />
       <LearnMoreSection />
     </main>
   );

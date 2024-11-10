@@ -1,121 +1,44 @@
+import { BlogProps } from "@/types/types";
 import styles from "./main-content-blog-slug.module.css";
+import PortableTextComponent from "@/components/globals/general/portable-text-component/portable-text-component";
+import Link from "next/link";
 
-export default function MainContentBlogSlug() {
+interface MainContentBlogSlugProps {
+  blog: BlogProps;
+}
+
+export default function MainContentBlogSlug({
+  blog,
+}: MainContentBlogSlugProps) {
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
         <p className={styles.authorInfo}>
-          <span className={styles.highlight}>By</span> Jordan Redavid{" "}
-          <span className={styles.highlight}>| October 20, 2023</span>
+          <span className={styles.highlight}>By</span> {blog?.author}{" "}
+          <span className={styles.highlight}>
+            |{" "}
+            {new Date(blog?.date).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </span>
         </p>
-        <h1 className={styles.title}>
-          Maurice Monk Lawsuit & Challenges in Suing the Government for Medical
-          Negligence
-        </h1>
-        <div className={styles.articleText}>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-        </div>
+        <h1 className={styles.title}>{blog?.title}</h1>
+        {blog?.content && (
+          <div className={styles.articleText}>
+            <PortableTextComponent content={blog?.content} />
+          </div>
+        )}
+        <p className={styles.categories}>
+          {blog.categories.length > 1 ? "Categories:" : "Category:"}{" "}
+          {blog?.categories.map((category, index) => (
+            <Link href={`/blog/categories/${category.slug}`}>
+              {index === 0 ? "" : ", "}
+              {category.title}
+            </Link>
+          ))}
+        </p>
       </div>
     </div>
   );

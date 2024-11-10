@@ -22,6 +22,18 @@ export const locationsDatas = [
   },
 ];
 
+export const resultsCategoriesOptions = [
+  { title: "Auto Accidents", value: "Auto Accidents" },
+  { title: "Brain Injury", value: "Brain Injury" },
+  { title: "Burn Injury", value: "Burn Injury" },
+  { title: "Catastrophic Injury", value: "Catastrophic Injury" },
+  { title: "Civil Rights", value: "Civil Rights" },
+  { title: "Medical Malpractice", value: "Medical Malpractice" },
+  { title: "Personal Injury", value: "Personal Injury" },
+  { title: "Premises Liability", value: "Premises Liability" },
+  { title: "Serious Bodily Injury", value: "Serious Bodily Injury" },
+];
+
 export const courtOptions = [
   {
     title: "11th Circuit Court of Appeals",

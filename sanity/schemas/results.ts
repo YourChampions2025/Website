@@ -1,3 +1,4 @@
+import { resultsCategoriesOptions } from "@/utils/constants";
 import { MdMoney } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
@@ -31,25 +32,18 @@ export default defineType({
       validation: (Rule) => Rule.required().error("Subtitle is required"),
     }),
     defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+    }),
+    defineField({
       name: "categories",
       title: "Categories",
       type: "array",
       of: [{ type: "string" }],
       options: {
-        list: [
-          { title: "Auto Accidents", value: "Auto Accidents" },
-          { title: "Brain Injury", value: "Brain Injury" },
-          { title: "Burn Injury", value: "Burn Injury" },
-          { title: "Catastrophic Injury", value: "Catastrophic Injury" },
-          { title: "Civil Rights", value: "Civil Rights" },
-          { title: "Medical Malpractice", value: "Medical Malpractice" },
-          { title: "Personal Injury", value: "Personal Injury" },
-          { title: "Premises Liability", value: "Premises Liability" },
-          { title: "Serious Bodily Injury", value: "Serious Bodily Injury" },
-        ],
+        list: resultsCategoriesOptions,
       },
-      validation: (Rule) =>
-        Rule.required().error("At least one category is required"),
     }),
     defineField({
       name: "content",
@@ -82,7 +76,6 @@ export default defineType({
           },
         }),
       ],
-      validation: (Rule) => Rule.required().error("Content is required"),
     }),
   ],
 });

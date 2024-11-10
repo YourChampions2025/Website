@@ -1,17 +1,20 @@
 import { FaStar } from "react-icons/fa6";
 import styles from "./main-content-testimonials.module.css";
+import { TestimonialProps } from "@/types/types";
+import { TypedObject } from "sanity";
+import PortableTextComponent from "@/components/globals/general/portable-text-component/portable-text-component";
 
 interface TestimonialCardProps {
-  testimony?: string;
+  testimony?: TypedObject | TypedObject[];
   name?: string;
   quote?: string;
   stars?: number;
 }
 
 function TestimonialCard({
-  testimony = "My friend was in a terrible accident and Fischer Redavid was compassionate, helpful, and available from the beginning. During a time that was traumatic for his family. Fischer Redavid Law firm provided thoughtful, honest care with specialized legal support. I would recommend them.",
-  name = "mark j.",
-  quote = "Fischer Redavid Law firm provided thoughtful, honest care with specialized legal support.",
+  testimony,
+  name,
+  quote,
   stars = 5,
 }: TestimonialCardProps) {
   return (
@@ -22,16 +25,20 @@ function TestimonialCard({
         ))}
       </div>
 
-      <h6 className={styles.quote}>"{quote}"</h6>
-
-      <p className={styles.testimony}>{testimony}</p>
-
+      <h6 className={styles.quote}>{quote}</h6>
+      {testimony && <PortableTextComponent content={testimony} />}
       <p className={styles.name}>{name}</p>
     </div>
   );
 }
 
-export default function MainContentTestimonials() {
+interface MainContentTestimonialsProps {
+  testimonials: TestimonialProps[];
+}
+
+export default function MainContentTestimonials({
+  testimonials,
+}: MainContentTestimonialsProps) {
   return (
     <div className={styles.container}>
       <div className={styles.testimonialsWrapper}>
@@ -43,8 +50,8 @@ export default function MainContentTestimonials() {
           <b className={styles.contactNumber}>888-694-0708</b>.
         </p>
 
-        {Array.from({ length: 10 }).map((_, index) => (
-          <TestimonialCard key={index} />
+        {testimonials.map((testimonial, index) => (
+          <TestimonialCard key={index} stars={5} {...testimonial} />
         ))}
       </div>
     </div>

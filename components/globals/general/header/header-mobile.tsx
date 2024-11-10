@@ -10,6 +10,8 @@ import classNames from "classnames";
 import { linksSlideUp, logoSlideUp, navBarHeight } from "./header-animation";
 import Link from "next/link";
 import { MdArrowOutward, MdMailOutline, MdPhone } from "react-icons/md";
+import fischerLogo from "@/public/images/fischerLogo.svg";
+import Image from "next/image";
 
 const mobilelinks = [
   {
@@ -44,7 +46,7 @@ function HeaderMobile() {
     <div>
       <div className={style.menuIcon} onClick={toggleMenu}>
         <div className={style.menuHeader}>
-          <img src="images/fischerLogo.svg" alt="fischerLogo" />
+          <Image src={fischerLogo} alt="fischerLogo" />
 
           {isMenuOpen ? (
             <AiOutlineClose size={28} color="#2DE046" />
@@ -67,8 +69,8 @@ function HeaderMobile() {
           animate={isMenuOpen ? "enter" : "exit"}
           onClick={toggleMenu}
         >
-          <img
-            src="images/fischerLogo.svg"
+          <Image
+            src={fischerLogo}
             alt="Fischer Redavid Logo"
             className={style.logoMobileContainer}
           />
