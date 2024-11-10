@@ -6,6 +6,7 @@ import { AiOutlineSound } from "react-icons/ai";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
 import { TbReload } from "react-icons/tb";
+import { useRouter } from "next/navigation";
 
 interface HomeHeroProps {
   imageUrl?: string;
@@ -16,6 +17,18 @@ export default function HomeHero({
 }: HomeHeroProps) {
   const arrowCount = 3;
   const [isMuted, setIsMuted] = useState(true);
+  const router = useRouter();
+
+  function handleButtonResults() {
+    router.push("/results");
+  }
+
+  const handleScrollToContactUs = () => {
+    const contactUsSection = document.getElementById("contact-us");
+    if (contactUsSection) {
+      contactUsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   function toggleMute() {
     setIsMuted(!isMuted);
@@ -44,11 +57,18 @@ export default function HomeHero({
           </span>
 
           <div className={styles.buttonsContainer}>
-            <CustomButton color="blue" size="small">
+            <CustomButton
+              color="blue"
+              size="small"
+              onClick={handleScrollToContactUs}
+            >
               Get in touch now
             </CustomButton>
 
-            <button className={styles.buttonResults}>
+            <button
+              className={styles.buttonResults}
+              onClick={handleButtonResults}
+            >
               <p> Our Results</p>
               {[...Array(arrowCount)].map((_, index) => (
                 <MdKeyboardDoubleArrowRight

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./main-content-about-us.module.css";
-import Link from "next/link";
 
 interface MainContentAboutUsProps {
   activeLink: string;
@@ -25,14 +24,13 @@ function MainContentAboutUs({
           <div className={styles.linkContainer}>
             {links.map((link) => (
               <div
-                key={link} // chave única
+                key={link}
                 className={
                   activeLink === link ? styles.activeLink : styles.link
                 }
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log(`Setting active link to: ${link}`);
-                  setActiveLink(link); // Muda o estado para o link selecionado
+                  setActiveLink(link);
                 }}
               >
                 {link}

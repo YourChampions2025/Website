@@ -18,7 +18,7 @@ export default function WeGetResults() {
             <div className={styles.resultContent}>
               <div className={styles.resultHeader}>
                 <h3 className={styles.amount}>$11.9 MILLION</h3>
-                <Link href="#" className={styles.link}>
+                <Link href="/results" className={styles.link}>
                   <IoTriangle className={styles.icon} />
                   explore our case results
                 </Link>

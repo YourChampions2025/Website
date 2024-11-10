@@ -13,9 +13,8 @@
 
 .title {
   color: #fff;
-  color: #fff;
   font-family: "Instrument Sans";
-  font-size: 32px;
+  font-size: clamp(18px, 2.89vw, 32px);
   font-style: normal;
   font-weight: 500;
   line-height: 132%;
@@ -26,7 +25,7 @@
 .description {
   color: #fff;
   font-family: "Instrument Sans";
-  font-size: 28px;
+  font-size: clamp(16px, 2.32vw, 28px);
   font-style: normal;
   font-weight: 500;
   line-height: 132%;
