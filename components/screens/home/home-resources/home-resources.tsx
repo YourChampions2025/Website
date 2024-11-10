@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./home-resources.module.css";
 import Link from "next/link";
@@ -13,7 +14,7 @@ function HomeResources() {
         <div className={styles.headingContent}>
           <h2 className={styles.title}>resources</h2>
 
-          <Link href="" className={styles.linkDetails}>
+          <Link href="/blog" className={styles.linkDetails}>
             <RiArrowDropRightFill
               size={42}
               color="#1055C1"

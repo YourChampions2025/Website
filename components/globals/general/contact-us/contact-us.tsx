@@ -9,7 +9,7 @@ interface ContactUsProps {
 
 export default function ContactUs({ hasBorderTop }: ContactUsProps) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="contact-us">
       <div
         className={classNames(styles.header, hasBorderTop && styles.borderTop)}
       >

@@ -10,6 +10,12 @@ function ContentSwitcher() {
     "clients" | "attorneys"
   >("clients");
 
+  const handleScrollToContactUs = () => {
+    const contactUsSection = document.getElementById("contact-us");
+    if (contactUsSection) {
+      contactUsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className={styles.contentSwitcherContainer}>
       <div className={styles.contentSwitcherContent}>
@@ -50,7 +56,10 @@ function ContentSwitcher() {
                   technology and employ creative trial strategies to stay ahead
                   of the curve and maximize your results.
                 </h6>
-                <button className={styles.homeAboutButton}>
+                <button
+                  className={styles.homeAboutButton}
+                  onClick={handleScrollToContactUs}
+                >
                   Get in touch now{" "}
                 </button>{" "}
               </div>
@@ -73,7 +82,10 @@ function ContentSwitcher() {
                   or to take over entirely. Why? Because we deliver what many
                   others can't. We’re impossible to beat.
                 </h6>
-                <button className={styles.homeAboutButton}>
+                <button
+                  className={styles.homeAboutButton}
+                  onClick={handleScrollToContactUs}
+                >
                   Get in touch now{" "}
                 </button>{" "}
               </div>

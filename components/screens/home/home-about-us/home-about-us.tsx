@@ -1,9 +1,16 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import imageAbout from "@/public/images/home-about.png";
 import styles from "./home-about-us.module.css";
+import { useRouter } from "next/navigation";
 
 function HomeAboutUs() {
+  const router = useRouter();
+
+  const handleAboutUs = () => {
+    router.push("/about-us");
+  };
   return (
     <div className={styles.homeAboutUsContainer}>
       <div className={styles.homeAboutUsContent}>
@@ -25,7 +32,7 @@ function HomeAboutUs() {
             Jordan Redavid
           </p>
 
-          <button className={styles.homeAboutButton}>
+          <button className={styles.homeAboutButton} onClick={handleAboutUs}>
             Meet Fischer Redavid
           </button>
         </div>

@@ -11,23 +11,20 @@ const fakeData = [
   {
     title: "meet our team",
     buttonText: "about us",
-    buttonLink: "#",
-    imageUrl:
-      "https://plus.unsplash.com/premium_photo-1673957923985-b814a9dbc03d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww",
+    buttonLink: "/about-us",
+    imageUrl: "/images/meet-our-team.png",
   },
   {
     title: "our past successes",
     buttonText: "Case Results",
-    buttonLink: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
+    buttonLink: "/results",
+    imageUrl: "/images/our-past-successes.png",
   },
   {
     title: "real stories",
     buttonText: "testimonials",
-    buttonLink: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1492447166138-50c3889fccb1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
+    buttonLink: "/testimonials",
+    imageUrl: "/images/real-stories.png",
   },
 ];
 
@@ -68,7 +65,7 @@ export default function LearnMoreSection({
           spaceBetween={0}
           slidesPerView={1}
           breakpoints={{
-            480: {
+            520: {
               slidesPerView: 3,
             },
           }}

@@ -5,17 +5,22 @@ interface PageGridLayoutProps {
   mainContent: React.ReactNode;
   sideContent: React.ReactNode;
   reverseLayout?: boolean;
+  identicalColumns?: boolean;
 }
 
 export default function PageGridLayout({
   mainContent,
   sideContent,
   reverseLayout = false,
+  identicalColumns = false,
 }: PageGridLayoutProps) {
   return (
     <section className={styles.sectionBorder}>
       <div
-        className={`${styles.gridContainer} ${reverseLayout ? styles.reverse : ""}`}
+        className={`${styles.gridContainer}
+         ${reverseLayout ? styles.reverse : ""}
+         ${identicalColumns ? styles.identical : ""}
+         `}
       >
         <div className={styles.mainContentWrapper}>
           <div className={styles.mainContentInner}>{mainContent}</div>
@@ -24,7 +29,9 @@ export default function PageGridLayout({
           <div
             className={`${styles.sideContentInner} ${
               reverseLayout ? styles.sideContentInnerReverse : ""
-            }`}
+            }
+            ${identicalColumns ? styles.sideContentIdentical : ""}
+            `}
           >
             {sideContent}
           </div>

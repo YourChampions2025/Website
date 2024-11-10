@@ -2,46 +2,49 @@
 
 import React, { useState } from "react";
 import style from "./header.module.css";
-import { usePathname } from "next/navigation";
 import { AiOutlineClose } from "react-icons/ai";
 import { TbMenu } from "react-icons/tb";
 import { motion } from "framer-motion";
 import classNames from "classnames";
 import { linksSlideUp, logoSlideUp, navBarHeight } from "./header-animation";
 import Link from "next/link";
-import { MdArrowOutward, MdMailOutline, MdPhone } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import fischerLogo from "@/public/images/fischerLogo.svg";
 import Image from "next/image";
 
 const mobilelinks = [
   {
+    href: "/",
+    label: "home",
+  },
+  {
+    href: "/about-us",
     label: "about us",
-    href: "",
   },
   {
+    href: "/practice-areas",
     label: "practice areas",
-    href: "",
   },
   {
+    href: "/resources",
     label: "resources",
-    href: "",
   },
   {
+    href: "/locations",
     label: "locations",
-    href: "",
   },
   {
+    href: "/results",
     label: "results",
-    href: "",
   },
 ];
+
 function HeaderMobile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const pathname = usePathname();
   return (
     <div>
       <div className={style.menuIcon} onClick={toggleMenu}>

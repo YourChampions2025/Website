@@ -75,6 +75,13 @@ const contacts = [
 ];
 
 function HeaderDesktop() {
+  const handleScrollToContactUs = () => {
+    const contactUsSection = document.getElementById("contact-us");
+    if (contactUsSection) {
+      contactUsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div className={style.headerFirstRow}>
@@ -86,7 +93,9 @@ function HeaderDesktop() {
               {data.icon}
             </Link>
           ))}
-          <CustomButton size="small">ONLINE INTAKE FORM</CustomButton>
+          <CustomButton size="small" onClick={handleScrollToContactUs}>
+            ONLINE INTAKE FORM
+          </CustomButton>
         </div>
       </div>
 

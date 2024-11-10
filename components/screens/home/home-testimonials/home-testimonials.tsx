@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { FaStar } from "react-icons/fa6";
 import styles from "./home-testimonials.module.css";
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
+import { useRouter } from "next/navigation";
 
 const homeTestimonials = [
   {
@@ -30,6 +32,11 @@ const homeTestimonials = [
 ];
 
 function HomeTestimonials() {
+  const router = useRouter();
+
+  const handleTestimonials = () => {
+    router.push("/testimonials");
+  };
   return (
     <div className={styles.homeTestimonialsContainer}>
       <div className={styles.homeTestimonialsContent}>
@@ -37,7 +44,7 @@ function HomeTestimonials() {
           <h2 className={styles.headerTitle}>
             the results speak for themselves
           </h2>
-          <CustomButton color="blue" size="small">
+          <CustomButton color="blue" size="small" onClick={handleTestimonials}>
             explore all testimonials
           </CustomButton>
         </div>

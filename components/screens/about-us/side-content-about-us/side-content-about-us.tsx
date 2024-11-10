@@ -17,6 +17,9 @@ import crystalGaj from "@/public/images/staff/crystalGaj.png";
 import abigailEnnis from "@/public/images/staff/abigailEnnis.png";
 import brendaChiou from "@/public/images/staff/brendaChiou.png";
 import bettyPeterson from "@/public/images/staff/bettyMaePeterson.png";
+import mariaMichel from "@/public/images/staff/mariaMichel.png";
+import cliftonFranklin from "@/public/images/staff/cliftonFranklin.png";
+import melissaBecker from "@/public/images/staff/melissaBecker.png";
 
 const attorneysData = [
   {
@@ -53,6 +56,31 @@ const staffData = [
     href: "/",
   },
   {
+    image: "",
+    cardName: "Tracy Kramer, Esq.",
+    professionalPosition: "Trial Support Associate Attorney",
+    href: "/",
+  },
+  {
+    image: melissaBecker,
+    cardName: "Melissa Becker BA, RN",
+    professionalPosition: "Director of Prelitigation",
+    href: "/",
+  },
+
+  {
+    image: brendaChiou,
+    cardName: "Brenda Chiou",
+    professionalPosition: "Paralegal",
+    href: "/",
+  },
+  {
+    image: bettyPeterson,
+    cardName: "Betty-Mae Peterson",
+    professionalPosition: "Paralegal",
+    href: "/",
+  },
+  {
     image: crystalGaj,
     cardName: "Crystal Gaj",
     professionalPosition: "Paralegal",
@@ -64,16 +92,23 @@ const staffData = [
     professionalPosition: "Legal Assistant",
     href: "/",
   },
+
   {
-    image: brendaChiou,
-    cardName: "Brenda Chiou",
+    image: mariaMichel,
+    cardName: "Maria Michel",
+    professionalPosition: "Bookkeeper",
+    href: "/",
+  },
+  {
+    image: "",
+    cardName: "Linet Alphonese",
     professionalPosition: "Paralegal",
     href: "/",
   },
   {
-    image: bettyPeterson,
-    cardName: "Betty-Mae Peterson",
-    professionalPosition: "Paralegal",
+    image: cliftonFranklin,
+    cardName: "Clifton Franklin",
+    professionalPosition: "[INSERT ROLE HERE]",
     href: "/",
   },
 ];
