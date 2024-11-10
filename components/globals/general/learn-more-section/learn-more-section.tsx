@@ -65,7 +65,7 @@ export default function LearnMoreSection({
           spaceBetween={0}
           slidesPerView={1}
           breakpoints={{
-            480: {
+            520: {
               slidesPerView: 3,
             },
           }}

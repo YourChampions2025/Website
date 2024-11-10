@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import style from "./header.module.css";
-import { usePathname } from "next/navigation";
 import { AiOutlineClose } from "react-icons/ai";
 import { TbMenu } from "react-icons/tb";
 import { motion } from "framer-motion";
@@ -37,13 +36,13 @@ const mobilelinks = [
     label: "results",
   },
 ];
+
 function HeaderMobile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const pathname = usePathname();
   return (
     <div>
       <div className={style.menuIcon} onClick={toggleMenu}>
