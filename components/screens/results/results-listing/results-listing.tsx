@@ -1,7 +1,7 @@
 import { ResultProps } from "@/types/types";
 import React from "react";
 import { IoTriangle } from "react-icons/io5";
-import ResultsListingLoadMoreButton from "./results-listing-load-more-button";
+import LoadMoreDynamicDataConnected from "@/components/globals/general/load-more-dynamic-data-connected/load-more-dynamic-data-connected";
 
 interface ResultsListingProps {
   results: ResultProps[];
@@ -38,9 +38,9 @@ export default function ResultsListing({
         </div>
       </div>
 
-      <ResultsListingLoadMoreButton
-        results={results}
-        totalResults={totalResults}
+      <LoadMoreDynamicDataConnected
+        itemsLength={results.length}
+        totalItems={totalResults}
       />
     </div>
   );

@@ -1,11 +1,11 @@
-import { MdPerson4 } from "react-icons/md";
+import { MdPerson } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
   name: "profiles",
   title: "Profiles",
   type: "document",
-  icon: MdPerson4,
+  icon: MdPerson,
   fields: [
     defineField({
       name: "type",
@@ -19,6 +19,7 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().error("A type is required"),
     }),
+
     defineField({
       name: "name",
       title: "Name",
@@ -37,6 +38,7 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().error("Slug is required"),
     }),
+
     defineField({
       name: "role",
       title: "Role",
@@ -44,6 +46,7 @@ export default defineType({
       type: "string",
       validation: (Rule) => Rule.required().error("Role is required"),
     }),
+
     defineField({
       name: "image",
       title: "Image",
@@ -53,6 +56,7 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().error("Image is required"),
     }),
+
     defineField({
       name: "video",
       title: "Video",
@@ -61,6 +65,7 @@ export default defineType({
         accept: "video/*",
       },
     }),
+
     defineField({
       name: "content",
       title: "Content",
@@ -93,6 +98,7 @@ export default defineType({
         }),
       ],
     }),
+
     defineField({
       name: "barAdmission",
       title: "Bar Admission",
@@ -113,6 +119,7 @@ export default defineType({
         }),
       ],
     }),
+
     defineField({
       name: "education",
       title: "Education",
@@ -139,6 +146,7 @@ export default defineType({
         }),
       ],
     }),
+
     defineField({
       name: "awards",
       title: "Awards",

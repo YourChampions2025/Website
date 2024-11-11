@@ -1,17 +1,16 @@
 "use client";
-import { BlogProps } from "@/types/types";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import LoadMoreDynamicData from "@/components/globals/general/load-more-dynamic-data/load-more-dynamic-data";
 
-interface BlogIndexListingLoadMoreButtonProps {
-  blogs: BlogProps[];
-  totalBlogs: number;
+interface LoadMoreDynamicDataConnectedProps {
+  itemsLength: number;
+  totalItems: number;
 }
 
-export default function BlogIndexListingLoadMoreButton({
-  blogs,
-  totalBlogs,
-}: BlogIndexListingLoadMoreButtonProps) {
+export default function LoadMoreDynamicDataConnected({
+  itemsLength,
+  totalItems,
+}: LoadMoreDynamicDataConnectedProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -21,14 +20,14 @@ export default function BlogIndexListingLoadMoreButton({
     const currentLimit = parseInt(params.get("limit") || "12", 10);
 
     const increment = 6;
-    const newLimit = Math.min(currentLimit + increment, totalBlogs);
+    const newLimit = Math.min(currentLimit + increment, totalItems);
 
     params.set("limit", newLimit.toString());
 
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
-  if (totalBlogs > blogs.length) {
+  if (totalItems > itemsLength) {
     return (
       <LoadMoreDynamicData onClick={handleLoadMore}>
         load more

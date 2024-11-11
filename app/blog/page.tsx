@@ -1,3 +1,4 @@
+import ContactUs from "@/components/globals/general/contact-us/contact-us";
 import PageHeader from "@/components/globals/layout/page-header/page-header";
 import BlogIndexFilter from "@/components/screens/blog/index/blog-index-filter/blog-index-filter";
 import BlogIndexListing from "@/components/screens/blog/index/blog-index-listing/blog-index-listing";
@@ -28,6 +29,7 @@ export default async function BlogListingPage({
       />
       <BlogIndexFilter categoriesForBlogs={categoriesForBlogs} />
       <BlogIndexListing blogs={blogs} totalBlogs={totalBlogs} />
+      <ContactUs />
     </main>
   );
 }

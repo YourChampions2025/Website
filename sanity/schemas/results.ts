@@ -1,12 +1,12 @@
 import { resultsCategoriesOptions } from "@/utils/constants";
-import { MdMoney } from "react-icons/md";
+import { MdPaid } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
   name: "results",
   title: "Results",
   type: "document",
-  icon: MdMoney,
+  icon: MdPaid,
   fields: [
     defineField({
       name: "title",

@@ -37,6 +37,10 @@
   text-transform: uppercase;
 }
 
+.categories span {
+  color: #7A868E;
+}
+
 .categories a {
   color: #7A868E;
   text-decoration: underline;

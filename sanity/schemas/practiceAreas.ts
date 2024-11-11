@@ -60,5 +60,27 @@ export default defineType({
       ],
       validation: (Rule) => Rule.required().error("Content is required"),
     }),
+    defineField({
+      name: "secondaryContent",
+      title: "Secondary Content",
+      type: "array",
+      of: [
+        defineArrayMember({ type: "block" }),
+        defineArrayMember({
+          type: "object",
+          name: "callToAction",
+          title: "Call to Action",
+          fields: [
+            {
+              name: "label",
+              type: "string",
+              title: "Label",
+              readOnly: true,
+              initialValue: "Call to action",
+            },
+          ],
+        }),
+      ],
+    }),
   ],
 });

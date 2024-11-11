@@ -123,6 +123,30 @@ export const getArticleBySlugQuery = groq`
   }
 `;
 
+export const getTerrysTakesBySlugQuery = groq`
+ {
+    "caseItem": *[_type == "cases" && slug.current == $slug][0] {
+      title,
+      description,
+      "slug": slug.current,
+      date,
+      author,
+      court,
+      categories,
+      content,
+      "prev": *[_type == "cases" && date < ^.date] | order(date desc)[0] {
+        "slug": slug.current,
+        court
+      },
+      "next": *[_type == "cases" && date > ^.date] | order(date asc)[0] {
+        "slug": slug.current,
+        court
+      }
+    }
+  }
+  
+`;
+
 export const getAllTestimonialsQuery = groq`
   *[_type == "testimonials"] {
     quote,

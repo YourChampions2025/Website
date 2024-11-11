@@ -8,6 +8,21 @@ export default defineType({
   icon: MdLocationOn,
   fields: [
     defineField({
+      name: "location",
+      title: "Location",
+      description: "Ex: Coral Gables, Miami, etc.",
+      type: "string",
+      options: {
+        list: [
+          { title: "Florida", value: "florida" },
+          { title: "Georgia", value: "georgia" },
+          { title: "U.S. Virgin Islands", value: "u-s-virgin-islands" },
+        ],
+      },
+      validation: (Rule) => Rule.required().error("A location is required"),
+    }),
+
+    defineField({
       name: "title",
       title: "Title",
       description: "Ex: Coral Gables",
@@ -34,36 +49,43 @@ export default defineType({
       validation: (Rule) => Rule.required().error("Description is required"),
     }),
 
-    defineField({
-      name: "otherAreas",
-      title: "Other Areas",
-      description:
-        "This will help relate otherAreas to locations, such as Car Accidents and Prison Injuries are related to Coral Gables.",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "otherAreas" }],
-        },
-      ],
-      validation: (Rule) =>
-        Rule.required().error("At least one Other Area is required"),
-    }),
+    // defineField({
+    //   name: "otherAreas",
+    //   title: "Other Areas",
+    //   description:
+    //     "This will help relate otherAreas to locations, such as Car Accidents and Prison Injuries are related to Coral Gables.",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       type: "reference",
+    //       to: [{ type: "otherAreas" }],
+    //     },
+    //   ],
+    // }),
 
-    defineField({
-      name: "subtitle",
-      title: "Subtitle",
-      description: "Ex: Coral Gables Personal Injury Lawyer",
-      type: "string",
-      validation: (Rule) => Rule.required().error("Subtitle is required"),
-    }),
     defineField({
       name: "excerpt",
       title: "Excerpt",
-      description: "Text of approximately 3 paragraphs.",
+      description:
+        "Page content, containing links, lists, headings and paragraphs.",
       type: "array",
-      of: [defineArrayMember({ type: "block" })],
-      validation: (Rule) => Rule.required().error("Excerpt is required"),
+      of: [
+        defineArrayMember({ type: "block" }),
+        defineArrayMember({
+          type: "object",
+          name: "callToAction",
+          title: "Call to Action",
+          fields: [
+            {
+              name: "label",
+              type: "string",
+              title: "Label",
+              readOnly: true,
+              initialValue: "Call to action",
+            },
+          ],
+        }),
+      ],
     }),
 
     defineField({
@@ -89,7 +111,6 @@ export default defineType({
           ],
         }),
       ],
-      validation: (Rule) => Rule.required().error("Content is required"),
     }),
   ],
 });
