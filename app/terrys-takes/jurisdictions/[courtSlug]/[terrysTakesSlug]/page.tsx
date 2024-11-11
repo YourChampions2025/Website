@@ -4,39 +4,42 @@ import PageGridLayout from "@/components/globals/layout/page-grid-layout/page-gr
 import BlogSlugHero from "@/components/screens/blog/[slug]/blog-slug-hero/blog-slug-hero";
 import MainContentBlogSlug from "@/components/screens/blog/[slug]/main-content-blog-slug/main-content-blog-slug";
 import SideContentBlogSlug from "@/components/screens/blog/[slug]/side-content-blog-slug/side-content-blog-slug";
-import { getArticleBySlug } from "@/sanity/lib/api";
-import { BlogProps } from "@/types/types";
+import { getTerrysTakesBySlug } from "@/sanity/lib/api";
+import { CaseProps } from "@/types/types";
+import React from "react";
 
-export default async function BlogSlugPage({
+export default async function TerrysTakesSlugPage({
   params,
 }: {
-  params: Promise<{
-    blogSlug: string;
-    monthSlug: string;
-    yearSlug: string;
-  }>;
+  params: Promise<{ courtSlug: string; terrysTakesSlug: string }>;
 }) {
-  const { blogSlug } = await params;
+  const { terrysTakesSlug } = await params;
 
-  const { blog }: { blog: BlogProps } = await getArticleBySlug(blogSlug);
+  const { caseItem }: { caseItem: CaseProps } =
+    await getTerrysTakesBySlug(terrysTakesSlug);
 
   return (
     <main>
-      <BlogSlugHero imageUrl={blog?.imageUrl} />
+      <BlogSlugHero />
       <PageGridLayout
         mainContent={
           <MainContentBlogSlug
-            author={blog.author}
-            date={blog.date}
-            title={blog.title}
-            content={blog.content}
-            categories={blog.categories}
-            type="blog"
+            author={caseItem.author}
+            date={caseItem.date}
+            title={caseItem.title}
+            content={caseItem.content}
+            court={caseItem.court}
+            categories={caseItem.categories}
+            type="terrys-takes"
           />
         }
         sideContent={<SideContentBlogSlug />}
       />
-      <DynamicDataPrevBackNextButtons prev={blog?.prev} next={blog?.next} />
+      <DynamicDataPrevBackNextButtons
+        prev={caseItem?.prev}
+        next={caseItem?.next}
+        type="terrys-takes"
+      />
       <LearnMoreSection />
     </main>
   );

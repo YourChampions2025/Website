@@ -1,7 +1,8 @@
 import React from "react";
 import { CaseProps } from "@/types/types";
-import TerrysTakesListingLoadMoreButton from "./terrys-takes-listing-load-more-button";
 import { IoTriangle } from "react-icons/io5";
+import Link from "next/link";
+import LoadMoreDynamicDataConnected from "@/components/globals/general/load-more-dynamic-data-connected/load-more-dynamic-data-connected";
 
 interface TerrysTakesListingProps {
   cases: CaseProps[];
@@ -43,16 +44,21 @@ export default function TerrysTakesListing({
                 {caseItem.description}
               </p>
 
-              <span className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline">
+              <Link
+                href={`/terrys-takes/jurisdictions/${caseItem?.court || "general"}/${caseItem.slug}`}
+                className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline"
+              >
                 <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
                 read more
-              </span>
+              </Link>
             </div>
           ))}
         </div>
       </div>
-
-      <TerrysTakesListingLoadMoreButton cases={cases} totalCases={totalCases} />
+      <LoadMoreDynamicDataConnected
+        itemsLength={cases.length}
+        totalItems={totalCases}
+      />
     </div>
   );
 }

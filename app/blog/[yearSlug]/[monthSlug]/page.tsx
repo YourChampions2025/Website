@@ -1,3 +1,4 @@
+import ContactUs from "@/components/globals/general/contact-us/contact-us";
 import PageHeader from "@/components/globals/layout/page-header/page-header";
 import BlogIndexListing from "@/components/screens/blog/index/blog-index-listing/blog-index-listing";
 import { getFilteredBlogs } from "@/sanity/lib/api";
@@ -36,6 +37,7 @@ export default async function BlogPageListingByYear({
         description={`Filtered by date: ${monthSlug}/${yearSlug} `}
       />
       <BlogIndexListing blogs={blogs} totalBlogs={totalBlogs} />
+      <ContactUs />
     </main>
   );
 }

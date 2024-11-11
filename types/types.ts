@@ -36,6 +36,14 @@ export interface CaseProps {
   court?: string;
   categories?: string[];
   content: TypedObject | TypedObject[];
+  prev?: {
+    court: string;
+    slug: string;
+  };
+  next?: {
+    court: string;
+    slug: string;
+  };
 }
 
 export interface TestimonialProps {

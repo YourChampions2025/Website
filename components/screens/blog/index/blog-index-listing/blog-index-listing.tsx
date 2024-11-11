@@ -1,10 +1,11 @@
 import { BlogProps } from "@/types/types";
 import React from "react";
 import { IoTriangle } from "react-icons/io5";
-import BlogIndexListingLoadMoreButton from "./blog-index-listing-load-more-button";
 import Image from "next/image";
 import Link from "next/link";
 import { formatDateForHref } from "@/utils/functions";
+import LoadMoreDynamicDataConnected from "@/components/globals/general/load-more-dynamic-data-connected/load-more-dynamic-data-connected";
+
 interface BlogIndexListingProps {
   blogs: BlogProps[];
   totalBlogs: number;
@@ -69,7 +70,10 @@ export default function BlogIndexListing({
         </div>
       </div>
 
-      <BlogIndexListingLoadMoreButton blogs={blogs} totalBlogs={totalBlogs} />
+      <LoadMoreDynamicDataConnected
+        itemsLength={blogs.length}
+        totalItems={totalBlogs}
+      />
     </div>
   );
 }

@@ -1,11 +1,11 @@
-import { MdPerson } from "react-icons/md";
+import { MdPeople } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
   name: "testimonials",
   title: "Testimonials",
   type: "document",
-  icon: MdPerson,
+  icon: MdPeople,
   fields: [
     defineField({
       name: "quote",

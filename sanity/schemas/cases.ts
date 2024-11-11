@@ -1,12 +1,12 @@
 import { categoriesOptions, courtOptions } from "@/utils/constants";
-import { MdFilePresent } from "react-icons/md";
+import { MdFileCopy } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
   name: "cases",
   title: "Cases",
   type: "document",
-  icon: MdFilePresent,
+  icon: MdFileCopy,
   fields: [
     defineField({
       name: "title",
