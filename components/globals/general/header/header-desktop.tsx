@@ -8,6 +8,7 @@ import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
 import { FaGoogle, FaLinkedin } from "react-icons/fa";
 import { MdMailOutline, MdPhone } from "react-icons/md";
 import fischerLogo from "@/public/images/fischerLogo.svg";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 const socialLinks = [
   {
@@ -101,11 +102,56 @@ function HeaderDesktop() {
 
       <div className={style.headerSecondRow}>
         <div className={style.navigationLinks}>
-          {navbarLinks.map((data, i) => (
-            <Link key={i} href={data.href}>
-              {data.label}
-            </Link>
-          ))}
+          {navbarLinks.map((data, i) =>
+            data.href === "/resources" ? (
+              <Menu key={i} as="div" className="relative inline-block">
+                <Menu.Button className={style.menuButton}>
+                  {data.label}
+                </Menu.Button>
+                <Menu.Items className={style.menuItems}>
+                  <Menu.Item>
+                    {() => (
+                      <Link href="/terrys-takes" className={style.menuItem}>
+                        Terry's Takes{" "}
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {() => (
+                      <Link href="/careers" className={style.menuItem}>
+                        Careers
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {() => (
+                      <Link href="/podcasts" className={style.menuItem}>
+                        Podcast
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {() => (
+                      <Link href="/blog" className={style.menuItem}>
+                        Blog
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {() => (
+                      <Link href="/testimonials" className={style.menuItem}>
+                        Testimonials
+                      </Link>
+                    )}
+                  </Menu.Item>
+                </Menu.Items>
+              </Menu>
+            ) : (
+              <Link key={i} href={data.href} className={style.link}>
+                {data.label}
+              </Link>
+            )
+          )}
         </div>
 
         <div className={style.contactLinks}>

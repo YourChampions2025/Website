@@ -26,8 +26,15 @@ const mobilelinks = [
     label: "practice areas",
   },
   {
-    href: "/resources",
+    href: "",
     label: "resources",
+    subLinks: [
+      { href: "/terrys-takes", label: "Terry's Takes" },
+      { href: "/careers", label: "Careers" },
+      { href: "/podcasts", label: "Podcast" },
+      { href: "/blog", label: "Blog" },
+      { href: "/testimonials", label: "Testimonials" },
+    ],
   },
   {
     href: "/locations",
@@ -41,10 +48,15 @@ const mobilelinks = [
 
 function HeaderMobile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const toggleSubMenu = () => {
+    setIsSubMenuOpen(!isSubMenuOpen);
+  };
+
   return (
     <div>
       <div className={style.menuIcon} onClick={toggleMenu}>
@@ -86,17 +98,41 @@ function HeaderMobile() {
           className={style.menuLinks}
         >
           {mobilelinks.map((data, i) => (
-            <Link
-              href={data.href}
-              onClick={toggleMenu}
-              className={style.linkMobile}
-              key={i}
-            >
-              {data.label}
-              <span>
-                <MdArrowOutward color="#2DE046" />
-              </span>
-            </Link>
+            <React.Fragment key={i}>
+              {data.subLinks ? (
+                <div onClick={toggleSubMenu} className={style.linkMobile}>
+                  {data.label}
+                  <span>
+                    <MdArrowOutward color="#2DE046" />
+                  </span>
+                </div>
+              ) : (
+                <Link
+                  href={data.href}
+                  onClick={toggleMenu}
+                  className={style.linkMobile}
+                >
+                  {data.label}
+                  <span>
+                    <MdArrowOutward color="#2DE046" />
+                  </span>
+                </Link>
+              )}
+              {data.subLinks && isSubMenuOpen && (
+                <div className={style.subMenu}>
+                  {data.subLinks.map((subLink, j) => (
+                    <Link
+                      href={subLink.href}
+                      onClick={toggleMenu}
+                      className={style.subLinkMobile}
+                      key={j}
+                    >
+                      {subLink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </motion.div>
       </motion.div>

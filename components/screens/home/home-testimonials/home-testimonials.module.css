@@ -22,7 +22,7 @@
 .headerTitle {
   max-width: 587px;
 
-  font-size: clamp(64px, 7.11vw, 84px);
+  font-size: clamp(50px, 8.42vw, 84px);
   font-weight: 400;
   line-height: 132%;
   letter-spacing: 0.84px;

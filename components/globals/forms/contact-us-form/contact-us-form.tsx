@@ -52,7 +52,11 @@ export default function ContactUsForm() {
     <FormProvider {...rest} handleSubmit={handleSubmit} reset={reset}>
       <form
         onSubmit={handleSubmit(onSubmitForm)}
-        className="w-full flex flex-col gap-3"
+        className="w-full mx-auto flex flex-col gap-3 p-4 
+        lg:max-w-[100%] 
+        md:max-w-[80%] 
+        sm:max-w-[90%] 
+        sm:text-center"
       >
         <CustomInput name="name" label="Name" />
         <CustomInput name="email" label="Email" />
