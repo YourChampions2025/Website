@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-size: clamp(60px, 8.42vw, 80px);
+  font-size: clamp(48px, 8.42vw, 80px);
   font-family: serif;
   letter-spacing: calc(80px * -0.04);
   text-align: right;
