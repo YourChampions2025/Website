@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  min-height: 920px;
+  min-height: 1000px;
   height: 100%;
   position: relative;
 }
@@ -65,6 +65,8 @@
 }
 
 .heroDescriptionContainer {
+  max-width: 1200px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -152,13 +154,14 @@
 }
 
 .secondContainerDescription {
+  max-width: 600px;
+
   color: #8d8d8d;
-  font-family: "Instrument Sans";
   font-size: clamp(16px, 1.45vw, 18px);
-  font-style: normal;
   font-weight: 400;
   line-height: 132%;
   letter-spacing: -0.36px;
+  font-family: "Instrument Sans";
 }
 
 .linkDetails {
@@ -180,25 +183,32 @@
   margin-left: -10px;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1063px) {
+  .secondContainerDescription {
+    max-width: 400px;
+  }
+}
+@media (max-width: 796px) {
   .heroDescriptionContainer {
     display: flex;
-    gap: 8px;
     flex-direction: column;
+    gap: 24px;
   }
-  .practiceAreasFirstContainer {
-    display: flex;
-    flex-direction: column;
-    /* height: auto; */
-    gap: 32px;
-    padding-left: 22px;
-    border-left: none;
-    border-bottom: 1px solid #083376;
+  .secondContainerDescription {
+    max-width: 600px;
   }
-
   .linkContainer {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: clamp(8px, 1.09vw, 12px);
+  }
+  .aboutContent {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .aboutContainer {
+    top: 70px;
   }
 }
