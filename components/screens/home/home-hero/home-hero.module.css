@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-
   position: relative;
 }
 
@@ -37,7 +36,6 @@
 
 .heroContent {
   max-width: 1504px;
-  width: 100%;
 
   margin: 0 auto;
 
@@ -52,7 +50,7 @@
   font-size: clamp(60px, 10.16vw, 122px);
   font-weight: 400;
   line-height: 132%;
-  letter-spacing: calc(clamp(60px, 10.16vw, 122px)*0.01);
+  letter-spacing: calc(clamp(60px, 10.16vw, 122px) * 0.01);
   text-transform: capitalize;
 }
 
@@ -127,7 +125,7 @@
   cursor: pointer;
 }
 
-.buttonResults>*:first-child {
+.buttonResults > *:first-child {
   margin-right: 8px;
 }
 

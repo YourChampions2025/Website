@@ -122,4 +122,10 @@
     padding-top: 96px;
     padding-bottom: 40px;
   }
+  .resultsContainer {
+    padding: 24px 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
 }

@@ -15,7 +15,7 @@ export default function ResultsListing({
   return (
     <div className="w-full flex flex-col border-t border-[#083376]">
       <div className="w-full flex flex-col">
-        <div className="w-full mx-auto grid grid-cols-3">
+        <div className="w-full mx-auto grid sd:grid-cols-1 md:grid-cols-3">
           {results.map((result, index) => (
             <div
               key={index}

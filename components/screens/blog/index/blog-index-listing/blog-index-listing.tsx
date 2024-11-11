@@ -17,7 +17,7 @@ export default function BlogIndexListing({
   return (
     <div className="w-full flex flex-col border-t border-[#083376]">
       <div className="w-full flex flex-col">
-        <div className="w-full mx-auto grid sd:grid-cols-2 md:grid-cols-3">
+        <div className="w-full mx-auto grid sd:grid-cols-1 md:grid-cols-3">
           {blogs.map((blog, index) => (
             <div
               key={index}
