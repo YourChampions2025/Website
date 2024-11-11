@@ -62,7 +62,12 @@ export default function PracticeAreasHero({
               <span className={styles.secondContainerDescription}>
                 {activeDescription}
               </span>
-              <Link href="/" className={styles.linkDetails}>
+              <Link
+                href={`/practice-areas/${encodeURIComponent(
+                  activeLabel.toLowerCase().replace(/\s+/g, "-")
+                )}`}
+                className={styles.linkDetails}
+              >
                 <RiArrowDropRightFill
                   size={38}
                   color="#2DE046"

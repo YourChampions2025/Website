@@ -5,7 +5,7 @@ export const navBarHeight: Variants = {
     height: 0,
   },
   enter: {
-    height: "60vh",
+    height: "100vh",
     transition: {
       duration: 1,
       ease: [0.76, 0, 0.24, 1],
