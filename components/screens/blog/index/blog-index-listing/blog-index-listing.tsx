@@ -35,7 +35,7 @@ export default function BlogIndexListing({
               </div>
 
               <div className="w-full flex flex-col items-start gap-6 md:gap-4 sm:gap-2 px-12 py-16">
-                <p className="text-[#2DE046] text-[16px] md:text-[14px] sm:text-[14px] tracking-[calc(16px*-0.02)] uppercase">
+                <p className="text-[#2DE046] text-[16px] tracking-[calc(16px*-0.02)] uppercase">
                   {new Date(blog.date).toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
@@ -43,23 +43,23 @@ export default function BlogIndexListing({
                   })}
                 </p>
 
-                <span className="text-[#8D8D8D] text-[16px] md:text-[14px] sm:text-[14px] tracking-[calc(16px*-0.02)] uppercase">
+                <span className="text-[#8D8D8D] text-[16px] tracking-[calc(16px*-0.02)] uppercase">
                   {blog.categories
                     ?.map((category) => category.title)
                     .join(", ")}
                 </span>
 
-                <h6 className="text-[26px] md:text-[20px] sm:text-[18px] tracking-[calc(26px*-0.02)] font-medium text-left">
+                <h6 className="text-[26px] tracking-[calc(26px*-0.02)] font-medium text-left">
                   {blog.title}
                 </h6>
 
-                <p className="text-[18px] md:text-[16px] sm:text-[14px] tracking-[calc(18px*-0.02)] text-[#8D8D8D] text-left line-clamp-4">
+                <p className="text-[18px] tracking-[calc(18px*-0.02)] text-[#8D8D8D] text-left line-clamp-4">
                   {blog.description}
                 </p>
 
                 <Link
                   href={`/blog/${formatDateForHref(blog.date)}/${blog.slug}`}
-                  className="flex items-center justify-center gap-2 uppercase text-[18px]  md:text-[16px] sm:text-[14px] tracking-[calc(18px*-0.02)] text-pretty underline"
+                  className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline"
                 >
                   <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
                   read more

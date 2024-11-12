@@ -92,3 +92,24 @@ export interface VideoCenterProps {
   url?: string;
   videoUrl?: string;
 }
+
+export interface ProfileProps {
+  type: string;
+  name: string;
+  slug: string;
+  imageUrl: string;
+  role: string;
+  content: TypedObject | TypedObject[];
+  videoUrl?: string;
+  barAdmission?: {
+    barAdmissionTitle: string;
+  }[];
+  education?: {
+    educationTitle: string;
+    educationDescription: string;
+  }[];
+  awards?: {
+    awardsTitle: string;
+    awardsImageUrl: string;
+  }[];
+}

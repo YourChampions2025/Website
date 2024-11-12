@@ -2,12 +2,15 @@ import { client } from "./client";
 import {
   getAllTestimonialsQuery,
   getArticleBySlugQuery,
+  getAttorneysProfilesQuery,
   getCategoriesForBlogsQuery,
   getFilteredBlogsQuery,
   getFilteredCasesQuery,
   getFilteredResultsQuery,
   getLatestTestimonialsQuery,
   getPodcastsQuery,
+  getProfileBySlugQuery,
+  getStaffProfilesQuery,
   getTerrysTakesBySlugQuery,
 } from "./queries";
 
@@ -114,6 +117,34 @@ export const getLatestTestimonials = async () => {
 
 export const getPodcasts = async () => {
   const data = await client.fetch(getPodcastsQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getAttorneysProfiles = async () => {
+  const data = await client.fetch(getAttorneysProfilesQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getStaffProfiles = async () => {
+  const data = await client.fetch(getStaffProfilesQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getProfileBySlug = async (slug: string) => {
+  if (!slug) return null;
+
+  const data = await client.fetch(getProfileBySlugQuery, {
+    slug,
+  });
 
   if (!data) return undefined;
 

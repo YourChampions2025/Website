@@ -172,3 +172,46 @@ export const getPodcastsQuery = groq`
     url
   }
 `;
+
+export const getAttorneysProfilesQuery = groq`
+  *[_type == "profiles" && type == "Attorneys"] {
+    type,
+    name,
+    "slug": slug.current,
+    role,
+    "imageUrl": image.asset->url
+  }
+`;
+
+export const getStaffProfilesQuery = groq`
+  *[_type == "profiles" && type == "Staff"] {
+    type,
+    name,
+    "slug": slug.current,
+    role,
+    "imageUrl": image.asset->url
+  }
+`;
+
+export const getProfileBySlugQuery = groq`
+  *[_type == "profiles" && slug.current == $slug][0] {
+    type,
+    name,
+    "slug": slug.current,
+    role,
+    "imageUrl": image.asset->url,
+    video,
+    content,
+    barAdmission[]->{
+      barAdmissionTitle
+    },
+    education[]->{
+      educationTitle,
+      educationDescription
+    },
+    awards[]->{
+      awardsTitle,
+      "awardsImageUrl": awardsImage.asset->url
+    }
+  }
+`;
