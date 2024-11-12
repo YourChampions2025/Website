@@ -6,8 +6,8 @@ import results from "./schemas/results";
 import profiles from "./schemas/profiles";
 import practiceAreas from "./schemas/practiceAreas";
 import videoCenter from "./schemas/videoCenter";
-// import otherAreas from "./schemas/otherAreas";
-// import otherSubAreas from "./schemas/otherSubAreas";
+import otherAreas from "./schemas/otherAreas";
+import otherSubAreas from "./schemas/otherSubAreas";
 import locations from "./schemas/locations";
 import cases from "./schemas/cases";
 
@@ -22,7 +22,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     cases,
     results,
     locations,
-    // otherAreas,
-    // otherSubAreas,
+    otherAreas,
+    otherSubAreas,
   ],
 };

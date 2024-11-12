@@ -264,3 +264,9 @@ export const practiceAreaLinks = [
       "https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/productLiability.mp4",
   },
 ];
+
+export const videoCenterPaths = {
+  Podcast: "/podcast",
+  "Personal Injury": "/personal-injury",
+  "About Fischer Redavid": "/about-fischer-redavid",
+};
