@@ -1,5 +1,6 @@
 import { client } from "./client";
 import {
+  getAboutFischerRedavidVideosQuery,
   getAllTestimonialsQuery,
   getArticleBySlugQuery,
   getAttorneysProfilesQuery,
@@ -8,6 +9,7 @@ import {
   getFilteredCasesQuery,
   getFilteredResultsQuery,
   getLatestTestimonialsQuery,
+  getPersonalInjuryVideosQuery,
   getPodcastsQuery,
   getProfileBySlugQuery,
   getStaffProfilesQuery,
@@ -115,8 +117,27 @@ export const getLatestTestimonials = async () => {
   return data;
 };
 
-export const getPodcasts = async () => {
-  const data = await client.fetch(getPodcastsQuery);
+export const getPodcasts = async (limit?: number) => {
+  const query = getPodcastsQuery(limit);
+  const data = await client.fetch(query);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getPersonalInjuryVideos = async (limit?: number) => {
+  const query = getPersonalInjuryVideosQuery(limit);
+  const data = await client.fetch(query);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getAboutFischerRedavidVideos = async (limit?: number) => {
+  const query = getAboutFischerRedavidVideosQuery(limit);
+  const data = await client.fetch(query);
 
   if (!data) return undefined;
 

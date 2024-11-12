@@ -213,3 +213,9 @@ export const categoriesOptions = [
   { title: "Writ of Quo Warranto", value: "writ-of-quo-warranto" },
   { title: "Wrongful Death", value: "wrongful-death" },
 ];
+
+export const videoCenterPaths = {
+  Podcast: "/podcast",
+  "Personal Injury": "/personal-injury",
+  "About Fischer Redavid": "/about-fischer-redavid",
+};

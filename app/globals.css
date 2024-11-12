@@ -93,7 +93,7 @@ body::-webkit-scrollbar {
 #portable-text-wrapper p {
   font-size: clamp(14px, 1.66vw, 18px);
   padding: clamp(4px, 0.74vw, 8px) 0 clamp(8px, 1.11vw, 12px);
-  color: #CECECE;
+  color: #cecece;
   opacity: 0.8;
 }
 
@@ -112,7 +112,7 @@ body::-webkit-scrollbar {
 
 #portable-text-wrapper ul {
   padding-left: 17px;
-  color: #CECECE;
+  color: #cecece;
   opacity: 0.8;
 }
 
@@ -120,8 +120,8 @@ body::-webkit-scrollbar {
   list-style: initial;
 }
 
-#portable-react-player>div,
-#react-player-wrapper>div {
+#portable-react-player > div,
+#react-player-wrapper > div {
   width: 100% !important;
   height: fit-content !important;
 
@@ -134,4 +134,8 @@ body::-webkit-scrollbar {
   height: fit-content !important;
 
   aspect-ratio: 16/9 !important;
+}
+
+#video-center-react-player > div {
+  width: 100% !important;
 }

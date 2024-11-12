@@ -163,13 +163,34 @@ export const getLatestTestimonialsQuery = groq`
   }
 `;
 
-export const getPodcastsQuery = groq`
-  *[_type == "videoCenter" && category == "Podcast"] {
+export const getPodcastsQuery = (limit?: number) => groq`
+  *[_type == "videoCenter" && category == "Podcast"] | order(date desc) ${!!limit ? `[0..${limit - 1}]` : ""} {
     title,
     "slug": slug.current,
     date,
     episodeNumber,
-    url
+    url,
+    category
+  }
+`;
+
+export const getPersonalInjuryVideosQuery = (limit?: number) => groq`
+  *[_type == "videoCenter" && category == "Personal Injury"] | order(date desc) ${!!limit ? `[0..${limit - 1}]` : ""} {
+    title,
+    "slug": slug.current,
+    date,
+    "videoUrl": video.asset->url,
+    category
+  }
+`;
+
+export const getAboutFischerRedavidVideosQuery = (limit?: number) => groq`
+  *[_type == "videoCenter" && category == "About Fischer Redavid"] | order(date desc) ${!!limit ? `[0..${limit - 1}]` : ""} {
+    title,
+    "slug": slug.current,
+    date,
+    "videoUrl": video.asset->url,
+    category
   }
 `;
 
