@@ -200,17 +200,11 @@ export const getProfileBySlugQuery = groq`
     "slug": slug.current,
     role,
     "imageUrl": image.asset->url,
-    video,
+    "videoUrl": video.asset->url,
     content,
-    barAdmission[]->{
-      barAdmissionTitle
-    },
-    education[]->{
-      educationTitle,
-      educationDescription
-    },
-    awards[]->{
-      awardsTitle,
+    barAdmission,
+    education,
+    awards[]{
       "awardsImageUrl": awardsImage.asset->url
     }
   }

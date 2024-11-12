@@ -3,7 +3,7 @@ import { getProfileBySlug } from "@/sanity/lib/api";
 import type { ProfileProps } from "@/types/types";
 import React from "react";
 
-export default async function OurStaffSlugPage({
+export default async function OurAttorneysSlugPage({
   params,
 }: {
   params: Promise<{ slug: string }>;

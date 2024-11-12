@@ -1,113 +1,36 @@
 import React from "react";
 import styles from "./main-content-about-us-slug.module.css";
+import type { ProfileProps } from "@/types/types";
+import PortableTextComponent from "@/components/globals/general/portable-text-component/portable-text-component";
 
-export default function MainContentAboutUsSlug() {
+interface MainContentAboutUsSlugProps {
+  profile: ProfileProps;
+}
+
+export default function MainContentAboutUsSlug({
+  profile,
+}: MainContentAboutUsSlugProps) {
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
         <div className={styles.articleText}>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet. In molestiae fugiat sed dignissimos
-            ratione qui nihil delectus qui rerum velit ut totam sequi. Ab
-            officia nihil nam ipsa facilis et cumque exercitationem At enim
-            excepturi. Qui accusantium voluptatibus nam molestiae aliquam est
-            numquam voluptates ab reprehenderit numquam non numquam mollitia non
-            nihil eveniet.
-          </p>
-          <p>
-            Et illo dolorem id quam itaque qui optio quam non labore possimus ea
-            dolores iste ut ullam quod in quisquam nostrum. Et odio eaque vel
-            nihil provident eos iusto perferendis. Eos veniam molestiae qui
-            voluptatum iste id facilis totam aut facere excepturi qui officia
-            consequatur aut doloribus saepe. Aut excepturi sunt et veritatis
-            atque qui voluptatem omnis est ipsa neque ut vero quisquam qui ullam
-            numquam aut rerum vitae.
-          </p>
+          {profile?.videoUrl && (
+            <div className="w-full h-fit relative">
+              <div className="w-full h-full absolute top-0 left-0 bg-black/50" />
+              <video
+                className="w-full h-fit relative z-10"
+                src={profile?.videoUrl}
+                autoPlay
+                muted
+                loop
+                controls
+              />
+            </div>
+          )}
+
+          <div className="w-full mt-14">
+            <PortableTextComponent content={profile?.content} />
+          </div>
         </div>
       </div>
     </div>
