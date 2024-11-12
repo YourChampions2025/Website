@@ -14,6 +14,7 @@ import {
   getProfileBySlugQuery,
   getStaffProfilesQuery,
   getTerrysTakesBySlugQuery,
+  getVideoCenterBySlugQuery,
 } from "./queries";
 
 export const getFilteredResults = async (
@@ -138,6 +139,18 @@ export const getPersonalInjuryVideos = async (limit?: number) => {
 export const getAboutFischerRedavidVideos = async (limit?: number) => {
   const query = getAboutFischerRedavidVideosQuery(limit);
   const data = await client.fetch(query);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getVideoCenterBySlug = async (slug: string) => {
+  if (!slug) return null;
+
+  const data = await client.fetch(getVideoCenterBySlugQuery, {
+    slug,
+  });
 
   if (!data) return undefined;
 

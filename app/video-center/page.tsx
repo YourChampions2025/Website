@@ -18,7 +18,7 @@ export default async function VideoCenterPage() {
 
   return (
     <main className="pt-[162px]">
-      <PageHeader title="Video Center" />
+      <PageHeader title="Video Center" hasBreadCrumb />
       <div className="w-full flex flex-col px-4 py-12 gap-24">
         <VideoCenterSection
           type="About Fischer Redavid"
@@ -30,7 +30,7 @@ export default async function VideoCenterPage() {
           videos={personalInjuryVideos}
         />
       </div>
-      <ContactUs />
+      <ContactUs hasBorderTop />
     </main>
   );
 }

@@ -270,3 +270,9 @@ export const videoCenterPaths = {
   "Personal Injury": "/personal-injury",
   "About Fischer Redavid": "/about-fischer-redavid",
 };
+
+export const videoCenterTitle = {
+  podcast: "Podcast",
+  "personal-injury": "Personal Injury",
+  "about-fischer-redavid": "About Fischer Redavid",
+};

@@ -135,7 +135,3 @@ body::-webkit-scrollbar {
 
   aspect-ratio: 16/9 !important;
 }
-
-#video-center-react-player > div {
-  width: 100% !important;
-}

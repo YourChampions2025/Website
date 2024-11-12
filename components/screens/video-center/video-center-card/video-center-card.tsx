@@ -1,10 +1,9 @@
-"use client";
 import type { VideoCenterProps } from "@/types/types";
 import React from "react";
-import ReactPlayerYoutube from "react-player/youtube";
-import ReactPlayerBase from "react-player";
 import Link from "next/link";
 import { videoCenterPaths } from "@/utils/constants";
+import CardImage from "@/public/images/video-center-placeholder.png";
+import Image from "next/image";
 
 interface VideoCenterCardProps {
   video: VideoCenterProps;
@@ -18,26 +17,14 @@ export default function VideoCenterCard({ video }: VideoCenterCardProps) {
       href={`/video-center/${videoCenterPaths[video.category as keyof typeof videoCenterPaths]}/${
         video.slug
       }`}
-      className="w-full h-full bg-[#1A1B21] rounded-md p-8 flex flex-col gap-8"
+      className="w-full h-full bg-[#1A1B21] rounded-md p-8 flex flex-col gap-8 group"
     >
-      <div
-        id="video-center-react-player"
-        className="w-full h-fit aspect-video overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {isPodcast ? (
-          <ReactPlayerYoutube
-            light="/images/video-center-placeholder.png"
-            url={video.url}
-            controls
-          />
-        ) : (
-          <ReactPlayerBase
-            light="/images/video-center-placeholder.png"
-            url={video.videoUrl}
-            controls
-          />
-        )}
+      <div className="w-full h-fit aspect-video overflow-hidden">
+        <Image
+          className="w-full h-fit object-cover group-hover:scale-110 transition-all duration-300"
+          src={CardImage}
+          alt={video.title}
+        />
       </div>
 
       <div className="w-full mt-auto flex flex-col gap-2 items-start">

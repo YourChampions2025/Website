@@ -164,7 +164,7 @@ export const getLatestTestimonialsQuery = groq`
 `;
 
 export const getPodcastsQuery = (limit?: number) => groq`
-  *[_type == "videoCenter" && category == "Podcast"] | order(date desc) ${!!limit ? `[0..${limit - 1}]` : ""} {
+  *[_type == "videoCenter" && category == "Podcast"] | order(episodeNumber desc) ${!!limit ? `[0..${limit - 1}]` : ""} {
     title,
     "slug": slug.current,
     date,
@@ -191,6 +191,18 @@ export const getAboutFischerRedavidVideosQuery = (limit?: number) => groq`
     date,
     "videoUrl": video.asset->url,
     category
+  }
+`;
+
+export const getVideoCenterBySlugQuery = groq`
+  *[_type == "videoCenter" && slug.current == $slug][0] {
+    title,
+    "slug": slug.current,
+    date,
+    episodeNumber,
+    url,
+    category,
+    "videoUrl": video.asset->url
   }
 `;
 
