@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-left: 48px;
 }
 
 .heading {
@@ -212,11 +213,16 @@
   .resultContainer {
     border-right: none;
   }
+
   .resultContent {
     padding-right: 14px;
     padding-left: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .resultsContainer {
+    padding: 64px 0 0 10px;
   }
 }
