@@ -49,19 +49,19 @@ export default defineType({
       validation: (Rule) => Rule.required().error("Description is required"),
     }),
 
-    // defineField({
-    //   name: "otherAreas",
-    //   title: "Other Areas",
-    //   description:
-    //     "This will help relate otherAreas to locations, such as Car Accidents and Prison Injuries are related to Coral Gables.",
-    //   type: "array",
-    //   of: [
-    //     {
-    //       type: "reference",
-    //       to: [{ type: "otherAreas" }],
-    //     },
-    //   ],
-    // }),
+   defineField({
+     name: "otherAreas",
+     title: "Other Areas",
+     description:
+       "This will help relate otherAreas to locations, such as Car Accidents and Prison Injuries are related to Coral Gables.",
+     type: "array",
+     of: [
+       {
+         type: "reference",
+         to: [{ type: "otherAreas" }],
+       },
+     ],
+   }),
 
     defineField({
       name: "excerpt",
