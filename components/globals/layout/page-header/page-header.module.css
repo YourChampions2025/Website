@@ -35,9 +35,9 @@
   text-align: right;
 }
 
-@media (max-width: 625px) {
+@media (max-width: 700px) {
   .pageHeaderContainer {
-    padding: 108px 16px 72px;
+    padding: 8px 16px 42px;
   }
 
   .pageHeaderWrapper {
