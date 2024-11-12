@@ -14,7 +14,7 @@ export default async function AboutUsOurAttorneysPage() {
       <AboutUsHero />
       <div className="w-full h-full relative">
         <AboutUsLayout>
-          <div className="w-full grid grid-cols-2 gap-6">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
             {profiles.map((profile) => (
               <AboutUsCard key={profile.slug} profile={profile} />
             ))}
