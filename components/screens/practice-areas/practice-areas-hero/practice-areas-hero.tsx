@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import { links } from "./types";
 import React, { useState } from "react";
 import styles from "./practice-areas.module.css";
 import { RiArrowDropRightFill } from "react-icons/ri";
+import { practiceAreaLinks } from "@/utils/constants";
 
 interface PracticeAreasHeroProps {
   defaultVideoUrl?: string;
@@ -12,9 +12,11 @@ interface PracticeAreasHeroProps {
 export default function PracticeAreasHero({
   defaultVideoUrl = "/videos/burn.mp4",
 }: PracticeAreasHeroProps) {
-  const [activeLabel, setActiveLabel] = useState(links[0].label);
+  const [activeLabel, setActiveLabel] = useState(practiceAreaLinks[0].label);
 
-  const activeItem = links.find((link) => link.label === activeLabel);
+  const activeItem = practiceAreaLinks.find(
+    (link) => link.label === activeLabel
+  );
   const activeDescription = activeItem?.description;
   const videoUrl = activeItem?.videoUrl || defaultVideoUrl;
 
@@ -43,7 +45,7 @@ export default function PracticeAreasHero({
                 practice areas
               </div>
               <div className={styles.linkContainer}>
-                {links.map((link, index) => (
+                {practiceAreaLinks.map((link, index) => (
                   <div
                     key={index}
                     onClick={() => setActiveLabel(link.label)}
