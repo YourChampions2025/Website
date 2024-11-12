@@ -49,7 +49,7 @@ export default function HomeHero() {
     <div className={styles.container}>
       <video
         ref={videoRef}
-        src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/Fischer+Redavid+v2+CG.mp4"
+        src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerAndRedavid.mp4"
         className={styles.image}
         autoPlay
         muted
