@@ -1,6 +1,9 @@
 .sectionBorder {
   border-top: 1px solid #083376;
   border-bottom: 1px solid #083376;
+
+  position: relative;
+  z-index: 90;
 }
 
 .gridContainer {
