@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./home-graduates.module.css";
-import graduatesImage from "@/public/images/graduates-image.png";
+import graduatesImage from "@/public/images/homee-graduates-details.png";
 
 function HomeGraduates() {
   return (

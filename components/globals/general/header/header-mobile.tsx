@@ -9,7 +9,7 @@ import classNames from "classnames";
 import { linksSlideUp, logoSlideUp, navBarHeight } from "./header-animation";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
-import fischerLogo from "@/public/images/fischerLogo.svg";
+import fischerLogo from "@/public/images/fischer-redavid-trial-lawyers-logo.svg";
 import Image from "next/image";
 
 const mobilelinks = [

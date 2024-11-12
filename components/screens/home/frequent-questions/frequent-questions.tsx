@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import styles from "./frequent-questions.module.css";
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 import Collapse from "@/components/globals/general/collapse/collapse";
-import faqImage from "@/public/images/frequently-questions.png";
+import faqImage from "@/public/images/home-cover-frequently-questions.png";
 
 const questionsAndAnswers = [
   {

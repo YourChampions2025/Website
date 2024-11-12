@@ -7,8 +7,8 @@ import { IoLogoFacebook } from "react-icons/io5";
 import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
 import { FaGoogle, FaLinkedin } from "react-icons/fa";
 import { MdMailOutline, MdPhone } from "react-icons/md";
-import fischerLogo from "@/public/images/fischerLogo.svg";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import fischerRedavidLogo from "@/public/images/fischer-redavid-trial-lawyers-logo.svg";
+import { Menu } from "@headlessui/react";
 
 const socialLinks = [
   {
@@ -86,7 +86,7 @@ function HeaderDesktop() {
   return (
     <>
       <div className={style.headerFirstRow}>
-        <Image src={fischerLogo} alt="fischerLogo" />
+        <Image src={fischerRedavidLogo} alt="fischerLogo" />
 
         <div className={style.socialLinks}>
           {socialLinks.map((data, i) => (

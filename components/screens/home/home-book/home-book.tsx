@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./home-book.module.css";
-import bookImage from "@/public/images/book-image.png";
-import bookDetails from "@/public/images/book-details.png";
+import bookImage from "@/public/images/home-book.png";
+import bookDetails from "@/public/images/home-book-details.png";
 
 function HomeBook() {
   return (

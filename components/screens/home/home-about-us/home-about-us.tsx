@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import imageAbout from "@/public/images/home-about.png";
+import imageAbout from "@/public/images/home-about-cover.png";
 import styles from "./home-about-us.module.css";
 import { useRouter } from "next/navigation";
 

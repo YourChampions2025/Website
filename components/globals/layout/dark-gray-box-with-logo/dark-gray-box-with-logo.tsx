@@ -16,7 +16,7 @@ export default function DarkGrayBoxWithLogo({
         <h6 className={styles.title}>{title}</h6>
         <img
           className={styles.logo}
-          src="/images/card-logo.svg"
+          src="/images/logo-details.svg"
           alt="SVG Image"
         />
       </div>

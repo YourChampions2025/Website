@@ -12,19 +12,19 @@ const fakeData = [
     title: "meet our team",
     buttonText: "about us",
     buttonLink: "/about-us",
-    imageUrl: "/images/meet-our-team.png",
+    imageUrl: "/images/learn-more-meet-team.png",
   },
   {
     title: "our past successes",
     buttonText: "Case Results",
     buttonLink: "/results",
-    imageUrl: "/images/our-past-successes.png",
+    imageUrl: "/images/learn-more-past-success.png",
   },
   {
     title: "real stories",
     buttonText: "testimonials",
     buttonLink: "/testimonials",
-    imageUrl: "/images/real-stories.png",
+    imageUrl: "/images/learn-more-real-stories.png",
   },
 ];
 
