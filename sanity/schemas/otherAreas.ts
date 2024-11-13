@@ -30,9 +30,6 @@ export default defineType({
       title: "Slug",
       description: "Ex: bicycle-accident-lawyer",
       type: "slug",
-      // options: {
-      //   source: "title",
-      // },
       validation: (Rule) => Rule.required().error("Slug is required"),
     }),
 

@@ -8,9 +8,11 @@ import {
   getFilteredBlogsQuery,
   getFilteredCasesQuery,
   getFilteredResultsQuery,
+  getLatestBlogsQuery,
   getLatestTestimonialsQuery,
   getPersonalInjuryVideosQuery,
   getPodcastsQuery,
+  getPracticeAreaBySlugQuery,
   getProfileBySlugQuery,
   getStaffProfilesQuery,
   getTerrysTakesBySlugQuery,
@@ -118,6 +120,14 @@ export const getLatestTestimonials = async () => {
   return data;
 };
 
+export const getLatestBlogs = async () => {
+  const data = await client.fetch(getLatestBlogsQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
 export const getPodcasts = async (limit?: number) => {
   const query = getPodcastsQuery(limit);
   const data = await client.fetch(query);
@@ -177,6 +187,18 @@ export const getProfileBySlug = async (slug: string) => {
   if (!slug) return null;
 
   const data = await client.fetch(getProfileBySlugQuery, {
+    slug,
+  });
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getPracticeAreaBySlug = async (slug: string) => {
+  if (!slug) return null;
+
+  const data = await client.fetch(getPracticeAreaBySlugQuery, {
     slug,
   });
 

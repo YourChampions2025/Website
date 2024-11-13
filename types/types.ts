@@ -113,3 +113,12 @@ export interface ProfileProps {
     awardsImageUrl: string;
   }[];
 }
+
+export interface PracticeAreaProps {
+  title: string;
+  description: string;
+  slug: string;
+  imageUrl: string;
+  content: TypedObject | TypedObject[];
+  secondaryContent?: TypedObject | TypedObject[];
+}
