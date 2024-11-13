@@ -26,7 +26,7 @@ function ContentSwitcher() {
             }`}
             onClick={() => setSelectedContent("clients")}
           >
-            <span>for</span> Clients
+            for Clients
           </button>
           <button
             className={`${styles.buttonSwitch} ${
@@ -34,7 +34,7 @@ function ContentSwitcher() {
             }`}
             onClick={() => setSelectedContent("attorneys")}
           >
-            <span>for</span> Attorneys
+            for Attorneys
           </button>
         </div>
         <div className={styles.contentDisplay}>
