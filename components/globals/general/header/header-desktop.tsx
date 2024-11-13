@@ -132,8 +132,15 @@ function HeaderDesktop() {
                   </Menu.Item>
                   <Menu.Item>
                     {() => (
-                      <Link href="/blog" className={style.menuItem}>
-                        Blog
+                      <Link href="/articles" className={style.menuItem}>
+                        Articles
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {() => (
+                      <Link href="/video-center" className={style.menuItem}>
+                        Video Center{" "}
                       </Link>
                     )}
                   </Menu.Item>

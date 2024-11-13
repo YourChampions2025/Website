@@ -32,8 +32,9 @@ const mobilelinks = [
       { href: "/terrys-takes", label: "Terry's Takes" },
       { href: "/careers", label: "Careers" },
       { href: "/podcasts", label: "Podcast" },
-      { href: "/blog", label: "Blog" },
+      { href: "/articles", label: "Articles" },
       { href: "/testimonials", label: "Testimonials" },
+      { href: "/video-center", label: "Video Center" },
     ],
   },
   {

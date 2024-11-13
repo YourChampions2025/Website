@@ -58,7 +58,7 @@ export default function BlogIndexListing({
                 </p>
 
                 <Link
-                  href={`/blog/${formatDateForHref(blog.date)}/${blog.slug}`}
+                  href={`/articles/${formatDateForHref(blog.date)}/${blog.slug}`}
                   className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline"
                 >
                   <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />

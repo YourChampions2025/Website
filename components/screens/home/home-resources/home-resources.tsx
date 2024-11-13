@@ -13,7 +13,7 @@ function HomeResources() {
         <div className={styles.headingContent}>
           <h2 className={styles.title}>resources</h2>
 
-          <Link href="/blog" className={styles.linkDetails}>
+          <Link href="/articles" className={styles.linkDetails}>
             <RiArrowDropRightFill
               size={42}
               color="#1055C1"
