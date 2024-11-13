@@ -57,6 +57,31 @@ export default defineType({
     }),
 
     defineField({
+      name: "excerpt",
+      title: "Excerpt",
+      description:
+        "Page content, containing links, lists, headings and paragraphs.",
+      type: "array",
+      of: [
+        defineArrayMember({ type: "block" }),
+        defineArrayMember({
+          type: "object",
+          name: "callToAction",
+          title: "Call to Action",
+          fields: [
+            {
+              name: "label",
+              type: "string",
+              title: "Label",
+              readOnly: true,
+              initialValue: "Call to action",
+            },
+          ],
+        }),
+      ],
+    }),
+
+    defineField({
       name: "content",
       title: "Content",
       description:
