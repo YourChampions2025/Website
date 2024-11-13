@@ -10,8 +10,8 @@ function HomeBook() {
       <div className={styles.homeBookContent}>
         <div className={styles.firstContent}>
           <h2 className={styles.title}>
-            Jordan Redavid
-            <span>Book</span>
+            Jordan Redavid on
+            <span>Drowning</span>
           </h2>
           <p className={styles.description}>
             In 2024, Jordan Redavid, along with other thought leaders in the

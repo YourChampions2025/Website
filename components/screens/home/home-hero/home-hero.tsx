@@ -49,7 +49,7 @@ export default function HomeHero() {
     <div className={styles.container}>
       <video
         ref={videoRef}
-        src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerAndRedavid.mp4"
+        src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4"
         className={styles.image}
         autoPlay
         muted
@@ -72,7 +72,7 @@ export default function HomeHero() {
 
           <span className={styles.heroDescription}>
             We’re an aggressive team of powerful advocates with a single-minded
-            goal. Uncompromised justice.
+            goal: uncompromised justice.
           </span>
 
           <div className={styles.buttonsContainer}>

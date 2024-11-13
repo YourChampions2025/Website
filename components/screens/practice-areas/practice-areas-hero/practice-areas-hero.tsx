@@ -48,6 +48,7 @@ export default function PracticeAreasHero({
                 {practiceAreaLinks.map((link, index) => (
                   <div
                     key={index}
+                    onMouseEnter={() => setActiveLabel(link.label)}
                     onClick={() => setActiveLabel(link.label)}
                     className={`${styles.link} ${
                       activeLabel === link.label ? styles.activeLink : ""

@@ -24,14 +24,13 @@
 }
 
 .pageHeaderDescription {
-  max-width: 320px;
+  max-width: 450px;
   width: 100%;
 
   font-size: clamp(18px, 1.82vw, 26px);
   font-weight: 400;
   letter-spacing: calc(26px * -0.02);
   text-transform: uppercase;
-  text-wrap: balance;
   text-align: right;
 }
 

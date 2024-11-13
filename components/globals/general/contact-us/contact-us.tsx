@@ -32,16 +32,22 @@ export default function ContactUs({ hasBorderTop }: ContactUsProps) {
                 <h6 className={styles.promiseTitle}>Our Promise</h6>
 
                 <div className={styles.promiseList}>
-                  <p>Aggressive Litigation</p>
-                  <p>Honest Representation</p>
-                  <p>Dedicated Communication</p>
-                  <p>Respect and Compassion</p>
+                  <p>
+                    Aggressive Litigation. Honest Representation. Dedicated
+                    Communication. Respect and Compassion.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className={styles.imageContainer}>
-              <img src="/images/contact-us-image.png" alt="" />
+              <video
+                src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidContactUs.mp4"
+                className={styles.image}
+                autoPlay
+                muted
+                loop
+              />
             </div>
           </div>
 
