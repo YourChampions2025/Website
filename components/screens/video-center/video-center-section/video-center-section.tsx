@@ -34,7 +34,7 @@ export default function VideoCenterSection({
         </div>
       )}
 
-      <div className="w-full grid grid-cols-2 gap-6">
+      <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-6">
         {videos.map((video) => (
           <VideoCenterCard key={video.slug} video={video} />
         ))}
