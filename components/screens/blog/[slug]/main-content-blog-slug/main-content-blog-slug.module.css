@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 10.18vw, 56px);
+}
+
+.authorInfo {
+  font-size: clamp(12px, 2.28vw, 16px);
+  text-transform: uppercase;
+  letter-spacing: calc(16px * -0.02);
+}
+
+.highlight {
+  color: #2de046;
+}
+
+.title {
+  font-size: clamp(38px, 8.38vw, 52px);
+  font-family: serif;
+}
+
+.articleText {
+  color: #cecece;
+  font-size: clamp(14px, 2.45vw, 18px);
+}
+
+.categories {
+  font-size: clamp(14px, 2.45vw, 18px);
+  color: #7A868E;
+  text-transform: uppercase;
+}
+
+.categories span {
+  color: #7A868E;
+}
+
+.categories a {
+  color: #7A868E;
+  text-decoration: underline;
+}

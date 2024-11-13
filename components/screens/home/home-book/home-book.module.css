@@ -1,0 +1,117 @@
+.homeBookContainer {
+  width: 100%;
+  height: fit-content;
+  background: #1a1b21;
+}
+
+.homeBookContent {
+  max-width: 1600px;
+  height: 467px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 166px;
+}
+
+.firstContent {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 570px;
+  gap: 18px;
+}
+
+.title {
+  font-size: clamp(32px, 3.68vw, 42px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 0.42px;
+  text-transform: capitalize;
+  font-family: "Instrument Serif";
+  color: #fff;
+}
+
+.title span {
+  color: #2de046;
+  margin-left: 6px;
+  font-family: "Instrument Sans";
+}
+
+.description {
+  font-size: clamp(14px, 1.57vw, 18px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  margin-bottom: 18px;
+
+  font-family: "Instrument Sans";
+  color: #fff;
+}
+
+.homeBookButton {
+  width: 248px;
+  height: 48px;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+  /* font-family: "Instrument Sans"; */
+
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.2);
+}
+
+.bookImage {
+  max-width: 262px;
+  max-height: 400px;
+
+  position: relative;
+  z-index: 100;
+}
+
+.imageDetailsContainer {
+  position: relative;
+}
+
+.bookDetails {
+  position: absolute;
+  left: 120px;
+  bottom: -28px;
+
+  max-width: 400px;
+  height: 467px;
+}
+@media (max-width: 1046px) {
+  .firstContent {
+    padding: 24px;
+  }
+  .bookImage {
+    max-width: 200px;
+    max-height: 280px;
+  }
+  .bookDetails {
+    display: none;
+  }
+}
+
+@media (max-width: 730px) {
+  .bookImage {
+    display: none;
+  }
+  .firstContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .homeBookContent {
+    gap: 2px;
+  }
+}

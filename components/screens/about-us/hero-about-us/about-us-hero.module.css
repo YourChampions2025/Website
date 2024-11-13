@@ -1,0 +1,103 @@
+.container {
+  width: 100%;
+
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  inset: 0;
+
+  object-fit: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.aboutContainer {
+  width: 100%;
+  height: 100%;
+
+  padding: 220px 16px 32px;
+
+  position: relative;
+  z-index: 50;
+}
+
+.aboutContent {
+  max-width: 1504px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aboutTitle {
+  color: #fff;
+  font-family: "Instrument Serif";
+  font-size: clamp(60px, 10.16vw, 122px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 1.22px;
+  text-transform: capitalize;
+}
+
+.aboutTitle span {
+  color: #2de046;
+  font-family: "Instrument Serif";
+  font-size: clamp(80px, 10.16vw, 122px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 1.22px;
+  text-transform: capitalize;
+}
+
+.aboutDescription {
+  max-width: 291px;
+
+  color: #fff;
+  text-align: right;
+
+  font-size: clamp(16px, 1.83vw, 22px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.44px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .aboutTitle {
+    align-self: flex-start;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  .aboutDescription {
+    padding-left: 32px;
+    padding-right: 32px;
+    align-self: flex-end;
+    text-align: right;
+  }
+}

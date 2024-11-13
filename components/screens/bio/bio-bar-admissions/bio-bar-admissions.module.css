@@ -1,0 +1,34 @@
+.bioEducationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-firection: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: #fff;
+  font-family: "Instrument Sans";
+  font-size: clamp(18px, 2.89vw, 32px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+}
+
+.description {
+  color: #fff;
+  font-family: "Instrument Sans";
+  font-size: clamp(16px, 2.32vw, 28px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.56px;
+  text-transform: capitalize;
+}

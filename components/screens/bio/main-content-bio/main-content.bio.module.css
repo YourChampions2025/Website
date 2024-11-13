@@ -1,0 +1,73 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.introText {
+  color: #cecece;
+  font-size: clamp(16px, 1.71vw, 18px);
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.sectionTitle {
+  font-size: clamp(20px, 4.32vw, 28px);
+  font-weight: 500;
+  letter-spacing: calc(28px * -0.02);
+}
+
+.sectionText {
+  color: #cecece;
+  font-size: 18px;
+}
+
+.asSeenOnSection {
+  margin-top: 60px;
+}
+
+.sectionDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  color: #fff;
+  font-size: clamp(14px, 2.45vw, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  text-transform: uppercase;
+  font-family: "Instrument Sans";
+  text-decoration-line: underline;
+}
+
+.imageStyles {
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+}

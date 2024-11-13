@@ -1,0 +1,29 @@
+.buttonBase {
+  width: fit-content;
+  height: fit-content;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 500;
+}
+
+.sizeSmall {
+  padding: 0.5rem 1.5rem;
+  font-size: 14px;
+  letter-spacing: calc(14px * -0.02);
+}
+
+.sizeMedium {
+  padding: 1rem 3rem;
+  font-size: 16px;
+  letter-spacing: calc(16px * -0.02);
+}
+
+.green {
+  border: 1px solid #2DE046;
+  background: rgba(45, 224, 70, 0.10);
+}
+
+.blue {
+  border: 1px solid #1055C1;
+  background: rgba(16, 85, 193, 0.20);
+}

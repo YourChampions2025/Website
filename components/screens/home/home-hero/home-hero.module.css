@@ -1,0 +1,184 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  inset: 0;
+
+  object-fit: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.heroContainer {
+  width: 100%;
+  height: 100%;
+
+  padding: 260px 16px 32px;
+
+  position: relative;
+  z-index: 50;
+}
+
+.heroContent {
+  max-width: 1504px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroTitle {
+  color: #fff;
+  font-family: "Instrument Serif";
+  font-size: clamp(60px, 10.16vw, 122px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: calc(clamp(60px, 10.16vw, 122px) * 0.01);
+  text-transform: capitalize;
+}
+
+.heroTitle span {
+  color: #2de046;
+  font-family: "Instrument Serif";
+}
+
+.heroSubtitle {
+  color: #fff;
+  font-size: clamp(32px, 3.68vw, 42px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 0.42px;
+  text-transform: capitalize;
+  font-family: "Instrument Serif";
+}
+
+.subtitleContainer {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.subtitleDetails {
+  width: 137px;
+  height: 1px;
+  background: #2de046;
+}
+
+.heroDescription {
+  max-width: 706px;
+  width: 100%;
+
+  margin-top: 12px;
+
+  font-size: clamp(16px, 1.83vw, 22px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.44px;
+  font-family: "Instrument Sans";
+
+  color: #fff;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin: 24px 0;
+
+  gap: 18px;
+}
+
+.buttonResults {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 3rem;
+  font-size: 16px;
+  letter-spacing: calc(16px * -0.02);
+  text-transform: uppercase;
+
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #1a1b21;
+
+  cursor: pointer;
+}
+
+.buttonResults > *:first-child {
+  margin-right: 8px;
+}
+
+.buttonsVideo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.soundButton {
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 1px solid #2de046;
+  background: rgba(45, 224, 70, 0.1);
+}
+
+.reloadButton {
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #1a1b21;
+}
+
+@media (max-width: 720px) {
+  .subtitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 2px;
+  }
+}
+
+@media (max-width: 464px) {
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

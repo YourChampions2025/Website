@@ -1,0 +1,110 @@
+.homeAboutUsContainer {
+  width: 100%;
+  height: fit-content;
+  background: #000208;
+}
+
+.homeAboutUsContent {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 62px 48px;
+  gap: clamp(32px, 5.19vw, 67px);
+
+  display: flex;
+  flex-direction: row;
+}
+
+.homeAboutUsText {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 57px;
+}
+.aboutUs {
+  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.aboutUs p {
+  font-size: clamp(14px, 2.45vw, 18px);
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+
+  text-transform: uppercase;
+  /* font-family: "Instrument Sans"; */
+
+  color: #fff;
+}
+
+.bullet {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2de046;
+}
+
+.title {
+  font-size: clamp(50px, 8.42vw, 84px);
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.84px;
+  text-transform: capitalize;
+  font-family: "Instrument Serif";
+
+  color: #fff;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.36px;
+  /* font-family: "Instrument Sans"; */
+
+  color: #8d8d8d;
+}
+
+.homeAboutButton {
+  width: 248px;
+  height: 48px;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 132%;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+  /* font-family: "Instrument Sans"; */
+
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.2);
+}
+
+.imageAbout {
+  min-width: 500px;
+}
+@media (max-width: 1190px) {
+  .homeAboutUsContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageAbout {
+    min-width: 500px;
+  }
+  .homeAboutUsText {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 57px;
+  }
+}
+
+@media (max-width: 520px) {
+  .imageAbout {
+    display: none;
+  }
+}

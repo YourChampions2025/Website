@@ -1,0 +1,50 @@
+.homeGraduatesContainer {
+  width: 100%;
+  height: fit-content;
+  background: #1a1b21;
+}
+
+.homeGraduatesContent {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.homeGraduatesWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 42px;
+}
+
+.textGraduates h2 {
+  font-size: clamp(18px, 1.82vw, 26px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: -0.52px;
+  text-transform: uppercase;
+
+  color: #8d8d8d;
+}
+
+.imageGraduates {
+  width: 182px;
+  height: 182px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@media (max-width: 720px) {
+  .homeGraduatesWrapper {
+    height: 182px;
+    padding: 42px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageGraduates {
+    display: none;
+  }
+}

@@ -1,0 +1,271 @@
+.headerContainer {
+  width: 100%;
+  height: fit-content;
+  padding: 28px 16px;
+
+  position: absolute;
+  z-index: 99;
+}
+
+.headerContent {
+  max-width: 1500px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.headerFirstRow {
+  width: 100%;
+
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(16px, 2.89vw, 32px);
+
+  color: white;
+}
+
+.socialLinks a {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Instrument Sans";
+  font-size: clamp(12px, 1.44vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%; /* 21.12px */
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+}
+
+.headerSecondRow {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigationLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: white;
+}
+
+.navigationLinks a {
+  text-transform: uppercase;
+}
+
+.contactLinks {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  color: white;
+}
+
+.contactLinkItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactLinkItemIconWrapper {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #2de046;
+  border-radius: 50%;
+}
+
+.contactLinkItemText {
+  font-size: 16px;
+}
+
+.link {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Instrument Sans";
+  font-size: clamp(12px, 1.44vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%; /* 21.12px */
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+}
+
+.menuButton {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Instrument Sans";
+  font-size: clamp(12px, 1.44vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%; /* 21.12px */
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+}
+
+.menuItems {
+  position: absolute;
+  margin-top: 0.5rem;
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.92);
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menuItem {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #c0c0c0;
+  text-decoration: none;
+}
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+
+  display: flex;
+  height: auto;
+  flex-direction: column;
+
+  gap: 20px;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.92);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  color: #c0c0c0;
+  z-index: 100;
+}
+
+.mobileMenu.open {
+  right: 0;
+}
+
+.logoMobileContainer {
+  max-width: 256px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: fit-content;
+}
+.menuLinks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 42px;
+  gap: 32px;
+}
+
+.subMenu {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.subLinkMobile {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Instrument Sans";
+  font-size: clamp(12px, 1.44vw, 16px);
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.closeMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 14rem;
+}
+
+.linkMobile {
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Instrument Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 132%;
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contactLinksMobile {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1120px) {
+  .contactLinkItem {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .desktopNavLinks {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+
+  .menuHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.contactLinks {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  color: white;
+}
