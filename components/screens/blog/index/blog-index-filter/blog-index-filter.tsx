@@ -69,7 +69,7 @@ export default function BlogIndexFilter({
     // Reset limit to default when filters change
     params.set("limit", "12");
 
-    router.push(`/blog?${params.toString()}`, { scroll: false });
+    router.push(`/articles?${params.toString()}`, { scroll: false });
   }, [debouncedTitleValue, yearValue, categoryValue]);
 
   const handleClearInput = (name: keyof IBlogIndexFilter) => {
@@ -82,7 +82,7 @@ export default function BlogIndexFilter({
 
     params.set("limit", "12");
 
-    router.push(`/blog?${params.toString()}`, { scroll: false });
+    router.push(`/articles?${params.toString()}`, { scroll: false });
   };
 
   return (
