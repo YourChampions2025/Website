@@ -10,13 +10,14 @@ export const getFilteredResultsQuery = (
       title ? `&& title match "*${title}*"` : ""
     } ${
       category ? `&& "${category}" in categories` : ""
-    }] | order(_createdAt asc) [0..${limit}-1] {
+    }] | order(amount desc) [0..${limit}-1] {
       title,
       subtitle,
       description,
       "slug": slug.current,
       categories,
-      content
+      content,
+      amount
     },
     "totalResults": count(*[_type == "results" ${
       title ? `&& title match "*${title}*"` : ""

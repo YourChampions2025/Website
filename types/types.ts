@@ -19,6 +19,7 @@ export type PageProps = {
 };
 
 export interface ResultProps {
+  amount: number;
   title: string;
   slug: string;
   subtitle?: string;

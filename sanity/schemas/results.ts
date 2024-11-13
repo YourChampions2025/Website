@@ -15,6 +15,12 @@ export default defineType({
       validation: (Rule) => Rule.required().error("Title is required"),
     }),
     defineField({
+      name: "amount",
+      title: "Amount",
+      type: "number",
+      validation: (Rule) => Rule.required().error("Amount is required"),
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
