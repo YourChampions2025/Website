@@ -30,7 +30,9 @@ export default defineType({
       title: "Slug",
       description: "Ex: bicycle-accident-lawyer",
       type: "slug",
-      validation: (Rule) => Rule.required().error("Slug is required"),
+      options: {
+        isUnique: () => true,
+      },
     }),
 
     defineField({
