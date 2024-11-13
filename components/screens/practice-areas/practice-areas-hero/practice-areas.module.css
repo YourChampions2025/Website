@@ -22,6 +22,8 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 1;
+  transition: 1s ease;
 }
 
 .aboutContainer {
@@ -122,6 +124,13 @@
   letter-spacing: -0.4px;
   text-transform: capitalize;
   cursor: pointer;
+
+  transition:
+    background-color 5s ease,
+    color 0.3s ease;
+}
+.link:hover {
+  color: #ffffff;
 }
 
 .activeLink {
