@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import imageToggle from "@/public/images/faq.png";
-//!the image will later be replaced by a video
+import imageSwitcher from "@/public/images/home-content-switcher.jpeg";
 import styles from "./home-content-switcher.module.css";
 
 function ContentSwitcher() {
@@ -42,7 +41,7 @@ function ContentSwitcher() {
             <div className={styles.contentWrapper}>
               <Image
                 alt=""
-                src={imageToggle}
+                src={imageSwitcher}
                 className={styles.imageContainer}
               />
               <div className={styles.textsContainer}>
@@ -68,7 +67,7 @@ function ContentSwitcher() {
             <div className={styles.contentWrapper}>
               <Image
                 alt=""
-                src={imageToggle}
+                src={imageSwitcher}
                 className={styles.imageContainer}
               />
               <div className={styles.textsContainer}>
