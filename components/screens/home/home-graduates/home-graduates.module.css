@@ -23,8 +23,15 @@
   line-height: 132%;
   letter-spacing: -0.52px;
   text-transform: uppercase;
+  font-family: "Instrument Serif";
 
   color: #8d8d8d;
+}
+
+.textGraduates span {
+  font-family: "Instrument Serif";
+
+  color: #fff;
 }
 
 .imageGraduates {

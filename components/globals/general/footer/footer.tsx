@@ -6,7 +6,7 @@ import styles from "./footer.module.css";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaGoogle, FaLinkedin } from "react-icons/fa";
 
-import footerDetails from "@/public/images/footer-details.png";
+import footerDetails from "@/public/images/footer.svg";
 
 import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
 import { usePathname } from "next/navigation";

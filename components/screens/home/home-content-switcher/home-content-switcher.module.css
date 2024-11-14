@@ -72,11 +72,13 @@
   line-height: 132%;
   letter-spacing: 0.42px;
   text-transform: capitalize;
+  font-family: "Instrument Serif";
 
   color: #fff;
 }
 .titleSwitch span {
   color: #2de046;
+  font-family: "Instrument Serif";
 }
 
 .descriptionSwitch {

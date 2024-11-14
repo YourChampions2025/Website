@@ -10,10 +10,15 @@ function HomeGraduates() {
         <div className={styles.homeGraduatesWrapper}>
           <div className={styles.textGraduates}>
             <h2>
-              our attorneys are licensed in <span>FL, GA, USVI, MA, CA</span>{" "}
+              our attorneys are licensed in{" "}
+              <span>
+                Florida, Georgia, United States Virgin Islands, New York,
+                Massachusetts, Colorado, and California.
+              </span>{" "}
             </h2>
             <h2>
-              we also have COOffices in <span>FL, GA, USVI</span>{" "}
+              we also have COOffices in{" "}
+              <span> Florida, Georgia and United States Virgin Islands</span>{" "}
             </h2>
           </div>
           <Image

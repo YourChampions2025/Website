@@ -41,6 +41,7 @@ export default function ResultsListing({
       <LoadMoreDynamicDataConnected
         itemsLength={results.length}
         totalItems={totalResults}
+        title="More Wins"
       />
     </div>
   );

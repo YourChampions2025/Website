@@ -5,11 +5,13 @@ import LoadMoreDynamicData from "@/components/globals/general/load-more-dynamic-
 interface LoadMoreDynamicDataConnectedProps {
   itemsLength: number;
   totalItems: number;
+  title?: string;
 }
 
 export default function LoadMoreDynamicDataConnected({
   itemsLength,
   totalItems,
+  title = "Load More",
 }: LoadMoreDynamicDataConnectedProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -30,7 +32,7 @@ export default function LoadMoreDynamicDataConnected({
   if (totalItems > itemsLength) {
     return (
       <LoadMoreDynamicData onClick={handleLoadMore}>
-        load more
+        {title}
       </LoadMoreDynamicData>
     );
   } else {

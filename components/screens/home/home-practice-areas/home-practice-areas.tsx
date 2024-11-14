@@ -43,7 +43,7 @@ function HomePracticeAreas() {
             <h2 className={styles.headerTitle}>practice areas</h2>
             <CustomButton
               type="submit"
-              size="small"
+              size="medium"
               color="blue"
               onClick={handleButtonResults}
             >

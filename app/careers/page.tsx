@@ -7,7 +7,7 @@ import LearnMoreSection from "@/components/globals/general/learn-more-section/le
 function Careers() {
   return (
     <main className="pt-[162px]">
-      <PageHeader title="careers" description="Join Our Client-Centric Team" />
+      <PageHeader title="careers" />
       <PageGridLayout
         mainContent={<MainContentCareers />}
         sideContent={<SideContentCareers />}

@@ -6,7 +6,7 @@ export default function SideContentTestimonials() {
   return (
     <div className="w-full flex flex-col">
       <SideContentHeader
-        title="work with your legal champions"
+        title="We're ready to help."
         description="Free & Confidential Consultation"
       />
       <ContactUsForm />
