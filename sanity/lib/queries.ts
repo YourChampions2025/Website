@@ -10,13 +10,14 @@ export const getFilteredResultsQuery = (
       title ? `&& title match "*${title}*"` : ""
     } ${
       category ? `&& "${category}" in categories` : ""
-    }] | order(_createdAt asc) [0..${limit}-1] {
+    }] | order(amount desc) [0..${limit}-1] {
       title,
       subtitle,
       description,
       "slug": slug.current,
       categories,
-      content
+      content,
+      amount
     },
     "totalResults": count(*[_type == "results" ${
       title ? `&& title match "*${title}*"` : ""
@@ -56,6 +57,21 @@ export const getCategoriesForBlogsQuery = groq`
   *[_type == "categoriesForBlogs"] {
     title,
     "slug": slug.current
+  }
+`;
+
+export const getLatestBlogsQuery = groq`
+  *[_type == "blogs"] | order(date desc) [0..8] {
+    title,
+    description,
+    "slug": slug.current,
+    date,
+    author,
+    categories[]->{
+      title,
+      "slug": slug.current
+    },
+    "imageUrl": image.asset->url
   }
 `;
 
@@ -240,5 +256,16 @@ export const getProfileBySlugQuery = groq`
     awards[]{
       "awardsImageUrl": awardsImage.asset->url
     }
+  }
+`;
+
+export const getPracticeAreaBySlugQuery = groq`
+  *[_type == "practiceAreas" && slug.current == $slug][0] {
+    title,
+    description,
+    "slug": slug.current,
+    "imageUrl": image.asset->url,
+    content,
+    secondaryContent
   }
 `;

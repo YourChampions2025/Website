@@ -66,9 +66,7 @@ export default function PracticeAreasHero({
                 {activeDescription}
               </span>
               <Link
-                href={`/practice-areas/${encodeURIComponent(
-                  activeLabel.toLowerCase().replace(/\s+/g, "-")
-                )}`}
+                href={`/practice-areas/${activeItem?.href}`}
                 className={styles.linkDetails}
               >
                 <RiArrowDropRightFill

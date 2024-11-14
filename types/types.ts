@@ -19,6 +19,7 @@ export type PageProps = {
 };
 
 export interface ResultProps {
+  amount: number;
   title: string;
   slug: string;
   subtitle?: string;
@@ -112,4 +113,13 @@ export interface ProfileProps {
     awardsTitle: string;
     awardsImageUrl: string;
   }[];
+}
+
+export interface PracticeAreaProps {
+  title: string;
+  description: string;
+  slug: string;
+  imageUrl: string;
+  content: TypedObject | TypedObject[];
+  secondaryContent?: TypedObject | TypedObject[];
 }

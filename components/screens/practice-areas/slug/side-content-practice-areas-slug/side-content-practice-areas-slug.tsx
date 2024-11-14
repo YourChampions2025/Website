@@ -1,21 +1,17 @@
+"use client";
+
 import ContactUsForm from "@/components/globals/forms/contact-us-form/contact-us-form";
 import SideContentHeader from "@/components/globals/layout/side-content-header/side-content-header";
 import classNames from "classnames";
 import Link from "next/link";
 import React from "react";
 import styles from "./side-content-practice-areas-slug.module.css";
-
-const fakeLinks = [
-  "Catastrophic Injuries",
-  "Burn Injuries",
-  "Drowning",
-  "Traumatic Brain Injuries",
-  "Wrongful Death",
-  "Medical Malpractice",
-  "Product Liability",
-];
+import { practiceAreaLinks } from "@/utils/constants";
+import { usePathname } from "next/navigation";
 
 export default function SideContentPracticeAreasSlug() {
+  const pathname = usePathname();
+
   return (
     <div className={styles.container}>
       <SideContentHeader
@@ -28,16 +24,18 @@ export default function SideContentPracticeAreasSlug() {
         <h6 className={styles.helpTitle}>how we can help</h6>
 
         <div className={styles.linksContainer}>
-          {fakeLinks.map((link, index) => (
+          {practiceAreaLinks.map((link, index) => (
             <Link
               key={index}
-              href="#"
+              href={`/practice-areas/${link.href}`}
               className={classNames(
                 styles.link,
-                index === 0 ? styles.mainLink : styles.secondaryLink
+                pathname.includes(link.label.toLowerCase().replace(/\s+/g, "-"))
+                  ? styles.mainLink
+                  : styles.secondaryLink
               )}
             >
-              {link}
+              {link.label}
             </Link>
           ))}
         </div>
