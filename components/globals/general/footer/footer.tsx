@@ -5,14 +5,13 @@ import Image from "next/image";
 import styles from "./footer.module.css";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaGoogle, FaLinkedin } from "react-icons/fa";
-import virginMap from "@/public/images/virgin-office.png";
-import floridaMap from "@/public/images/florida-office.png";
-import georgiaMap from "@/public/images/georgia-office.png";
+
 import footerDetails from "@/public/images/footer-details.png";
 
 import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
 import { usePathname } from "next/navigation";
 import { locationsDatas } from "@/utils/constants";
+import CustomButton from "../../forms/custom-button/custom-button";
 
 const footerLink = [
   {
@@ -105,11 +104,12 @@ function Footer() {
         <div className={styles.footerColumns}>
           <div className={styles.footerContact}>
             <div className={styles.footerGetStarted}>
-              <h2>
-                LET’S GET <br />
-                STARTED
-              </h2>
-              <button className={styles.buttonFooter}>(888) 694-0708</button>
+              <h2>LET’S GET STARTED</h2>
+              <a href="tel:8886940708">
+                <CustomButton color="blue" size="medium">
+                  (888) 694-0708
+                </CustomButton>
+              </a>
             </div>
             <div className={styles.footerSocialLinksContainer}>
               <div className={styles.footerSocialLinksColumns}>

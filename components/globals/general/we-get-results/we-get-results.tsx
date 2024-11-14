@@ -42,7 +42,7 @@ export default function WeGetResults() {
             </div>
 
             <div className={styles.imageContainer}>
-              <img src="/images/contact-us-image.png" alt="" />
+              <img src="/images/we-get-results.png" alt="" />
             </div>
           </div>
 
