@@ -13,7 +13,8 @@ export default async function PodcastsPage() {
     <main className="pt-[162px]">
       <PageHeader
         title="podcasts"
-        description="Listen to “John and Jordan on Justice”"
+        link='Listen to "John and Jordan on Justice"'
+        linkHref="/video-center"
       />
       <PageGridLayout
         mainContent={<MainContentPodcasts podcasts={podcasts} />}

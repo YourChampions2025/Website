@@ -34,6 +34,18 @@
   text-align: right;
 }
 
+.pageLinkDescription {
+  max-width: 500px;
+  width: 100%;
+
+  font-size: clamp(18px, 1.82vw, 24px);
+  font-weight: 400;
+  letter-spacing: calc(26px * -0.02);
+  text-transform: uppercase;
+  text-align: right;
+  border-bottom: 1px solid #2de046;
+}
+
 @media (max-width: 700px) {
   .pageHeaderContainer {
     padding: 8px 16px 42px;
