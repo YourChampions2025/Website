@@ -2,8 +2,18 @@ import Link from "next/link";
 import React from "react";
 import { IoTriangle } from "react-icons/io5";
 import styles from "./we-get-results.module.css";
+import type { ResultProps } from "@/types/types";
+import PortableTextComponent from "../portable-text-component/portable-text-component";
+import classNames from "classnames";
 
-export default function WeGetResults() {
+interface WeGetResultsProps {
+  results: ResultProps[];
+}
+
+export default function WeGetResults({ results }: WeGetResultsProps) {
+  const mainResult = results[0];
+  const otherResults = results.slice(1);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -17,28 +27,27 @@ export default function WeGetResults() {
           <div className={styles.resultContainer}>
             <div className={styles.resultContent}>
               <div className={styles.resultHeader}>
-                <h3 className={styles.amount}>$11.9 MILLION</h3>
-                <Link href="/results" className={styles.link}>
-                  <IoTriangle className={styles.icon} />
-                  explore our case results
-                </Link>
+                <h3 className={styles.amount}>{mainResult.title}</h3>
               </div>
 
               <div className={styles.resultDetails}>
                 <span className={styles.resultInfo}>
-                  <span className={styles.greenText}>--x Offer</span> ($--K) /{" "}
-                  <span className={styles.grayText}>Medical Negligence</span>
+                  <span className={styles.grayText}>{mainResult.subtitle}</span>
                 </span>
 
-                <p className={styles.description}>
-                  Our law firm obtained a global settlement of $11.9 Million
-                  from multiple at-fault parties, including corporations and
-                  government agencies, for our client who was a pretrial
-                  detainee in a county jail and the victim of medical negligence
-                  and deliberate indifference to his serious medical needs in
-                  violation of the Fourteenth Amendment.
-                </p>
+                {mainResult.content && (
+                  <div
+                    className={classNames(styles.description, "line-clamp-3")}
+                  >
+                    <PortableTextComponent content={mainResult.content} />
+                  </div>
+                )}
               </div>
+
+              <Link href="/results" className={styles.link}>
+                <IoTriangle className={styles.icon} />
+                explore our case results
+              </Link>
             </div>
 
             <div className={styles.imageContainer}>
@@ -47,24 +56,26 @@ export default function WeGetResults() {
           </div>
 
           <div id="results-container" className={styles.resultsContainer}>
-            {Array.from({ length: 10 }).map((_, index) => (
+            {otherResults.map((result, index) => (
               <div key={index} className={styles.resultItem}>
                 <div className={styles.resultItemHeader}>
-                  <h3 className={styles.resultItemAmount}>$11.9 MILLION</h3>
+                  <h3 className={styles.resultItemAmount}>{result.title}</h3>
 
                   <span className={styles.resultItemInfo}>
-                    <span className={styles.greenText}>--x Offer ($--K)</span>
-                    <span className={styles.grayText}>Medical Negligence</span>
+                    <span className={styles.grayText}>{result.subtitle}</span>
                   </span>
                 </div>
 
-                <p className={styles.resultItemDescription}>
-                  Our law firm represented a family who suffered a life-altering
-                  loss on Christmas Day. The patriarch of the family had
-                  recently become a grandfather. When all the family gathered at
-                  his house for Christmas festivities, he and his adult son ran
-                  out to the local gas station to grab soda and chips.
-                </p>
+                {result.content && (
+                  <div
+                    className={classNames(
+                      styles.resultItemDescription,
+                      "line-clamp-3"
+                    )}
+                  >
+                    <PortableTextComponent content={result.content} />
+                  </div>
+                )}
               </div>
             ))}
           </div>

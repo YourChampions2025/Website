@@ -4,8 +4,11 @@ import PageGridLayout from "@/components/globals/layout/page-grid-layout/page-gr
 import PageHeader from "@/components/globals/layout/page-header/page-header";
 import MainContentForAttorneys from "@/components/screens/for-attorneys/main-content-for-attorneys/main-content-for-attorneys";
 import SideContentForAttorneys from "@/components/screens/for-attorneys/side-content-for-attorneys/side-content-for-attorneys";
+import { getBiggestResults } from "@/sanity/lib/api";
 
-export default function ForAttorneysPage() {
+export default async function ForAttorneysPage() {
+  const biggestResults = await getBiggestResults();
+
   return (
     <main className="pt-[162px]">
       <PageHeader
@@ -16,7 +19,7 @@ export default function ForAttorneysPage() {
         mainContent={<MainContentForAttorneys />}
         sideContent={<SideContentForAttorneys />}
       />
-      <WeGetResults />
+      <WeGetResults results={biggestResults} />
       <LearnMoreSection />
     </main>
   );

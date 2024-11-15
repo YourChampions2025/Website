@@ -4,6 +4,7 @@ import {
   getAllTestimonialsQuery,
   getArticleBySlugQuery,
   getAttorneysProfilesQuery,
+  getBiggestResultsQuery,
   getCategoriesForBlogsQuery,
   getFilteredBlogsQuery,
   getFilteredCasesQuery,
@@ -201,6 +202,14 @@ export const getPracticeAreaBySlug = async (slug: string) => {
   const data = await client.fetch(getPracticeAreaBySlugQuery, {
     slug,
   });
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getBiggestResults = async () => {
+  const data = await client.fetch(getBiggestResultsQuery);
 
   if (!data) return undefined;
 

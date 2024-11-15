@@ -1,5 +1,17 @@
 import { groq } from "next-sanity";
 
+export const getBiggestResultsQuery = groq`
+  *[_type == "results"] | order(amount desc) [0..8] {
+    title,
+    subtitle,
+    description,
+    "slug": slug.current,
+    categories,
+    content,
+    amount
+  }
+`;
+
 export const getFilteredResultsQuery = (
   title: string,
   category: string,

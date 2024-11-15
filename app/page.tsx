@@ -10,11 +10,16 @@ import HomeHero from "@/components/screens/home/home-hero/home-hero";
 import HomePracticeAreas from "@/components/screens/home/home-practice-areas/home-practice-areas";
 import HomeStrategies from "@/components/screens/home/home-strategies/home-strategies";
 import HomeTestimonials from "@/components/screens/home/home-testimonials/home-testimonials";
-import { getLatestBlogs, getLatestTestimonials } from "@/sanity/lib/api";
+import {
+  getBiggestResults,
+  getLatestBlogs,
+  getLatestTestimonials,
+} from "@/sanity/lib/api";
 
 export default async function Home() {
   const testimonials = await getLatestTestimonials();
   const blogPosts = await getLatestBlogs();
+  const biggestResults = await getBiggestResults();
 
   return (
     <main>
@@ -22,7 +27,7 @@ export default async function Home() {
       <HomeAboutUs />
       <ContentSwitcher />
       <HomeGraduates />
-      <WeGetResults />
+      <WeGetResults results={biggestResults} />
       <HomeStrategies />
       <HomeTestimonials testimonials={testimonials} />
       <HomePracticeAreas />
