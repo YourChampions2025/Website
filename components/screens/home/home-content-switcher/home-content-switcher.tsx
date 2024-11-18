@@ -1,20 +1,41 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import imageSwitcher from "@/public/images/home-content-switcher.jpeg";
 import styles from "./home-content-switcher.module.css";
+import { BiVolumeMute } from "react-icons/bi";
+import { TbReload } from "react-icons/tb";
+import { useRouter } from "next/router";
+import { AiOutlineSound } from "react-icons/ai";
 
 function ContentSwitcher() {
   const [selectedContent, setSelectedContent] = useState<
     "clients" | "attorneys"
   >("clients");
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
   const handleScrollToContactUs = () => {
     const contactUsSection = document.getElementById("contact-us");
     if (contactUsSection) {
       contactUsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  function toggleMute() {
+    if (videoRef.current) {
+      const newMuteState = !videoRef.current.muted;
+      videoRef.current.muted = newMuteState;
+      setIsMuted(newMuteState);
+    }
+  }
+
+  function handleReloadVideo() {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  }
   return (
     <div className={styles.contentSwitcherContainer}>
       <div className={styles.contentSwitcherContent}>
@@ -39,11 +60,33 @@ function ContentSwitcher() {
         <div className={styles.contentDisplay}>
           {selectedContent === "clients" ? (
             <div className={styles.contentWrapper}>
-              <Image
-                alt=""
-                src={imageSwitcher}
-                className={styles.imageContainer}
-              />
+              <div>
+                <video
+                  ref={videoRef}
+                  src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FisherRedavidCustomers.mp4"
+                  className={styles.imageContainer}
+                  autoPlay
+                  muted
+                  loop
+                />
+
+                <div className={styles.buttonsVideo}>
+                  <button className={styles.soundButton} onClick={toggleMute}>
+                    {isMuted ? (
+                      <BiVolumeMute size={20} />
+                    ) : (
+                      <AiOutlineSound size={20} />
+                    )}
+                  </button>
+                  <button
+                    className={styles.reloadButton}
+                    onClick={handleReloadVideo}
+                  >
+                    <TbReload size={20} />
+                  </button>
+                </div>
+              </div>
+
               <div className={styles.textsContainer}>
                 <h2 className={styles.titleSwitch}>
                   We don’t follow a <span>one-size-fits-all playbook.</span>
@@ -65,11 +108,32 @@ function ContentSwitcher() {
             </div>
           ) : (
             <div className={styles.contentWrapper}>
-              <Image
-                alt=""
-                src={imageSwitcher}
-                className={styles.imageContainer}
-              />
+              <div>
+                <video
+                  ref={videoRef}
+                  src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidForAttorneys.mp4"
+                  className={styles.imageContainer}
+                  autoPlay
+                  muted
+                  loop
+                />
+                <div className={styles.buttonsVideo}>
+                  <button className={styles.soundButton} onClick={toggleMute}>
+                    {isMuted ? (
+                      <BiVolumeMute size={20} />
+                    ) : (
+                      <AiOutlineSound size={20} />
+                    )}
+                  </button>
+                  <button
+                    className={styles.reloadButton}
+                    onClick={handleReloadVideo}
+                  >
+                    <TbReload size={20} />
+                  </button>
+                </div>
+              </div>
+
               <div className={styles.textsContainer}>
                 <h2 className={styles.titleSwitch}>
                   We don’t just stand out from other personal injury{" "}
