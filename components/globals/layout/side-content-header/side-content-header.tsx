@@ -12,10 +12,11 @@ export default function SideContentHeader({
 }: SideContentHeaderProps) {
   return (
     <div className={styles.container}>
-      <img
-        className={styles.image}
-        src="/images/serviceContractFormImage.png"
-        alt="Service Contract Form"
+      <video
+        src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidForAttorneys.mp4"
+        className={styles.imageContainer}
+        autoPlay
+        loop
       />
       <h6 className={styles.title}>{title}</h6>
       {description && <p className={styles.description}>{description}</p>}
