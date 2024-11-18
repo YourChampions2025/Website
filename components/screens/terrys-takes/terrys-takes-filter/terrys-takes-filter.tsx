@@ -83,9 +83,9 @@ export default function TerrysTakesFilter() {
 
   return (
     <div className="w-full relative border-t border-[#083376]">
-      <div className="max-w-[1600px] w-full h-full mx-auto grid grid-cols-[1.25fr_0.75fr] relative z-20 px-0">
-        <div className="w-full h-full flex items-center justify-center py-12">
-          <div className="max-w-4xl w-full flex flex-col items-start text-[#8D8D8D] text-[18px] tracking-[calc(18px*-0.02)]">
+      <div className="max-w-[1600px] w-full h-full mx-auto grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] relative z-20 px-4 2xl:px-0">
+        <div className="w-full h-full flex items-center justify-center py-10 md:py-12">
+          <div className="max-w-4xl w-full flex flex-col items-start text-[#8D8D8D] text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)]">
             "Terry's Takes " summarizes every case that impacts Florida injury
             law. Our Director of Appellate Practice, Terry P. Roberts, puts his
             two decades of experience into summarizing opinions from the Supreme
@@ -102,18 +102,18 @@ export default function TerrysTakesFilter() {
             Send any feedback to Terry directly at Terry@YourChampions.com.
           </div>
         </div>
-        <div className="flex" />
+        <div className="hidden md:flex" />
       </div>
 
-      <div className="w-full grid-cols-[1.25fr_0.75fr] absolute inset-0 grid z-50">
-        <div />
+      <div className="w-full h-60 md:h-full grid-cols-1 md:grid-cols-[1.25fr_0.75fr] relative md:absolute inset-0 grid z-50 border-t border-[#083376] md:border-t-0">
+        <div className="hidden md:block" />
         <FormProvider
           {...rest}
           control={control}
           setValue={setValue}
           watch={watch}
         >
-          <form className="w-full h-full flex flex-col border-l border-[#083376]">
+          <form className="w-full h-full flex flex-col border-l-0 md:border-l border-[#083376]">
             <Controller
               name="title"
               control={control}

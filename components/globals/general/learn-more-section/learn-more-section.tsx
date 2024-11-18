@@ -65,13 +65,13 @@ export default function LearnMoreSection({
           spaceBetween={0}
           slidesPerView={1}
           breakpoints={{
-            520: {
+            900: {
               slidesPerView: 3,
             },
           }}
           centeredSlides
           loop
-          className="!max-w-full !w-full"
+          className="!max-w-full !w-full !px-4 md:!px-0"
           onResize={(swiper) => swiper.update()}
           centerInsufficientSlides
           onInit={handleSwiperInit}
@@ -81,7 +81,9 @@ export default function LearnMoreSection({
               <div
                 className={classNames(
                   styles.slide,
-                  activeSlide !== index && styles.inactiveSlide
+                  activeSlide === index
+                    ? styles.activeSlide
+                    : styles.inactiveSlide
                 )}
               >
                 <div className={styles.imageContainer}>

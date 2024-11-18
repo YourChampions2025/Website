@@ -11,7 +11,7 @@ export default function LoadMoreDynamicData({
 }: LoadMoreDynamicDataProps) {
   return (
     <button
-      className="w-full h-fit py-12 border-b border-[#083376] text-[#2DE046] text-[36px] tracking-[calc(36px*-0.04)] uppercase text-pretty underline"
+      className="w-full h-fit py-[clamp(24px,5.33vw,48px)] border-b border-[#083376] text-[#2DE046] text-[clamp(14px,4vw,36px)] tracking-[calc(clamp(14px,4vw,36px)*-0.04)] uppercase text-pretty underline"
       {...props}
     >
       {children}

@@ -15,6 +15,8 @@ export default function SideContentHeader({
       <video
         src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidForAttorneys.mp4"
         autoPlay
+        muted
+        controls
         loop
       />
       <h6 className={styles.title}>{title}</h6>

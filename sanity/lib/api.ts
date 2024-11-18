@@ -11,6 +11,7 @@ import {
   getFilteredResultsQuery,
   getLatestBlogsQuery,
   getLatestTestimonialsQuery,
+  getLocationsBySlugQuery,
   getPersonalInjuryVideosQuery,
   getPodcastsQuery,
   getPracticeAreaBySlugQuery,
@@ -97,6 +98,18 @@ export const getTerrysTakesBySlug = async (slug: string) => {
   if (!slug) return null;
 
   const data = await client.fetch(getTerrysTakesBySlugQuery, {
+    slug,
+  });
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getLocationsBySlug = async (slug: string) => {
+  if (!slug) return null;
+
+  const data = await client.fetch(getLocationsBySlugQuery, {
     slug,
   });
 

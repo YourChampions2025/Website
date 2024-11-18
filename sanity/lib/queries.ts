@@ -172,7 +172,23 @@ export const getTerrysTakesBySlugQuery = groq`
       }
     }
   }
-  
+`;
+
+export const getLocationsBySlugQuery = groq`
+ {
+    "locationItem": *[_type == "locations" && slug.current == $slug][0] {
+      location,
+      title,
+      description,
+      "slug": slug.current,
+      otherAreas[]->{
+        title,
+        "slug": slug.current
+      },
+      excerpt,
+      content
+    }
+  }
 `;
 
 export const getAllTestimonialsQuery = groq`

@@ -123,3 +123,12 @@ export interface PracticeAreaProps {
   content: TypedObject | TypedObject[];
   secondaryContent?: TypedObject | TypedObject[];
 }
+
+export interface LocationProps {
+  location: string;
+  title: string;
+  description: string;
+  otherAreas: any[];
+  excerpt: TypedObject | TypedObject[];
+  content: TypedObject | TypedObject[];
+}

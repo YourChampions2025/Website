@@ -15,21 +15,21 @@ export default function ResultsListing({
   return (
     <div className="w-full flex flex-col border-t border-[#083376]">
       <div className="w-full flex flex-col">
-        <div className="w-full mx-auto grid sd:grid-cols-1 md:grid-cols-3">
+        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3">
           {results.map((result, index) => (
             <div
               key={index}
-              className="w-full h-full px-12 py-16 flex flex-col items-center [&:nth-child(3n+2)]:border-l [&:nth-child(3n+2)]:border-r border-b border-[#083376]"
+              className="w-full h-full px-[clamp(16px,5.33vw,48px)] py-[clamp(32px,7.11vw,64px)] flex flex-col items-center [&:nth-child(3n+2)]:border-l-0 md:[&:nth-child(3n+2)]:border-l [&:nth-child(3n+2)]:border-r-0 md:[&:nth-child(3n+2)]:border-r border-b border-[#083376]"
             >
-              <h6 className="font-serif text-[60px] text-center">
+              <h6 className="font-serif text-[clamp(32px,6.66vw,60px)] text-center text-pretty">
                 {result.title}
               </h6>
               {result.subtitle && (
-                <p className="uppercase text-[22px] tracking-[calc(22px*-0.02)] text-[#CECECE] text-center mt-6 mb-8">
+                <p className="uppercase text-[clamp(16px,2.44vw,22px)] tracking-[calc(clamp(16px,2.44vw,22px)*-0.02)] text-[#CECECE] text-pretty text-center mt-6 mb-8">
                   {result.subtitle}
                 </p>
               )}
-              <span className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline">
+              <span className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline">
                 <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
                 read more
               </span>

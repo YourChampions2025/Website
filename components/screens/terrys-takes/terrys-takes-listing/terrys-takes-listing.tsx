@@ -20,9 +20,9 @@ export default function TerrysTakesListing({
           {cases.map((caseItem, index) => (
             <div
               key={index}
-              className="w-full h-full px-12 py-16 flex flex-col items-start gap-6 [&:nth-child(3n+2)]:border-l [&:nth-child(3n+2)]:border-r border-b border-[#083376]"
+              className="w-full h-full px-[clamp(16px,5.33vw,48px)] py-[clamp(32px,7.11vw,64px)] flex flex-col items-start gap-6 [&:nth-child(3n+2)]:border-l-0 md:[&:nth-child(3n+2)]:border-l [&:nth-child(3n+2)]:border-r-0 md:[&:nth-child(3n+2)]:border-r border-b border-[#083376]"
             >
-              <p className="text-[#2DE046] text-[16px] tracking-[calc(16px*-0.02)] uppercase">
+              <p className="text-[#2DE046] text-[clamp(12px,1.77vw,16px)] tracking-[calc(clamp(12px,1.77vw,16px)*-0.02)] uppercase">
                 {new Date(caseItem.date).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
@@ -30,23 +30,23 @@ export default function TerrysTakesListing({
                 })}
               </p>
 
-              <span className="text-[#8D8D8D] text-[16px] tracking-[calc(16px*-0.02)] uppercase">
+              <span className="text-[#8D8D8D] text-[clamp(12px,1.77vw,16px)] tracking-[calc(clamp(12px,1.77vw,16px)*-0.02)] uppercase">
                 {caseItem.court?.replaceAll("-", " ") || "no court"},{" "}
                 {caseItem.categories?.join(", ").replaceAll("-", " ") ||
                   "no categories"}
               </span>
 
-              <h6 className="text-[26px] tracking-[calc(26px*-0.02)] font-medium text-left">
+              <h6 className="text-[clamp(20px,2.88vw,26px)] tracking-[calc(clamp(20px,2.88vw,26px)*-0.02)] font-medium text-left">
                 {caseItem.title}
               </h6>
 
-              <p className="text-[18px] tracking-[calc(18px*-0.02)] text-[#8D8D8D] text-left line-clamp-4">
+              <p className="text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)] text-[#8D8D8D] text-left line-clamp-4">
                 {caseItem.description}
               </p>
 
               <Link
                 href={`/terrys-takes/jurisdictions/${caseItem?.court || "general"}/${caseItem.slug}`}
-                className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline"
+                className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline"
               >
                 <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
                 read more
