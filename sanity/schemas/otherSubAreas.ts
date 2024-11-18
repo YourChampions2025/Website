@@ -64,6 +64,10 @@ export default defineType({
       of: [
         defineArrayMember({ type: "block" }),
         defineArrayMember({
+          type: "image",
+          options: { hotspot: true }
+        }),
+        defineArrayMember({
           type: "object",
           name: "callToAction",
           title: "Call to Action",
@@ -88,6 +92,10 @@ export default defineType({
       type: "array",
       of: [
         defineArrayMember({ type: "block" }),
+        defineArrayMember({
+          type: "image",
+          options: { hotspot: true }
+        }),
         defineArrayMember({
           type: "object",
           name: "callToAction",
