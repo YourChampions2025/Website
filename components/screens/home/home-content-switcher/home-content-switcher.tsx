@@ -1,11 +1,8 @@
 "use client";
-import Image from "next/image";
 import React, { useRef, useState } from "react";
-import imageSwitcher from "@/public/images/home-content-switcher.jpeg";
 import styles from "./home-content-switcher.module.css";
 import { BiVolumeMute } from "react-icons/bi";
 import { TbReload } from "react-icons/tb";
-import { useRouter } from "next/router";
 import { AiOutlineSound } from "react-icons/ai";
 
 function ContentSwitcher() {
