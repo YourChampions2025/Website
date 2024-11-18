@@ -1,10 +1,10 @@
 .container {
   width: 100%;
   height: fit-content;
-  padding: 48px 0;
+  padding: clamp(24px, 5.33vw, 48px) 0;
   border-bottom: 1px solid #083376;
-  font-size: 36px;
-  letter-spacing: calc(36px * -0.04);
+  font-size: clamp(14px, 4vw, 36px);
+  letter-spacing: calc(clamp(14px, 4vw, 36px) * -0.04);
   text-transform: uppercase;
   text-wrap: pretty;
 }
@@ -26,4 +26,11 @@
 .backLink {
   color: #8d8d8d;
   text-decoration: underline;
+}
+
+@media (max-width: 1500px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }

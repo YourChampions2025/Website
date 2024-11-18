@@ -23,7 +23,7 @@
 
 .title {
   font-size: clamp(38px, 8.38vw, 52px);
-  font-family: serif;
+  font-family: var(--font-instrument-serif);
 }
 
 .articleText {
@@ -33,15 +33,15 @@
 
 .categories {
   font-size: clamp(14px, 2.45vw, 18px);
-  color: #7A868E;
+  color: #7a868e;
   text-transform: uppercase;
 }
 
 .categories span {
-  color: #7A868E;
+  color: #7a868e;
 }
 
 .categories a {
-  color: #7A868E;
+  color: #7a868e;
   text-decoration: underline;
 }

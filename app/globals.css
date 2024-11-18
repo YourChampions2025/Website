@@ -77,7 +77,7 @@ body::-webkit-scrollbar {
 }
 
 #portable-text-wrapper h5 {
-  font-size: clamp(14px, 1.66vw, 18px);
+  font-size: clamp(16px, 1.66vw, 18px);
   padding: 20px 0 12px;
 }
 
@@ -91,7 +91,7 @@ body::-webkit-scrollbar {
 }
 
 #portable-text-wrapper p {
-  font-size: clamp(14px, 1.66vw, 18px);
+  font-size: clamp(16px, 1.66vw, 18px);
   padding: clamp(4px, 0.74vw, 8px) 0 clamp(8px, 1.11vw, 12px);
   color: #cecece;
   opacity: 0.8;
