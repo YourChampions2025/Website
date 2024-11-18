@@ -14,7 +14,6 @@ export default function SideContentHeader({
     <div className={styles.container}>
       <video
         src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidForAttorneys.mp4"
-        className={styles.imageContainer}
         autoPlay
         loop
       />
