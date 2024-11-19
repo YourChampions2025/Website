@@ -93,7 +93,7 @@ export default function HomeHero() {
                 <MdKeyboardDoubleArrowRight
                   key={index}
                   size={20}
-                  color="#1055C1"
+                  color="#2de046"
                   className="flex-shrink-0"
                 />
               ))}

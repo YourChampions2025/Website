@@ -118,9 +118,8 @@
   letter-spacing: calc(16px * -0.02);
   text-transform: uppercase;
 
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: #1a1b21;
+  border: 1px solid #2de046;
+  background: rgba(45, 224, 70, 0.1);
 
   cursor: pointer;
 }
@@ -163,6 +162,12 @@
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: #1a1b21;
+}
+
+.buttonCustom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 @media (max-width: 720px) {

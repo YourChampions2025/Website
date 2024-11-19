@@ -232,16 +232,16 @@ export const practiceAreaLinks = [
     videoUrl: "https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/burn.mp4",
   },
   {
-    label: "Truck Accidents",
-    href: "truck-accidents",
+    label: "Drowning",
+    href: "drowning",
     description:
-      "Truck accidents are complex and often involve multiple parties, including the truck driver, the trucking company, and other motorists. Proving liability requires a deep understanding of trucking regulations, driver safety practices, and maintenance records. We know how to gather evidence, interview witnesses, and work with experts to build a strong case on your behalf.",
+      "Drowning accidents are devastating events that can leave families in shock and despair. Whether it happens at a public place, a private residence, or in open water, the consequences can be life-altering. Drowning cases are complex and often involve multiple parties, including property owners, operators, lifeguards, and even product manufacturers. Proving liability requires a deep understanding of personal injury law, as well as specific knowledge of water safety regulations, aquatic facility standards, and, in some cases, maritime law. We know how to gather evidence, interview witnesses, and work with experts to build a strong case on your behalf.",
     videoUrl:
       "https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/Drowning.mp4",
   },
   {
-    label: "Prison Injuries",
-    href: "prison-injuries",
+    label: "Traumatic Brain Injuries",
+    href: "traumatic-brain",
     description:
       "Traumatic brain injuries (TBIs) occur when a sudden impact or jolt to the head causes damage to the brain. These injuries can range from mild concussions to severe brain trauma, leading to long-term cognitive, emotional, and physical impairments. Victims may experience memory loss, difficulty concentrating, mood changes, and even permanent disabilities. If a TBI results from someone else’s negligence, it’s essential to seek legal representation to secure compensation to cover medical expenses, rehabilitation, and lost wages, ensuring you receive the support needed for recovery.",
     videoUrl:

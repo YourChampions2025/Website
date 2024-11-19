@@ -10,12 +10,7 @@ function HomeStrategies() {
         <div className={styles.homeStrategiesWrapper}>
           <Image alt="" src={strategies} className={styles.imageStrategies} />{" "}
           <div className={styles.textStrategies}>
-            <h2>
-              Our aggressive personal injury litigation strategies deliver
-            </h2>
-            <h2>
-              results on the large complex cases other lawyers can't pursue.{" "}
-            </h2>
+            <h2>We deliver what other attorneys can't.</h2>
           </div>
         </div>
       </div>

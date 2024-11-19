@@ -40,11 +40,11 @@ export default function MainContentPodcasts({
       <div className={styles.podcastWrapper}>
         <p className={styles.introText}>
           Fischer Redavid PLLC attorneys John Fischer and Jordan Redavid team up
-          for a weekly deep dive into personal injury and wrongful death law,
-          and all the issues that come with it. In a fun, conversational way
-          that’s easy to understand, our lawyers discuss recent verdicts,
-          obstacles that can arise during a personal injury trial, the value of
-          teamwork, and ethical issues facing today’s legal professionals.
+          for a deep dive into personal injury and wrongful death law, and all
+          the issues that come with it. In a fun, conversational way that’s easy
+          to understand, our lawyers discuss recent verdicts, obstacles that can
+          arise during a personal injury trial, the value of teamwork, and
+          ethical issues facing today’s legal professionals.
           <br />
           <br />
           With the vital help of Fischer Redavid PLLC’s friendly and
