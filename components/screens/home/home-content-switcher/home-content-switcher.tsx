@@ -4,6 +4,7 @@ import styles from "./home-content-switcher.module.css";
 import { BiVolumeMute } from "react-icons/bi";
 import { TbReload } from "react-icons/tb";
 import { AiOutlineSound } from "react-icons/ai";
+import Link from "next/link";
 
 function ContentSwitcher() {
   const [selectedContent, setSelectedContent] = useState<
@@ -12,12 +13,6 @@ function ContentSwitcher() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
-  const handleScrollToContactUs = () => {
-    const contactUsSection = document.getElementById("contact-us");
-    if (contactUsSection) {
-      contactUsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   function toggleMute() {
     if (videoRef.current) {
@@ -95,12 +90,11 @@ function ContentSwitcher() {
                   technology and employ creative trial strategies to stay ahead
                   of the curve and maximize your results.
                 </h6>
-                <button
-                  className={styles.homeAboutButton}
-                  onClick={handleScrollToContactUs}
-                >
-                  Get in touch now{" "}
-                </button>{" "}
+                <Link href="#contact-us">
+                  <button className={styles.homeAboutButton}>
+                    Get in touch now{" "}
+                  </button>
+                </Link>
               </div>
             </div>
           ) : (
@@ -142,12 +136,11 @@ function ContentSwitcher() {
                   or to take over entirely. Why? Because we deliver what many
                   others can't. We’re impossible to beat.
                 </h6>
-                <button
-                  className={styles.homeAboutButton}
-                  onClick={handleScrollToContactUs}
-                >
-                  Get in touch now{" "}
-                </button>{" "}
+                <Link href="#contact-us">
+                  <button className={styles.homeAboutButton}>
+                    Get in touch now
+                  </button>
+                </Link>
               </div>
             </div>
           )}

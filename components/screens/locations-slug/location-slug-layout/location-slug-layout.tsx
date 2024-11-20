@@ -39,8 +39,8 @@ export default function LocationSlugLayout({
     <main className="pt-[162px]">
       <PageHeader title={isLocation ? title : cleanTitle(title)} />
       {excerpt && (
-        <div className="w-full py-24 px-4 border-t border-[#083376]">
-          <div className="w-full max-w-[1503px] mx-auto grid grid-cols-2 items-center gap-24">
+        <div className="w-full py-12 md:py-24 px-4 border-t border-[#083376]">
+          <div className="w-full max-w-[1503px] mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-24">
             <div className="w-full flex flex-col">
               <PortableTextComponent content={excerpt} />
 
@@ -49,9 +49,9 @@ export default function LocationSlugLayout({
               </Link>
             </div>
 
-            <div className="w-full h-fit aspect-square">
+            <div className="w-full h-fit aspect-square  ">
               <Image
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover "
                 src={LocationExcerptImage}
                 alt="John Fischer and Jordan Redavid Picture"
               />

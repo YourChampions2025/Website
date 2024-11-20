@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./home-book.module.css";
 import bookImage from "@/public/images/home-book.png";
 import bookDetails from "@/public/images/home-book-details.png";
+import Link from "next/link";
 
 function HomeBook() {
   return (
@@ -24,7 +25,9 @@ function HomeBook() {
             treated drowning lawsuits, and the most common defenses that he has
             seen raised by at-fault parties. 
           </p>
-          <button className={styles.homeBookButton}>learn more </button>
+          <Link href="#contact-us">
+            <button className={styles.homeBookButton}>learn more </button>
+          </Link>
         </div>
 
         <div>

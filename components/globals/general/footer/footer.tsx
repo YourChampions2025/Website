@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./footer.module.css";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaGoogle, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 import footerDetails from "@/public/images/footer.svg";
 
@@ -27,7 +28,7 @@ const footerLink = [
     label: "practice areas",
   },
   {
-    href: "/resources",
+    href: "/articles",
     label: "resources",
   },
   {
@@ -42,27 +43,27 @@ const footerLink = [
 
 const socialLinks = [
   {
-    href: "/",
+    href: "https://www.facebook.com/FischerRedavid/",
     label: "Facebook",
     icon: <IoLogoFacebook size={24} color="#1055C1" />,
   },
   {
-    href: "/",
+    href: "https://www.instagram.com/your_champions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     label: "Instagram",
     icon: <AiFillInstagram size={24} color="#1055C1" />,
   },
   {
-    href: "/",
+    href: "https://www.linkedin.com/company/yourchampions/about/",
     label: "LinkedIn",
     icon: <FaLinkedin size={24} color="#1055C1" />,
   },
   {
-    href: "/",
-    label: "TikTok",
-    icon: <AiFillTikTok size={24} color="#1055C1" />,
+    href: "https://x.com/OnJusticePod",
+    label: "X",
+    icon: <FaXTwitter size={24} color="#1055C1" />,
   },
   {
-    href: "/",
+    href: "https://www.youtube.com/@onjusticepodcast",
     label: "YouTube",
     icon: <AiFillYoutube size={24} color="#1055C1" />,
   },
@@ -105,11 +106,11 @@ function Footer() {
           <div className={styles.footerContact}>
             <div className={styles.footerGetStarted}>
               <h2>LET’S GET STARTED</h2>
-              <a href="tel:8886940708">
+              <Link href="tel:8886940708">
                 <CustomButton color="blue" size="medium">
                   (888) 694-0708
                 </CustomButton>
-              </a>
+              </Link>
             </div>
             <div className={styles.footerSocialLinksContainer}>
               <div className={styles.footerSocialLinksColumns}>
