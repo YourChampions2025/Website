@@ -67,15 +67,6 @@ export default defineType({
       title: "URL from YouTube",
       description: "Ex: https://youtu.be/xrfOP890cuo?si=s7hTqbsOMonGOCn5",
       type: "string",
-      hidden: ({ parent }) => parent?.category !== "Podcast",
-      validation: (Rule) =>
-        Rule.custom((value, context) => {
-          const category = (context.parent as any)?.category;
-          if (category === "Podcast" && !value) {
-            return "URL is required";
-          }
-          return true;
-        }),
     }),
     // Conditional field for "Personal Injury" and "About Fischer Redavid"
     defineField({
