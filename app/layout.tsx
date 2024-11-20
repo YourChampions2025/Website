@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import "./globals.css";
 import "swiper/css";
 import "swiper/css/bundle";
@@ -19,8 +19,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Fischer & Redavid Trial Lawyers",
-  description: "Fischer & Redavid Trial Lawyers",
+  title: "Personal Injury Law Firm | Fischer Redavid PLLC ",
+  description:
+    "Fischer Redavid PLLC is a renowned personal injury law firm, offering a client-first approach & serving clients throughout Florida, Georgia & the U.S. Virgin Islands. Call now!",
 };
 
 export default async function RootLayout({

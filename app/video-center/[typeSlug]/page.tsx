@@ -6,9 +6,43 @@ import {
   getPersonalInjuryVideos,
   getPodcasts,
 } from "@/sanity/lib/api";
-import type { VideoCenterProps } from "@/types/types";
-import { videoCenterTitle } from "@/utils/constants";
+import { VideoCenterProps } from "@/types/types";
+import {
+  videoCenterDescriptionSEO,
+  videoCenterTitle,
+  videoCenterTitleSEO,
+} from "@/utils/constants";
+import { Metadata } from "next";
 import React from "react";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{
+    typeSlug: string;
+  }>;
+}): Promise<Metadata> {
+  try {
+    const { typeSlug } = await params;
+
+    const title =
+      videoCenterTitleSEO[typeSlug as keyof typeof videoCenterTitleSEO];
+    const description =
+      videoCenterDescriptionSEO[
+        typeSlug as keyof typeof videoCenterDescriptionSEO
+      ];
+
+    return {
+      title,
+      description,
+    };
+  } catch (error) {
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist",
+    };
+  }
+}
 
 export default async function VideoCenterPageListingByType({
   params,

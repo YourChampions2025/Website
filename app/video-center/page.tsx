@@ -8,11 +8,12 @@ import PageHeader from "@/components/globals/layout/page-header/page-header";
 import ContactUs from "@/components/globals/general/contact-us/contact-us";
 import type { VideoCenterProps } from "@/types/types";
 import VideoCenterSection from "@/components/screens/video-center/video-center-section/video-center-section";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Video Center | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: "Our Video Center | Fischer Redavid PLLC",
+  description:
+    "Learn more about Fischer Redavid PLLC and our wide variety of legal services! Browse videos on our website today.",
 };
 
 export default async function VideoCenterPage() {

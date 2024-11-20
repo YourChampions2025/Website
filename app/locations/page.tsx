@@ -5,11 +5,12 @@ import LocationsHero from "@/components/screens/locations/locations-hero/locatio
 import { getLocations } from "@/sanity/lib/api";
 import { LocationProps } from "@/types/types";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Locations | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: "Locations | Fischer Redavid PLLC",
+  description:
+    "Fischer Redavid PLLC proudly serves clients throughout Georgia, Florida, and the U.S. Virgin Islands. Our offices are conveniently located and our team is ready to assist you. Contact us today.",
 };
 
 export default async function LocationsPage() {

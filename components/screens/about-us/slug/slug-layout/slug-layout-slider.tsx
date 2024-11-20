@@ -1,7 +1,6 @@
 "use client";
-import PageGridLayout from "@/components/globals/layout/page-grid-layout/page-grid-layout";
 import Image from "next/image";
-import React, { Fragment } from "react";
+import React from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,7 +19,12 @@ export default function SlugLayoutSlider({ awards }: SlugLayoutSliderProps) {
         }}
         speed={5000}
         modules={[Autoplay]}
-        spaceBetween={72}
+        spaceBetween={32}
+        breakpoints={{
+          640: {
+            spaceBetween: 64,
+          },
+        }}
         className="logo-slider !max-w-full !w-full !z-50"
         loop
       >
@@ -29,7 +33,7 @@ export default function SlugLayoutSlider({ awards }: SlugLayoutSliderProps) {
             <Image
               width={400}
               height={400}
-              className="w-fit object-contain h-28"
+              className="w-fit object-contain h-[clamp(40px,14vw,112px)]"
               src={award.awardsImageUrl}
               alt="Trophies Law Logo"
             />

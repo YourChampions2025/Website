@@ -6,7 +6,31 @@ import MainContentBlogSlug from "@/components/screens/blog/[slug]/main-content-b
 import SideContentBlogSlug from "@/components/screens/blog/[slug]/side-content-blog-slug/side-content-blog-slug";
 import { getTerrysTakesBySlug } from "@/sanity/lib/api";
 import { CaseProps } from "@/types/types";
+import type { Metadata } from "next";
 import React from "react";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ courtSlug: string; terrysTakesSlug: string }>;
+}): Promise<Metadata> {
+  try {
+    const { terrysTakesSlug } = await params;
+
+    const { caseItem }: { caseItem: CaseProps } =
+      await getTerrysTakesBySlug(terrysTakesSlug);
+
+    return {
+      title: `${caseItem.title} | Fischer Redavid PLLC`,
+      description: caseItem.description,
+    };
+  } catch (error) {
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist",
+    };
+  }
+}
 
 export default async function TerrysTakesSlugPage({
   params,

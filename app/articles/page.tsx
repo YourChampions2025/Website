@@ -4,11 +4,12 @@ import BlogIndexFilter from "@/components/screens/blog/index/blog-index-filter/b
 import BlogIndexListing from "@/components/screens/blog/index/blog-index-listing/blog-index-listing";
 import { getCategoriesForBlogs, getFilteredBlogs } from "@/sanity/lib/api";
 import { BlogProps, BlogCategoryProps } from "@/types/types";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Articles | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: "Our Blog | Fischer Redavid PLLC",
+  description:
+    "Stay up to date with Fischer Redavid PLLC when you follow our blog. Learn about what legal services we provide and what advantages there are to consulting with our attorneys.",
 };
 
 export default async function BlogListingPage({

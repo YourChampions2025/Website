@@ -4,11 +4,12 @@ import ResultsFilter from "@/components/screens/results/results-filter/results-f
 import ResultsListing from "@/components/screens/results/results-listing/results-listing";
 import { getFilteredResults } from "@/sanity/lib/api";
 import { ResultProps } from "@/types/types";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Results | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: "Case Results | Fischer Redavid PLLC",
+  description:
+    "Case Results - Contact Fischer Redavid PLLC for a free consultation by clicking through to this page!",
 };
 
 export default async function ResultsPage({

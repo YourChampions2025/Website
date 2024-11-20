@@ -4,12 +4,13 @@ import TerrysTakesFilter from "@/components/screens/terrys-takes/terrys-takes-fi
 import TerrysTakesListing from "@/components/screens/terrys-takes/terrys-takes-listing/terrys-takes-listing";
 import { getFilteredCases } from "@/sanity/lib/api";
 import { CaseProps } from "@/types/types";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Terry's Takes | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: "Terry's Takes | Fischer Redavid PLLC",
+  description:
+    "Terry's Takes. Our legal team at Fischer Redavid PLLC has the legal experience to help you. Call us about your case today!",
 };
 
 export default async function TerrysTakesListingPage({

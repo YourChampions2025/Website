@@ -4,12 +4,13 @@ import AboutUsLayout from "@/components/screens/about-us/about-us-layout/about-u
 import AboutUsHero from "@/components/screens/about-us/hero-about-us/about-us-hero";
 import { getStaffProfiles } from "@/sanity/lib/api";
 import type { ProfileProps } from "@/types/types";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Our Staff | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: "Our Staff | Fischer Redavid PLLC",
+  description:
+    "Our Staff. If you need help with a legal case, call our team at Fischer Redavid PLLC.",
 };
 
 export default async function AboutUsOurStaffPage() {

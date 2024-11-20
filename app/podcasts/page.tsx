@@ -5,11 +5,15 @@ import MainContentPodcasts from "@/components/screens/podcasts/main-content-podc
 import SideContentPodcasts from "@/components/screens/podcasts/side-content-podcasts/side-content-podcasts";
 import { getPodcasts } from "@/sanity/lib/api";
 import { VideoCenterProps } from "@/types/types";
-import type { Metadata } from "next";
+import {
+  videoCenterDescriptionSEO,
+  videoCenterTitleSEO,
+} from "@/utils/constants";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Podcasts | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: videoCenterTitleSEO["podcast"],
+  description: videoCenterDescriptionSEO["podcast"],
 };
 
 export default async function PodcastsPage() {

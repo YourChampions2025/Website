@@ -5,11 +5,12 @@ import MainContentTestimonials from "@/components/screens/testimonials/main-cont
 import SideContentTestimonials from "@/components/screens/testimonials/side-content-testimonials/side-content-testimonials";
 import { getAllTestimonials } from "@/sanity/lib/api";
 import { TestimonialProps } from "@/types/types";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Testimonials | Fischer & Redavid Trial Lawyers",
-  description: "",
+  title: "Reviews | Fischer Redavid PLLC",
+  description:
+    "Reviews - Contact Fischer Redavid PLLC for a free consultation by clicking through to this page!",
 };
 
 export default async function TestimonialsPage() {

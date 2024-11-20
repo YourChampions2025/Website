@@ -7,13 +7,13 @@
 }
 
 .sizeSmall {
-  padding: 0.5rem 1.5rem;
+  padding: 8px clamp(12px, 2.5vw, 20px);
   font-size: 14px;
   letter-spacing: calc(14px * -0.02);
 }
 
 .sizeMedium {
-  padding: 1rem 3rem;
+  padding: 16px clamp(16px, 3vw, 24px);
   font-size: 16px;
   letter-spacing: calc(16px * -0.02);
 }

@@ -6,7 +6,7 @@ import Link from "next/link";
 import React from "react";
 import { IoTriangle } from "react-icons/io5";
 import AboutUsImage from "@/public/images/about-us-image.png";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us | Fischer & Redavid Trial Lawyers",

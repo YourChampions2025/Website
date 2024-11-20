@@ -5,7 +5,7 @@ import PageHeader from "@/components/globals/layout/page-header/page-header";
 import MainContentForAttorneys from "@/components/screens/for-attorneys/main-content-for-attorneys/main-content-for-attorneys";
 import SideContentForAttorneys from "@/components/screens/for-attorneys/side-content-for-attorneys/side-content-for-attorneys";
 import { getBiggestResults } from "@/sanity/lib/api";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "For Attorneys | Fischer & Redavid Trial Lawyers",

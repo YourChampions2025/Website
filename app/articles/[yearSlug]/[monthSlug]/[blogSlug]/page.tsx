@@ -6,6 +6,33 @@ import MainContentBlogSlug from "@/components/screens/blog/[slug]/main-content-b
 import SideContentBlogSlug from "@/components/screens/blog/[slug]/side-content-blog-slug/side-content-blog-slug";
 import { getArticleBySlug } from "@/sanity/lib/api";
 import { BlogProps } from "@/types/types";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{
+    blogSlug: string;
+    monthSlug: string;
+    yearSlug: string;
+  }>;
+}): Promise<Metadata> {
+  try {
+    const { blogSlug } = await params;
+
+    const { blog }: { blog: BlogProps } = await getArticleBySlug(blogSlug);
+
+    return {
+      title: `${blog.title} | Fischer Redavid PLLC`,
+      description: blog.description,
+    };
+  } catch (error) {
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist",
+    };
+  }
+}
 
 export default async function BlogSlugPage({
   params,

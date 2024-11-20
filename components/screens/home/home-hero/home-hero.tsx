@@ -7,12 +7,47 @@ import { BiVolumeMute } from "react-icons/bi";
 import { AiOutlineSound } from "react-icons/ai";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import LogoSlider from "@/components/globals/general/logo-slider/logo-slider";
-import LogoOne from "@/public/images/slider-home-one.png";
-import LogoTwo from "@/public/images/slider-home-two.png";
 import Link from "next/link";
 
-const LOGOS_ONE = [LogoOne, LogoOne, LogoOne];
-const LOGOS_TWO = [LogoTwo, LogoTwo, LogoTwo];
+import ImageBadge1 from "@/public/images/about-us-slug-badge1.png";
+import ImageBadge2 from "@/public/images/about-us-slug-badge2.png";
+import ImageBadge3 from "@/public/images/about-us-slug-badge3.png";
+import ImageBadge4 from "@/public/images/about-us-slug-badge4.png";
+import ImageBadge5 from "@/public/images/about-us-slug-badge5.png";
+import ImageBadge6 from "@/public/images/about-us-slug-badge6.png";
+import ImageBadge7 from "@/public/images/about-us-slug-badge7.png";
+
+import ImageLogo1 from "@/public/images/home-logo-carousel-1.png";
+import ImageLogo2 from "@/public/images/home-logo-carousel-2.png";
+import ImageLogo3 from "@/public/images/home-logo-carousel-3.png";
+import ImageLogo4 from "@/public/images/home-logo-carousel-4.png";
+import ImageLogo5 from "@/public/images/home-logo-carousel-5.png";
+import ImageLogo6 from "@/public/images/home-logo-carousel-6.png";
+import ImageLogo7 from "@/public/images/home-logo-carousel-7.png";
+import ImageLogo8 from "@/public/images/home-logo-carousel-8.png";
+import ImageLogo9 from "@/public/images/home-logo-carousel-9.png";
+
+const LOGOS_ONE = [
+  ImageBadge1,
+  ImageBadge2,
+  ImageBadge3,
+  ImageBadge4,
+  ImageBadge5,
+  ImageBadge6,
+  ImageBadge7,
+];
+
+const LOGOS_TWO = [
+  ImageLogo1,
+  ImageLogo2,
+  ImageLogo6,
+  ImageLogo3,
+  ImageLogo7,
+  ImageLogo4,
+  ImageLogo8,
+  ImageLogo5,
+  ImageLogo9,
+];
 
 export default function HomeHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -99,7 +134,7 @@ export default function HomeHero() {
         </div>
       </div>
 
-      <div className="w-full h-fit relative z-50 pointer-events-none">
+      <div className="w-full h-fit flex flex-col gap-8 relative z-50 pointer-events-none">
         <LogoSlider logos={LOGOS_ONE} />
         <LogoSlider logos={LOGOS_TWO} reverseDirection />
       </div>

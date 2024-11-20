@@ -19,16 +19,18 @@ interface HomeBlogProps {
 function HomeBlog({ blogPosts }: HomeBlogProps) {
   return (
     <div className="w-full py-20 flex flex-col gap-16">
-      <div className="max-w-[1503px] w-full flex items-center justify-between mx-auto">
-        <h2 className="font-serif text-[clamp(50px,_8.42vw,_84px)] tracking-[clamp(50px,_8.42vw,_84px)*-0.02] capitalize text-white">
-          resources
-        </h2>
+      <div className="w-full px-4">
+        <div className="max-w-[1503px] w-full flex items-center justify-between mx-auto">
+          <h2 className="font-serif text-[clamp(50px,_8.42vw,_84px)] tracking-[clamp(50px,_8.42vw,_84px)*-0.02] capitalize text-white">
+            resources
+          </h2>
 
-        <Link href="/testimonials">
-          <CustomButton color="blue" size="medium">
-            view all resources
-          </CustomButton>
-        </Link>
+          <Link href="/testimonials">
+            <CustomButton color="blue" size="medium">
+              view all resources
+            </CustomButton>
+          </Link>
+        </div>
       </div>
 
       <Swiper

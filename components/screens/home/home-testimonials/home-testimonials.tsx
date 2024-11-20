@@ -27,7 +27,12 @@ function HomeTestimonials({ testimonials }: HomeTestimonialsProps) {
       </div>
 
       <Swiper
-        spaceBetween={96}
+        spaceBetween={48}
+        breakpoints={{
+          640: {
+            spaceBetween: 96,
+          },
+        }}
         grabCursor
         loop
         slidesPerView="auto"

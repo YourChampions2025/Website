@@ -1,8 +1,8 @@
 "use client";
+
 import { z } from "zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 import CustomTextarea from "@/components/globals/forms/custom-textarea/custom-textarea";
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
@@ -28,6 +28,7 @@ export default function ContactUsForm() {
     resolver: zodResolver(onContactUsFormSchema),
   });
 
+  // ! Pedro: This is the function that will be called when the form is submitted.
   async function onSubmitForm(data: IContactUsForm) {
     try {
       const response = await fetch("/api/contact-us", {

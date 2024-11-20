@@ -284,3 +284,19 @@ export const videoCenterTitle = {
   "personal-injury": "Personal Injury",
   "about-fischer-redavid": "About Fischer Redavid",
 };
+
+export const videoCenterTitleSEO = {
+  podcast: "Video Category: Podcast | Fischer Redavid PLLC",
+  "personal-injury": "Video Category: Personal Injury | Fischer Redavid PLLC",
+  "about-fischer-redavid":
+    "Video Category: About Fischer Redavid | Fischer Redavid PLLC",
+};
+
+export const videoCenterDescriptionSEO = {
+  podcast:
+    "Video Category: Podcast. Check out our latest videos and related information when you visit the website of Fischer Redavid PLLC. Let us keep you informed!",
+  "personal-injury":
+    "Video Category: Personal Injury. Check out our latest videos and related information when you visit the website of Fischer Redavid PLLC. Let us keep you informed!",
+  "about-fischer-redavid":
+    "Video Category: About Fischer Redavid. Check out our latest videos and related information when you visit the website of Fischer Redavid PLLC. Let us keep you informed!",
+};

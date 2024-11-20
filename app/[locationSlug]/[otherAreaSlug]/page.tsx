@@ -1,7 +1,35 @@
 import { getOtherAreaBySlugs } from "@/sanity/lib/api";
-import { LocationProps, type OtherAreaProps } from "@/types/types";
+import { LocationProps, OtherAreaProps } from "@/types/types";
 import React from "react";
 import LocationSlugLayout from "@/components/screens/locations-slug/location-slug-layout/location-slug-layout";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locationSlug: string; otherAreaSlug: string }>;
+}): Promise<Metadata> {
+  try {
+    const { locationSlug, otherAreaSlug } = await params;
+
+    const {
+      otherAreaItem,
+    }: {
+      otherAreaItem: OtherAreaProps;
+      locationItem: Pick<LocationProps, "otherAreas" | "slug">;
+    } = await getOtherAreaBySlugs(locationSlug, otherAreaSlug);
+
+    return {
+      title: otherAreaItem.title,
+      description: otherAreaItem.description,
+    };
+  } catch (error) {
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist",
+    };
+  }
+}
 
 export default async function OtherAreaSlugPage({
   params,

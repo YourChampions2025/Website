@@ -1,8 +1,8 @@
 "use client";
+
 import { z } from "zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 import CustomTextarea from "@/components/globals/forms/custom-textarea/custom-textarea";
 import SideContentHeader from "@/components/globals/layout/side-content-header/side-content-header";
@@ -29,6 +29,7 @@ export default function SideContentCareers() {
     resolver: zodResolver(onCareersFormSchema),
   });
 
+  // ! Pedro: This is the function that will be called when the form is submitted.
   async function onSubmitForm(data: ICareersForm) {
     try {
       const response = await fetch("/api/contact-us", {
