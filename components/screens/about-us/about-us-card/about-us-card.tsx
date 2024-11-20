@@ -33,7 +33,7 @@ export default function AboutUsCard({ profile }: AboutUsCardProps) {
 
           <Link
             href={`/about-us/${profile.type === "Attorneys" ? "our-attorneys" : "our-staff"}/${profile.slug}`}
-            className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline flex-shrink-0"
+            className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline flex-shrink-0"
           >
             <IoTriangle className="shrink-0 rotate-90 text-[#2DE046]" />
             Read Bio

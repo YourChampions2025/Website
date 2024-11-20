@@ -5,6 +5,12 @@ import LocationsHero from "@/components/screens/locations/locations-hero/locatio
 import { getLocations } from "@/sanity/lib/api";
 import { LocationProps } from "@/types/types";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Locations | Fischer & Redavid Trial Lawyers",
+  description: "",
+};
 
 export default async function LocationsPage() {
   const locations: Pick<LocationProps, "location" | "title" | "slug">[] =

@@ -76,12 +76,12 @@ export default function SlugLayout({ profile }: SlugLayoutProps) {
                   className="w-full flex items-center justify-between pb-7 border-b border-b-white/10 last-of-type:border-b-0 last-of-type:pb-0"
                 >
                   <Image
-                    className="w-fit max-h-[48px] object-contain"
+                    className="w-fit max-h-[clamp(20px,6vw,48px)] object-contain"
                     src={link.image}
                     alt="as seen on"
                   />
 
-                  <span className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline flex-shrink-0">
+                  <span className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline flex-shrink-0">
                     <IoTriangle className="shrink-0 rotate-90 text-[#2DE046]" />
                     Read Article
                   </span>
@@ -92,7 +92,58 @@ export default function SlugLayout({ profile }: SlugLayoutProps) {
         }
         sideContent={<Fragment />}
       />
+      {(!!profile?.barAdmission || !!profile?.education) && (
+        <PageGridLayout
+          mainContent={
+            profile?.education ? (
+              <div className="w-full flex flex-col items-start">
+                <p className="uppercase font-medium text-[32px] tracking-[calc(32px*-0.02)]">
+                  education
+                </p>
 
+                <div className="w-full mt-24 flex flex-col items-start gap-7">
+                  {profile.education?.map((education) => (
+                    <div
+                      key={education.educationTitle}
+                      className="flex flex-col items-start gap-2"
+                    >
+                      <p className="text-[clamp(18px,1.93vw,24px)]">
+                        {education.educationTitle}
+                      </p>
+                      <p className="text-[clamp(14px,1.85vw,20px)] text-[#8d8d8d]">
+                        {education.educationDescription}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Fragment />
+            )
+          }
+          sideContent={
+            profile.barAdmission ? (
+              <div className="w-full flex flex-col items-start">
+                <p className="uppercase font-medium text-[32px] tracking-[calc(32px*-0.02)]">
+                  bar admission
+                </p>
+
+                <div className="w-full mt-24 flex flex-col items-start gap-7">
+                  {profile.barAdmission?.map((admission) => (
+                    <div key={admission.barAdmissionTitle}>
+                      <p className="text-[clamp(18px,1.93vw,24px)]">
+                        {admission.barAdmissionTitle}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Fragment />
+            )
+          }
+        />
+      )}
       <LearnMoreSection />
     </main>
   );

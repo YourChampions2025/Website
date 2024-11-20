@@ -5,9 +5,9 @@
 }
 
 .heading {
-  font-size: clamp(32px, 2.36vw, 42px);
+  font-size: clamp(32px, 4.66vw, 42px);
   text-transform: uppercase;
-  letter-spacing: calc(42px * -0.04);
+  letter-spacing: calc(clamp(32px, 4.66vw, 42px) * -0.04);
   text-wrap: pretty;
 }
 
@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
   }
+
   .image {
     max-width: 180px;
   }

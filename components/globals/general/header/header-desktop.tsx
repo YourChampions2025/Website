@@ -86,7 +86,12 @@ function HeaderDesktop() {
   return (
     <>
       <div className={style.headerFirstRow}>
-        <Image src={fischerRedavidLogo} alt="fischerLogo" />
+        <Link href="/">
+          <Image
+            src={fischerRedavidLogo}
+            alt="Fischer & Redavid Trial Lawyers Logo"
+          />
+        </Link>
 
         <div className={style.socialLinks}>
           {socialLinks.map((data, i) => (

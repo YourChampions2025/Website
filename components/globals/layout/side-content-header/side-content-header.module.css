@@ -13,10 +13,10 @@
 }
 
 .title {
-  font-size: 42px;
+  font-size: clamp(32px, 4.66vw, 42px);
   text-transform: uppercase;
   text-wrap: pretty;
-  letter-spacing: calc(42px * -0.04);
+  letter-spacing: calc(clamp(32px, 4.66vw, 42px) * -0.04);
   color: #ffffff;
   margin-top: 48px;
 }

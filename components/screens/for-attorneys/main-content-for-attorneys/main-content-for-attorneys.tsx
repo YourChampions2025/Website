@@ -1,5 +1,6 @@
 import DarkGrayBoxWithLogo from "@/components/globals/layout/dark-gray-box-with-logo/dark-gray-box-with-logo";
 import styles from "./main-content-for-attorneys.module.css";
+import Link from "next/link";
 
 export default function MainContentForAttorneys() {
   return (
@@ -66,7 +67,10 @@ export default function MainContentForAttorneys() {
         <div className={styles.contactInfo}>
           <p>
             You can get in touch with us via our online contact form or by
-            calling <b>(888) 694-0708</b>
+            calling{" "}
+            <Link href="tel:8886940708">
+              <b>(888) 694-0708</b>
+            </Link>
           </p>
         </div>
       </DarkGrayBoxWithLogo>

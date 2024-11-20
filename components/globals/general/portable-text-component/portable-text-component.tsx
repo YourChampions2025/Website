@@ -5,6 +5,8 @@ import ReactPlayer from "react-player";
 import { TypedObject } from "sanity";
 import { urlFor } from "@/utils/urlFor";
 import CallToActionBlock from "./call-to-action-block";
+import DarkGrayBoxWithLogo from "../../layout/dark-gray-box-with-logo/dark-gray-box-with-logo";
+import Link from "next/link";
 
 const components = {
   types: {
@@ -34,10 +36,18 @@ const components = {
       );
     },
 
-    callToActionBlock: () => (
-      <div className="w-[calc(100%_+_32px)] -translate-x-4">
-        <CallToActionBlock />
-      </div>
+    callToAction: () => (
+      <DarkGrayBoxWithLogo title="Refer a case today">
+        <div className="max-w-[590px] w-full ml-auto text-[clamp(18px,_4.32vw,_24px)] tracking-[calc(clamp(18px,_4.32vw,_24px)_*_-0.02)] text-right">
+          <p>
+            You can get in touch with us via our online contact form or by
+            calling{" "}
+            <Link href="tel:8886940708">
+              <b>(888) 694-0708</b>
+            </Link>
+          </p>
+        </div>
+      </DarkGrayBoxWithLogo>
     ),
   },
 };

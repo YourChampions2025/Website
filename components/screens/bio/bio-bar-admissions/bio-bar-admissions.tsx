@@ -5,7 +5,7 @@ function BioBarAdmissions() {
     <div className={styles.bioEducationContainer}>
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>Bar Admissions</h2>
-        <img alt="" src="/images/bio-details.svg" />
+        <img alt="Vector" src="/images/bio-details.svg" />
       </div>
       <h4 className={styles.description}>Florida</h4>
     </div>

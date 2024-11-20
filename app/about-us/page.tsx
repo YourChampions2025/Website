@@ -6,6 +6,12 @@ import Link from "next/link";
 import React from "react";
 import { IoTriangle } from "react-icons/io5";
 import AboutUsImage from "@/public/images/about-us-image.png";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Fischer & Redavid Trial Lawyers",
+  description: "",
+};
 
 export default function AboutUsPage() {
   return (
@@ -52,7 +58,7 @@ export default function AboutUsPage() {
 
             <Link
               href="#contact-us"
-              className="flex items-center justify-center gap-2 uppercase text-[18px] mt-6 tracking-[calc(18px*-0.02)] text-pretty underline"
+              className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] mt-6 tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline"
             >
               <IoTriangle className="shrink-0 rotate-90 text-[#2DE046]" />
               schedule a call

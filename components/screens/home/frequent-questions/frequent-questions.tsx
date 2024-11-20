@@ -89,7 +89,11 @@ function FrequentQuestions() {
             })}
           </div>
           <div className={styles.mediaContainer}>
-            <Image alt="" src={faqImage} className={styles.faqMedia} />
+            <Image
+              alt="photo of Fisher & Redavid lawyers"
+              src={faqImage}
+              className={styles.faqMedia}
+            />
           </div>
         </div>
       </div>

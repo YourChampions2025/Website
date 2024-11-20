@@ -98,7 +98,7 @@ function Footer() {
         </div>
         <span className={styles.lineSeparator} />
         <Image
-          alt=""
+          alt="Vector footer"
           src={footerDetails}
           className={styles.footerImageDetails}
         />

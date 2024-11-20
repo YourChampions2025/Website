@@ -61,10 +61,10 @@
 
 .heroSubtitle {
   color: #fff;
-  font-size: clamp(32px, 3.68vw, 42px);
+  font-size: clamp(32px, 4.66vw, 42px);
   font-weight: 400;
   line-height: 132%;
-  letter-spacing: 0.42px;
+  letter-spacing: calc(clamp(32px, 4.66vw, 42px) * 0.02);
   text-transform: capitalize;
   font-family: "Instrument Serif";
 }
@@ -124,7 +124,7 @@
   cursor: pointer;
 }
 
-.buttonResults > *:first-child {
+.buttonResults>*:first-child {
   margin-right: 8px;
 }
 

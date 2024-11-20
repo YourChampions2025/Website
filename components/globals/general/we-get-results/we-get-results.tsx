@@ -51,7 +51,10 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
             </div>
 
             <div className={styles.imageContainer}>
-              <img src="/images/we-get-results.png" alt="" />
+              <img
+                src="/images/we-get-results.png"
+                alt="photo of Fisher & Redavid lawyers"
+              />
             </div>
           </div>
 

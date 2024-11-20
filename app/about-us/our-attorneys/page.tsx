@@ -4,7 +4,13 @@ import AboutUsLayout from "@/components/screens/about-us/about-us-layout/about-u
 import AboutUsHero from "@/components/screens/about-us/hero-about-us/about-us-hero";
 import { getAttorneysProfiles } from "@/sanity/lib/api";
 import type { ProfileProps } from "@/types/types";
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Our Attorneys | Fischer & Redavid Trial Lawyers",
+  description: "",
+};
 
 export default async function AboutUsOurAttorneysPage() {
   const profiles: ProfileProps[] = await getAttorneysProfiles();

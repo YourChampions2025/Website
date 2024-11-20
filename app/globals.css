@@ -41,56 +41,56 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-#portable-text-wrapper ul,
-#portable-text-wrapper ol {
+#portable-text-wrapper > ul,
+#portable-text-wrapper > ol {
   line-height: 2.5;
 }
 
-#portable-text-wrapper h1,
-#portable-text-wrapper h2,
-#portable-text-wrapper h3,
-#portable-text-wrapper h4,
-#portable-text-wrapper h5,
-#portable-text-wrapper h6 {
+#portable-text-wrapper > h1,
+#portable-text-wrapper > h2,
+#portable-text-wrapper > h3,
+#portable-text-wrapper > h4,
+#portable-text-wrapper > h5,
+#portable-text-wrapper > h6 {
   color: white !important;
   font-weight: 600 !important;
 }
 
-#portable-text-wrapper h1 {
+#portable-text-wrapper > h1 {
   font-size: clamp(24px, 4vw, 36px);
   padding: 32px 0 20px;
 }
 
-#portable-text-wrapper h2 {
+#portable-text-wrapper > h2 {
   font-size: clamp(20px, 3.55vw, 30px);
   padding: 20px 0;
 }
 
-#portable-text-wrapper h3 {
+#portable-text-wrapper > h3 {
   font-size: clamp(18px, 2.22vw, 24px);
   padding: 20px 0 12px;
 }
 
-#portable-text-wrapper h4 {
+#portable-text-wrapper > h4 {
   font-size: clamp(16px, 1.85vw, 20px);
   padding: 20px 0 12px;
 }
 
-#portable-text-wrapper h5 {
+#portable-text-wrapper > h5 {
   font-size: clamp(16px, 1.66vw, 18px);
   padding: 20px 0 12px;
 }
 
-#portable-text-wrapper h6 {
+#portable-text-wrapper > h6 {
   font-size: clamp(12px, 1.48vw, 16px);
   padding: 20px 0 12px;
 }
 
-#portable-text-wrapper a {
+#portable-text-wrapper > a {
   text-decoration: underline;
 }
 
-#portable-text-wrapper p {
+#portable-text-wrapper > p {
   font-size: clamp(16px, 1.66vw, 18px);
   padding: clamp(4px, 0.74vw, 8px) 0 clamp(8px, 1.11vw, 12px);
   color: #cecece;
@@ -102,7 +102,7 @@ body::-webkit-scrollbar {
   font-weight: 500 !important;
 }
 
-#portable-text-wrapper img {
+#portable-text-wrapper > img {
   width: 100%;
   height: auto;
   /* Adjusted for proper aspect ratio */
@@ -110,7 +110,7 @@ body::-webkit-scrollbar {
   border: 1px solid #e2e8f0;
 }
 
-#portable-text-wrapper ul {
+#portable-text-wrapper > ul {
   margin: 16px 0;
   padding-left: 17px;
 
@@ -122,7 +122,7 @@ body::-webkit-scrollbar {
   opacity: 0.8;
 }
 
-#portable-text-wrapper ul li {
+#portable-text-wrapper > ul > li {
   list-style: initial;
   font-size: clamp(16px, 1.66vw, 18px);
 }

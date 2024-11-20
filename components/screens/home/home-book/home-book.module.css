@@ -25,10 +25,10 @@
 }
 
 .title {
-  font-size: clamp(32px, 3.68vw, 42px);
+  font-size: clamp(32px, 4.66vw, 42px);
   font-weight: 400;
   line-height: 132%;
-  letter-spacing: 0.42px;
+  letter-spacing: calc(clamp(32px, 4.66vw, 42px) * 0.02);
   text-transform: capitalize;
   font-family: "Instrument Serif";
   color: #fff;
@@ -86,14 +86,17 @@
   max-width: 400px;
   height: 467px;
 }
+
 @media (max-width: 1046px) {
   .firstContent {
     padding: 24px;
   }
+
   .bookImage {
     max-width: 200px;
     max-height: 280px;
   }
+
   .bookDetails {
     display: none;
   }
@@ -103,6 +106,7 @@
   .bookImage {
     display: none;
   }
+
   .firstContent {
     display: flex;
     flex-direction: column;
@@ -110,6 +114,7 @@
     justify-content: center;
     margin: 0 auto;
   }
+
   .homeBookContent {
     gap: 2px;
   }

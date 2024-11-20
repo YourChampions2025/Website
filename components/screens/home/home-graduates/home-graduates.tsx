@@ -22,7 +22,7 @@ function HomeGraduates() {
             </h2>
           </div>
           <Image
-            alt=""
+            alt="Vector"
             src={graduatesImage}
             className={styles.imageGraduates}
           />{" "}

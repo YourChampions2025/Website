@@ -90,12 +90,13 @@
 .link {
   display: flex;
   align-items: center;
-  text-transform: uppercase;
-  color: white;
   gap: 4px;
+
+  color: white;
   text-decoration: underline;
+  text-transform: uppercase;
   font-weight: 500;
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
 }
 
 .icon {

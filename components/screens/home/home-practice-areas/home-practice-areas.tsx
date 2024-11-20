@@ -15,16 +15,19 @@ const practiceAreasCard = [
     image: imageCatastrophic,
     label: "Catastrophic Injuries",
     href: "/practice-areas/catastrophic-injuries",
+    alt: "Catastrophic Injuries",
   },
   {
     image: imageBurn,
     label: "Burn Injuries",
     href: "/practice-areas/burn-injuries",
+    alt: "Burn Injuries",
   },
   {
     image: imageDrowning,
     label: "Drowning",
     href: "/practice-areas/drowning",
+    alt: "Drowning",
   },
 ];
 
@@ -55,7 +58,7 @@ function HomePracticeAreas() {
             {practiceAreasCard.map((data, i) => (
               <div key={i} className={styles.linksContainer}>
                 <Image
-                  alt=""
+                  alt={data.alt}
                   src={data.image}
                   className={styles.imageDetails}
                 />

@@ -5,6 +5,12 @@ import MainContentTestimonials from "@/components/screens/testimonials/main-cont
 import SideContentTestimonials from "@/components/screens/testimonials/side-content-testimonials/side-content-testimonials";
 import { getAllTestimonials } from "@/sanity/lib/api";
 import { TestimonialProps } from "@/types/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Testimonials | Fischer & Redavid Trial Lawyers",
+  description: "",
+};
 
 export default async function TestimonialsPage() {
   const testimonials: TestimonialProps[] = await getAllTestimonials();

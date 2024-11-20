@@ -40,6 +40,6 @@
   width: 100%;
   margin-left: auto;
   font-size: clamp(18px, 4.32vw, 24px);
-  letter-spacing: calc(24px * -0.02);
+  letter-spacing: calc(clamp(18px, 4.32vw, 24px) * -0.02);
   text-align: right;
 }

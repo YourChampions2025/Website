@@ -3,8 +3,14 @@ import PageGridLayout from "@/components/globals/layout/page-grid-layout/page-gr
 import MainContentCareers from "@/components/screens/careers/main-content-careers/main-content-careers";
 import SideContentCareers from "@/components/screens/careers/side-content-careers/side-content-careers";
 import LearnMoreSection from "@/components/globals/general/learn-more-section/learn-more-section";
+import type { Metadata } from "next";
 
-function Careers() {
+export const metadata: Metadata = {
+  title: "Careers | Fischer & Redavid Trial Lawyers",
+  description: "",
+};
+
+export default function CareersPage() {
   return (
     <main className="pt-[162px]">
       <PageHeader title="careers" />
@@ -16,5 +22,3 @@ function Careers() {
     </main>
   );
 }
-
-export default Careers;

@@ -8,7 +8,11 @@ function HomeStrategies() {
     <div className={styles.homeStrategiesContainer}>
       <div className={styles.homeStrategiesContent}>
         <div className={styles.homeStrategiesWrapper}>
-          <Image alt="" src={strategies} className={styles.imageStrategies} />{" "}
+          <Image
+            alt="Vector"
+            src={strategies}
+            className={styles.imageStrategies}
+          />{" "}
           <div className={styles.textStrategies}>
             <h2>We deliver what other attorneys can't.</h2>
           </div>

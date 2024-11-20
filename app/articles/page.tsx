@@ -4,6 +4,12 @@ import BlogIndexFilter from "@/components/screens/blog/index/blog-index-filter/b
 import BlogIndexListing from "@/components/screens/blog/index/blog-index-listing/blog-index-listing";
 import { getCategoriesForBlogs, getFilteredBlogs } from "@/sanity/lib/api";
 import { BlogProps, BlogCategoryProps } from "@/types/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Articles | Fischer & Redavid Trial Lawyers",
+  description: "",
+};
 
 export default async function BlogListingPage({
   searchParams,

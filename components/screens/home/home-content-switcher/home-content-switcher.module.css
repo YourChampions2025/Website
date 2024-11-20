@@ -67,15 +67,16 @@
 }
 
 .titleSwitch {
-  font-size: clamp(32px, 4.57vw, 42px);
+  font-size: clamp(32px, 4.66vw, 42px);
   font-weight: 400;
   line-height: 132%;
-  letter-spacing: 0.42px;
+  letter-spacing: calc(clamp(32px, 4.66vw, 42px) * 0.02);
   text-transform: capitalize;
   font-family: "Instrument Serif";
 
   color: #fff;
 }
+
 .titleSwitch span {
   color: #2de046;
   font-family: "Instrument Serif";
@@ -147,6 +148,7 @@
     padding: 100px 80px;
   }
 }
+
 @media (max-width: 920px) {
   .contentWrapper {
     display: flex;

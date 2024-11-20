@@ -26,7 +26,7 @@ export default function VideoCenterSection({
 
           <Link
             href={`/video-center/${videoCenterPaths[type as keyof typeof videoCenterPaths]}`}
-            className="flex items-center justify-center gap-2 uppercase text-[18px] tracking-[calc(18px*-0.02)] text-pretty underline"
+            className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline"
           >
             <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
             View more

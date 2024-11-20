@@ -4,7 +4,13 @@ import TerrysTakesFilter from "@/components/screens/terrys-takes/terrys-takes-fi
 import TerrysTakesListing from "@/components/screens/terrys-takes/terrys-takes-listing/terrys-takes-listing";
 import { getFilteredCases } from "@/sanity/lib/api";
 import { CaseProps } from "@/types/types";
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Terry's Takes | Fischer & Redavid Trial Lawyers",
+  description: "",
+};
 
 export default async function TerrysTakesListingPage({
   searchParams,
