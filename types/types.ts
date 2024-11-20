@@ -128,7 +128,26 @@ export interface LocationProps {
   location: string;
   title: string;
   description: string;
-  otherAreas: any[];
+  slug: string;
+  otherAreas: {
+    _id: string;
+    title: string;
+    slug: string;
+    otherSubAreas: {
+      _id: string;
+      title: string;
+      slug: string;
+    }[];
+  }[];
+  excerpt?: TypedObject | TypedObject[];
+  content: TypedObject | TypedObject[];
+}
+
+export interface OtherAreaProps {
+  title: string;
+  description: string;
+  slug: string;
+  imageUrl: string;
   excerpt: TypedObject | TypedObject[];
   content: TypedObject | TypedObject[];
 }

@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
 #portable-text-wrapper h5,
 #portable-text-wrapper h6 {
   color: white !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 
 #portable-text-wrapper h1 {
@@ -106,18 +106,25 @@ body::-webkit-scrollbar {
   width: 100%;
   height: auto;
   /* Adjusted for proper aspect ratio */
-  margin: 1rem 0;
+  margin: 16px 0;
   border: 1px solid #e2e8f0;
 }
 
 #portable-text-wrapper ul {
+  margin: 16px 0;
   padding-left: 17px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
   color: #cecece;
   opacity: 0.8;
 }
 
 #portable-text-wrapper ul li {
   list-style: initial;
+  font-size: clamp(16px, 1.66vw, 18px);
 }
 
 #portable-react-player > div,
@@ -125,7 +132,7 @@ body::-webkit-scrollbar {
   width: 100% !important;
   height: fit-content !important;
 
-  margin: 1rem 0;
+  margin: 16px 0;
 }
 
 #portable-react-player iframe,

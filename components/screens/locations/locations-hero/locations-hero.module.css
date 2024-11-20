@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   height: fit-content;
-  padding: 0 16px 160px;
+  padding: 0 16px 80px;
 }
 
 .innerContainer {
@@ -11,6 +11,7 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
+  gap: 64px 32px;
 }
 
 .locationCard {
@@ -59,44 +60,19 @@
   flex-shrink: 0;
   transform: rotate(90deg);
 }
-@media (max-width: 1370px) {
-  .locationCard {
-    max-width: 400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 32px;
-  }
-}
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
   .innerContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+    flex-wrap: wrap;
   }
+
   .locationCard {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: calc(50% - 16px);
   }
 }
 
-@media (max-width: 526px) {
+@media (max-width: 640px) {
   .locationCard {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .container {
-    width: 100%;
-    height: fit-content;
-    /* padding: 0 16px 160px; */
-    padding: 10px 42px;
+    max-width: none;
   }
 }

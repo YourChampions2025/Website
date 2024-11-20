@@ -174,6 +174,14 @@ export const getTerrysTakesBySlugQuery = groq`
   }
 `;
 
+export const getLocationsQuery = groq`
+ *[_type == "locations"] {
+    location,
+    title,
+    "slug": slug.current
+  }
+`;
+
 export const getLocationsBySlugQuery = groq`
  {
     "locationItem": *[_type == "locations" && slug.current == $slug][0] {
@@ -182,13 +190,86 @@ export const getLocationsBySlugQuery = groq`
       description,
       "slug": slug.current,
       otherAreas[]->{
+        _id,
         title,
-        "slug": slug.current
+        "slug": slug.current,
+        "otherSubAreas": *[
+          _type == "otherSubAreas" && parentOtherArea._ref == ^._id
+        ]{
+          _id,
+          title,
+          "slug": slug.current
+        }
       },
       excerpt,
       content
     }
   }
+`;
+
+export const getOtherAreaBySlugsQuery = groq`
+{
+  "otherAreaItem": *[_type == "otherAreas" && slug.current == $otherAreaSlug && _id in *[_type == "locations" && slug.current == $locationSlug][0].otherAreas[]._ref][0]{
+    title,
+    description,
+    "slug": slug.current,
+    "imageUrl": image.asset->url,
+    excerpt,
+    content
+  },
+  "locationItem": *[_type == "locations" && slug.current == $locationSlug][0] {
+    "slug": slug.current,
+    otherAreas[]->{
+      _id,
+      title,
+      "slug": slug.current,
+      "otherSubAreas": *[
+        _type == "otherSubAreas" && parentOtherArea._ref == ^._id
+      ]{
+        title,
+        "slug": slug.current
+      }
+    }
+  }
+}
+`;
+
+export const getOtherSubAreaBySlugsQuery = groq`
+{
+  "otherSubAreaItem": *[
+    _type == "otherSubAreas" &&
+    slug.current == $otherSubAreaSlug &&
+    parentOtherArea._ref == *[
+      _type == "otherAreas" &&
+      slug.current == $otherAreaSlug &&
+      _id in *[
+        _type == "locations" &&
+        slug.current == $locationSlug
+      ][0].otherAreas[]._ref
+    ][0]._id
+  ][0]{
+    title,
+    description,
+    "slug": slug.current,
+    "imageUrl": image.asset->url,
+    excerpt,
+    content
+  },
+  "locationItem": *[_type == "locations" && slug.current == $locationSlug][0] {
+    "slug": slug.current,
+    otherAreas[]->{
+      _id,
+      title,
+      "slug": slug.current,
+      "otherSubAreas": *[
+        _type == "otherSubAreas" && parentOtherArea._ref == ^._id
+      ]{
+        title,
+        "slug": slug.current
+      }
+    }
+  }
+}
 `;
 
 export const getAllTestimonialsQuery = groq`

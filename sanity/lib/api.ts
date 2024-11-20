@@ -12,6 +12,9 @@ import {
   getLatestBlogsQuery,
   getLatestTestimonialsQuery,
   getLocationsBySlugQuery,
+  getLocationsQuery,
+  getOtherAreaBySlugsQuery,
+  getOtherSubAreaBySlugsQuery,
   getPersonalInjuryVideosQuery,
   getPodcastsQuery,
   getPracticeAreaBySlugQuery,
@@ -223,6 +226,48 @@ export const getPracticeAreaBySlug = async (slug: string) => {
 
 export const getBiggestResults = async () => {
   const data = await client.fetch(getBiggestResultsQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getLocations = async () => {
+  const data = await client.fetch(getLocationsQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getOtherAreaBySlugs = async (
+  locationSlug: string,
+  otherAreaSlug: string
+) => {
+  if (!locationSlug || !otherAreaSlug) return null;
+
+  const data = await client.fetch(getOtherAreaBySlugsQuery, {
+    locationSlug,
+    otherAreaSlug,
+  });
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getOtherSubAreaBySlugs = async (
+  locationSlug: string,
+  otherAreaSlug: string,
+  otherSubAreaSlug: string
+) => {
+  if (!locationSlug || !otherAreaSlug || !otherSubAreaSlug) return null;
+
+  const data = await client.fetch(getOtherSubAreaBySlugsQuery, {
+    locationSlug,
+    otherAreaSlug,
+    otherSubAreaSlug,
+  });
 
   if (!data) return undefined;
 
