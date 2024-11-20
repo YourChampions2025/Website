@@ -13,15 +13,9 @@ interface VideoCenterReactPlayerProps {
 export default function VideoCenterReactPlayer({
   video,
 }: VideoCenterReactPlayerProps) {
-  const isPodcast = video.category === "Podcast";
-
   return (
     <Fragment>
-      {isPodcast ? (
-        <ReactPlayerYoutube url={video.url} controls />
-      ) : (
-        <ReactPlayerBase url={video.videoUrl} controls />
-      )}
+      <ReactPlayerYoutube url={video.url} controls />
     </Fragment>
   );
 }
