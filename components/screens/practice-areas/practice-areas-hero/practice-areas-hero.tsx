@@ -1,16 +1,16 @@
-"use client";
-import Link from "next/link";
-import React, { useState } from "react";
-import styles from "./practice-areas.module.css";
-import { RiArrowDropRightFill } from "react-icons/ri";
-import { practiceAreaLinks } from "@/utils/constants";
+'use client';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import styles from './practice-areas.module.css';
+import { RiArrowDropRightFill } from 'react-icons/ri';
+import { practiceAreaLinks } from '@/utils/constants';
 
 interface PracticeAreasHeroProps {
   defaultVideoUrl?: string;
 }
 
 export default function PracticeAreasHero({
-  defaultVideoUrl = "/videos/burn.mp4",
+  defaultVideoUrl = '/videos/burn.mp4',
 }: PracticeAreasHeroProps) {
   const [activeLabel, setActiveLabel] = useState(practiceAreaLinks[0].label);
 
@@ -51,7 +51,7 @@ export default function PracticeAreasHero({
                     onMouseEnter={() => setActiveLabel(link.label)}
                     onClick={() => setActiveLabel(link.label)}
                     className={`${styles.link} ${
-                      activeLabel === link.label ? styles.activeLink : ""
+                      activeLabel === link.label ? styles.activeLink : ''
                     }`}
                   >
                     {link.label}
@@ -71,7 +71,7 @@ export default function PracticeAreasHero({
               >
                 <RiArrowDropRightFill
                   size={38}
-                  color="#2DE046"
+                  color='#2DE046'
                   className={styles.arrowIcon}
                 />
                 learn more
