@@ -94,6 +94,7 @@ function HeaderDesktop() {
           <Image
             src={fischerRedavidLogo}
             alt='Fischer & Redavid Trial Lawyers Logo'
+            width={200}
           />
         </Link>
 
