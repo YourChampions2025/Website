@@ -31,7 +31,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
 
   const borderEffect = hasError
     ? 'border border-red-600'
-    : 'border border-[var(--champions-blue)] focus:border-[var(--champions-green)] duration-300 ease-in-out';
+    : 'border border-[var(--champions-blue)] hover:border-[var(--champions-green)] focus:border-[var(--champions-green)] duration-300 ease-in-out';
 
   const borderClassName = classNames(
     `peer block w-full appearance-none pb-3 pl-5 pt-8 text-[clamp(18px,1.85vw,20px)] text-white focus:outline-none focus:ring-0`,
