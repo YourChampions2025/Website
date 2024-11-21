@@ -35,7 +35,7 @@ const socialLinks = [
   },
   {
     href: '/',
-    icon: <FaGoogle size={24} />,
+    icon: <FaGoogle size={21} />,
   },
 ];
 
@@ -100,7 +100,12 @@ function HeaderDesktop() {
 
         <div className={style.socialLinks}>
           {socialLinks.map((data, i) => (
-            <Link key={i} href={data.href} target='_blank'>
+            <Link
+              className='hover:text-green-500 transition-all duration-300'
+              key={i}
+              href={data.href}
+              target='_blank'
+            >
               {data.icon}
             </Link>
           ))}
