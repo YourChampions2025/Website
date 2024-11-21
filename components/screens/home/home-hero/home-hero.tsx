@@ -126,9 +126,9 @@ export default function HomeHero() {
           <div className={styles.buttonsVideo}>
             <button className={styles.soundButton} onClick={toggleMute}>
               {isMuted ? (
-                <BiVolumeMute size={20} />
+                <BiVolumeMute size={24} />
               ) : (
-                <AiOutlineSound size={20} />
+                <AiOutlineSound size={24} />
               )}
             </button>
             <button className={styles.reloadButton} onClick={handleReloadVideo}>
