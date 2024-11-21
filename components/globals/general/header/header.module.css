@@ -83,7 +83,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: red;
 }
 
 .contactLinkItemIconWrapper {
@@ -105,6 +104,8 @@
 
 .contactLinkItemText {
   font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .contactLinkItemText:hover {
