@@ -1,15 +1,15 @@
-'use client';
-import React, { useRef, useState } from 'react';
-import styles from './home-content-switcher.module.css';
-import { BiVolumeMute } from 'react-icons/bi';
-import { TbReload } from 'react-icons/tb';
-import { AiOutlineSound } from 'react-icons/ai';
-import Link from 'next/link';
+"use client";
+import React, { useRef, useState } from "react";
+import styles from "./home-content-switcher.module.css";
+import { BiVolumeMute } from "react-icons/bi";
+import { TbReload } from "react-icons/tb";
+import { AiOutlineSound } from "react-icons/ai";
+import Link from "next/link";
 
 function ContentSwitcher() {
   const [selectedContent, setSelectedContent] = useState<
-    'clients' | 'attorneys'
-  >('clients');
+    "clients" | "attorneys"
+  >("clients");
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -34,28 +34,28 @@ function ContentSwitcher() {
         <div className={styles.buttonContainer}>
           <button
             className={`${styles.buttonSwitch} ${
-              selectedContent === 'clients' ? styles.active : ''
+              selectedContent === "clients" ? styles.active : ""
             }`}
-            onClick={() => setSelectedContent('clients')}
+            onClick={() => setSelectedContent("clients")}
           >
             for Clients
           </button>
           <button
             className={`${styles.buttonSwitch} ${
-              selectedContent === 'attorneys' ? styles.active : ''
+              selectedContent === "attorneys" ? styles.active : ""
             }`}
-            onClick={() => setSelectedContent('attorneys')}
+            onClick={() => setSelectedContent("attorneys")}
           >
             for Attorneys
           </button>
         </div>
         <div className={styles.contentDisplay}>
-          {selectedContent === 'clients' ? (
+          {selectedContent === "clients" ? (
             <div className={styles.contentWrapper}>
               <div>
                 <video
                   ref={videoRef}
-                  src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FisherRedavidCustomers.mp4'
+                  src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FisherRedavidCustomers.mp4"
                   className={styles.imageContainer}
                   autoPlay
                   muted
@@ -90,9 +90,9 @@ function ContentSwitcher() {
                   technology and employ creative trial strategies to stay ahead
                   of the curve and maximize your results.
                 </h6>
-                <Link href='#contact-us'>
+                <Link href="#contact-us">
                   <button className={styles.homeAboutButton}>
-                    Get in touch now{' '}
+                    Get in touch now{" "}
                   </button>
                 </Link>
               </div>
@@ -102,7 +102,7 @@ function ContentSwitcher() {
               <div>
                 <video
                   ref={videoRef}
-                  src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidForAttorneys.mp4'
+                  src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidForAttorneys.mp4"
                   className={styles.imageContainer}
                   autoPlay
                   muted
@@ -127,7 +127,7 @@ function ContentSwitcher() {
 
               <div className={styles.textsContainer}>
                 <h2 className={styles.titleSwitch}>
-                  We don’t just stand out from other personal injury{' '}
+                  We don’t just stand out from other personal injury{" "}
                   <span>firms—we set the standard.</span>
                 </h2>
                 <h6 className={styles.descriptionSwitch}>
@@ -136,7 +136,7 @@ function ContentSwitcher() {
                   or to take over entirely. Why? Because we deliver what many
                   others can't. We’re impossible to beat.
                 </h6>
-                <Link href='#contact-us'>
+                <Link href="#contact-us">
                   <button className={styles.homeAboutButton}>
                     Get in touch now
                   </button>
