@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --champions-green: #2de046;
+  --champions-blue: #093376;
+}
+
 .font-instrument-sans {
   font-family: var(--font-instrument-sans);
 }
