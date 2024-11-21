@@ -185,6 +185,12 @@
   background: #1a1b21;
 }
 
+.reloadButton:hover {
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
 .buttonCustom {
   display: flex;
   flex-direction: row;
