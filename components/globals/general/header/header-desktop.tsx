@@ -10,6 +10,8 @@ import { MdMailOutline, MdPhone } from 'react-icons/md';
 import fischerRedavidLogo from '@/public/images/fischer-redavid-trial-lawyers-logo.svg';
 import { Menu } from '@headlessui/react';
 
+import { GoTriangleDown } from 'react-icons/go';
+
 const socialLinks = [
   {
     href: '/',
@@ -68,10 +70,12 @@ const contacts = [
   {
     icon: <MdPhone size={14} color='#2de046' />,
     textContact: '(888) 694-0708',
+    href: 'tel:8886940708',
   },
   {
     icon: <MdMailOutline size={14} color='#2de046' />,
     textContact: 'contact@frtriallawyers.com',
+    href: 'mailto:contact@frtriallawyers.com',
   },
 ];
 
@@ -115,7 +119,7 @@ function HeaderDesktop() {
                 className='relative inline-block leading-3'
               >
                 <Menu.Button className={style.menuButton}>
-                  {data.label}
+                  {data.label} <GoTriangleDown />
                 </Menu.Button>
                 <Menu.Items className={style.menuItems}>
                   <Menu.Item>
@@ -172,14 +176,14 @@ function HeaderDesktop() {
 
         <div className={style.contactLinks}>
           {contacts.map((contact, i) => (
-            <div key={i} className={style.contactLinkItem}>
+            <Link href={contact.href} key={i} className={style.contactLinkItem}>
               <div className={style.contactLinkItemIconWrapper}>
                 {contact.icon}
               </div>
               <h2 className={style.contactLinkItemText}>
                 {contact.textContact}
               </h2>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

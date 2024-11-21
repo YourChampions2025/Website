@@ -83,6 +83,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: red;
 }
 
 .contactLinkItemIconWrapper {
@@ -97,8 +98,18 @@
   border-radius: 50%;
 }
 
+.contactLinkItem:hover .contactLinkItemIconWrapper {
+  background: rgba(45, 224, 69, 0.25);
+  transition: 1s ease-in-out all;
+}
+
 .contactLinkItemText {
   font-size: 16px;
+}
+
+.contactLinkItemText:hover {
+  color: #2de046;
+  transition: 1s ease-in-out all;
 }
 
 .link,
@@ -112,6 +123,13 @@
   line-height: 132%; /* 21.12px */
   letter-spacing: 2.08px;
   text-transform: uppercase;
+  display: inline-flex;
+}
+
+.menuButton svg {
+  margin-left: 5px;
+  transform: translateY(2px);
+  margin-right: -5px;
 }
 
 .link:hover,
