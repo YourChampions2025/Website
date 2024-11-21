@@ -42,7 +42,7 @@
 .socialLinks a {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
-  font-family: "Instrument Sans";
+  font-family: 'Instrument Sans';
   font-size: clamp(12px, 1.44vw, 16px);
   font-style: normal;
   font-weight: 400;
@@ -104,8 +104,9 @@
 .link {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
-  font-family: "Instrument Sans";
+  font-family: 'Instrument Sans';
   font-size: clamp(12px, 1.44vw, 16px);
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 132%; /* 21.12px */
@@ -116,7 +117,7 @@
 .menuButton {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
-  font-family: "Instrument Sans";
+  font-family: 'Instrument Sans';
   font-size: clamp(12px, 1.44vw, 16px);
   font-style: normal;
   font-weight: 400;
@@ -204,7 +205,7 @@
   display: block;
   padding: 0.5rem 1rem;
   color: rgba(255, 255, 255, 0.9);
-  font-family: "Instrument Sans";
+  font-family: 'Instrument Sans';
   font-size: clamp(12px, 1.44vw, 16px);
   font-weight: 400;
   line-height: 132%;
@@ -227,7 +228,7 @@
   justify-content: space-between;
 
   color: rgba(255, 255, 255, 0.9);
-  font-family: "Instrument Sans";
+  font-family: 'Instrument Sans';
   font-size: 16px;
   font-weight: 400;
   line-height: 132%;
