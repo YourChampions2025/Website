@@ -23,7 +23,7 @@
   line-height: 132%;
   letter-spacing: -1.12px;
   text-transform: capitalize;
-  font-family: "Instrument Sans";
+  font-family: 'Instrument Sans';
 
   color: #fff;
   cursor: pointer;
@@ -72,14 +72,14 @@
   line-height: 132%;
   letter-spacing: calc(clamp(32px, 4.66vw, 42px) * 0.02);
   text-transform: capitalize;
-  font-family: "Instrument Serif";
+  font-family: 'Instrument Serif';
 
   color: #fff;
 }
 
 .titleSwitch span {
   color: #2de046;
-  font-family: "Instrument Serif";
+  font-family: 'Instrument Serif';
 }
 
 .descriptionSwitch {
@@ -99,12 +99,17 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 132%;
-  letter-spacing: -0.28px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   /* font-family: "Instrument Sans"; */
 
   border: 1px solid #1055c1;
   background: rgba(16, 85, 193, 0.2);
+}
+
+.homeAboutButton:hover {
+  background: rgba(16, 85, 193, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 .buttonsVideo {
