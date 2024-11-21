@@ -4,26 +4,25 @@
   text-transform: uppercase;
   color: white;
   font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .sizeSmall {
   padding: 8px clamp(12px, 2.5vw, 20px);
   font-size: 14px;
-  letter-spacing: calc(14px * -0.02);
 }
 
 .sizeMedium {
   padding: 16px clamp(16px, 3vw, 24px);
   font-size: 16px;
-  letter-spacing: calc(16px * -0.02);
 }
 
 .green {
-  border: 1px solid #2DE046;
-  background: rgba(45, 224, 70, 0.10);
+  border: 1px solid #2de046;
+  background: rgba(45, 224, 70, 0.1);
 }
 
 .blue {
-  border: 1px solid #1055C1;
-  background: rgba(16, 85, 193, 0.20);
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.2);
 }
