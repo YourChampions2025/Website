@@ -46,7 +46,7 @@
 
 .heroTitle {
   color: #fff;
-  font-family: "Instrument Serif";
+  font-family: 'Instrument Serif';
   font-size: clamp(60px, 10.16vw, 122px);
   font-weight: 400;
   line-height: 132%;
@@ -56,7 +56,7 @@
 
 .heroTitle span {
   color: #2de046;
-  font-family: "Instrument Serif";
+  font-family: 'Instrument Serif';
 }
 
 .heroSubtitle {
@@ -66,7 +66,7 @@
   line-height: 132%;
   letter-spacing: calc(clamp(32px, 4.66vw, 42px) * 0.02);
   text-transform: capitalize;
-  font-family: "Instrument Serif";
+  font-family: 'Instrument Serif';
 }
 
 .subtitleContainer {
@@ -92,7 +92,7 @@
   font-weight: 400;
   line-height: 132%;
   letter-spacing: -0.44px;
-  font-family: "Instrument Sans";
+  font-family: 'Instrument Sans';
 
   color: #fff;
 }
@@ -113,9 +113,9 @@
   align-items: center;
   justify-content: center;
 
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   font-size: 16px;
-  letter-spacing: calc(16px * -0.02);
+  letter-spacing: 1px;
   text-transform: uppercase;
 
   border: 1px solid #2de046;
@@ -124,7 +124,7 @@
   cursor: pointer;
 }
 
-.buttonResults>*:first-child {
+.buttonResults > *:first-child {
   margin-right: 8px;
 }
 
