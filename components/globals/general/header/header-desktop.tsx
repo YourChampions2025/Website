@@ -109,7 +109,11 @@ function HeaderDesktop() {
         <div className={style.navigationLinks}>
           {navbarLinks.map((data, i) =>
             data.href === '/resources' ? (
-              <Menu key={i} as='div' className='relative inline-block'>
+              <Menu
+                key={i}
+                as='div'
+                className='relative inline-block leading-3'
+              >
                 <Menu.Button className={style.menuButton}>
                   {data.label}
                 </Menu.Button>
