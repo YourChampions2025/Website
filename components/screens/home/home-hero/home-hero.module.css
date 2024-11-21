@@ -124,6 +124,11 @@
   cursor: pointer;
 }
 
+.buttonResults:hover {
+  background: rgba(45, 224, 70, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
 .buttonResults > *:first-child {
   margin-right: 8px;
 }

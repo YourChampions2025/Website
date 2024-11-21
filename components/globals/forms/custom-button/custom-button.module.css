@@ -22,7 +22,17 @@
   background: rgba(45, 224, 70, 0.1);
 }
 
+.green:hover {
+  background: rgba(45, 224, 70, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
 .blue {
   border: 1px solid #1055c1;
   background: rgba(16, 85, 193, 0.2);
+}
+
+.blue:hover {
+  background: rgba(16, 85, 193, 0.3);
+  transition: all 0.3s ease-in-out;
 }
