@@ -32,6 +32,10 @@
   color: #8d8d8d;
 }
 
+.headerLink:hover {
+  color: #fff;
+}
+
 .split {
   margin-left: clamp(16px, 3.2vw, 40px);
 }
