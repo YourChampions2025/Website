@@ -40,11 +40,12 @@ export default function ContactUs({ hasBorderTop }: ContactUsProps) {
               </div>
             </div>
 
-            <div className={styles.imageContainer}>
+            <div className={styles.videoContainer}>
               <video
                 src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidContactUs.mp4"
-                className={styles.image}
+                className={styles.video}
                 autoPlay
+                playsInline
                 muted
                 loop
               />

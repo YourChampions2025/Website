@@ -58,6 +58,7 @@ function ContentSwitcher() {
                   src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FisherRedavidCustomers.mp4"
                   className={styles.imageContainer}
                   autoPlay
+                  playsInline
                   muted
                   loop
                 />
@@ -105,6 +106,7 @@ function ContentSwitcher() {
                   src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidForAttorneys.mp4"
                   className={styles.imageContainer}
                   autoPlay
+                  playsInline
                   muted
                   loop
                 />

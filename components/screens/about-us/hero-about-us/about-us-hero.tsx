@@ -25,6 +25,7 @@ export default function AboutUsHero() {
       <video
         src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4"
         className={styles.image}
+        playsInline
         autoPlay
         muted
         loop

@@ -22,6 +22,7 @@ export default function MainContentAboutUsSlug({
                 src={profile?.videoUrl}
                 autoPlay
                 muted
+                playsInline
                 loop
                 controls
               />

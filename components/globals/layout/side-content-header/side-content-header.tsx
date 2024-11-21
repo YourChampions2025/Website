@@ -18,6 +18,7 @@ export default function SideContentHeader({
         muted
         controls
         loop
+        playsInline
       />
       <h6 className={styles.title}>{title}</h6>
       {description && <p className={styles.description}>{description}</p>}
