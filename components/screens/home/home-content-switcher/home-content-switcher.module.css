@@ -132,6 +132,24 @@
   border-radius: 50%;
   border: 1px solid #2de046;
   background: rgba(45, 224, 70, 0.1);
+  animation: pulse 2s infinite;
+}
+
+.soundButton:hover {
+  background: rgba(45, 224, 70, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    background: rgba(45, 224, 70, 0.1);
+  }
+  50% {
+    background: rgba(45, 224, 70, 0.5);
+  }
+  100% {
+    background: rgba(45, 224, 70, 0.1);
+  }
 }
 
 .reloadButton {
@@ -146,6 +164,12 @@
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: #1a1b21;
+}
+
+.reloadButton:hover {
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 1165px) {
