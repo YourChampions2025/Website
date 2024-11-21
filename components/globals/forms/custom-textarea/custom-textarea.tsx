@@ -33,7 +33,7 @@ const CustomTextarea: React.FC<CustomTextareaProps> = ({
 
   const borderEffect = hasError
     ? 'border border-red-600'
-    : 'border border-[var(--champions-blue)] border-[var(--champions-green)] focus:border-[var(--champions-green)] duration-300 ease-in-out';
+    : 'border border-[var(--champions-blue)] hover:border-[var(--champions-green)] focus:border-[var(--champions-green)] duration-300 ease-in-out';
 
   const paddingTop = label.length > 35 ? 'pt-16' : 'pt-8';
 
