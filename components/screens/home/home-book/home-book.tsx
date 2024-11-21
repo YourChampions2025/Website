@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./home-book.module.css";
-import bookImage from "@/public/images/home-book.png";
-import bookDetails from "@/public/images/home-book-details.png";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import styles from './home-book.module.css';
+import bookImage from '@/public/images/home-book.png';
+import bookDetails from '@/public/images/home-book-details.png';
+import Link from 'next/link';
 
 function HomeBook() {
   return (
@@ -11,8 +11,8 @@ function HomeBook() {
       <div className={styles.homeBookContent}>
         <div className={styles.firstContent}>
           <h2 className={styles.title}>
-            Jordan Redavid on
-            <span>Drowning</span>
+            Jordan Redavid&apos;s Book on the Legal Implications of
+            <span>Drowning Cases</span>
           </h2>
           <p className={styles.description}>
             In 2024, Jordan Redavid, along with other thought leaders in the
@@ -25,15 +25,15 @@ function HomeBook() {
             treated drowning lawsuits, and the most common defenses that he has
             seen raised by at-fault parties. 
           </p>
-          <Link href="#contact-us">
+          <Link href='#contact-us'>
             <button className={styles.homeBookButton}>learn more </button>
           </Link>
         </div>
 
         <div>
-          <Image src={bookImage} className={styles.bookImage} alt="" />
+          <Image src={bookImage} className={styles.bookImage} alt='' />
           <div className={styles.imageDetailsContainer}>
-            <Image src={bookDetails} className={styles.bookDetails} alt="" />
+            <Image src={bookDetails} className={styles.bookDetails} alt='' />
           </div>
         </div>
       </div>
