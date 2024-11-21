@@ -94,8 +94,12 @@ export default function HomeHero() {
           </div>
 
           <span className={styles.heroDescription}>
-            We’re an aggressive team of powerful advocates with a single-minded
-            goal: uncompromised justice.
+            We are an{' '}
+            <span className='underline'>
+              aggressive team of powerful advocates
+            </span>{' '}
+            with a single-minded goal:{' '}
+            <span className='font-bold'>uncompromised justice</span>.
           </span>
 
           <div className={styles.buttonsContainer}>

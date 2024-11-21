@@ -13,7 +13,7 @@
 }
 
 .sizeMedium {
-  padding: 16px clamp(16px, 3vw, 24px);
+  padding: 16px 2rem;
   font-size: 16px;
 }
 
