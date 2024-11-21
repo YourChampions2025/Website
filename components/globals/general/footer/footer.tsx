@@ -157,10 +157,12 @@ function Footer() {
             {locationsDatas.map((officeData) => (
               <div key={officeData.title} className={styles.officesContent}>
                 <h4 className={styles.officeTitle}>{officeData.title}</h4>
-                <span
-                  className={styles.officeAddress}
-                  dangerouslySetInnerHTML={{ __html: officeData.address }}
-                />
+                <Link href={officeData.href}>
+                  <span
+                    className={styles.officeAddress}
+                    dangerouslySetInnerHTML={{ __html: officeData.address }}
+                  />
+                </Link>
                 <Link className={styles.officelinkMaps} href={officeData.href}>
                   GET DIRECTIONS
                 </Link>
@@ -184,8 +186,9 @@ function Footer() {
         <Link href='/' className={styles.linkTerms}>
           Privacy Policy{' '}
         </Link>
-        <p className={styles.linkTerms}>
-          Copyright @ 2024 Your Champions. All Rights Reserved.
+        <p className={styles.copyright}>
+          Copyright @ 2024 Your Champions. All Rights Reserved. Powered by{' '}
+          <Link href='https://thecaselygroup.com'>The Casely Group</Link>.
         </p>
       </div>
     </div>
