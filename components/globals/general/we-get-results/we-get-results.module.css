@@ -90,6 +90,11 @@
   font-weight: 500;
 }
 
+.link:hover {
+  color: #3d87ff;
+  transition: color 0.3s;
+}
+
 .icon {
   transform: rotate(90deg);
   color: #1055c1;
@@ -193,7 +198,7 @@
   }
 }
 
-@media(max-width:900px) {
+@media (max-width: 900px) {
   .resultsContainer {
     max-height: 100%;
     padding: 64px 16px 0 0;
