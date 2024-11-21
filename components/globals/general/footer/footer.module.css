@@ -34,6 +34,7 @@
 
 .headerLink:hover {
   color: #fff;
+  transition: 0.3s all ease-in-out;
 }
 
 .split {
@@ -147,6 +148,11 @@
   /* font-family: "Instrument Sans"; */
 
   color: #fff;
+}
+
+.footerSocialLink:hover {
+  color: #609dff;
+  transition: 0.3s all ease-in-out;
 }
 
 .officesWrapper {
