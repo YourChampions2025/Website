@@ -1,16 +1,14 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
-import { type IMiniContactUsFormData } from "../../../components/global/MiniContactUsForm";
-import { type IYourRightsFormData } from "../../../components/global/YourRightsGlobalComponent";
-import { type IYourRightsHomeFormData } from "../../../components/Home/YourRightsHomeComponent";
 import { type IClientInfo } from "../../../utils/useGetClientInfo";
+import { type IContactUsForm } from "../../../components/globals/forms/contact-us-form/contact-us-form";
+import { type ICareersForm } from "../../../components/screens/careers/side-content-careers/side-content-careers";
 
 const uri: any = process.env.MONGODB_URI;
 
 async function Mongo_DB(
-  data: (Partial<IMiniContactUsFormData> &
-    Partial<IYourRightsFormData> &
-    Partial<IYourRightsHomeFormData>) &
-    IClientInfo
+  data: (Partial<IContactUsForm> & Partial<ICareersForm>) & {
+    score: number;
+  } & IClientInfo
 ) {
   if (!uri) throw new Error(`No MongoDB URI setup for this project, aborting.`);
 
