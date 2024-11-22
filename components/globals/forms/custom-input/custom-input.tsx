@@ -9,8 +9,8 @@ interface CustomInputProps {
   isFullHeight?: boolean;
   backgroundColor?: string;
   value?: string;
-  // onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  // isRequired?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isRequired?: boolean;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -19,8 +19,8 @@ const CustomInput: React.FC<CustomInputProps> = ({
   isFullHeight = false,
   backgroundColor = '#000',
   value,
-  // onChange,
-  // isRequired = true,
+  onChange,
+  isRequired = true,
 }) => {
   const {
     register,
@@ -55,11 +55,11 @@ const CustomInput: React.FC<CustomInputProps> = ({
           style={{ backgroundColor }}
           placeholder=' '
           value={value}
-          // onChange={onChange}
+          onChange={onChange}
         />
         <label className='uppercase scale-75 peer-focus:scale-75 pointer-events-none absolute left-5 top-2 z-10 origin-[0] transform text-[clamp(16px,2.5vw,20px)] text-white text-opacity-60 peer-focus:text-opacity-100 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 -translate-y-1 peer-focus:-translate-y-1 text-base'>
           {label}
-          {/* {isRequired && <span className="text-red-600">*</span>} */}
+          {isRequired && <span className='text-red-600'>*</span>}
         </label>
       </div>
       {hasError && (

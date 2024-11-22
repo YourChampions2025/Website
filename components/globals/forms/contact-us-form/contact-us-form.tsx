@@ -31,7 +31,6 @@ export default function ContactUsForm() {
     resolver: zodResolver(onContactUsFormSchema),
   });
 
-  // ! Pedro: This is the function that will be called when the form is submitted.
   async function onSubmitForm(data: IContactUsForm) {
     setFormSubmitted(true);
     trackConversions(data);
@@ -58,7 +57,12 @@ export default function ContactUsForm() {
   }
 
   if (formSubmitted) {
-    return <span>Design Something</span>;
+    return (
+      <p>
+        Thank you for reaching out to Fischer Redavid. We will be in touch with
+        you shortly.
+      </p>
+    );
   }
 
   if (!formSubmitted) {
