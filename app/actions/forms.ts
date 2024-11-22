@@ -20,7 +20,7 @@ async function getReCaptchaScore(token: string) {
       return { score: 0 };
     });
 
-  console.log("[CAPTCHA]", captcha);
+  // console.log("[CAPTCHA]", captcha);
 
   return { score: captcha.score || 0 };
 }
