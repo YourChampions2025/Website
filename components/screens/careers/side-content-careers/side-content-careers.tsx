@@ -32,17 +32,17 @@ export default function SideContentCareers() {
   // ! Pedro: This is the function that will be called when the form is submitted.
   async function onSubmitForm(data: ICareersForm) {
     try {
-      const response = await fetch("/api/contact-us", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      // const response = await fetch("/api/contact-us", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // });
 
-      if (!response.ok) {
-        throw new Error();
-      }
+      // if (!response.ok) {
+      //   throw new Error();
+      // }
 
       reset();
     } catch (err) {

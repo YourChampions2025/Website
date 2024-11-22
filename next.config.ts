@@ -12,6 +12,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  redirects: async () => {
+    return [
+      { source: "/blog", destination: "/articles", permanent: true },
+      {
+        source: "/blog/:slug*",
+        destination: "/articles/:slug*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
