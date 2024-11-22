@@ -77,6 +77,10 @@
   .formContent {
     width: 560px;
   }
+  .formDetails {
+    display: flex;
+    flex-direction: column !important;
+  }
 }
 
 @media (max-width: 580px) {
