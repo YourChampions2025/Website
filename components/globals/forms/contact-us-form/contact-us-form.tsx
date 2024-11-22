@@ -14,8 +14,6 @@ export const onContactUsFormSchema = z.object({
     .min(1, 'This field is required.')
     .email('Please enter a valid email address.'),
   phone: z.string().min(1, 'This field is required.'),
-  desiredRole: z.string().min(1, 'This field is required.'),
-  barNumber: z.string().optional(),
   message: z
     .string()
     .min(10, 'Please enter a message of at least 10 characters.'),
@@ -30,23 +28,25 @@ export default function ContactUsForm() {
 
   // ! Pedro: This is the function that will be called when the form is submitted.
   async function onSubmitForm(data: IContactUsForm) {
-    try {
-      const response = await fetch('/api/contact-us', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+    console.log(data);
+    alert(JSON.stringify(data, null, 2));
+    // try {
+    //   const response = await fetch('/api/contact-us', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //   });
 
-      if (!response.ok) {
-        throw new Error();
-      }
+    //   if (!response.ok) {
+    //     throw new Error();
+    //   }
 
-      reset();
-    } catch (err) {
-      console.error(err);
-    }
+    //   reset();
+    // } catch (err) {
+    //   console.error(err);
+    // }
   }
 
   return (
