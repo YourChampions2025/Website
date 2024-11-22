@@ -96,9 +96,12 @@ export default function HomeHero() {
 
           <span className={styles.heroDescription}>
             We are an{" "}
-            <span className="underline">
+            <Link
+              href="/about-us"
+              className="underline hover:text-green-500 transition-all duration-300 ease-in-out"
+            >
               aggressive team of powerful advocates
-            </span>{" "}
+            </Link>{" "}
             with a single-minded goal:{" "}
             <span className="font-bold">uncompromised justice</span>.
           </span>
