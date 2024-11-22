@@ -22,6 +22,8 @@ import ImageLogo6 from "@/public/images/home-logo-carousel-6.png";
 import ImageLogo7 from "@/public/images/home-logo-carousel-7.png";
 import ImageLogo8 from "@/public/images/home-logo-carousel-8.png";
 import ImageLogo9 from "@/public/images/home-logo-carousel-9.png";
+import Link from "next/link";
+import { MdPhone } from "react-icons/md";
 
 const LOGOS_ONE = [
   ImageBadge1,
@@ -61,13 +63,13 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
   } = squeezeItem;
 
   return (
-    <main className="w-full pt-[220px]">
+    <main className="w-full sm:pt-[220px] pt-[120px]">
       <div className="w-full flex flex-col items-center">
         <div className="w-full px-4 flex flex-col items-center">
-          <h1 className="max-w-[1080px] w-full text-[clamp(36px,5.77vw,52px)] tracking-[calc(clamp(36px,5.77vw,52px)*0.01)] font-serif text-center text-balance">
+          <h1 className="max-w-[1080px] w-full text-[clamp(32px,5.77vw,52px)] tracking-[calc(clamp(32px,5.77vw,52px)*0.01)] font-serif text-center text-balance">
             {title}
           </h1>
-          <p className="max-w-[1080px] w-full text-[clamp(16px,2.22vw,20px)] text-[#2DE046] tracking-[calc(clamp(16px,2.22vw,20px)*-0.02)] text-center text-pretty mt-4">
+          <p className="max-w-[1080px] w-full text-[clamp(12px,2.22vw,20px)] text-[#2DE046] tracking-[calc(clamp(12px,2.22vw,20px)*-0.02)] text-center text-pretty mt-4">
             {description}
           </p>
         </div>
@@ -78,20 +80,34 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
           <div className="max-w-[1252px] w-full flex items-center justify-between gap-4 md:gap-8 flex-col md:flex-row">
             <div className="flex items-center gap-3 text-center md:text-left">
               <div className="w-3 h-3 flex-shrink-0 rounded-full bg-[#2DE046]" />
-              <p className="text-[clamp(28px,5.33vw,40px)] tracking-[calc(clamp(28px,5.33vw,40px)*0.01)] capitalize font-serif text-white text-pretty">
+              <p className="text-[clamp(24px,5.33vw,40px)] tracking-[calc(clamp(24px,5.33vw,40px)*0.01)] capitalize font-serif text-white text-pretty">
                 {subTitle}
               </p>
             </div>
-            <p className="text-center md:text-right max-w-[485px] w-full text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)] text-[#8D8D8D] text-pretty">
+            <p className="text-center md:text-right max-w-[485px] w-full text-[clamp(12px,2vw,18px)] tracking-[calc(clamp(12px,2vw,18px)*-0.02)] text-[#8D8D8D] text-pretty">
               Our aggressive personal injury litigation strategies deliver
               results on the large complex cases other lawyers can't pursue.
             </p>
           </div>
         </div>
 
-        <div className="w-full h-fit pt-16 px-4 flex flex-col items-center">
+        <div className="w-full h-fit pt-10 px-4 flex flex-col items-center">
           <div className="max-w-[1252px] w-full grid grid-cols-1 md:grid-cols-[61%_39%] gap-12 md:gap-6">
             <div className="w-full flex flex-col">
+              <Link
+                href="tel:8886940708"
+                className="group flex items-center justify-center w-full pb-4 gap-2 sm:hidden text-[#FFFC] hover:text-[#2DE046] transition-colors duration-300"
+              >
+                <div className="w-[30px] h-[30px] flex items-center justify-center border border-[#2DE046] rounded-full group-hover:bg-[#2DE04640] transition-all duration-1000">
+                  <MdPhone
+                    size={16}
+                    className="text-current group-hover:text-[#2DE046] transition-colors duration-300"
+                  />
+                </div>
+                <b className="text-current group-hover:text-[#2DE046] transition-colors duration-300">
+                  (888) 694-0708
+                </b>
+              </Link>
               <div className="w-full h-fit aspect-video">
                 <video
                   className="w-full h-full object-cover"
