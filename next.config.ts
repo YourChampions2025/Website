@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
         destination: "/for-attorneys",
         permanent: true,
       },
+      {
+        source: "/podcast",
+        destination: "/podcasts",
+        permanent: true,
+      },
     ];
   },
 };
