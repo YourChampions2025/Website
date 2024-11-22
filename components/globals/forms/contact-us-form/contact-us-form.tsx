@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 import CustomTextarea from "@/components/globals/forms/custom-textarea/custom-textarea";
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
+import { useGetClientInfo } from "../../../../utils/useGetClientInfo";
 
 export const onContactUsFormSchema = z.object({
   name: z.string().min(1, "This field is required."),
@@ -24,9 +25,12 @@ export const onContactUsFormSchema = z.object({
 export type IContactUsForm = z.infer<typeof onContactUsFormSchema>;
 
 import trackConversions from "@/utils/trackConversions";
+import { submitContactForm } from "../../../../app/actions/forms";
+import { Tracking } from "../../../Analytics/Analytics";
 
 export default function ContactUsForm() {
   const [formSubmitted, setFormSubmitted] = React.useState(false);
+  const clientInfo = useGetClientInfo();
 
   const methods = useForm<IContactUsForm>({
     resolver: zodResolver(onContactUsFormSchema),
@@ -48,17 +52,8 @@ export default function ContactUsForm() {
 
       console.log({ data });
 
-      // const response = await fetch("/api/contact-us", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(data),
-      // });
-
-      // if (!response.ok) {
-      //   throw new Error("Failed to submit form");
-      // }
+      const { token } = await Tracking.getRecaptchaToken();
+      submitContactForm(data, token, clientInfo);
 
       reset();
     } catch (err) {
