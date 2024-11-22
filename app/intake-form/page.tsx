@@ -7,11 +7,9 @@ function IntakeFormPage() {
   return (
     <main className="pt-[162px]">
       <PageHeader title="online intake form" />
-
-      <div>
+      <div className="w-full px-4 py-12 border-t border-t-[#083376] border-b border-b-[#083376]">
         <IntakeForm />
       </div>
-
       <LearnMoreSection />
     </main>
   );

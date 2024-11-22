@@ -159,6 +159,7 @@ export default function IntakeForm() {
                     value: option,
                     label: option,
                   }))}
+                  placeholder=""
                   value={field.value || ""}
                   onChange={(e) => {
                     field.onChange(e);
