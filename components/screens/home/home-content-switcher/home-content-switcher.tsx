@@ -24,6 +24,8 @@ function ContentSwitcher() {
 
   function handleReloadVideo() {
     if (videoRef.current) {
+      videoRef.current.muted = true;
+      setIsMuted(true);
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }

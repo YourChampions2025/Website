@@ -63,11 +63,12 @@ export default function HomeHero() {
 
   function handleReloadVideo() {
     if (videoRef.current) {
+      videoRef.current.muted = true;
+      setIsMuted(true);
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }
   }
-
   return (
     <div className={styles.container}>
       <video

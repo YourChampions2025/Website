@@ -1,14 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useState } from "react";
 import style from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import CustomButton from "../../forms/custom-button/custom-button";
 import { IoLogoFacebook } from "react-icons/io5";
-import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
+import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { FaGoogle, FaLinkedin } from "react-icons/fa";
 import { MdMailOutline, MdPhone } from "react-icons/md";
 import fischerRedavidLogo from "@/public/images/fischer-redavid-trial-lawyers-logo.svg";
-import { Menu } from "@headlessui/react";
 
 import { GoTriangleDown } from "react-icons/go";
 import { FaXTwitter } from "react-icons/fa6";
@@ -86,6 +87,26 @@ interface MenuItem {
 }
 
 function HeaderDesktop() {
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (index: number) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveDropdown(index);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 200);
+  };
+  const renderMenuItems = (items: MenuItem[]) =>
+    items.map((item, index) => (
+      <Link key={index} href={item.href} className={style.menuItem}>
+        {item.label}
+      </Link>
+    ));
+
   return (
     <>
       <div className={style.headerFirstRow}>
@@ -108,7 +129,7 @@ function HeaderDesktop() {
               {data.icon}
             </Link>
           ))}
-          <Link href="#contact-us">
+          <Link href="/intake-form">
             <CustomButton size="small">ONLINE INTAKE FORM</CustomButton>
           </Link>
         </div>
@@ -117,82 +138,80 @@ function HeaderDesktop() {
       <div className={style.headerSecondRow}>
         <div className={style.navigationLinks}>
           {navbarLinks.map((data, i) => {
-            const renderMenuItems = (items: MenuItem[]) =>
-              items.map((item, index) => (
-                <Menu.Item key={index}>
-                  {() => (
-                    <Link href={item.href} className={style.menuItem}>
-                      {item.label}
-                    </Link>
-                  )}
-                </Menu.Item>
-              ));
-
             if (data.href === "/practice-areas") {
               return (
-                <Menu
+                <div
                   key={i}
-                  as="div"
-                  className="relative inline-block leading-3"
+                  className="relative inline-block"
+                  onMouseEnter={() => handleMouseEnter(i)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  <Menu.Button className={style.menuButton}>
+                  <button className={style.menuButton}>
                     {data.label} <GoTriangleDown />
-                  </Menu.Button>
-                  <Menu.Items className={style.menuItems}>
-                    {renderMenuItems([
-                      { href: "/practice-areas", label: "all practice areas" },
-                      {
-                        href: "/practice-areas/catastrophic-injuries",
-                        label: "Catastrophic Injuries",
-                      },
-                      {
-                        href: "/practice-areas/burn-injuries",
-                        label: "Burn Injuries",
-                      },
-                      { href: "/practice-areas/drowning", label: "Drowning" },
-                      {
-                        href: "/practice-areas/traumatic-brain",
-                        label: "Traumatic Brain Injuries",
-                      },
-                      {
-                        href: "/practice-areas/wrongful-death",
-                        label: "Wrongful Death",
-                      },
-                      {
-                        href: "/practice-areas/medical-malpractice",
-                        label: "Medical Malpractice",
-                      },
-                      {
-                        href: "/practice-areas/product-liability",
-                        label: "Product Liability",
-                      },
-                    ])}
-                  </Menu.Items>
-                </Menu>
+                  </button>
+                  {activeDropdown === i && (
+                    <div className={style.menuItems}>
+                      {renderMenuItems([
+                        {
+                          href: "/practice-areas",
+                          label: "All Practice Areas",
+                        },
+                        {
+                          href: "/practice-areas/catastrophic-injuries",
+                          label: "Catastrophic Injuries",
+                        },
+                        {
+                          href: "/practice-areas/burn-injuries",
+                          label: "Burn Injuries",
+                        },
+                        { href: "/practice-areas/drowning", label: "Drowning" },
+                        {
+                          href: "/practice-areas/traumatic-brain",
+                          label: "Traumatic Brain Injuries",
+                        },
+                        {
+                          href: "/practice-areas/wrongful-death",
+                          label: "Wrongful Death",
+                        },
+                        {
+                          href: "/practice-areas/medical-malpractice",
+                          label: "Medical Malpractice",
+                        },
+                        {
+                          href: "/practice-areas/product-liability",
+                          label: "Product Liability",
+                        },
+                      ])}
+                    </div>
+                  )}
+                </div>
               );
             }
 
             if (data.href === "/resources") {
               return (
-                <Menu
+                <div
                   key={i}
-                  as="div"
-                  className="relative inline-block leading-3"
+                  className="relative inline-block"
+                  onMouseEnter={() => handleMouseEnter(i)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  <Menu.Button className={style.menuButton}>
+                  <button className={style.menuButton}>
                     {data.label} <GoTriangleDown />
-                  </Menu.Button>
-                  <Menu.Items className={style.menuItems}>
-                    {renderMenuItems([
-                      { href: "/terrys-takes", label: "Terry's Takes" },
-                      { href: "/careers", label: "Careers" },
-                      { href: "/podcasts", label: "Podcast" },
-                      { href: "/articles", label: "Articles" },
-                      { href: "/video-center", label: "Video Center" },
-                      { href: "/testimonials", label: "Testimonials" },
-                    ])}
-                  </Menu.Items>
-                </Menu>
+                  </button>
+                  {activeDropdown === i && (
+                    <div className={style.menuItems}>
+                      {renderMenuItems([
+                        { href: "/terrys-takes", label: "Terry's Takes" },
+                        { href: "/careers", label: "Careers" },
+                        { href: "/podcasts", label: "Podcast" },
+                        { href: "/articles", label: "Articles" },
+                        { href: "/video-center", label: "Video Center" },
+                        { href: "/testimonials", label: "Testimonials" },
+                      ])}
+                    </div>
+                  )}
+                </div>
               );
             }
 

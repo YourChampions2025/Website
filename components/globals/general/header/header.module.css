@@ -142,24 +142,33 @@
 .menuItems {
   position: absolute;
   margin-top: 0.5rem;
-  width: 12rem;
+
+  width: 260px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.92);
-  border-radius: 0.375rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #1a1b21;
+}
+
+.relative:hover .menuItems {
+  display: block;
 }
 
 .menuItem {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  max-width: 220px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px;
+  font-size: 14px;
   color: #c0c0c0;
   text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .menuItem:hover {
   color: #2de046;
-  transition: 1s ease-in-out all;
+  transition: 0.3ms ease-in-out all;
 }
 
 .menuIcon {
