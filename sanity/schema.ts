@@ -10,6 +10,7 @@ import otherAreas from "./schemas/otherAreas";
 import otherSubAreas from "./schemas/otherSubAreas";
 import locations from "./schemas/locations";
 import cases from "./schemas/cases";
+import squeeze from "./schemas/squeeze";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -24,5 +25,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     locations,
     otherAreas,
     otherSubAreas,
+    squeeze,
   ],
 };

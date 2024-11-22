@@ -1,31 +1,53 @@
-import { getLocations, getLocationsBySlug } from "@/sanity/lib/api";
-import { LocationProps } from "@/types/types";
 import React from "react";
-import LocationSlugLayout from "@/components/screens/locations-slug/location-slug-layout/location-slug-layout";
+import {
+  getLocations,
+  getLocationsBySlug,
+  getSqueezeBySlug,
+  getSqueezes,
+} from "@/sanity/lib/api";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { LocationProps, SqueezeProps } from "@/types/types";
+import LocationSlugLayout from "@/components/screens/locations-slug/location-slug-layout/location-slug-layout";
+import SqueezeLayout from "@/components/screens/squeeze/squeeze-layout/squeeze-layout";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locationSlug: string }>;
 }): Promise<Metadata> {
-  try {
-    const { locationSlug } = await params;
+  const { locationSlug } = await params;
 
+  const locations: Pick<LocationProps, "title" | "slug">[] =
+    await getLocations();
+  const locationMatch = locations.find(
+    (location) => location.slug === locationSlug
+  );
+  if (locationMatch) {
     const { locationItem }: { locationItem: LocationProps } =
       await getLocationsBySlug(locationSlug);
-
     return {
       title: locationItem.title,
       description: locationItem.description,
     };
-  } catch (error) {
+  }
+
+  const squeezes: Pick<SqueezeProps, "title" | "slug">[] = await getSqueezes();
+  const squeezeMatch = squeezes.find(
+    (squeeze) => squeeze.slug === locationSlug
+  );
+  if (squeezeMatch) {
+    const squeezeItem: SqueezeProps = await getSqueezeBySlug(locationSlug);
     return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist",
+      title: `${squeezeItem.title} | Fischer & Redavid Trial Lawyers`,
+      description: squeezeItem.description,
     };
   }
+
+  return {
+    title: "Not Found",
+    description: "The page you are looking for does not exist.",
+  };
 }
 
 export default async function LocationsSlugPage({
@@ -35,28 +57,34 @@ export default async function LocationsSlugPage({
 }) {
   const { locationSlug } = await params;
 
-  const locations: Pick<LocationProps, "location" | "title" | "slug">[] =
+  const locations: Pick<LocationProps, "title" | "slug">[] =
     await getLocations();
-
-  if (
-    !locations ||
-    !locations.length ||
-    !locations.find((location) => location.slug === locationSlug)
-  ) {
-    return notFound();
+  const locationMatch = locations.find(
+    (location) => location.slug === locationSlug
+  );
+  if (locationMatch) {
+    const { locationItem }: { locationItem: LocationProps } =
+      await getLocationsBySlug(locationSlug);
+    return (
+      <LocationSlugLayout
+        isLocation={true}
+        title={locationItem.title}
+        excerpt={locationItem.excerpt}
+        content={locationItem.content}
+        locationSlug={locationSlug}
+        otherAreas={locationItem.otherAreas}
+      />
+    );
   }
 
-  const { locationItem }: { locationItem: LocationProps } =
-    await getLocationsBySlug(locationSlug);
-
-  return (
-    <LocationSlugLayout
-      isLocation={true}
-      title={locationItem.title}
-      excerpt={locationItem.excerpt}
-      content={locationItem.content}
-      locationSlug={locationSlug}
-      otherAreas={locationItem.otherAreas}
-    />
+  const squeezes: Pick<SqueezeProps, "title" | "slug">[] = await getSqueezes();
+  const squeezeMatch = squeezes.find(
+    (squeeze) => squeeze.slug === locationSlug
   );
+  if (squeezeMatch) {
+    const squeezeItem: SqueezeProps = await getSqueezeBySlug(locationSlug);
+    return <SqueezeLayout squeezeItem={squeezeItem} />;
+  }
+
+  return notFound();
 }

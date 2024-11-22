@@ -151,3 +151,14 @@ export interface OtherAreaProps {
   excerpt: TypedObject | TypedObject[];
   content: TypedObject | TypedObject[];
 }
+
+export interface SqueezeProps {
+  title: string;
+  slug: string;
+  description: string;
+  subTitle: string;
+  contactTitle: string;
+  contentTitle: string;
+  content: TypedObject | TypedObject[];
+  quote: string;
+}

@@ -19,6 +19,8 @@ import {
   getPodcastsQuery,
   getPracticeAreaBySlugQuery,
   getProfileBySlugQuery,
+  getSqueezeBySlugQuery,
+  getSqueezesQuery,
   getStaffProfilesQuery,
   getTerrysTakesBySlugQuery,
   getVideoCenterBySlugQuery,
@@ -268,6 +270,24 @@ export const getOtherSubAreaBySlugs = async (
     otherAreaSlug,
     otherSubAreaSlug,
   });
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getSqueezes = async () => {
+  const data = await client.fetch(getSqueezesQuery);
+
+  if (!data) return undefined;
+
+  return data;
+};
+
+export const getSqueezeBySlug = async (slug: string) => {
+  if (!slug) return null;
+
+  const data = await client.fetch(getSqueezeBySlugQuery, { slug });
 
   if (!data) return undefined;
 
