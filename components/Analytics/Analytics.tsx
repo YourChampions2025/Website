@@ -1,8 +1,8 @@
 // @ts-nocheck
-import React from 'react';
-import Script from 'next/script';
-import { SpeedInsights as VercelInsights } from '@vercel/speed-insights/next';
-import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
+import React from "react";
+import Script from "next/script";
+import { SpeedInsights as VercelInsights } from "@vercel/speed-insights/next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 
 declare global {
   interface Window {
@@ -20,9 +20,22 @@ function ReCaptcha_V3({
   return (
     <Script
       src={`https://www.google.com/recaptcha/api.js?render=${ReCaptcha_Site_Key}`}
-      strategy='lazyOnload'
+      strategy="lazyOnload"
     />
   );
+}
+
+function getRecaptchaToken() {
+  return new Promise<{ token: string }>((resolve) => {
+    window.grecaptcha.ready(async () => {
+      const token = await window.grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+        { action: "submit" }
+      );
+
+      resolve({ token });
+    });
+  });
 }
 
 interface CallRailProps {
@@ -32,7 +45,7 @@ interface CallRailProps {
 function CallRail({ CALL_RAIL_SRC }: CallRailProps) {
   return (
     <>
-      <Script type='text/javascript' src={CALL_RAIL_SRC} />
+      <Script type="text/javascript" src={CALL_RAIL_SRC} />
     </>
   );
 }
@@ -55,7 +68,7 @@ function GA4({ GA4_ID }: GA4Props) {
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
       />
-      <Script id='ga4-analytics'>
+      <Script id="ga4-analytics">
         {` 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -75,7 +88,7 @@ interface MetaPixelProps {
 function Meta({ META_PIXEL_ID }: MetaPixelProps) {
   return (
     <>
-      <Script id='Meta-Pixel'>
+      <Script id="Meta-Pixel">
         {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -91,9 +104,9 @@ function Meta({ META_PIXEL_ID }: MetaPixelProps) {
 
       <noscript>
         <img
-          height='1'
-          width='1'
-          style={{ display: 'none' }}
+          height="1"
+          width="1"
+          style={{ display: "none" }}
           src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
         />
       </noscript>
@@ -106,6 +119,7 @@ export const Tracking = {
   GA4,
   CallRail,
   ReCaptcha_V3,
+  getRecaptchaToken,
   VercelInsights,
   VercelAnalytics,
 };
