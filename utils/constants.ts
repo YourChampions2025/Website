@@ -1,3 +1,6 @@
+export const BASE_URL =
+  "https://fischer-and-redavid-trial-lawyers-git-preview.thecaselygroup.dev";
+
 export const locationsDatas = [
   {
     iframeUrl:

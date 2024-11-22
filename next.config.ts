@@ -21,6 +21,16 @@ const nextConfig: NextConfig = {
         destination: "/articles/:slug*",
         permanent: true,
       },
+      {
+        source: "/terrys-takes/topics",
+        destination: "/terrys-takes",
+        permanent: true,
+      },
+      {
+        source: "/referral",
+        destination: "/for-attorneys",
+        permanent: true,
+      },
     ];
   },
 };
