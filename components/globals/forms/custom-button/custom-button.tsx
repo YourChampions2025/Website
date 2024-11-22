@@ -5,7 +5,7 @@ import classNames from "classnames";
 interface CustomButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  size?: "small" | "medium";
+  size?: "small" | "medium" | "large";
   color?: "green" | "blue";
 }
 
@@ -21,7 +21,8 @@ export default function CustomButton({
       className={classNames(
         styles.buttonBase,
         styles[color],
-        size === "small" ? styles.sizeSmall : styles.sizeMedium
+        size === "small" ? styles.sizeSmall : styles.sizeMedium,
+        size === "large" ? styles.sizeLarge : styles.sizeMedium
       )}
     >
       {children}
