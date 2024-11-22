@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useEffect, useState, useRef } from "react";
 import { z } from "zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,6 +8,9 @@ import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 import CustomTextarea from "@/components/globals/forms/custom-textarea/custom-textarea";
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
 import { useGetClientInfo } from "../../../../utils/useGetClientInfo";
+import trackConversions from "@/utils/trackConversions";
+import { submitContactForm } from "../../../../app/actions/forms";
+import { Tracking } from "../../../Analytics/Analytics";
 
 export const onContactUsFormSchema = z.object({
   name: z.string().min(1, "This field is required."),
@@ -24,13 +27,10 @@ export const onContactUsFormSchema = z.object({
 
 export type IContactUsForm = z.infer<typeof onContactUsFormSchema>;
 
-import trackConversions from "@/utils/trackConversions";
-import { submitContactForm } from "../../../../app/actions/forms";
-import { Tracking } from "../../../Analytics/Analytics";
-
 export default function ContactUsForm() {
-  const [formSubmitted, setFormSubmitted] = React.useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const clientInfo = useGetClientInfo();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const methods = useForm<IContactUsForm>({
     resolver: zodResolver(onContactUsFormSchema),
@@ -43,17 +43,77 @@ export default function ContactUsForm() {
     },
   });
 
-  const { handleSubmit, reset } = methods;
+  const { handleSubmit, reset, setValue } = methods;
+
+  // Handle autofill
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return;
+
+    // Function to check and update form values
+    const updateFormValues = () => {
+      const inputs = form.querySelectorAll<
+        HTMLInputElement | HTMLTextAreaElement
+      >("input, textarea");
+      inputs.forEach((input) => {
+        const field = input.name as keyof IContactUsForm;
+        if (input.value) {
+          setValue(field, input.value, { shouldValidate: true });
+        }
+      });
+    };
+
+    // Check immediately
+    updateFormValues();
+
+    // Check on animation frame for Chrome autofill
+    const frameCheck = () => {
+      updateFormValues();
+      requestAnimationFrame(frameCheck);
+    };
+    const frameId = requestAnimationFrame(frameCheck);
+
+    // Also check on various events
+    const events = [
+      "input",
+      "change",
+      "blur",
+      "animationstart",
+      "animationend",
+    ];
+    const handleEvent = () => updateFormValues();
+    events.forEach((event) => {
+      form.addEventListener(event, handleEvent);
+    });
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      events.forEach((event) => {
+        form.removeEventListener(event, handleEvent);
+      });
+    };
+  }, [setValue]);
 
   async function onSubmitForm(data: IContactUsForm) {
     try {
+      // Perform one final check before submission
+      if (formRef.current) {
+        const inputs = formRef.current.querySelectorAll<
+          HTMLInputElement | HTMLTextAreaElement
+        >("input, textarea");
+        inputs.forEach((input) => {
+          const field = input.name as keyof IContactUsForm;
+          if (input.value) {
+            setValue(field, input.value, { shouldValidate: true });
+          }
+        });
+      }
+
       setFormSubmitted(true);
       trackConversions(data);
 
-      console.log({ data });
-
       const { token } = await Tracking.getRecaptchaToken();
-      submitContactForm(data, token, clientInfo);
+      await submitContactForm(data, token, clientInfo);
 
       reset();
     } catch (err) {
@@ -74,6 +134,7 @@ export default function ContactUsForm() {
   return (
     <FormProvider {...methods}>
       <form
+        ref={formRef}
         onSubmit={handleSubmit(onSubmitForm)}
         className="w-full mx-auto flex flex-col gap-3"
       >
