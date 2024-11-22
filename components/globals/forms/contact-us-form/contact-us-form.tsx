@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { z } from 'zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -21,13 +22,20 @@ export const onContactUsFormSchema = z.object({
 
 export type IContactUsForm = z.infer<typeof onContactUsFormSchema>;
 
+import trackConversions from '@/utils/trackConversions';
+
 export default function ContactUsForm() {
+  const [formSubmitted, setFormSubmitted] = React.useState(false);
+
   const { handleSubmit, reset, ...rest } = useForm<IContactUsForm>({
     resolver: zodResolver(onContactUsFormSchema),
   });
 
   // ! Pedro: This is the function that will be called when the form is submitted.
   async function onSubmitForm(data: IContactUsForm) {
+    setFormSubmitted(true);
+    trackConversions(data);
+
     console.log(data);
     alert(JSON.stringify(data, null, 2));
     // try {
@@ -49,19 +57,27 @@ export default function ContactUsForm() {
     // }
   }
 
-  return (
-    <FormProvider {...rest} handleSubmit={handleSubmit} reset={reset}>
-      <form
-        onSubmit={handleSubmit(onSubmitForm)}
-        className='w-full mx-auto flex flex-col gap-3'
-      >
-        <CustomInput name='name' label='Name' />
-        <CustomInput name='email' label='Email' />
-        <CustomInput name='phone' label='Phone' />
-        <CustomInput name='location' label='Location' />
-        <CustomTextarea name='message' label='How can we help you?' />
-        <CustomButton type='submit'>Connect With Fischer Redavid</CustomButton>
-      </form>
-    </FormProvider>
-  );
+  if (formSubmitted) {
+    return <span>Design Something</span>;
+  }
+
+  if (!formSubmitted) {
+    return (
+      <FormProvider {...rest} handleSubmit={handleSubmit} reset={reset}>
+        <form
+          onSubmit={handleSubmit(onSubmitForm)}
+          className='w-full mx-auto flex flex-col gap-3'
+        >
+          <CustomInput name='name' label='Name' />
+          <CustomInput name='email' label='Email' />
+          <CustomInput name='phone' label='Phone' />
+          <CustomInput name='location' label='Location' />
+          <CustomTextarea name='message' label='How can we help you?' />
+          <CustomButton type='submit'>
+            Connect With Fischer Redavid
+          </CustomButton>
+        </form>
+      </FormProvider>
+    );
+  }
 }

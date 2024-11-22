@@ -147,3 +147,7 @@ body::-webkit-scrollbar {
 
   aspect-ratio: 16/9 !important;
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
