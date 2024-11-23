@@ -124,6 +124,21 @@ const nextConfig: NextConfig = {
           "/blog/2017/july/how-much-compensation-is-my-car-accident-worth-",
         permanent: true,
       },
+      {
+        source: "/miami-car-accident-lawyer",
+        destination: "/miami/car-accident-lawyer",
+        permanent: true,
+      },
+      {
+        source: "/careers-with-fischer-redavid-pllc",
+        destination: "/careers",
+        permanent: true,
+      },
+      {
+        source: "/miami-personal-injury-lawyer",
+        destination: "/miami",
+        permanent: true,
+      },
     ];
   },
 };
