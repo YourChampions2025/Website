@@ -17,6 +17,12 @@ export default defineType({
       validation: (Rule) => Rule.required().error("Image is required"),
     }),
     defineField({
+      name: "videoUrl",
+      title: "Video URL",
+      type: "string",
+      validation: (Rule) => Rule.required().error("URL is required"),
+    }),
+    defineField({
       name: "title",
       title: "Title",
       type: "string",

@@ -40,8 +40,21 @@ export default async function PracticeAreasSlugPage({
   const practiceArea: PracticeAreaProps = await getPracticeAreaBySlug(slug);
 
   return (
-    <main className="pt-[162px]">
-      <PageHeader title={practiceArea.title} />
+    <main>
+      <div className="w-full h-fit pt-[162px] relative">
+        <div className="w-full h-fit relative z-20">
+          <PageHeader title={practiceArea.title} />
+        </div>
+        <div className="w-full h-full inset-0 absolute bg-black/80 z-10" />
+        <video
+          src={practiceArea.videoUrl}
+          playsInline
+          autoPlay
+          muted
+          loop
+          className="w-full h-full object-cover absolute inset-0 z-0"
+        />
+      </div>
       <PageGridLayout
         mainContent={
           <MainContentPracticeAreasSlug

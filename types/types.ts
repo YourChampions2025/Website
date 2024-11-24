@@ -122,6 +122,7 @@ export interface PracticeAreaProps {
   imageUrl: string;
   content: TypedObject | TypedObject[];
   secondaryContent?: TypedObject | TypedObject[];
+  videoUrl: string;
 }
 
 export interface LocationProps {

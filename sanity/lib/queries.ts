@@ -375,7 +375,8 @@ export const getPracticeAreaBySlugQuery = groq`
     "slug": slug.current,
     "imageUrl": image.asset->url,
     content,
-    secondaryContent
+    secondaryContent,
+    videoUrl
   }
 `;
 
