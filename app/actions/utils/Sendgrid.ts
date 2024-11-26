@@ -20,8 +20,9 @@ async function Sendgrid(
 
   const msg = {
     to: [
-      // "davin@thecaselygroup.com",
-      "pedro@thecaselygroup.com",
+      "davin@thecaselygroup.com",
+      "prelit@yourchampions.com"
+      // "pedro@thecaselygroup.com",
     ],
     from: "notifications@thecaselygroup.com",
     subject: `Fischer and Redavid Lead | ${formName} | ${data.name}`,
