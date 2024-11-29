@@ -1,13 +1,38 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useState } from "react";
 import ContactUsForm from "../../forms/contact-us-form/contact-us-form";
 import styles from "./contact-us.module.css";
 import classNames from "classnames";
+import { BiVolumeMute } from "react-icons/bi";
+import { AiOutlineSound } from "react-icons/ai";
+import { TbReload } from "react-icons/tb";
 
 interface ContactUsProps {
   hasBorderTop?: boolean;
 }
 
 export default function ContactUs({ hasBorderTop }: ContactUsProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  function toggleMute() {
+    if (videoRef.current) {
+      const newMuteState = !videoRef.current.muted;
+      videoRef.current.muted = newMuteState;
+      setIsMuted(newMuteState);
+    }
+  }
+
+  function handleReloadVideo() {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      setIsMuted(true);
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  }
+
   return (
     <div className={styles.container} id="contact-us">
       <div
@@ -41,7 +66,23 @@ export default function ContactUs({ hasBorderTop }: ContactUsProps) {
             </div>
 
             <div className={styles.videoContainer}>
+              <div className={styles.buttonsVideo}>
+                <button className={styles.soundButton} onClick={toggleMute}>
+                  {isMuted ? (
+                    <BiVolumeMute size={24} />
+                  ) : (
+                    <AiOutlineSound size={24} />
+                  )}
+                </button>
+                <button
+                  className={styles.reloadButton}
+                  onClick={handleReloadVideo}
+                >
+                  <TbReload size={20} />
+                </button>
+              </div>
               <video
+                ref={videoRef}
                 src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/FischerRedavidContactUs.mp4"
                 className={styles.video}
                 autoPlay

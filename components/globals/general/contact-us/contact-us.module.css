@@ -125,6 +125,70 @@
   inset: 0;
 
   object-fit: cover;
+  position: relative;
+  z-index: 10;
+}
+
+.buttonsVideo {
+  position: absolute;
+  z-index: 100;
+  left: 16px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.soundButton {
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 1px solid #2de046;
+  background: rgba(45, 224, 70, 0.1);
+}
+
+.soundButton {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background: rgba(45, 224, 70, 0.1);
+  }
+  50% {
+    background: rgba(45, 224, 70, 0.5);
+  }
+  100% {
+    background: rgba(45, 224, 70, 0.1);
+  }
+}
+
+.reloadButton {
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #1a1b21;
+}
+
+.reloadButton:hover {
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 1500px) {
@@ -133,6 +197,25 @@
   }
 }
 
+@media (max-width: 950px) {
+  .buttonsVideo {
+    position: absolute;
+    left: 16px;
+    bottom: 32px;
+  }
+}
+@media (max-width: 920px) {
+  .buttonsVideo {
+    position: absolute;
+    bottom: 62px;
+  }
+}
+@media (max-width: 840px) {
+  .buttonsVideo {
+    position: absolute;
+    bottom: 82px;
+  }
+}
 @media (max-width: 800px) {
   .gridContainer {
     grid-template-columns: 1fr;
@@ -153,5 +236,27 @@
   .promiseContent {
     padding-left: 16px;
     padding-right: 0;
+  }
+  .buttonsVideo {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 570px) {
+  .buttonsVideo {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .soundButton {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+  }
+  .reloadButton {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
   }
 }
