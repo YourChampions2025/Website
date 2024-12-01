@@ -1,7 +1,7 @@
-import { MongoClient, ServerApiVersion } from "mongodb";
-import { type IClientInfo } from "../../../utils/useGetClientInfo";
-import { type IContactUsForm } from "../../../components/globals/forms/contact-us-form/contact-us-form";
-import { type ICareersForm } from "../../../components/screens/careers/side-content-careers/side-content-careers";
+import { MongoClient, ServerApiVersion } from 'mongodb';
+import { type IClientInfo } from '../../../utils/useGetClientInfo';
+import { type IContactUsForm } from '../../../components/globals/forms/contact-us-form/contact-us-form';
+import { type ICareersForm } from '../../../components/screens/careers/side-content-careers/side-content-careers';
 
 const uri: any = process.env.MONGODB_URI;
 
@@ -22,13 +22,13 @@ async function Mongo_DB(
 
   await mongoClient.connect();
 
-  const database = mongoClient.db("bush-and-bush-law-group");
-  const collection = database.collection("form-submissions");
+  const database = mongoClient.db('fischer-redavid');
+  const collection = database.collection('form-submissions');
   const result = await collection.insertOne(data);
 
   await mongoClient.close();
 
-  console.log(result, "Mongo DB Result");
+  console.log(result, 'Mongo DB Result');
 }
 
 export default Mongo_DB;
