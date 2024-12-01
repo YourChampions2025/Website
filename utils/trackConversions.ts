@@ -2,6 +2,8 @@ import va from '@vercel/analytics';
 
 import { IContactUsForm } from '@/components/globals/forms/contact-us-form/contact-us-form';
 
+import { IIntakeForm } from '@/components/globals/forms/intake-form/intake-form';
+
 interface fbqData {
   name: string;
   email: string;
@@ -12,7 +14,7 @@ interface fbqData {
 }
 
 export default function trackConversions(
-  data: IContactUsForm,
+  data: IContactUsForm | IIntakeForm,
   event_name: string
 ) {
   // Google (GA4) Tracking

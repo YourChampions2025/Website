@@ -5,8 +5,8 @@ import Conversions_API_Meta from './utils/Conversions_API_Meta';
 import Mongo_DB from './utils/MongoDB';
 import Sendgrid from './utils/Sendgrid';
 import { IContactUsForm } from '../../components/globals/forms/contact-us-form/contact-us-form';
+import { IIntakeForm } from '@/components/globals/forms/intake-form/intake-form';
 import { IClientInfo } from '../../utils/useGetClientInfo';
-import { form } from 'sanity/structure';
 
 async function getReCaptchaScore(token: string) {
   const captcha = await fetch(
@@ -27,7 +27,7 @@ async function getReCaptchaScore(token: string) {
 }
 
 export async function submitContactForm(
-  data: IContactUsForm,
+  data: IContactUsForm | IIntakeForm,
   token: string,
   clientInfo: IClientInfo,
   eventName: string
@@ -44,17 +44,17 @@ export async function submitContactForm(
 
   await Promise.all([
     // Twilio
-    Twilio(formData, 'Contact Form'),
+    Twilio(formData, eventName),
 
     // Sendgrid
-    Sendgrid(formData, 'Contact Form'),
+    Sendgrid(formData, eventName),
 
     // Meta Conversions API
     Conversions_API_Meta(formData, eventName),
   ]);
 
   // MongoDB
-  await Mongo_DB(formData);
+  await Mongo_DB(formData, eventName);
 
   return { success: true };
 }

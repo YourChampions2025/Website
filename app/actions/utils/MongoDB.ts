@@ -8,7 +8,8 @@ const uri: any = process.env.MONGODB_URI;
 async function Mongo_DB(
   data: (Partial<IContactUsForm> & Partial<ICareersForm>) & {
     score: number;
-  } & IClientInfo
+  } & IClientInfo & { event_name?: string },
+  eventName: string
 ) {
   if (!uri) throw new Error(`No MongoDB URI setup for this project, aborting.`);
 
@@ -22,8 +23,14 @@ async function Mongo_DB(
 
   await mongoClient.connect();
 
+  let collectionName = 'general-form-submissions';
+
+  if (eventName.toLowerCase().includes('intake')) {
+    collectionName = 'intake-form-submissions';
+  }
+
   const database = mongoClient.db('fischer-redavid');
-  const collection = database.collection('form-submissions');
+  const collection = database.collection(collectionName);
   const result = await collection.insertOne(data);
 
   await mongoClient.close();

@@ -1,11 +1,12 @@
 import { type IContactUsForm } from '../../../components/globals/forms/contact-us-form/contact-us-form';
 import { type ICareersForm } from '../../../components/screens/careers/side-content-careers/side-content-careers';
+import { IIntakeForm } from '@/components/globals/forms/intake-form/intake-form';
 import { type IClientInfo } from '../../../utils/useGetClientInfo';
 
 const hash = require('hash.js');
 
 export default async function Conversions_API_Meta(
-  data: (IContactUsForm | ICareersForm) & IClientInfo,
+  data: (IContactUsForm | ICareersForm | IIntakeForm) & IClientInfo,
   event_name: string
 ) {
   const event_params = {

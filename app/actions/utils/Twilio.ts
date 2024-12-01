@@ -14,7 +14,7 @@ async function Twilio(
   data: (Partial<IContactUsForm> & Partial<ICareersForm>) & {
     score: number;
   } & IClientInfo,
-  formName: 'Contact Form' | 'Career Form'
+  formName: string
 ) {
   // To not send prop names but instead labels
   const DATA_LABEL_MAP: {

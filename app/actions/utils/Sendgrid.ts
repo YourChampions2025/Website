@@ -14,14 +14,14 @@ async function Sendgrid(
   data: (Partial<IContactUsForm> & Partial<ICareersForm>) & {
     score: number;
   } & IClientInfo,
-  formName: 'Contact Form' | 'Career Form'
+  formName: string
 ) {
   const emailHTML = await render(Email_Template(data), { pretty: true });
 
   const msg = {
     to: [
       'davin@thecaselygroup.com',
-      'prelit@yourchampions.com',
+      // 'prelit@yourchampions.com',
       // "pedro@thecaselygroup.com",
     ],
     from: 'notifications@thecaselygroup.com',
