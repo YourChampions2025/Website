@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
-import { useEffect, useState, useRef } from "react";
-import { z } from "zod";
-import { FormProvider, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import CustomInput from "@/components/globals/forms/custom-input/custom-input";
-import CustomTextarea from "@/components/globals/forms/custom-textarea/custom-textarea";
-import CustomButton from "@/components/globals/forms/custom-button/custom-button";
-import { useGetClientInfo } from "../../../../utils/useGetClientInfo";
-import trackConversions from "@/utils/trackConversions";
-import { submitContactForm } from "../../../../app/actions/forms";
-import { Tracking } from "../../../Analytics/Analytics";
+import { useEffect, useState, useRef } from 'react';
+import { z } from 'zod';
+import { FormProvider, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import CustomInput from '@/components/globals/forms/custom-input/custom-input';
+import CustomTextarea from '@/components/globals/forms/custom-textarea/custom-textarea';
+import CustomButton from '@/components/globals/forms/custom-button/custom-button';
+import { useGetClientInfo } from '../../../../utils/useGetClientInfo';
+import trackConversions from '@/utils/trackConversions';
+import { submitContactForm } from '../../../../app/actions/forms';
+import { Tracking } from '../../../Analytics/Analytics';
 
 export const onContactUsFormSchema = z.object({
-  name: z.string().min(1, "This field is required."),
+  name: z.string().min(1, 'This field is required.'),
   email: z
     .string()
-    .min(1, "This field is required.")
-    .email("Please enter a valid email address."),
-  phone: z.string().min(1, "This field is required."),
-  location: z.string().min(1, "This field is required."),
+    .min(1, 'This field is required.')
+    .email('Please enter a valid email address.'),
+  phone: z.string().min(1, 'This field is required.'),
+  location: z.string().min(1, 'This field is required.'),
   message: z
     .string()
-    .min(10, "Please enter a message of at least 10 characters."),
+    .min(10, 'Please enter a message of at least 10 characters.'),
 });
 
 export type IContactUsForm = z.infer<typeof onContactUsFormSchema>;
@@ -31,15 +31,16 @@ export default function ContactUsForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const clientInfo = useGetClientInfo();
   const formRef = useRef<HTMLFormElement>(null);
+  const eventName = 'Fischer Redavid | Form Submission';
 
   const methods = useForm<IContactUsForm>({
     resolver: zodResolver(onContactUsFormSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      location: "",
-      message: "",
+      name: '',
+      email: '',
+      phone: '',
+      location: '',
+      message: '',
     },
   });
 
@@ -54,7 +55,7 @@ export default function ContactUsForm() {
     const updateFormValues = () => {
       const inputs = form.querySelectorAll<
         HTMLInputElement | HTMLTextAreaElement
-      >("input, textarea");
+      >('input, textarea');
       inputs.forEach((input) => {
         const field = input.name as keyof IContactUsForm;
         if (input.value) {
@@ -75,11 +76,11 @@ export default function ContactUsForm() {
 
     // Also check on various events
     const events = [
-      "input",
-      "change",
-      "blur",
-      "animationstart",
-      "animationend",
+      'input',
+      'change',
+      'blur',
+      'animationstart',
+      'animationend',
     ];
     const handleEvent = () => updateFormValues();
     events.forEach((event) => {
@@ -95,12 +96,14 @@ export default function ContactUsForm() {
   }, [setValue]);
 
   async function onSubmitForm(data: IContactUsForm) {
+    setFormSubmitted(true);
+
     try {
       // Perform one final check before submission
       if (formRef.current) {
         const inputs = formRef.current.querySelectorAll<
           HTMLInputElement | HTMLTextAreaElement
-        >("input, textarea");
+        >('input, textarea');
         inputs.forEach((input) => {
           const field = input.name as keyof IContactUsForm;
           if (input.value) {
@@ -109,8 +112,7 @@ export default function ContactUsForm() {
         });
       }
 
-      setFormSubmitted(true);
-      trackConversions(data);
+      trackConversions(data, eventName);
 
       const { token } = await Tracking.getRecaptchaToken();
       await submitContactForm(data, token, clientInfo);
@@ -136,14 +138,14 @@ export default function ContactUsForm() {
       <form
         ref={formRef}
         onSubmit={handleSubmit(onSubmitForm)}
-        className="w-full mx-auto flex flex-col gap-3"
+        className='w-full mx-auto flex flex-col gap-3'
       >
-        <CustomInput name="name" label="Name" />
-        <CustomInput name="email" label="Email" />
-        <CustomInput name="phone" label="Phone" />
-        <CustomInput name="location" label="Location" />
-        <CustomTextarea name="message" label="How can we help you?" />
-        <CustomButton type="submit">Connect With Fischer Redavid</CustomButton>
+        <CustomInput name='name' label='Name' />
+        <CustomInput name='email' label='Email' />
+        <CustomInput name='phone' label='Phone' />
+        <CustomInput name='location' label='Location' />
+        <CustomTextarea name='message' label='How can we help you?' />
+        <CustomButton type='submit'>Connect With Fischer Redavid</CustomButton>
       </form>
     </FormProvider>
   );

@@ -13,7 +13,7 @@ interface fbqData {
 
 export default function trackConversions(
   data: IContactUsForm,
-  event_name = 'MHTL Form Submission'
+  event_name: string
 ) {
   // Google (GA4) Tracking
   window.gtag('event', event_name, data);
