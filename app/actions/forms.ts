@@ -43,11 +43,11 @@ export async function submitContactForm(
   console.log('Contact Form Submission:', formData);
 
   await Promise.all([
-    // // Twilio
-    // Twilio(formData, 'Contact Form'),
+    // Twilio
+    Twilio(formData, 'Contact Form'),
 
-    // // Sendgrid
-    // Sendgrid(formData, 'Contact Form'),
+    // Sendgrid
+    Sendgrid(formData, 'Contact Form'),
 
     // Meta Conversions API
     Conversions_API_Meta(formData, eventName),
