@@ -8,7 +8,7 @@
 }
 
 .sizeSmall {
-  padding: 8px clamp(12px, 2.5vw, 20px);
+  padding: 10px clamp(12px, 2.5vw, 20px);
   font-size: 14px;
 }
 
