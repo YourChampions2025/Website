@@ -1,5 +1,6 @@
 export const BASE_URL =
-  "https://fischer-and-redavid-trial-lawyers-git-preview.thecaselygroup.dev";
+  // "https://fischer-and-redavid-trial-lawyers-git-preview.thecaselygroup.dev";
+  "https://yourchampions.com";
 
 export const locationsDatas = [
   {
