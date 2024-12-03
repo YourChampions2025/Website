@@ -27,11 +27,15 @@ export const onContactUsFormSchema = z.object({
 
 export type IContactUsForm = z.infer<typeof onContactUsFormSchema>;
 
-export default function ContactUsForm() {
+interface Props {
+  event?: string;
+}
+
+export default function ContactUsForm({ event }: Props) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const clientInfo = useGetClientInfo();
   const formRef = useRef<HTMLFormElement>(null);
-  const eventName = 'Fischer Redavid | Form Submission';
+  const eventName = event || 'Fischer Redavid | Form Submission';
 
   const methods = useForm<IContactUsForm>({
     resolver: zodResolver(onContactUsFormSchema),

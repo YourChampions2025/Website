@@ -112,10 +112,10 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
             </Link>
           </div>
 
-          <div className='w-full py-8 h-fit relative z-50 pointer-events-none'>
+          <div className='w-full py-6 h-fit relative z-50 pointer-events-none'>
             <LogoSlider logos={LOGOS_ONE} />
           </div>
-          <div className='w-full flex flex-col items-center px-4 py-8 border-y border-[#083376]'>
+          <div className='w-full flex flex-col items-center px-4 py-6 border-y border-[#083376]'>
             <div className='max-w-[1252px] w-full flex items-center justify-between gap-4 md:gap-8 flex-col md:flex-row'>
               <div className='flex items-center gap-3 text-center md:text-left'>
                 <div className='w-3 h-3 flex-shrink-0 rounded-full bg-[#2DE046]' />
@@ -184,7 +184,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   {contactTitle}
                 </p>
                 <div id='contact-us' className='mb-10'>
-                  <ContactUsForm />
+                  <ContactUsForm event='Medical Malpractice | Form Submission' />
                 </div>
                 <div className='w-full h-fit aspect-video hidden md:block'>
                   <video
