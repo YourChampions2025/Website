@@ -303,3 +303,91 @@ export const videoCenterDescriptionSEO = {
   "about-fischer-redavid":
     "Video Category: About Fischer Redavid. Check out our latest videos and related information when you visit the website of Fischer Redavid PLLC. Let us keep you informed!",
 };
+
+export const questionsAndAnswers = [
+  {
+    question:
+      "What do I need to prove to be successful in my personal injury case?",
+    answer:
+      "You will file an insurance claim with your own auto insurance company after your car accident. Florida is a fault state for car accidents, so you are required to carry personal injury protection (PIP) coverage as part of your auto insurance policy. This coverage means your insurer has an obligation to cover certain losses when you are involved in a collision. But, insurers are rarely fair when it comes to victim compensation.",
+  },
+  {
+    question: "What Should I Do After an Accident?",
+    answer:
+      "After an accident, stay calm and move to a safe location to avoid further risks. Check for injuries and assess the damage. If the other driver is reliable, exchange basic information such as name, driver’s license details, and insurance information. Gather evidence immediately by taking photos of the scene, injuries, and all vehicles involved.",
+  },
+  {
+    question: "Can I sue for a slip-and-fall injury if I was partly at fault?",
+    answer:
+      "You can still file a lawsuit even if you were partially at fault. According to the state’s comparative negligence laws, victims who are somehow responsible for their injuries can receive compensation that’s less than the percentage of fault contributed. Even so, your lawyer will still focus on maximizing the settlement you’re due. ",
+  },
+  {
+    question: "First District Court of Appeals",
+    links: [
+      {
+        label: "Terry's Takes: February 12–18, 2023",
+        url: "/documents/20230218-Terry-s-Takes-Feb-12-18-2023.pdf",
+      },
+      {
+        label: "Monthly Roundup: October 2022",
+        url: "/documents/20221031-Monthly-Roundup-October-2022.docx",
+      },
+      {
+        label: "Weekly Update: October 31 – November 4, 2022",
+        url: "/documents/October-31-November-4.docx",
+      },
+      {
+        label: "Weekly Update: October 24–28, 2022",
+        url: "/documents/October-24-28.docx",
+      },
+      {
+        label: "Weekly Update: October 3–7, 2022",
+        url: "/documents/October-3-7.docx",
+      },
+      {
+        label: "Weekly Update: September 19–23, 2022",
+        url: "/documents/September-19-23.docx",
+      },
+      {
+        label: "Weekly Update: September 12–16, 2022",
+        url: "/documents/September-12-16.docx",
+      },
+      {
+        label: "Weekly Update: September 5–9, 2022",
+        url: "/documents/September-5-9.docx",
+      },
+      {
+        label: "Weekly Update: August 22–26, 2022",
+        url: "/documents/August-22-26.docx",
+      },
+      {
+        label: "Weekly Update: August 15–19, 2022",
+        url: "/documents/August-15-19.docx",
+      },
+      {
+        label: "Weekly Update: August 8–12, 2022",
+        url: "/documents/August-8-12.docx",
+      },
+      {
+        label: "Weekly Update: August 1–5, 2022",
+        url: "/documents/August-1-5.docx",
+      },
+      {
+        label: "Weekly Update: July 18–22, 2022",
+        url: "/documents/July-18-22.docx",
+      },
+      {
+        label: "Weekly Update: July 11–15, 2022",
+        url: "/documents/July-11-15.docx",
+      },
+      {
+        label: "Weekly Update: June 20–24, 2022",
+        url: "/documents/June-20-24.docx",
+      },
+      {
+        label: "Weekly Update: June 13–17, 2022",
+        url: "/documents/June-13-17.docx",
+      },
+    ],
+  },
+];

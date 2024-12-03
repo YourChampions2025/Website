@@ -6,25 +6,8 @@ import styles from "./frequent-questions.module.css";
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 import Collapse from "@/components/globals/general/collapse/collapse";
 import faqImage from "@/public/images/home-cover-frequently-questions.png";
-
-const questionsAndAnswers = [
-  {
-    question:
-      "What do I need to prove to be successful in my personal injury case?",
-    answer:
-      "You will file an insurance claim with your own auto insurance company after your car accident. Florida is a fault state for car accidents, so you are required to carry personal injury protection (PIP) coverage as part of your auto insurance policy. This coverage means your insurer has an obligation to cover certain losses when you are involved in a collision. But, insurers are rarely fair when it comes to victim compensation.",
-  },
-  {
-    question: "What Should I Do After an Accident?",
-    answer:
-      "After an accident, stay calm and move to a safe location to avoid further risks. Check for injuries and assess the damage. If the other driver is reliable, exchange basic information such as name, driver’s license details, and insurance information. Gather evidence immediately by taking photos of the scene, injuries, and all vehicles involved.",
-  },
-  {
-    question: "Can I sue for a slip-and-fall injury if I was partly at fault?",
-    answer:
-      "You can still file a lawsuit even if you were partially at fault. According to the state’s comparative negligence laws, victims who are somehow responsible for their injuries can receive compensation that’s less than the percentage of fault contributed. Even so, your lawyer will still focus on maximizing the settlement you’re due. ",
-  },
-];
+import Link from "next/link";
+import { questionsAndAnswers } from "@/utils/constants";
 
 function FrequentQuestions() {
   const [selectedItem, setSelectedItem] = useState<number | null>(0);
@@ -40,7 +23,7 @@ function FrequentQuestions() {
         <div className={styles.content}>
           <div className={styles.questionsContainer}>
             {questionsAndAnswers.map((item, i) => {
-              const { question, answer } = item;
+              const { question, answer, links } = item;
               const isOpen = selectedItem === i;
 
               return (
@@ -77,7 +60,24 @@ function FrequentQuestions() {
                   </div>
 
                   <Collapse isOpen={isOpen}>
-                    <p className={styles.answerText}>{answer}</p>
+                    {answer && <p className={styles.answerText}>{answer}</p>}
+                    {links && (
+                      <ul className={styles.linkList}>
+                        {links.map((link, index) => (
+                          <li key={index} className={styles.linkItem}>
+                            <div className={styles.bullet} />
+                            <Link
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.linkText}
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </Collapse>
                 </div>
               );
