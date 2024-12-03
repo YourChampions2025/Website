@@ -293,3 +293,96 @@ export const getSqueezeBySlug = async (slug: string) => {
 
   return data;
 };
+
+export const getBlogsForSEO = async () => {
+  const query = `*[_type == "blogs"] {
+    "slug": slug.current,
+    "date": date
+  }`;
+  const data = await client.fetch(query);
+
+  if (!data) return [];
+
+  const monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 
+    'july', 'august', 'september', 'october', 'november', 'december'];
+
+  return data.map((item: { slug: string; date: string }) => ({
+    slug: item.slug,
+    year: item.date.split('-')[0],
+    month: monthNames[parseInt(item.date.split('-')[1]) - 1]
+  }));
+};
+
+export const getPracticeAreasForSEO = async () => {
+  const query = `*[_type == "practiceAreas"] {
+    "slug": slug.current
+  }`;
+  const data = await client.fetch(query);
+
+  if (!data) return [];
+
+  return data;
+};
+
+export const getLocationsForSEO = async () => {
+  const query = `*[_type == "locations"] {
+    "slug": slug.current,
+    "otherAreas": otherAreas[]->{
+      "slug": slug.current,
+      "otherSubAreas": *[_type == "otherSubAreas" && parentOtherArea._ref == ^._id]{
+        "slug": slug.current
+      }
+    }
+  }`;
+  const data = await client.fetch(query);
+
+  if (!data) return [];
+
+  return data;
+};
+
+export const getCasesForSEO = async () => {
+  const query = `*[_type == "cases"] {
+    "slug": slug.current
+  }`;
+  const data = await client.fetch(query);
+
+  if (!data) return [];
+
+  return data;
+};
+
+export const getVideoForSEO = async () => {
+  const query = `*[_type == "videoCenter"] {
+    "slug": slug.current,
+    "category": category
+  }`;
+  const data = await client.fetch(query);
+
+  if (!data) return [];
+
+  return data;
+};
+
+export const getProfilesForSEO = async () => {
+  const query = `*[_type == "profiles"] {
+    "slug": slug.current,
+    "type": type
+  }`;
+  const data = await client.fetch(query);
+
+  if (!data) return [];
+
+  return data;
+};
+
+export const getSqueezesForSEO = async () => {
+  const query = `*[_type == "squeeze"] {
+    "slug": slug.current
+  }`;
+  const data = await client.fetch(query);
+
+  if (!data) return [];
+
+  return data;
+};
