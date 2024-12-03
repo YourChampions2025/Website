@@ -141,6 +141,7 @@ export default function BlogIndexFilter({
                   <CustomSelect
                     backgroundColor="transparent"
                     isFullHeight
+                    name={field.name}
                     label="Search by year"
                     options={[
                       "2024",
@@ -171,6 +172,7 @@ export default function BlogIndexFilter({
                 <CustomSelect
                   backgroundColor="transparent"
                   isFullHeight
+                  name={field.name}
                   label="Search for a category"
                   options={categoriesForBlogs.map((option) => ({
                     value: option.slug,
