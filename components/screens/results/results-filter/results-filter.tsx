@@ -117,6 +117,7 @@ export default function ResultsFilter() {
                   <CustomSelect
                     backgroundColor="transparent"
                     isFullHeight
+                    name={field.name}
                     label="Search for a category"
                     options={resultsCategoriesOptions.map((option) => ({
                       value: option.value,

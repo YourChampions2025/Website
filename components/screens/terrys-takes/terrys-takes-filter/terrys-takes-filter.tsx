@@ -138,6 +138,7 @@ export default function TerrysTakesFilter() {
                   <CustomSelect
                     backgroundColor="transparent"
                     isFullHeight
+                    name={field.name}
                     label="Search by court"
                     options={courtOptions.map((option) => ({
                       value: option.value,
@@ -159,6 +160,7 @@ export default function TerrysTakesFilter() {
                 <CustomSelect
                   backgroundColor="transparent"
                   isFullHeight
+                  name={field.name}
                   label="Search by category"
                   options={categoriesOptions.map((option) => ({
                     value: option.value,
