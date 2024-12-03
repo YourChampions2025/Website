@@ -6,30 +6,31 @@ import MainContentBlogSlug from "@/components/screens/blog/[slug]/main-content-b
 import SideContentBlogSlug from "@/components/screens/blog/[slug]/side-content-blog-slug/side-content-blog-slug";
 import { getTerrysTakesBySlug } from "@/sanity/lib/api";
 import { CaseProps } from "@/types/types";
-import type { Metadata } from "next";
-import React from "react";
+import { Metadata } from "next";
+import { BASE_URL } from "@/utils/constants";
 
-export async function generateMetadata({
-  params,
-}: {
+interface GenerateMetadataProps {
   params: Promise<{ courtSlug: string; terrysTakesSlug: string }>;
-}): Promise<Metadata> {
-  try {
-    const { terrysTakesSlug } = await params;
+}
 
-    const { caseItem }: { caseItem: CaseProps } =
-      await getTerrysTakesBySlug(terrysTakesSlug);
+export async function generateMetadata({ params }: GenerateMetadataProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const { caseItem }: { caseItem: CaseProps } = await getTerrysTakesBySlug(resolvedParams.terrysTakesSlug);
 
-    return {
-      title: `${caseItem.title} | Fischer Redavid PLLC`,
-      description: caseItem.description,
-    };
-  } catch (error) {
+  if (!caseItem) {
     return {
       title: "Not Found",
       description: "The page you are looking for does not exist",
     };
   }
+
+  return {
+    title: `${caseItem.title} | Terry's Takes | Fischer & Redavid Trial Lawyers`,
+    description: caseItem.description,
+    alternates: {
+      canonical: `${BASE_URL}/terrys-takes/jurisdictions/${caseItem.court || "general"}/${resolvedParams.terrysTakesSlug}`,
+    },
+  };
 }
 
 export default async function TerrysTakesSlugPage({
@@ -37,10 +38,8 @@ export default async function TerrysTakesSlugPage({
 }: {
   params: Promise<{ courtSlug: string; terrysTakesSlug: string }>;
 }) {
-  const { terrysTakesSlug } = await params;
-
-  const { caseItem }: { caseItem: CaseProps } =
-    await getTerrysTakesBySlug(terrysTakesSlug);
+  const resolvedParams = await params;
+  const { caseItem }: { caseItem: CaseProps } = await getTerrysTakesBySlug(resolvedParams.terrysTakesSlug);
 
   return (
     <main>

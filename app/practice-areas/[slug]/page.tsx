@@ -7,6 +7,7 @@ import { getPracticeAreaBySlug } from "@/sanity/lib/api";
 import { PracticeAreaProps } from "@/types/types";
 import { Metadata } from "next";
 import React from "react";
+import { BASE_URL } from "@/utils/constants";
 
 export async function generateMetadata({
   params,
@@ -15,12 +16,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const { slug } = await params;
-
     const practiceArea: PracticeAreaProps = await getPracticeAreaBySlug(slug);
 
     return {
       title: `${practiceArea.title} | FL, GA, US Virgin Islands |  Fischer Redavid PLLC`,
       description: practiceArea.description,
+      alternates: {
+        canonical: `${BASE_URL}/practice-areas/${slug}`,
+      },
     };
   } catch (error) {
     return {

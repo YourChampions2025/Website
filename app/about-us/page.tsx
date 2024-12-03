@@ -7,10 +7,14 @@ import React from "react";
 import { IoTriangle } from "react-icons/io5";
 import AboutUsImage from "@/public/images/about-us-image.png";
 import { Metadata } from "next";
+import { BASE_URL } from "@/utils/constants";
 
 export const metadata: Metadata = {
   title: "About Us | Fischer & Redavid Trial Lawyers",
-  description: "",
+  description: "Meet our team of experienced trial attorneys at Fischer & Redavid. Learn about our mission, values, and commitment to justice in FL, GA, and the US Virgin Islands.",
+  alternates: {
+    canonical: `${BASE_URL}/about-us`,
+  },
 };
 
 export default function AboutUsPage() {
@@ -39,10 +43,10 @@ export default function AboutUsPage() {
               clients. Our aggressive approach, coupled with our client-first
               philosophy, has helped us earn the trust of our clients, the
               respect of our opponents, and the acclaim of some of the legal
-              industries' most highly regarded organizations. 
+              industries' most highly regarded organizations. 
               <br />
               <br />
-              If you have been injured as a result of someone else’s negligent
+              If you have been injured as a result of someone else's negligent
               or wrongful conduct, your future may seem uncertain—but you do not
               have to face this uncertainty alone. Our attorneys, legal
               assistants, and support staff are prepared to guide you through

@@ -17,5 +17,5 @@ function PracticeAreas() {
     </div>
   );
 }
-
 export default PracticeAreas;
+

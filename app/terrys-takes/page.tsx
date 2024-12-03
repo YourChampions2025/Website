@@ -5,13 +5,37 @@ import TerrysTakesListing from "@/components/screens/terrys-takes/terrys-takes-l
 import { getFilteredCases } from "@/sanity/lib/api";
 import { CaseProps } from "@/types/types";
 import { Metadata } from "next";
-import React from "react";
+import { BASE_URL } from "@/utils/constants";
 
-export const metadata: Metadata = {
-  title: "Terry's Takes | Fischer Redavid PLLC",
-  description:
-    "Terry's Takes. Our legal team at Fischer Redavid PLLC has the legal experience to help you. Call us about your case today!",
-};
+interface GenerateMetadataProps {
+  searchParams: { category?: string; court?: string };
+}
+
+export async function generateMetadata({ searchParams }: GenerateMetadataProps): Promise<Metadata> {
+  const { category, court } = searchParams;
+  const { totalCases } = await getFilteredCases(1, undefined, category, court);
+
+  let title = "Terry's Takes | Florida Legal Case Summaries | Fischer & Redavid Trial Lawyers";
+  let description = `Explore ${totalCases}+ case summaries by Terry P. Roberts, our Director of Appellate Practice. Expert analysis of cases impacting Florida injury law from all jurisdictions.`;
+
+  if (court) {
+    const courtName = court.replace(/-/g, ' ');
+    title = `${courtName} Case Summaries | Terry's Takes | Fischer & Redavid Trial Lawyers`;
+    description = `Browse case summaries from the ${courtName}. Expert analysis by Terry P. Roberts on cases impacting Florida injury law.`;
+  } else if (category) {
+    const categoryName = category.replace(/-/g, ' ');
+    title = `${categoryName} Case Summaries | Terry's Takes | Fischer & Redavid Trial Lawyers`;
+    description = `Explore ${categoryName} case summaries. Expert analysis by Terry P. Roberts on cases impacting Florida injury law.`;
+  }
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${BASE_URL}/terrys-takes`,
+    },
+  };
+}
 
 export default async function TerrysTakesListingPage({
   searchParams,

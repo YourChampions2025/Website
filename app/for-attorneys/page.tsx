@@ -6,10 +6,14 @@ import MainContentForAttorneys from "@/components/screens/for-attorneys/main-con
 import SideContentForAttorneys from "@/components/screens/for-attorneys/side-content-for-attorneys/side-content-for-attorneys";
 import { getBiggestResults } from "@/sanity/lib/api";
 import { Metadata } from "next";
+import { BASE_URL } from "@/utils/constants";
 
 export const metadata: Metadata = {
   title: "For Attorneys | Fischer & Redavid Trial Lawyers",
-  description: "",
+  description: "Partner with Fischer & Redavid Trial Lawyers. We welcome attorney referrals and co-counsel opportunities across FL, GA, and US Virgin Islands. Let's work together to maximize case value.",
+  alternates: {
+    canonical: `${BASE_URL}/for-attorneys`,
+  },
 };
 
 export default async function ForAttorneysPage() {

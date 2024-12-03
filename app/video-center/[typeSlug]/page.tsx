@@ -11,6 +11,7 @@ import {
   videoCenterDescriptionSEO,
   videoCenterTitle,
   videoCenterTitleSEO,
+  BASE_URL,
 } from "@/utils/constants";
 import { Metadata } from "next";
 import React from "react";
@@ -35,6 +36,9 @@ export async function generateMetadata({
     return {
       title,
       description,
+      alternates: {
+        canonical: `${BASE_URL}/video-center/${typeSlug}`,
+      },
     };
   } catch (error) {
     return {

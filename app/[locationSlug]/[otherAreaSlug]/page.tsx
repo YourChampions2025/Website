@@ -3,6 +3,7 @@ import { LocationProps, OtherAreaProps } from "@/types/types";
 import React from "react";
 import LocationSlugLayout from "@/components/screens/locations-slug/location-slug-layout/location-slug-layout";
 import { Metadata } from "next";
+import { BASE_URL } from "@/utils/constants";
 
 export async function generateMetadata({
   params,
@@ -14,6 +15,7 @@ export async function generateMetadata({
 
     const {
       otherAreaItem,
+      locationItem,
     }: {
       otherAreaItem: OtherAreaProps;
       locationItem: Pick<LocationProps, "otherAreas" | "slug">;
@@ -22,6 +24,9 @@ export async function generateMetadata({
     return {
       title: otherAreaItem.title,
       description: otherAreaItem.description,
+      alternates: {
+        canonical: `${BASE_URL}/${locationItem.slug}/${otherAreaItem.slug}`,
+      },
     };
   } catch (error) {
     return {

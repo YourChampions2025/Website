@@ -6,7 +6,9 @@ import MainContentBlogSlug from "@/components/screens/blog/[slug]/main-content-b
 import SideContentBlogSlug from "@/components/screens/blog/[slug]/side-content-blog-slug/side-content-blog-slug";
 import { getArticleBySlug } from "@/sanity/lib/api";
 import { BlogProps } from "@/types/types";
+import { BlogSEOItem } from "@/types/seo";
 import { Metadata } from "next";
+import { BASE_URL } from "@/utils/constants";
 
 export async function generateMetadata({
   params,
@@ -18,13 +20,19 @@ export async function generateMetadata({
   }>;
 }): Promise<Metadata> {
   try {
-    const { blogSlug } = await params;
+    const resolvedParams = await params;
+    const { blog }: { blog: BlogProps } = await getArticleBySlug(resolvedParams.blogSlug);
 
-    const { blog }: { blog: BlogProps } = await getArticleBySlug(blogSlug);
+    const date = new Date(blog.date);
+    const year = date.getFullYear().toString();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
 
     return {
       title: `${blog.title} | Fischer Redavid PLLC`,
       description: blog.description,
+      alternates: {
+        canonical: `${BASE_URL}/articles/${year}/${month}/${blog.slug}`,
+      },
     };
   } catch (error) {
     return {

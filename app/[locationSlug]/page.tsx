@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import { LocationProps, SqueezeProps } from "@/types/types";
 import LocationSlugLayout from "@/components/screens/locations-slug/location-slug-layout/location-slug-layout";
 import SqueezeLayout from "@/components/screens/squeeze/squeeze-layout/squeeze-layout";
+import { BASE_URL } from "@/utils/constants";
 
 export async function generateMetadata({
   params,
@@ -29,6 +30,9 @@ export async function generateMetadata({
     return {
       title: locationItem.title,
       description: locationItem.description,
+      alternates: {
+        canonical: `${BASE_URL}/${locationItem.slug}`,
+      },
     };
   }
 
@@ -41,6 +45,9 @@ export async function generateMetadata({
     return {
       title: `${squeezeItem.title} | Fischer & Redavid Trial Lawyers`,
       description: squeezeItem.description,
+      alternates: {
+        canonical: `${BASE_URL}/${squeezeItem.slug}`,
+      },
     };
   }
 

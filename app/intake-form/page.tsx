@@ -2,6 +2,16 @@ import IntakeForm from "@/components/globals/forms/intake-form/intake-form";
 import LearnMoreSection from "@/components/globals/general/learn-more-section/learn-more-section";
 import PageHeader from "@/components/globals/layout/page-header/page-header";
 import React from "react";
+import { Metadata } from "next";
+import { BASE_URL } from "@/utils/constants";
+
+export const metadata: Metadata = {
+  title: "Case Intake Form | Fischer & Redavid Trial Lawyers",
+  description: "Start your case with Fischer & Redavid Trial Lawyers. Fill out our secure intake form to help us understand your situation and provide the best legal assistance possible.",
+  alternates: {
+    canonical: `${BASE_URL}/intake-form`,
+  },
+};
 
 function IntakeFormPage() {
   return (

@@ -10,33 +10,14 @@ import {
   getProfilesForSEO,
   getSqueezesForSEO,
 } from "../sanity/lib/api";
-
-interface SEOItem {
-  slug: string;
-}
-
-interface BlogItem extends SEOItem {
-  year: string;
-  month: string;
-}
-
-interface OtherSubArea extends SEOItem {}
-
-interface OtherArea extends SEOItem {
-  otherSubAreas?: OtherSubArea[];
-}
-
-interface Location extends SEOItem {
-  otherAreas?: OtherArea[];
-}
-
-interface VideoItem extends SEOItem {
-  category: string;
-}
-
-interface ProfileItem extends SEOItem {
-  type: string;
-}
+import {
+  BlogSEOItem,
+  CaseSEOItem,
+  LocationSEO,
+  ProfileSEOItem,
+  SEOItem,
+  VideoSEOItem,
+} from "../types/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Check generate-local-sitemap.js, or, run `pnpm generate-sitemap`
@@ -67,12 +48,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   // Process location-based URLs (including other areas and sub-areas)
-  const locationUrls = locations.flatMap((location: Location) => {
+  const locationUrls = locations.flatMap((location: LocationSEO) => {
     const baseUrl = `/${location.slug}`;
-    const otherAreaUrls = location.otherAreas?.flatMap((otherArea: OtherArea) => {
+    const otherAreaUrls = location.otherAreas?.flatMap((otherArea) => {
       const otherAreaUrl = `${baseUrl}/${otherArea.slug}`;
       const subAreaUrls = otherArea.otherSubAreas?.map(
-        (subArea: OtherSubArea) => `${otherAreaUrl}/${subArea.slug}`
+        (subArea) => `${otherAreaUrl}/${subArea.slug}`
       ) || [];
       return [otherAreaUrl, ...subAreaUrls];
     }) || [];
@@ -82,22 +63,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Combine all dynamic URLs
   const dynamicSlugs: MetadataRoute.Sitemap = [
     // Blogs
-    ...blogs.map((item: BlogItem) => `/articles/${item.year}/${item.month}/${item.slug}`),
+    ...blogs.map((item: BlogSEOItem) => `/articles/${item.year}/${item.month}/${item.slug}`),
     // Practice Areas
     ...practiceAreas.map((item: SEOItem) => `/practice-areas/${item.slug}`),
     // Locations (including other areas and sub-areas)
     ...locationUrls,
     // Cases (Terry's Takes)
-    ...cases.map((item: SEOItem) => `/terrys-takes/${item.slug}`),
+    ...cases.map((item: CaseSEOItem) => `/terrys-takes/jurisdictions/${item.court || "general"}/${item.slug}`),
     // Video Center
-    ...videos.map((item: VideoItem) => {
+    ...videos.map((item: VideoSEOItem) => {
       const typeSlug = item.category === 'Podcast' ? 'podcast' :
         item.category === 'Personal Injury' ? 'personal-injury' :
         'about-fischer-redavid';
       return `/video-center/${typeSlug}/${item.slug}`;
     }),
     // Team Profiles
-    ...profiles.map((item: ProfileItem) => {
+    ...profiles.map((item: ProfileSEOItem) => {
       const section = item.type === 'Attorneys' ? 'our-attorneys' : 'our-staff';
       return `/about-us/${section}/${item.slug}`;
     }),

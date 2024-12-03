@@ -15,6 +15,16 @@ import {
   getLatestBlogs,
   getLatestTestimonials,
 } from "@/sanity/lib/api";
+import { Metadata } from "next";
+import { BASE_URL } from "@/utils/constants";
+
+export const metadata: Metadata = {
+  title: "Fischer & Redavid Trial Lawyers | FL, GA, US Virgin Islands",
+  description: "Award-winning personal injury law firm serving Florida, Georgia, and the US Virgin Islands. Our experienced trial lawyers fight aggressively for maximum compensation.",
+  alternates: {
+    canonical: BASE_URL,
+  },
+};
 
 export default async function Home() {
   const testimonials = await getLatestTestimonials();

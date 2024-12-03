@@ -6,29 +6,38 @@ import { VideoCenterProps } from "@/types/types";
 import classNames from "classnames";
 import { Metadata } from "next";
 import React from "react";
+import { BASE_URL } from "@/utils/constants";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{
+    typeSlug: string;
     videoSlug: string;
   }>;
 }): Promise<Metadata> {
-  try {
-    const { videoSlug } = await params;
+  const resolvedParams = await params;
+  const video: VideoCenterProps = await getVideoCenterBySlug(resolvedParams.videoSlug);
 
-    const video: VideoCenterProps = await getVideoCenterBySlug(videoSlug);
-
-    return {
-      title: `Video: ${video.title} | Fischer Redavid PLLC`,
-      description: `Video: ${video.title}. View more videos or contact Fischer Redavid PLLC for help with your legal needs.`,
-    };
-  } catch (error) {
+  if (!video) {
     return {
       title: "Not Found",
       description: "The page you are looking for does not exist",
     };
   }
+
+  // Match the sitemap pattern for video type slugs
+  const typeSlug = video.category === 'Podcast' ? 'podcast' :
+    video.category === 'Personal Injury' ? 'personal-injury' :
+    'about-fischer-redavid';
+
+  return {
+    title: `Video: ${video.title} | Fischer Redavid PLLC`,
+    description: `Video: ${video.title}. View more videos or contact Fischer Redavid PLLC for help with your legal needs.`,
+    alternates: {
+      canonical: `${BASE_URL}/video-center/${typeSlug}/${video.slug}`,
+    },
+  };
 }
 
 export default async function VideoCenterPageListingByType({

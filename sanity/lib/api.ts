@@ -343,7 +343,8 @@ export const getLocationsForSEO = async () => {
 
 export const getCasesForSEO = async () => {
   const query = `*[_type == "cases"] {
-    "slug": slug.current
+    "slug": slug.current,
+    court
   }`;
   const data = await client.fetch(query);
 
