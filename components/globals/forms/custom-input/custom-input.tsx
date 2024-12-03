@@ -12,6 +12,7 @@ interface CustomInputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isRequired?: boolean;
   type?: string;
+  error?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -23,13 +24,19 @@ const CustomInput: React.FC<CustomInputProps> = ({
   onChange,
   isRequired = true,
   type = "text",
+  error: propError,
 }) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  let formContext;
+  try {
+    formContext = useFormContext();
+  } catch {
+    formContext = null;
+  }
 
-  const hasError = !!errors[name]?.message;
+  const register = formContext?.register;
+  const contextError = formContext?.formState?.errors?.[name]?.message?.toString();
+  const error = propError || contextError;
+  const hasError = !!error;
 
   const borderEffect = hasError
     ? "border border-red-600"
@@ -41,6 +48,10 @@ const CustomInput: React.FC<CustomInputProps> = ({
     isFullHeight && "h-full"
   );
 
+  const inputProps = register 
+    ? { ...register(name), value, onChange }
+    : { name, value, onChange };
+
   return (
     <div
       className={styles.container}
@@ -51,13 +62,11 @@ const CustomInput: React.FC<CustomInputProps> = ({
         style={{ height: isFullHeight ? "100%" : "auto" }}
       >
         <input
-          {...register(name)}
+          {...inputProps}
           type={type}
           className={borderClassName}
           style={{ backgroundColor }}
           placeholder=" "
-          value={value}
-          onChange={onChange}
         />
         <label className="uppercase scale-75 peer-focus:scale-75 pointer-events-none absolute left-5 top-2 z-10 origin-[0] transform text-[clamp(16px,2.5vw,20px)] text-white text-opacity-60 peer-focus:text-opacity-100 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 -translate-y-1 peer-focus:-translate-y-1 text-base">
           {label}
@@ -65,9 +74,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
         </label>
       </div>
       {hasError && (
-        <p className="mt-1 text-xs text-red-500">
-          {errors[name]?.message?.toString()}
-        </p>
+        <p className="mt-1 text-xs text-red-500">{error}</p>
       )}
     </div>
   );

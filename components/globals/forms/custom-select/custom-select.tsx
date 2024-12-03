@@ -2,8 +2,10 @@
 import classNames from "classnames";
 import styles from "./custom-select.module.css";
 import { BiChevronDown, BiX } from "react-icons/bi";
+import { useFormContext } from "react-hook-form";
 
 interface CustomSelectProps {
+  name: string;
   label: string;
   placeholder?: string;
   options: {
@@ -13,11 +15,13 @@ interface CustomSelectProps {
   isFullHeight?: boolean;
   backgroundColor?: string;
   value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (value: string) => void;
   onClear?: () => void;
+  error?: string;
 }
 
 const CustomSelect: React.FC<CustomSelectProps> = ({
+  name,
   label,
   placeholder = "Click to select",
   options,
@@ -26,11 +30,29 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   value,
   onChange,
   onClear,
+  error: propError,
 }) => {
+  let formContext;
+  try {
+    formContext = useFormContext();
+  } catch {
+    formContext = null;
+  }
+
+  const contextError = formContext?.formState?.errors?.[name]?.message?.toString();
+  const error = propError || contextError;
+  const hasError = !!error;
+
   const selectClassName = classNames(
     `peer block w-full appearance-none pb-2 pl-2 pt-8 text-[clamp(18px,1.85vw,20px)] text-white focus:outline-none focus:ring-0`,
     isFullHeight && "h-full"
   );
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
 
   return (
     <div
@@ -42,11 +64,12 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         style={{ height: isFullHeight ? "100%" : "auto" }}
       >
         <select
+          name={name}
           className={selectClassName}
           style={{ backgroundColor }}
           defaultValue=""
           value={value}
-          onChange={onChange}
+          onChange={handleChange}
         >
           {[
             {
@@ -79,6 +102,9 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
           </span>
         )}
       </div>
+      {hasError && (
+        <p className="mt-1 text-xs text-red-500">{error}</p>
+      )}
     </div>
   );
 };

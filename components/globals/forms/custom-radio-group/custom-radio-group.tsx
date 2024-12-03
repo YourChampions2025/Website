@@ -7,6 +7,9 @@ interface CustomRadioGroupProps {
   isRequired?: boolean;
   name: string;
   options: { label: string; value: string }[];
+  value?: string;
+  onChange?: (value: string) => void;
+  error?: string;
 }
 
 export default function CustomRadioGroup({
@@ -14,16 +17,37 @@ export default function CustomRadioGroup({
   isRequired = true,
   name,
   options,
+  value: controlledValue,
+  onChange: controlledOnChange,
+  error: propError,
 }: CustomRadioGroupProps) {
-  const {
-    watch,
-    setValue,
-    setError,
-    formState: { errors },
-  } = useFormContext();
+  let formContext;
+  try {
+    formContext = useFormContext();
+  } catch {
+    formContext = null;
+  }
 
-  const selectedValue = watch(name);
-  const hasError = errors[name]?.message;
+  const watch = formContext?.watch;
+  const setValue = formContext?.setValue;
+  const setError = formContext?.setError;
+  const contextError = formContext?.formState?.errors?.[name]?.message?.toString();
+  const error = propError || contextError;
+  const hasError = !!error;
+
+  const selectedValue = watch ? watch(name) : controlledValue;
+
+  const handleChange = (val: string) => {
+    if (setValue && setError) {
+      setValue(name, val);
+      setError(name, {
+        type: "manual",
+        message: "",
+      });
+    } else if (controlledOnChange) {
+      controlledOnChange(val);
+    }
+  };
 
   return (
     <div className="w-full h-fit border border-[#083376] pt-8 pb-3 pl-5 relative">
@@ -34,13 +58,7 @@ export default function CustomRadioGroup({
       )}
       <RadioGroup
         value={selectedValue}
-        onChange={(val) => {
-          setValue(name, val);
-          setError(name, {
-            type: "manual",
-            message: "",
-          });
-        }}
+        onChange={handleChange}
       >
         <div className="flex mt-4 items-start gap-3 flex-wrap">
           {options.map((option) => (
@@ -74,9 +92,7 @@ export default function CustomRadioGroup({
         </div>
       </RadioGroup>
       {hasError && (
-        <p className="text-xs text-[#EE0505] mt-1">
-          {errors[name]?.message?.toString()}
-        </p>
+        <p className="text-xs text-[#EE0505] mt-1">{error}</p>
       )}
     </div>
   );
