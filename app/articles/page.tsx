@@ -8,20 +8,27 @@ import { Metadata } from "next";
 import { BASE_URL } from "@/utils/constants";
 
 interface GenerateMetadataProps {
-  searchParams: { category?: string; year?: string };
+  searchParams: Promise<{
+    category?: string;
+    limit?: string;
+    title?: string;
+    year?: string;
+  }>;
 }
 
-export async function generateMetadata({ searchParams }: GenerateMetadataProps): Promise<Metadata> {
-  const { category, year } = searchParams;
+export async function generateMetadata({
+  searchParams,
+}: GenerateMetadataProps): Promise<Metadata> {
+  const { category, year } = await searchParams;
   const categoriesForBlogs = await getCategoriesForBlogs();
   const { totalBlogs } = await getFilteredBlogs(1, undefined, category, year);
 
   let title = "Legal Articles & Blog | Fischer & Redavid Trial Lawyers";
-  let description = `Explore ${totalBlogs}+ legal articles across ${categoriesForBlogs?.length || 'multiple'} categories. Stay informed with insights on personal injury law, legal tips, and important developments in FL, GA, and US Virgin Islands.`;
+  let description = `Explore ${totalBlogs}+ legal articles across ${categoriesForBlogs?.length || "multiple"} categories. Stay informed with insights on personal injury law, legal tips, and important developments in FL, GA, and US Virgin Islands.`;
 
   // Customize title and description for filtered views
   if (category) {
-    const categoryName = category.replace(/-/g, ' ');
+    const categoryName = category.replace(/-/g, " ");
     title = `${categoryName} Articles | Fischer & Redavid Trial Lawyers`;
     description = `Browse our ${categoryName} articles. Expert insights and legal advice from Fischer & Redavid's experienced trial attorneys.`;
   } else if (year) {
@@ -33,7 +40,7 @@ export async function generateMetadata({ searchParams }: GenerateMetadataProps):
     title,
     description,
     alternates: {
-      canonical: `${BASE_URL}/articles${category ? `?category=${category}` : ''}${year ? `?year=${year}` : ''}`,
+      canonical: `${BASE_URL}/articles${category ? `?category=${category}` : ""}${year ? `?year=${year}` : ""}`,
     },
   };
 }
