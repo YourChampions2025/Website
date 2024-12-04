@@ -108,10 +108,18 @@ export default function HomeHero() {
           </span>
 
           <div className={styles.buttonsContainer}>
-            <Link href="tel:8886940708">
-              <CustomButton color="blue" size="medium">
-                CALL NOW{" "}
-              </CustomButton>
+            <Link href="tel:9548608434">
+              <button className={styles.buttonCallNow}>
+                <p> CALL NOW</p>
+                {[...Array(3)].map((_, index) => (
+                  <MdKeyboardDoubleArrowRight
+                    key={index}
+                    size={20}
+                    color="#1055c1"
+                    className="flex-shrink-0"
+                  />
+                ))}
+              </button>
             </Link>
             <Link href="#contact-us">
               <button className={styles.buttonResults}>
