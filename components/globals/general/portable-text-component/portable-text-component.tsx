@@ -42,7 +42,7 @@ const components = {
           <p>
             You can get in touch with us via our online contact form or by
             calling{" "}
-            <Link href="tel:9548608434">
+            <Link href="tel:+19548608434">
               <b>(888) 694-0708</b>
             </Link>
           </p>

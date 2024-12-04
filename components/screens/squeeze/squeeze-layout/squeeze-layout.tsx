@@ -90,7 +90,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
         <div className="w-full flex flex-col mt-5">
           <div className="w-full flex flex-col sm:hidden">
             <Link
-              href="tel:9548608434"
+              href="tel:+19548608434"
               className="group flex items-center justify-center w-full pb-4 gap-2 text-[#FFFC] hover:text-[#2DE046] transition-colors duration-300"
             >
               <div className="w-[32px] h-[32px] flex items-center justify-center border border-[#2DE046] rounded-full group-hover:bg-[#2DE04640] transition-all duration-1000">

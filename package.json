@@ -17,7 +17,7 @@
     "@react-email/render": "^1.0.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/orderable-document-list": "^1.2.2",
-    "@sanity/ui": "^2.8.10",
+    "@sanity/ui": "^2.8.24",
     "@sanity/vision": "^3.62.2",
     "@sendgrid/mail": "^8.1.4",
     "@uidotdev/usehooks": "^2.4.1",

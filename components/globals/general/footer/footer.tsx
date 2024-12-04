@@ -106,7 +106,7 @@ function Footer() {
           <div className={styles.footerContact}>
             <div className={styles.footerGetStarted}>
               <h2>LET’S GET STARTED</h2>
-              <Link href="tel:9548608434">
+              <Link href="tel:+19548608434">
                 <CustomButton color="blue" size="medium">
                   (888) 694-0708
                 </CustomButton>

@@ -65,7 +65,7 @@ export default function ContactUs({ hasBorderTop }: ContactUsProps) {
               </div>
             </div>
 
-            <div className={styles.videoContainer}>
+            <div className={styles.videoContainer} id="contact-us-media-query">
               <div className={styles.buttonsVideo}>
                 <button className={styles.soundButton} onClick={toggleMute}>
                   {isMuted ? (

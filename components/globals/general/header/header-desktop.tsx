@@ -72,7 +72,7 @@ const contacts = [
   {
     icon: <MdPhone size={14} color="#2de046" />,
     textContact: "(888) 694-0708",
-    href: "tel:9548608434",
+    href: "tel:+19548608434",
   },
   {
     icon: <MdMailOutline size={14} color="#2de046" />,
