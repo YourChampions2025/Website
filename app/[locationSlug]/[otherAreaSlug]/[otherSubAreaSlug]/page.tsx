@@ -17,28 +17,32 @@ export async function generateMetadata({
   try {
     const { locationSlug, otherAreaSlug, otherSubAreaSlug } = await params;
 
-    const {
-      otherSubAreaItem,
-      locationItem,
-    }: {
-      otherSubAreaItem: OtherAreaProps;
-      locationItem: Pick<LocationProps, "otherAreas" | "slug">;
-    } = await getOtherSubAreaBySlugs(
+    const result = await getOtherSubAreaBySlugs(
       locationSlug,
       otherAreaSlug,
       otherSubAreaSlug
     );
 
+    if (!result) {
+      throw new Error('Not found');
+    }
+
+    const { otherSubAreaItem, locationItem, allLocations } = result;
+
     // Find the parent other area to get its slug
     const parentOtherArea = locationItem.otherAreas?.find(
-      area => area.otherSubAreas?.some(subArea => subArea.slug === otherSubAreaItem.slug)
+      (area: { otherSubAreas?: { slug: string }[] }) => 
+        area.otherSubAreas?.some((subArea: { slug: string }) => subArea.slug === otherSubAreaItem.slug)
     );
+
+    // Use the first location that has this sub-area as the canonical base
+    const primaryLocationSlug = allLocations?.[0]?.slug || locationSlug;
 
     return {
       title: otherSubAreaItem.title,
       description: otherSubAreaItem.description,
       alternates: {
-        canonical: `${BASE_URL}/${locationItem.slug}/${parentOtherArea?.slug}/${otherSubAreaItem.slug}`,
+        canonical: `${BASE_URL}/${primaryLocationSlug}/${parentOtherArea?.slug}/${otherSubAreaItem.slug}`,
       },
     };
   } catch (error) {
@@ -60,17 +64,17 @@ export default async function OtherSubAreaSlugPage({
 }) {
   const { locationSlug, otherAreaSlug, otherSubAreaSlug } = await params;
 
-  const {
-    otherSubAreaItem,
-    locationItem,
-  }: {
-    otherSubAreaItem: OtherAreaProps;
-    locationItem: Pick<LocationProps, "otherAreas" | "slug">;
-  } = await getOtherSubAreaBySlugs(
+  const result = await getOtherSubAreaBySlugs(
     locationSlug,
     otherAreaSlug,
     otherSubAreaSlug
   );
+
+  if (!result) {
+    throw new Error('Not found');
+  }
+
+  const { otherSubAreaItem, locationItem } = result;
 
   return (
     <LocationSlugLayout

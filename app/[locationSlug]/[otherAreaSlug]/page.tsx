@@ -13,19 +13,22 @@ export async function generateMetadata({
   try {
     const { locationSlug, otherAreaSlug } = await params;
 
-    const {
-      otherAreaItem,
-      locationItem,
-    }: {
-      otherAreaItem: OtherAreaProps;
-      locationItem: Pick<LocationProps, "otherAreas" | "slug">;
-    } = await getOtherAreaBySlugs(locationSlug, otherAreaSlug);
+    const result = await getOtherAreaBySlugs(locationSlug, otherAreaSlug);
+
+    if (!result) {
+      throw new Error('Not found');
+    }
+
+    const { otherAreaItem, locationItem, allLocations } = result;
+
+    // Use the first location that has this area as the canonical base
+    const primaryLocationSlug = allLocations?.[0]?.slug || locationSlug;
 
     return {
       title: otherAreaItem.title,
       description: otherAreaItem.description,
       alternates: {
-        canonical: `${BASE_URL}/${locationItem.slug}/${otherAreaItem.slug}`,
+        canonical: `${BASE_URL}/${primaryLocationSlug}/${otherAreaItem.slug}`,
       },
     };
   } catch (error) {
@@ -43,13 +46,13 @@ export default async function OtherAreaSlugPage({
 }) {
   const { locationSlug, otherAreaSlug } = await params;
 
-  const {
-    otherAreaItem,
-    locationItem,
-  }: {
-    otherAreaItem: OtherAreaProps;
-    locationItem: Pick<LocationProps, "otherAreas" | "slug">;
-  } = await getOtherAreaBySlugs(locationSlug, otherAreaSlug);
+  const result = await getOtherAreaBySlugs(locationSlug, otherAreaSlug);
+
+  if (!result) {
+    throw new Error('Not found');
+  }
+
+  const { otherAreaItem, locationItem } = result;
 
   return (
     <LocationSlugLayout
