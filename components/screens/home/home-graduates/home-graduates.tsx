@@ -17,7 +17,7 @@ function HomeGraduates() {
               </span>{" "}
             </h2>
             <h2>
-              we have COOffices in{" "}
+              we have Offices in{" "}
               <span> Florida, Georgia and United States Virgin Islands</span>{" "}
             </h2>
           </div>
