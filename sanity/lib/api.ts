@@ -24,6 +24,8 @@ import {
   getStaffProfilesQuery,
   getTerrysTakesBySlugQuery,
   getVideoCenterBySlugQuery,
+  getAreasForSEOQuery,
+  getSubAreasForSEOQuery,
 } from "./queries";
 
 export const getFilteredResults = async (
@@ -273,7 +275,11 @@ export const getOtherSubAreaBySlugs = async (
 
   if (!data) return undefined;
 
-  return data;
+  return {
+    otherSubAreaItem: data.otherSubAreaItem,
+    locationItem: data.locationItem,
+    allLocations: data.allLocations,
+  };
 };
 
 export const getSqueezes = async () => {
@@ -386,4 +392,37 @@ export const getSqueezesForSEO = async () => {
   if (!data) return [];
 
   return data;
+};
+
+export const getPrimaryLocation = async () => {
+  const query = `*[_type == "locations"] | order(_createdAt asc) [0] {
+    "slug": slug.current
+  }`;
+  const data = await client.fetch(query);
+  return data?.slug || "florida-prison-injury-lawyer";
+};
+
+export const getAreasForSEO = async () => {
+  const data = await client.fetch(getAreasForSEOQuery);
+  if (!data) return [];
+  return data.map((item: { slug: string; locations: { slug: string }[] }) => ({
+    slug: item.slug,
+    primaryLocation: item.locations[0]?.slug
+  }));
+};
+
+export const getSubAreasForSEO = async () => {
+  const data = await client.fetch(getSubAreasForSEOQuery);
+  if (!data) return [];
+  return data.map((item: { 
+    slug: string; 
+    parentArea: { 
+      slug: string; 
+      locations: { slug: string }[] 
+    } 
+  }) => ({
+    slug: item.slug,
+    parentAreaSlug: item.parentArea.slug,
+    primaryLocation: item.parentArea.locations[0]?.slug
+  }));
 };

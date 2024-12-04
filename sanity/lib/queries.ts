@@ -400,3 +400,22 @@ export const getSqueezeBySlugQuery = groq`
     quote
   }
 `;
+
+export const getAreasForSEOQuery = groq`
+*[_type == "otherAreas"] {
+  "slug": slug.current,
+  "locations": *[_type == "locations" && ^._id in otherAreas[]._ref] | order(_createdAt asc) {
+    "slug": slug.current
+  }
+}`;
+
+export const getSubAreasForSEOQuery = groq`
+*[_type == "otherSubAreas"] {
+  "slug": slug.current,
+  "parentArea": *[_type == "otherAreas" && _id == ^.parentOtherArea._ref][0] {
+    "slug": slug.current,
+    "locations": *[_type == "locations" && ^._id in otherAreas[]._ref] | order(_createdAt asc) {
+      "slug": slug.current
+    }
+  }
+}`;

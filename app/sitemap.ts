@@ -9,6 +9,8 @@ import {
   getVideoForSEO,
   getProfilesForSEO,
   getSqueezesForSEO,
+  getAreasForSEO,
+  getSubAreasForSEO,
 } from "../sanity/lib/api";
 import {
   BlogSEOItem,
@@ -17,6 +19,8 @@ import {
   ProfileSEOItem,
   SEOItem,
   VideoSEOItem,
+  AreaSEOItem,
+  SubAreaSEOItem,
 } from "../types/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -28,7 +32,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // Fetch all dynamic slugs
   const [
     blogs,
     practiceAreas,
@@ -37,6 +40,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     videos,
     profiles,
     squeezes,
+    areas,
+    subAreas,
   ] = await Promise.all([
     getBlogsForSEO(),
     getPracticeAreasForSEO(),
@@ -45,28 +50,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getVideoForSEO(),
     getProfilesForSEO(),
     getSqueezesForSEO(),
+    getAreasForSEO(),
+    getSubAreasForSEO(),
   ]);
 
-  // Process location-based URLs (including other areas and sub-areas)
-  const locationUrls = locations.flatMap((location: LocationSEO) => {
-    const baseUrl = `/${location.slug}`;
-    const otherAreaUrls = location.otherAreas?.flatMap((otherArea) => {
-      const otherAreaUrl = `${baseUrl}/${otherArea.slug}`;
-      const subAreaUrls = otherArea.otherSubAreas?.map(
-        (subArea) => `${otherAreaUrl}/${subArea.slug}`
-      ) || [];
-      return [otherAreaUrl, ...subAreaUrls];
-    }) || [];
-    return [baseUrl, ...otherAreaUrls];
-  });
+  // Process location-based URLs
+  const locationUrls = [
+    // Base location URLs
+    ...locations.map((location: LocationSEO) => `/${location.slug}`),
+    // Area URLs with their primary locations
+    ...areas.map((area: AreaSEOItem) => `/${area.primaryLocation}/${area.slug}`),
+    // Sub-area URLs with their primary locations and parent areas
+    ...subAreas.map((subArea: SubAreaSEOItem) => `/${subArea.primaryLocation}/${subArea.parentAreaSlug}/${subArea.slug}`),
+  ];
 
-  // Combine all dynamic URLs
   const dynamicSlugs: MetadataRoute.Sitemap = [
     // Blogs
     ...blogs.map((item: BlogSEOItem) => `/articles/${item.year}/${item.month}/${item.slug}`),
     // Practice Areas
     ...practiceAreas.map((item: SEOItem) => `/practice-areas/${item.slug}`),
-    // Locations (including other areas and sub-areas)
+    // Locations (including areas and sub-areas)
     ...locationUrls,
     // Cases (Terry's Takes)
     ...cases.map((item: CaseSEOItem) => `/terrys-takes/jurisdictions/${item.court || "general"}/${item.slug}`),
