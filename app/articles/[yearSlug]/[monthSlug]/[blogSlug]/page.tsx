@@ -25,7 +25,9 @@ export async function generateMetadata({
 
     const date = new Date(blog.date);
     const year = date.getFullYear().toString();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 
+      'july', 'august', 'september', 'october', 'november', 'december'];
+    const month = monthNames[date.getMonth()];
 
     return {
       title: `${blog.title} | Fischer Redavid PLLC`,
