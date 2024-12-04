@@ -14,7 +14,20 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutUsOurStaffPage() {
-  const profiles: ProfileProps[] = await getStaffProfiles();
+  let profiles: ProfileProps[] = await getStaffProfiles();
+
+  profiles = profiles.sort((a, b) => {
+    const isDirectorA = a.role.toLowerCase().includes("director");
+    const isDirectorB = b.role.toLowerCase().includes("director");
+
+    if (isDirectorA && !isDirectorB) {
+      return -1;
+    }
+    if (!isDirectorA && isDirectorB) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <main>

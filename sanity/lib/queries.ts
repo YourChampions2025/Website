@@ -332,7 +332,8 @@ export const getVideoCenterBySlugQuery = groq`
 `;
 
 export const getAttorneysProfilesQuery = groq`
-  *[_type == "profiles" && type == "Attorneys"] {
+  *[_type == "profiles" && type == "Attorneys"]
+  | order(name asc) {  
     type,
     name,
     "slug": slug.current,

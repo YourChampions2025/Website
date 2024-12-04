@@ -107,14 +107,38 @@
   gap: 18px;
 }
 
+.buttonCallNow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px clamp(18px, 5.09vw, 20px);
+  font-size: (12px, 1.48vw, 16px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  border: 1px solid #1055c1;
+  background: rgba(16, 85, 193, 0.1);
+
+  cursor: pointer;
+}
+.buttonCallNow:hover {
+  background: rgba(16, 85, 193, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonCallNow > *:first-child {
+  margin-right: 8px;
+}
 .buttonResults {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
-  padding: 1rem 2rem;
-  font-size: 16px;
+  padding: 16px clamp(18px, 5.09vw, 20px);
+  font-size: (12px, 1.48vw, 16px);
   letter-spacing: 1px;
   text-transform: uppercase;
 
@@ -207,7 +231,7 @@
   }
 }
 
-@media (max-width: 464px) {
+@media (max-width: 526px) {
   .buttonsContainer {
     display: flex;
     flex-direction: column;
