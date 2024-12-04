@@ -7,10 +7,12 @@ interface CustomButtonProps
   children: React.ReactNode;
   size?: 'small' | 'medium' | 'large';
   color?: 'green' | 'blue';
+  className?: string;
 }
 
 export default function CustomButton({
   children,
+  className,
   size = 'medium',
   color = 'green',
   ...props
@@ -25,7 +27,12 @@ export default function CustomButton({
   return (
     <button
       {...props}
-      className={classNames(styles.buttonBase, styles[color], buttonSize)}
+      className={classNames(
+        styles.buttonBase,
+        styles[color],
+        buttonSize,
+        className
+      )}
     >
       {children}
     </button>

@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import Image from "next/image";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+'use client';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import Image from 'next/image';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 interface LogoSliderProps {
   logos: StaticImport[];
@@ -16,7 +16,7 @@ export default function LogoSlider({
 }: LogoSliderProps) {
   return (
     <Swiper
-      slidesPerView="auto"
+      slidesPerView='auto'
       autoplay={{
         delay: 100,
         disableOnInteraction: true,
@@ -30,15 +30,15 @@ export default function LogoSlider({
           spaceBetween: 96,
         },
       }}
-      className="logo-slider !max-w-full !w-full !z-50"
+      className='logo-slider !max-w-full !w-full !z-50'
       loop
     >
       {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-        <SwiperSlide key={index} className="!w-fit">
+        <SwiperSlide key={index} className='!w-fit'>
           <Image
-            className="w-fit object-contain max-w-[clamp(160px,25vw,200px)] h-[clamp(40px,7vw,56px)]"
+            className='w-fit object-contain max-w-[clamp(160px,25vw,200px)] h-[clamp(40px,7vw,56px)] max-h-[50px]'
             src={logo}
-            alt="Trophies Law Logo"
+            alt='Trophies Law Logo'
           />
         </SwiperSlide>
       ))}
