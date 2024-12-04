@@ -108,14 +108,14 @@ export default function HomeHero() {
           </span>
 
           <div className={styles.buttonsContainer}>
-            <Link href="#contact-us">
+            <Link href="tel:8886940708">
               <CustomButton color="blue" size="medium">
-                Get in touch now
+                CALL NOW{" "}
               </CustomButton>
             </Link>
-            <Link href="/results">
+            <Link href="#contact-us">
               <button className={styles.buttonResults}>
-                <p>Our Results</p>
+                <p>GET IN TOUCH</p>
                 {[...Array(3)].map((_, index) => (
                   <MdKeyboardDoubleArrowRight
                     key={index}
