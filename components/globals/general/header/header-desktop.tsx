@@ -202,12 +202,12 @@ function HeaderDesktop() {
                   {activeDropdown === i && (
                     <div className={style.menuItems}>
                       {renderMenuItems([
-                        { href: "/terrys-takes", label: "Terry's Takes" },
-                        { href: "/careers", label: "Careers" },
-                        { href: "/podcasts", label: "Podcast" },
                         { href: "/articles", label: "Articles" },
-                        { href: "/video-center", label: "Video Center" },
+                        { href: "/terrys-takes", label: "Terry's Takes" },
                         { href: "/testimonials", label: "Testimonials" },
+                        { href: "/podcasts", label: "Podcast" },
+                        { href: "/video-center", label: "Video Center" },
+                        { href: "/careers", label: "Careers" },
                       ])}
                     </div>
                   )}

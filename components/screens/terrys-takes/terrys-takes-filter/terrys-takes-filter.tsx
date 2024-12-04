@@ -86,20 +86,19 @@ export default function TerrysTakesFilter() {
       <div className="max-w-[1600px] w-full h-full mx-auto grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] relative z-20 px-4 2xl:px-0">
         <div className="w-full h-full flex items-center justify-center py-10 md:py-12">
           <div className="max-w-4xl w-full flex flex-col items-start text-[#8D8D8D] text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)]">
-            "Terry's Takes " summarizes every case that impacts Florida injury
-            law. Our Director of Appellate Practice, Terry P. Roberts, puts his
-            two decades of experience into summarizing opinions from the Supreme
-            Court of the United States, the Eleventh Circuit Court of Appeals,
-            the Florida Supreme Court, and all six Florida District Courts of
-            Appeal.
+            Welcome to Terry's Takes! Here you'll find opinion summaries
+            authored by our Director of Appellate Practice, Terry P. Roberts.
+            Check out information on cases from the courts around Florida and
+            the United States Virgin Islands as well as the Eleventh Circuit
+            Court of Appeals and the Supreme Court of the United States.
             <br />
             <br />
-            The most recent summaries appear below, or you can use the tools
-            below to search for a keyword, sort results by court, or search for
-            specific topics.
+            Grab a coffee and buckle up for some riveting reading. You can use
+            the tools on this page to search by keyword, court, and category.
             <br />
             <br />
-            Send any feedback to Terry directly at Terry@YourChampions.com.
+            Terry is always eager to hear your thoughts! Email him directly to
+            connect at terry@yourchampions.com.{" "}
           </div>
         </div>
         <div className="hidden md:flex" />
