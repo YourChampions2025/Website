@@ -1,83 +1,83 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./footer.module.css";
-import { IoLogoFacebook } from "react-icons/io5";
-import { FaGoogle, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from './footer.module.css';
+import { IoLogoFacebook } from 'react-icons/io5';
+import { FaGoogle, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
-import footerDetails from "@/public/images/footer.svg";
+import footerDetails from '@/public/images/footer.svg';
 
-import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from "react-icons/ai";
-import { usePathname } from "next/navigation";
-import { locationsDatas } from "@/utils/constants";
-import CustomButton from "../../forms/custom-button/custom-button";
+import { AiFillInstagram, AiFillTikTok, AiFillYoutube } from 'react-icons/ai';
+import { usePathname } from 'next/navigation';
+import { locationsDatas } from '@/utils/constants';
+import CustomButton from '../../forms/custom-button/custom-button';
 
 const footerLink = [
   {
-    href: "/",
-    label: "home",
+    href: '/',
+    label: 'home',
   },
   {
-    href: "/about-us",
-    label: "about us",
+    href: '/about-us',
+    label: 'about us',
   },
   {
-    href: "/practice-areas",
-    label: "practice areas",
+    href: '/practice-areas',
+    label: 'practice areas',
   },
   {
-    href: "/articles",
-    label: "resources",
+    href: '/articles',
+    label: 'resources',
   },
   {
-    href: "/locations",
-    label: "locations",
+    href: '/locations',
+    label: 'locations',
   },
   {
-    href: "/results",
-    label: "results",
+    href: '/results',
+    label: 'results',
   },
 ];
 
 const socialLinks = [
   {
-    href: "https://www.facebook.com/FischerRedavid/",
-    label: "Facebook",
-    icon: <IoLogoFacebook size={24} color="#1055C1" />,
+    href: 'https://www.facebook.com/FischerRedavid/',
+    label: 'Facebook',
+    icon: <IoLogoFacebook size={24} color='#1055C1' />,
   },
   {
-    href: "https://www.instagram.com/your_champions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    label: "Instagram",
-    icon: <AiFillInstagram size={24} color="#1055C1" />,
+    href: 'https://www.instagram.com/your_champions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+    label: 'Instagram',
+    icon: <AiFillInstagram size={24} color='#1055C1' />,
   },
   {
-    href: "https://www.linkedin.com/company/yourchampions/about/",
-    label: "LinkedIn",
-    icon: <FaLinkedin size={24} color="#1055C1" />,
+    href: 'https://www.linkedin.com/company/yourchampions/about/',
+    label: 'LinkedIn',
+    icon: <FaLinkedin size={24} color='#1055C1' />,
   },
   {
-    href: "https://x.com/OnJusticePod",
-    label: "X",
-    icon: <FaXTwitter size={24} color="#1055C1" />,
+    href: 'https://x.com/OnJusticePod',
+    label: 'X',
+    icon: <FaXTwitter size={24} color='#1055C1' />,
   },
   {
-    href: "https://www.youtube.com/@onjusticepodcast",
-    label: "YouTube",
-    icon: <AiFillYoutube size={24} color="#1055C1" />,
+    href: 'https://www.youtube.com/@onjusticepodcast',
+    label: 'YouTube',
+    icon: <AiFillYoutube size={24} color='#1055C1' />,
   },
   {
-    href: "/",
-    label: "Google Business",
-    icon: <FaGoogle size={24} color="#1055C1" />,
+    href: '/',
+    label: 'Google Business',
+    icon: <FaGoogle size={24} color='#1055C1' />,
   },
 ];
 
 function Footer() {
   const pathname = usePathname();
 
-  const isStudio = pathname.includes("/studio");
+  const isStudio = pathname.includes('/studio');
 
   if (isStudio) return null;
 
@@ -98,7 +98,7 @@ function Footer() {
         </div>
         <span className={styles.lineSeparator} />
         <Image
-          alt="Vector footer"
+          alt='Vector footer'
           src={footerDetails}
           className={styles.footerImageDetails}
         />
@@ -106,9 +106,9 @@ function Footer() {
           <div className={styles.footerContact}>
             <div className={styles.footerGetStarted}>
               <h2>LET’S GET STARTED</h2>
-              <Link href="tel:+19548608434">
-                <CustomButton color="blue" size="medium">
-                  (888) 694-0708
+              <Link href='tel:+19548608434'>
+                <CustomButton color='blue' size='medium'>
+                  (954) 860-8434
                 </CustomButton>
               </Link>
             </div>
@@ -169,9 +169,9 @@ function Footer() {
                 <iframe
                   src={officeData.iframeUrl}
                   className={styles.mapDetails}
-                  loading="lazy"
+                  loading='lazy'
                   allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
+                  referrerPolicy='no-referrer-when-downgrade'
                   title={`Fischer Redavid PLLC ${officeData.title}`}
                 />
               </div>
@@ -180,12 +180,12 @@ function Footer() {
         </div>
       </div>
       <div className={styles.footerTerms}>
-        <Link href="/privacy-policy" className={styles.linkTerms}>
-          Privacy Policy{" "}
+        <Link href='/privacy-policy' className={styles.linkTerms}>
+          Privacy Policy{' '}
         </Link>
         <p className={styles.copyright}>
-          Copyright @ 2024 Your Champions. All Rights Reserved. Powered by{" "}
-          <Link href="https://thecaselygroup.com">The Casely Group</Link>.
+          Copyright @ 2024 Your Champions. All Rights Reserved. Powered by{' '}
+          <Link href='https://thecaselygroup.com'>The Casely Group</Link>.
         </p>
       </div>
     </div>

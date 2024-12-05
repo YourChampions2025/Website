@@ -8,6 +8,8 @@ import CallToActionBlock from './call-to-action-block';
 import DarkGrayBoxWithLogo from '../../layout/dark-gray-box-with-logo/dark-gray-box-with-logo';
 import Link from 'next/link';
 
+import Image from 'next/image';
+
 const components = {
   types: {
     image: ({ value }: { value: ImageSchema }) => {
@@ -17,10 +19,12 @@ const components = {
       }
 
       return (
-        <img
-          className='max-w-[1090px] w-full aspect-video object-cover my-4 mx-auto'
+        <Image
+          className='max-w-[1090px] w-full aspect-video object-cover my-4 mx-auto border-b border-[#2DE046]'
           src={urlFor(value.asset).url()}
           alt={value.caption || 'Imagem without description'}
+          width={800}
+          height={800}
         />
       );
     },
@@ -43,7 +47,7 @@ const components = {
             You can get in touch with us via our online contact form or by
             calling{' '}
             <Link href='tel:+19548608434'>
-              <b>(888) 694-0708</b>
+              <b>(954) 860-8434</b>
             </Link>
           </p>
         </div>

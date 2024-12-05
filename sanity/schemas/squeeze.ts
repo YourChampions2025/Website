@@ -83,31 +83,7 @@ export default defineType({
             },
           ],
         }),
-        defineArrayMember({
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'URL',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'string',
-                    title: 'URL',
-                  },
-                  {
-                    title: 'Open in new tab',
-                    name: 'blank',
-                    type: 'boolean',
-                  },
-                ],
-              },
-            ],
-          },
-        }),
+        defineArrayMember({ type: 'block' }),
       ],
       validation: (Rule) => Rule.required().error('Content is required'),
     }),

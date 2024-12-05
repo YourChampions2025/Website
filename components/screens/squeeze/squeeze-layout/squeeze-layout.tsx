@@ -69,9 +69,9 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
   } = squeezeItem;
 
   return (
-    <main className='w-full pt-[100px] sm:pt-[125px] p-4 pb-20'>
+    <main className='w-full pt-[60px] sm:pt-[125px] p-4 pb-20'>
       <div className='w-full flex flex-col items-center'>
-        <div className='w-fullflex flex-col items-center'>
+        {/* <div className='w-full flex flex-col items-center'>
           <div className='w-full h-fit aspect-video mb-8 block sm:hidden '>
             <video
               className='w-full h-full object-cover border border-[#2DE046] p-3 rounded-lg'
@@ -90,41 +90,17 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
           <p className='max-w-[1080px] w-full text-[clamp(12px,2.22vw,20px)] text-[#2DE046] tracking-[calc(clamp(12px,2.22vw,20px)*-0.02)] text-center text-pretty mt-4 sm:hidden'>
             {description}
           </p>
-        </div>
+        </div> */}
 
         <div className='w-full flex flex-col mt-5'>
-          <div className='w-full flex flex-col sm:hidden'>
-            <Link
-              href='tel:+19548608434'
-              className='group flex items-center justify-center w-full pb-4 gap-2 text-[#FFFC] hover:text-[#2DE046] transition-colors duration-300'
-            >
-              <div className='w-[32px] h-[32px] flex items-center justify-center border border-[#2DE046] rounded-full group-hover:bg-[#2DE04640] transition-all duration-1000'>
-                <MdPhone
-                  size={18}
-                  className='text-current group-hover:text-[#2DE046] transition-colors duration-300'
-                />
-              </div>
-              <b className='text-[24px] text-current group-hover:text-[#2DE046] transition-colors duration-300'>
-                (888) 694-0708
-              </b>
-            </Link>
-
-            <Link
-              href='#contact-us'
-              className=' flex items-center justify-center'
-            >
-              <CustomButton size='small'>get a free consultation</CustomButton>
-            </Link>
-          </div>
-
-          <div className='w-full py-6 h-fit relative z-50 pointer-events-none'>
+          <div className='w-full py-3 sm:py-6 h-fit relative z-50 pointer-events-none'>
             <LogoSlider logos={LOGOS_ONE} />
           </div>
-          <div className='w-full flex flex-col items-center px-4 py-6 border-y border-[#083376]'>
-            <div className='max-w-[1252px] w-full flex items-center justify-between gap-4 md:gap-8 flex-col md:flex-row'>
+          <div className='w-full flex flex-col items-center px-4 py-2 sm:py-6 border-y border-[#083376]'>
+            <div className='max-w-[1252px] w-full flex items-center justify-between gap-1 md:gap-8 flex-col md:flex-row'>
               <div className='flex items-center gap-3 text-center md:text-left'>
-                <Indicator />
-                <h2 className='ml-2.5 text-[clamp(24px,5.33vw,40px)] tracking-[calc(clamp(24px,5.33vw,40px)*0.01)] capitalize font-serif text-white text-pretty'>
+                <Indicator className='!hidden sm:inline-block' />
+                <h2 className='ml-2.5 text-[clamp(12px,4.75vw,40px)] tracking-[calc(clamp(24px,5.33vw,40px)*0.01)] capitalize font-serif text-white text-balance'>
                   {subTitle}
                 </h2>
               </div>
@@ -135,10 +111,10 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
             </div>
           </div>
 
-          <div className='w-full h-fit pt-8 px-4 flex flex-col items-center'>
+          <div className='w-full h-fit pt-4 sm:pt-8 sm:px-4 flex flex-col items-center'>
             <div className='max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-[61%_39%] gap-12'>
               <div className='w-full flex flex-col'>
-                <div className='w-full h-fit aspect-video hidden sm:block'>
+                <div className='w-full h-fit aspect-video  sm:block'>
                   <video
                     className='w-full h-full object-cover border border-[#2DE046] p-3 rounded-lg'
                     src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4'
@@ -150,8 +126,34 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   />
                 </div>
 
+                <div className='w-full flex flex-col items-start sm:hidden mt-5'>
+                  <Link
+                    href='tel:+19548608434'
+                    className='group flex items-center w-full pb-4 gap-2 text-[#FFFC] hover:text-[#2DE046] transition-colors duration-300'
+                  >
+                    <div className='w-[32px] h-[32px] flex items-center justify-center border border-[#2DE046] rounded-full group-hover:bg-[#2DE04640] transition-all duration-1000'>
+                      <MdPhone
+                        size={18}
+                        className='text-current group-hover:text-[#2DE046] transition-colors duration-300'
+                      />
+                    </div>
+                    <b className='text-xl text-current group-hover:text-[#2DE046] transition-colors duration-300'>
+                      (954) 860-8434
+                    </b>
+                  </Link>
+
+                  <Link
+                    href='#contact-us'
+                    className=' flex items-center justify-center'
+                  >
+                    <CustomButton size='small' className='w-full !px-6'>
+                      Connect With Fischer Redavid
+                    </CustomButton>
+                  </Link>
+                </div>
+
                 <div className='w-full py-5 border-b border-[#083376] flex items-start justify-between'>
-                  <h1 className='max-w-[90%] w-full text-left text-5xl tracking-[calc(clamp(32px,6.22vw,56px)*0.01)] capitalize font-serif'>
+                  <h1 className='max-w-[90%] w-full text-left text-3xl sm:text-5xl tracking-[calc(clamp(32px,6.22vw,56px)*0.01)] capitalize font-serif'>
                     {contentTitle}
                   </h1>
 
@@ -162,7 +164,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   />
                 </div>
 
-                <h6 className='text-[#2DE046] mt-3 text-lg'>
+                <h6 className='text-[#2DE046] mt-3 sm:text-lg'>
                   Featured on CNN, Fox Business News, Good Morning America, and
                   other major outlets
                 </h6>
@@ -189,28 +191,34 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 </div>
               </div>
 
-              <div className='w-full flex flex-col border border-gray-900 px-8 pt-5 pb-10 rounded-md h-fit'>
+              <div
+                id='contact-us'
+                className='w-full flex flex-col border border-gray-900 px-4 sm:px-8 pt-5 pb-10 rounded-md h-fit'
+              >
                 <Image
                   src={FischerRedavidLogo}
                   alt='Fischer & Redavid'
                   width={250}
-                  className='mb-5'
+                  className='mb-5 w-52 sm:w-60'
                 />
-                <div className='flex gap-16 items-center mt-3 mb-5'>
+                <div className='flex gap-10 sm:gap-16 items-center mt-3 mb-5'>
                   <Image
                     src={ImageLogo9}
                     alt='Top 100 Jury Verdicts'
                     width={75}
+                    className='w-16'
                   />
                   <Image
                     src={ImageLogo1}
                     alt='Top 100 Jury Verdicts'
                     width={75}
+                    className='w-16'
                   />
                   <Image
                     src={ImageLogo9}
                     alt='Top 100 Jury Verdicts'
                     width={75}
+                    className='w-16'
                   />
                 </div>
 
@@ -223,7 +231,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   </p>
                 </div>
 
-                <div id='contact-us' className='mb-10'>
+                <div className='mb-10'>
                   <ContactUsForm event='Medical Malpractice | Form Submission' />
                 </div>
                 <div className='w-full h-fit aspect-video hidden md:block'>
