@@ -5,12 +5,12 @@ import { TypedObject } from "sanity";
 
 interface MainContentBlogSlugProps {
   author?: string;
-  date: string;
+  date?: string;
   title: string;
   content: TypedObject | TypedObject[];
   court?: string;
   categories?: string[] | { title: string; slug: string }[];
-  type?: "terrys-takes" | "blog";
+  type?: "terrys-takes" | "blog" | "results";
 }
 
 export default function MainContentBlogSlug({
@@ -28,14 +28,17 @@ export default function MainContentBlogSlug({
         <p className={styles.authorInfo}>
           <span className={styles.highlight}>By</span>{" "}
           {author || "Jordan Redavid"}{" "}
-          <span className={styles.highlight}>
-            |{" "}
-            {new Date(date).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </span>
+          {date && (
+            <span className={styles.highlight}>
+              |{" "}
+              {date &&
+                new Date(date).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+            </span>
+          )}
         </p>
         <h1 className={styles.title}>{title}</h1>
         {content && (
@@ -60,7 +63,11 @@ export default function MainContentBlogSlug({
 
                 <Link
                   key={index}
-                  href={`/${type}/categories/${typeof category === "object" ? category.slug : category}`}
+                  href={
+                    type === "results"
+                      ? `/results?limit=12&category=${typeof category === "object" ? category.slug : category}`
+                      : `/${type}/categories/${typeof category === "object" ? category.slug : category}`
+                  }
                 >
                   {typeof category === "object"
                     ? category.title

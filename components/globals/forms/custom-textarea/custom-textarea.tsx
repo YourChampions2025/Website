@@ -4,6 +4,9 @@ import { useFormContext, UseFormRegisterReturn } from 'react-hook-form';
 import styles from './custom-textarea.module.css';
 import classNames from 'classnames';
 
+import Image from 'next/image';
+import GreenIcons from '@/public/images/home-book-details.png';
+
 interface CustomTextareaProps {
   name: string;
   label: string;
@@ -27,7 +30,8 @@ const CustomTextarea: React.FC<CustomTextareaProps> = ({
   }
 
   const register = formContext?.register;
-  const contextError = formContext?.formState?.errors?.[name]?.message?.toString();
+  const contextError =
+    formContext?.formState?.errors?.[name]?.message?.toString();
   const error = propError || contextError;
   const hasError = !!error;
 
@@ -47,19 +51,25 @@ const CustomTextarea: React.FC<CustomTextareaProps> = ({
   const paddingTop = label.length > 35 ? 'pt-16' : 'pt-8';
 
   const borderClassName = classNames(
-    'peer block w-full appearance-none bg-[#000] pb-3 pl-5 text-[clamp(18px,1.85vw,20px)] text-white focus:outline-none focus:ring-0 resize-none appearance-none overflow-y-hidden',
+    'peer block w-full appearance-none bg-[#000] pb-3 pl-5 text-[clamp(18px,1.85vw,20px)] text-white focus:outline-none focus:ring-0 resize-none appearance-none overflow-y-hidden rounded-lg',
     borderEffect,
     paddingTop
   );
 
-  const registerProps = register ? (register(name) as UseFormRegisterReturn) : {};
+  const registerProps = register
+    ? (register(name) as UseFormRegisterReturn)
+    : {};
   const textareaProps = register
     ? {
         ...registerProps,
         ref: (e: HTMLTextAreaElement | null) => {
           textareaRef.current = e;
           if ('ref' in registerProps) {
-            (registerProps.ref as (instance: HTMLTextAreaElement | null) => void)(e);
+            (
+              registerProps.ref as (
+                instance: HTMLTextAreaElement | null
+              ) => void
+            )(e);
           }
         },
         value,
@@ -82,13 +92,16 @@ const CustomTextarea: React.FC<CustomTextareaProps> = ({
           placeholder=' '
           rows={5}
         />
-        <label className='uppercase scale-75 peer-focus:scale-75 pointer-events-none absolute left-5 top-8 z-10 origin-[0] transform text-[clamp(16px,2.5vw,20px)] text-white text-opacity-60 peer-focus:text-opacity-100 duration-300  peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 -translate-y-1 peer-focus:-translate-y-1 text-base'>
+        <label className='uppercase scale-75 peer-focus:scale-75 pointer-events-none absolute left-5 top-8 z-10 origin-[0] transform text-[clamp(12px,2.5vw,14px)] text-white text-opacity-60 peer-focus:text-opacity-100 duration-300  peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 -translate-y-1 peer-focus:-translate-y-1 text-base'>
           {label}
         </label>
+        <Image
+          src={GreenIcons}
+          alt='green icons'
+          className='absolute top-4 right-3 w-5 h-5'
+        />
       </div>
-      {hasError && (
-        <p className={styles.errorText}>{error}</p>
-      )}
+      {hasError && <p className={styles.errorText}>{error}</p>}
     </div>
   );
 };

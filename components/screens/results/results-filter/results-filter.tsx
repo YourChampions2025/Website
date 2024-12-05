@@ -1,6 +1,5 @@
 "use client";
 
-import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 import CustomSelect from "@/components/globals/forms/custom-select/custom-select";
 import { resultsCategoriesOptions } from "@/utils/constants";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,6 +8,7 @@ import React, { useEffect } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import { useDebounce } from "@uidotdev/usehooks";
+import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 
 export const onResultsFilterSchema = z.object({
   title: z.string().optional(),
@@ -18,12 +18,16 @@ export const onResultsFilterSchema = z.object({
 export type IResultsFilter = z.infer<typeof onResultsFilterSchema>;
 
 export default function ResultsFilter() {
-  const { control, setValue, watch, ...rest } = useForm<IResultsFilter>({
-    resolver: zodResolver(onResultsFilterSchema),
-  });
-
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  const { control, setValue, watch, ...rest } = useForm<IResultsFilter>({
+    resolver: zodResolver(onResultsFilterSchema),
+    defaultValues: {
+      title: searchParams.get("title") || "",
+      category: searchParams.get("category") || "",
+    },
+  });
 
   const paramMap: Record<keyof IResultsFilter, string> = {
     title: "title",
@@ -57,7 +61,7 @@ export default function ResultsFilter() {
     params.set("limit", "12");
 
     router.push(`/results?${params.toString()}`, { scroll: false });
-  }, [debouncedTitleValue, categoryValue]);
+  }, [debouncedTitleValue, categoryValue, router, searchParams]);
 
   const handleClearInput = (name: keyof IResultsFilter) => {
     setValue(name, "");
@@ -66,7 +70,6 @@ export default function ResultsFilter() {
 
     const params = new URLSearchParams(searchParams.toString());
     params.delete(paramName);
-
     params.set("limit", "12");
 
     router.push(`/results?${params.toString()}`, { scroll: false });
@@ -77,8 +80,10 @@ export default function ResultsFilter() {
       <div className="max-w-[1600px] w-full h-full mx-auto grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] relative z-20 px-4 2xl:px-0">
         <div className="w-full h-full flex items-center justify-center py-10 md:py-20">
           <div className="max-w-4xl w-full flex flex-col items-start text-[#8D8D8D] text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)]">
-            We have recovered millions for our personal injury clients, won jury
-            trials around the state, and we have an outstanding track record.
+            Over the last 7 years, we have recovered over $70 million for our
+            clients and have won jury trials across the country. We're proud of
+            our success and are determined to continue fighting for victims of
+            negligence.
           </div>
         </div>
         <div className="hidden md:flex" />
