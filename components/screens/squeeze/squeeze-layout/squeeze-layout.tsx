@@ -179,7 +179,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 </div>
               </div>
 
-              <div className='w-full flex flex-col'>
+              <div className='w-full flex flex-col border border-gray-900 p-8 rounded-md'>
                 <p className='text-[clamp(28px,4.88vw,44px)] tracking-[calc(clamp(28px,4.88vw,44px)*0.01)] font-serif text-pretty capitalize mb-5'>
                   {contactTitle}
                 </p>
