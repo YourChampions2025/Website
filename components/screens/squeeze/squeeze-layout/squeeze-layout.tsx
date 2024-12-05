@@ -6,6 +6,9 @@ import { SqueezeProps } from '@/types/types';
 import React from 'react';
 import { BiSolidQuoteAltLeft } from 'react-icons/bi';
 
+import Image from 'next/image';
+import FischerRedavidLogo from '@/public/images/fischer-and-redavid-sanity-logo.png';
+
 import ImageBadge1 from '@/public/images/about-us-slug-badge1.png';
 import ImageBadge2 from '@/public/images/about-us-slug-badge2.png';
 import ImageBadge3 from '@/public/images/about-us-slug-badge3.png';
@@ -179,10 +182,40 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 </div>
               </div>
 
-              <div className='w-full flex flex-col border border-gray-900 px-8 py-5 rounded-md'>
-                <p className='text-[clamp(28px,4.88vw,44px)] tracking-[calc(clamp(28px,4.88vw,44px)*0.01)] font-serif text-pretty capitalize mb-5'>
-                  {contactTitle}
-                </p>
+              <div className='w-full flex flex-col border border-gray-900 px-8 pt-5 pb-10 rounded-md h-fit'>
+                <Image
+                  src={FischerRedavidLogo}
+                  alt='Fischer & Redavid'
+                  width={250}
+                  className='mb-5'
+                />
+                <div className='flex gap-16 items-center mt-3 mb-5'>
+                  <Image
+                    src={ImageLogo9}
+                    alt='Top 100 Jury Verdicts'
+                    width={75}
+                  />
+                  <Image
+                    src={ImageLogo1}
+                    alt='Top 100 Jury Verdicts'
+                    width={75}
+                  />
+                  <Image
+                    src={ImageLogo9}
+                    alt='Top 100 Jury Verdicts'
+                    width={75}
+                  />
+                </div>
+
+                <div className='mb-5'>
+                  <h6 className='text-4xl tracking-[calc(clamp(28px,4.88vw,44px)*0.01)] capitalize mb-1 font-serif'>
+                    {contactTitle}
+                  </h6>
+                  <p className='text-[#2DE046] font-semibold'>
+                    Fischer Redavid Trial Lawyers
+                  </p>
+                </div>
+
                 <div id='contact-us' className='mb-10'>
                   <ContactUsForm event='Medical Malpractice | Form Submission' />
                 </div>

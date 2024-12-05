@@ -3,6 +3,9 @@ import classNames from 'classnames';
 import { useFormContext } from 'react-hook-form';
 import styles from './custom-input.module.css';
 
+import Image from 'next/image';
+import GreenIcons from '@/public/images/home-book-details.png';
+
 interface CustomInputProps {
   name: string;
   label: string;
@@ -73,6 +76,11 @@ const CustomInput: React.FC<CustomInputProps> = ({
           {label}
           {isRequired && <span className='text-red-600'>*</span>}
         </label>
+        <Image
+          src={GreenIcons}
+          alt='green icons'
+          className='absolute top-4 right-3 w-5 h-5'
+        />
       </div>
       {hasError && <p className='mt-1 text-xs text-red-500'>{error}</p>}
     </div>

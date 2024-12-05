@@ -113,7 +113,6 @@ body::-webkit-scrollbar {
   height: auto;
   /* Adjusted for proper aspect ratio */
   margin: 16px 0;
-  border: 1px solid #e2e8f0;
 }
 
 #portable-text-wrapper > ul {
