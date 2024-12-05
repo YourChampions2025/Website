@@ -67,7 +67,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
     <main className='w-full pt-[100px] sm:pt-[125px] p-4 pb-20'>
       <div className='w-full flex flex-col items-center'>
         <div className='w-full px-4 flex flex-col items-center'>
-          <div className='w-full h-fit aspect-video mb-8 block sm:hidden'>
+          <div className='w-full h-fit aspect-video mb-8 block sm:hidden '>
             <video
               className='w-full h-full object-cover'
               src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4'
@@ -131,11 +131,11 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
           </div>
 
           <div className='w-full h-fit pt-8 px-4 flex flex-col items-center'>
-            <div className='max-w-[1252px] w-full grid grid-cols-1 md:grid-cols-[61%_39%] gap-12 md:gap-6'>
+            <div className='max-w-[1400px] w-full grid grid-cols-1 md:grid-cols-[61%_39%] gap-12'>
               <div className='w-full flex flex-col'>
                 <div className='w-full h-fit aspect-video hidden sm:block'>
                   <video
-                    className='w-full h-full object-cover'
+                    className='w-full h-full object-cover border border-[#2DE046] p-3'
                     src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4'
                     playsInline
                     autoPlay
@@ -145,7 +145,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   />
                 </div>
 
-                <div className='w-full py-10 border-b border-[#083376] flex items-start justify-between'>
+                <div className='w-full py-5 border-b border-[#083376] flex items-start justify-between'>
                   <h2 className='max-w-[520px] w-full text-left text-[clamp(32px,6.22vw,56px)] tracking-[calc(clamp(32px,6.22vw,56px)*0.01)] capitalize font-serif'>
                     {contentTitle}
                   </h2>
@@ -192,6 +192,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                     src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4#t=10'
                     playsInline
                     autoPlay
+                    controls
                     muted
                     loop
                   />
@@ -200,42 +201,6 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
             </div>
           </div>
         </div>
-
-        {/* <div className='w-full pt-24 h-fit relative z-50 pointer-events-none'>
-          <LogoSlider logos={LOGOS_TWO} reverseDirection />
-        </div> */}
-        {/* <div className="w-full flex flex-col items-center py-24 px-4">
-          <p className="max-w-[1252px] w-full text-[clamp(12px,1.55vw,14px)] tracking-[calc(clamp(12px,1.55vw,14px)*-0.02)] text-[#8D8D8D] text-pretty">
-            **ATTORNEY ADVERTISING:** The information provided on this website
-            is for general informational purposes only and does not constitute
-            legal advice. Fischer & Redavid does not establish an
-            attorney-client relationship through this website. The attorney
-            listings and advertisements on this site should not be interpreted
-            as referrals or endorsements by any state agency or bar association.
-            The attorneys at Fischer & Redavid do not claim any certification as
-            specialists in specific fields of law. Each case is unique; previous
-            results do not guarantee future outcomes. This site is designed to
-            provide general information, and it is essential to assess if a
-            particular attorney aligns with your legal needs. You may be
-            responsible for certain costs or expenses in addition to any
-            contingency fee arrangement for attorney’s fees. By using this site,
-            you agree to our Terms and Conditions. This site is protected by
-            reCAPTCHA, and the Google Privacy Policy and Terms of Service apply.
-            <br />
-            <br />
-            The contents of this website and any linked or attached materials
-            are meant solely for informational purposes and are not a substitute
-            for legal advice on individual cases. Viewing this material does not
-            create an attorney-client relationship. Selecting an attorney is a
-            significant decision and should not rely solely on advertisements.
-            The specific facts of your case will determine its outcome; prior
-            results do not imply similar future outcomes. Each case is evaluated
-            based on its unique merits. Any reports of past cases on this
-            website are not intended to create unjustified expectations
-            regarding any potential cases. Fischer & Redavid © 2024. All Rights
-            Reserved.
-          </p>
-        </div> */}
       </div>
     </main>
   );
