@@ -29,6 +29,8 @@ import ImageLogo9 from '@/public/images/home-logo-carousel-9.png';
 import Link from 'next/link';
 import { MdPhone } from 'react-icons/md';
 
+import Indicator from '@/components/indicator';
+
 const LOGOS_ONE = [
   ImageBadge1,
   ImageBadge2,
@@ -69,10 +71,10 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
   return (
     <main className='w-full pt-[100px] sm:pt-[125px] p-4 pb-20'>
       <div className='w-full flex flex-col items-center'>
-        <div className='w-full px-4 flex flex-col items-center'>
+        <div className='w-fullflex flex-col items-center'>
           <div className='w-full h-fit aspect-video mb-8 block sm:hidden '>
             <video
-              className='w-full h-full object-cover'
+              className='w-full h-full object-cover border border-[#2DE046] p-3 rounded-lg'
               src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4'
               playsInline
               autoPlay
@@ -121,10 +123,10 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
           <div className='w-full flex flex-col items-center px-4 py-6 border-y border-[#083376]'>
             <div className='max-w-[1252px] w-full flex items-center justify-between gap-4 md:gap-8 flex-col md:flex-row'>
               <div className='flex items-center gap-3 text-center md:text-left'>
-                <div className='w-3 h-3 flex-shrink-0 rounded-full bg-[#2DE046]' />
-                <p className='text-[clamp(24px,5.33vw,40px)] tracking-[calc(clamp(24px,5.33vw,40px)*0.01)] capitalize font-serif text-white text-pretty'>
+                <Indicator />
+                <h2 className='ml-2.5 text-[clamp(24px,5.33vw,40px)] tracking-[calc(clamp(24px,5.33vw,40px)*0.01)] capitalize font-serif text-white text-pretty'>
                   {subTitle}
-                </p>
+                </h2>
               </div>
               <p className='text-center md:text-right max-w-[485px] w-full text-[clamp(12px,2vw,18px)] tracking-[calc(clamp(12px,2vw,18px)*-0.02)] text-[#8D8D8D] text-pretty'>
                 Our aggressive personal injury litigation strategies deliver
@@ -134,7 +136,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
           </div>
 
           <div className='w-full h-fit pt-8 px-4 flex flex-col items-center'>
-            <div className='max-w-[1400px] w-full grid grid-cols-1 md:grid-cols-[61%_39%] gap-12'>
+            <div className='max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-[61%_39%] gap-12'>
               <div className='w-full flex flex-col'>
                 <div className='w-full h-fit aspect-video hidden sm:block'>
                   <video
@@ -149,9 +151,9 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 </div>
 
                 <div className='w-full py-5 border-b border-[#083376] flex items-start justify-between'>
-                  <h2 className='max-w-[90%] w-full text-left text-5xl tracking-[calc(clamp(32px,6.22vw,56px)*0.01)] capitalize font-serif'>
+                  <h1 className='max-w-[90%] w-full text-left text-5xl tracking-[calc(clamp(32px,6.22vw,56px)*0.01)] capitalize font-serif'>
                     {contentTitle}
-                  </h2>
+                  </h1>
 
                   <img
                     className='w-14 h-fit object-contain'
@@ -159,6 +161,11 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                     alt='Vector'
                   />
                 </div>
+
+                <h6 className='text-[#2DE046] mt-3 text-lg'>
+                  Featured on CNN, Fox Business News, Good Morning America, and
+                  other major outlets
+                </h6>
 
                 <div className='w-full mt-5'>
                   <PortableTextComponent content={content} />
@@ -222,7 +229,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 <div className='w-full h-fit aspect-video hidden md:block'>
                   <video
                     className='w-full h-full object-cover'
-                    src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4#t=10'
+                    src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/court-loop.mp4'
                     playsInline
                     autoPlay
                     controls
