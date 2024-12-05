@@ -1,6 +1,5 @@
 "use client";
 
-import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 import CustomSelect from "@/components/globals/forms/custom-select/custom-select";
 import { resultsCategoriesOptions } from "@/utils/constants";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,6 +8,7 @@ import React, { useEffect } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import { useDebounce } from "@uidotdev/usehooks";
+import CustomInput from "@/components/globals/forms/custom-input/custom-input";
 
 export const onResultsFilterSchema = z.object({
   title: z.string().optional(),
@@ -18,12 +18,16 @@ export const onResultsFilterSchema = z.object({
 export type IResultsFilter = z.infer<typeof onResultsFilterSchema>;
 
 export default function ResultsFilter() {
-  const { control, setValue, watch, ...rest } = useForm<IResultsFilter>({
-    resolver: zodResolver(onResultsFilterSchema),
-  });
-
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  const { control, setValue, watch, ...rest } = useForm<IResultsFilter>({
+    resolver: zodResolver(onResultsFilterSchema),
+    defaultValues: {
+      title: searchParams.get("title") || "",
+      category: searchParams.get("category") || "",
+    },
+  });
 
   const paramMap: Record<keyof IResultsFilter, string> = {
     title: "title",
@@ -57,7 +61,7 @@ export default function ResultsFilter() {
     params.set("limit", "12");
 
     router.push(`/results?${params.toString()}`, { scroll: false });
-  }, [debouncedTitleValue, categoryValue]);
+  }, [debouncedTitleValue, categoryValue, router, searchParams]);
 
   const handleClearInput = (name: keyof IResultsFilter) => {
     setValue(name, "");
@@ -66,7 +70,6 @@ export default function ResultsFilter() {
 
     const params = new URLSearchParams(searchParams.toString());
     params.delete(paramName);
-
     params.set("limit", "12");
 
     router.push(`/results?${params.toString()}`, { scroll: false });

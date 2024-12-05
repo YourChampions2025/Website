@@ -19,12 +19,18 @@ export const onTerrysTakesFilterSchema = z.object({
 export type ITerrysTakesFilter = z.infer<typeof onTerrysTakesFilterSchema>;
 
 export default function TerrysTakesFilter() {
-  const { control, setValue, watch, ...rest } = useForm<ITerrysTakesFilter>({
-    resolver: zodResolver(onTerrysTakesFilterSchema),
-  });
-
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  // Set initial values from URL parameters
+  const { control, setValue, watch, ...rest } = useForm<ITerrysTakesFilter>({
+    resolver: zodResolver(onTerrysTakesFilterSchema),
+    defaultValues: {
+      title: searchParams.get("title") || "",
+      court: searchParams.get("court") || "",
+      category: searchParams.get("category") || "",
+    },
+  });
 
   const paramMap: Record<keyof ITerrysTakesFilter, string> = {
     title: "title",
@@ -66,7 +72,7 @@ export default function TerrysTakesFilter() {
     params.set("limit", "12");
 
     router.push(`/terrys-takes?${params.toString()}`, { scroll: false });
-  }, [debouncedTitleValue, courtValue, categoryValue]);
+  }, [debouncedTitleValue, courtValue, categoryValue, router, searchParams]);
 
   const handleClearInput = (name: keyof ITerrysTakesFilter) => {
     setValue(name, "");

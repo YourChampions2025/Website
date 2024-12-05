@@ -381,6 +381,18 @@ export const getPracticeAreaBySlugQuery = groq`
   }
 `;
 
+export const getResultsBySlugQuery = groq`
+  *[_type == "results" && slug.current == $slug][0] {
+    title,
+    subtitle,
+    description,
+    "slug": slug.current,
+    categories,
+    content,
+    amount
+  }
+`;
+
 export const getSqueezesQuery = groq`
   *[_type == "squeeze"] {
     title,

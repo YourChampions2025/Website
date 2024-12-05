@@ -23,12 +23,18 @@ export default function BlogIndexFilter({
 }: {
   categoriesForBlogs: BlogCategoryProps[];
 }) {
-  const { control, setValue, watch, ...rest } = useForm<IBlogIndexFilter>({
-    resolver: zodResolver(onBlogIndexFilterSchema),
-  });
-
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  // Set initial values from URL parameters
+  const { control, setValue, watch, ...rest } = useForm<IBlogIndexFilter>({
+    resolver: zodResolver(onBlogIndexFilterSchema),
+    defaultValues: {
+      title: searchParams.get("title") || "",
+      year: searchParams.get("year") || "",
+      category: searchParams.get("category") || "",
+    },
+  });
 
   const paramMap: Record<keyof IBlogIndexFilter, string> = {
     title: "title",
@@ -70,7 +76,7 @@ export default function BlogIndexFilter({
     params.set("limit", "12");
 
     router.push(`/articles?${params.toString()}`, { scroll: false });
-  }, [debouncedTitleValue, yearValue, categoryValue]);
+  }, [debouncedTitleValue, yearValue, categoryValue, router, searchParams]);
 
   const handleClearInput = (name: keyof IBlogIndexFilter) => {
     setValue(name, "");
@@ -79,7 +85,6 @@ export default function BlogIndexFilter({
 
     const params = new URLSearchParams(searchParams.toString());
     params.delete(paramName);
-
     params.set("limit", "12");
 
     router.push(`/articles?${params.toString()}`, { scroll: false });

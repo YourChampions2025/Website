@@ -2,6 +2,7 @@ import { ResultProps } from "@/types/types";
 import React from "react";
 import { IoTriangle } from "react-icons/io5";
 import LoadMoreDynamicDataConnected from "@/components/globals/general/load-more-dynamic-data-connected/load-more-dynamic-data-connected";
+import Link from "next/link";
 
 interface ResultsListingProps {
   results: ResultProps[];
@@ -29,10 +30,14 @@ export default function ResultsListing({
                   {result.subtitle}
                 </p>
               )}
-              {/* <span className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline">
+
+              <Link
+                href={`/results/${result.slug}`}
+                className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline"
+              >
                 <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
-                read more
-              </span> */}
+                read mores
+              </Link>
             </div>
           ))}
         </div>
