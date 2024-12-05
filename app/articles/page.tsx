@@ -63,10 +63,7 @@ export default async function BlogListingPage({
 
   return (
     <main className="pt-[162px]">
-      <PageHeader
-        title="articles"
-        description="keep up to date with our news"
-      />
+      <PageHeader title="articles" />
       <BlogIndexFilter categoriesForBlogs={categoriesForBlogs} />
       <BlogIndexListing blogs={blogs} totalBlogs={totalBlogs} />
       <ContactUs />

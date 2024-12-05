@@ -332,7 +332,8 @@ export const getVideoCenterBySlugQuery = groq`
 `;
 
 export const getAttorneysProfilesQuery = groq`
-  *[_type == "profiles" && type == "Attorneys"] {
+  *[_type == "profiles" && type == "Attorneys"]
+  | order(name asc) {  
     type,
     name,
     "slug": slug.current,
@@ -380,6 +381,18 @@ export const getPracticeAreaBySlugQuery = groq`
   }
 `;
 
+export const getResultsBySlugQuery = groq`
+  *[_type == "results" && slug.current == $slug][0] {
+    title,
+    subtitle,
+    description,
+    "slug": slug.current,
+    categories,
+    content,
+    amount
+  }
+`;
+
 export const getSqueezesQuery = groq`
   *[_type == "squeeze"] {
     title,
@@ -399,3 +412,22 @@ export const getSqueezeBySlugQuery = groq`
     quote
   }
 `;
+
+export const getAreasForSEOQuery = groq`
+*[_type == "otherAreas"] {
+  "slug": slug.current,
+  "locations": *[_type == "locations" && ^._id in otherAreas[]._ref] | order(_createdAt asc) {
+    "slug": slug.current
+  }
+}`;
+
+export const getSubAreasForSEOQuery = groq`
+*[_type == "otherSubAreas"] {
+  "slug": slug.current,
+  "parentArea": *[_type == "otherAreas" && _id == ^.parentOtherArea._ref][0] {
+    "slug": slug.current,
+    "locations": *[_type == "locations" && ^._id in otherAreas[]._ref] | order(_createdAt asc) {
+      "slug": slug.current
+    }
+  }
+}`;

@@ -51,7 +51,7 @@ export default async function ResultsPage({
 
   return (
     <main className="pt-[162px]">
-      <PageHeader title="case success" description="our past results" />
+      <PageHeader title="case success" />
       <ResultsFilter />
       <ResultsListing results={results} totalResults={totalResults} />
       <ContactUs />

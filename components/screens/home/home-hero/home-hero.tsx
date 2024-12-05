@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
 import styles from "./home-hero.module.css";
-import CustomButton from "@/components/globals/forms/custom-button/custom-button";
 import { TbReload } from "react-icons/tb";
 import { BiVolumeMute } from "react-icons/bi";
 import { AiOutlineSound } from "react-icons/ai";
@@ -26,6 +25,7 @@ import ImageLogo6 from "@/public/images/home-logo-carousel-6.png";
 import ImageLogo7 from "@/public/images/home-logo-carousel-7.png";
 import ImageLogo8 from "@/public/images/home-logo-carousel-8.png";
 import ImageLogo9 from "@/public/images/home-logo-carousel-9.png";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const LOGOS_ONE = [
   ImageBadge1,
@@ -69,6 +69,8 @@ export default function HomeHero() {
       videoRef.current.play();
     }
   }
+
+  const isLargerThan720px = useMediaQuery("(min-width: 800px)");
   return (
     <div className={styles.container}>
       <video
@@ -108,14 +110,26 @@ export default function HomeHero() {
           </span>
 
           <div className={styles.buttonsContainer}>
-            <Link href="#contact-us">
-              <CustomButton color="blue" size="medium">
-                Get in touch now
-              </CustomButton>
+            <Link href="tel:9548608434">
+              <button className={styles.buttonCallNow}>
+                <p> CALL NOW</p>
+                {[...Array(3)].map((_, index) => (
+                  <MdKeyboardDoubleArrowRight
+                    key={index}
+                    size={20}
+                    color="#1055c1"
+                    className="flex-shrink-0"
+                  />
+                ))}
+              </button>
             </Link>
-            <Link href="/results">
+            <Link
+              href={
+                isLargerThan720px ? "#contact-us" : "#contact-us-media-query"
+              }
+            >
               <button className={styles.buttonResults}>
-                <p>Our Results</p>
+                <p>GET IN TOUCH</p>
                 {[...Array(3)].map((_, index) => (
                   <MdKeyboardDoubleArrowRight
                     key={index}

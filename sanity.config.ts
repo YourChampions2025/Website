@@ -10,6 +10,5 @@ export default defineConfig({
   dataset,
   schema,
   plugins: [structureTool({}), visionTool({ defaultApiVersion: apiVersion })],
-
-  title: "Studio | Fischer And ReDavid Trial Lawyers",
+  title: "Studio | Fischer Redavid",
 });

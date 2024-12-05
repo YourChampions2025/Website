@@ -24,6 +24,9 @@ import {
   getStaffProfilesQuery,
   getTerrysTakesBySlugQuery,
   getVideoCenterBySlugQuery,
+  getAreasForSEOQuery,
+  getSubAreasForSEOQuery,
+  getResultsBySlugQuery,
 } from "./queries";
 
 export const getFilteredResults = async (
@@ -226,6 +229,18 @@ export const getPracticeAreaBySlug = async (slug: string) => {
   return data;
 };
 
+export const getResultsBySlug = async (slug: string) => {
+  if (!slug) return null;
+
+  const data = await client.fetch(getResultsBySlugQuery, {
+    slug,
+  });
+
+  if (!data) return undefined;
+
+  return data;
+};
+
 export const getBiggestResults = async () => {
   const data = await client.fetch(getBiggestResultsQuery);
 
@@ -273,7 +288,11 @@ export const getOtherSubAreaBySlugs = async (
 
   if (!data) return undefined;
 
-  return data;
+  return {
+    otherSubAreaItem: data.otherSubAreaItem,
+    locationItem: data.locationItem,
+    allLocations: data.allLocations,
+  };
 };
 
 export const getSqueezes = async () => {
@@ -303,13 +322,25 @@ export const getBlogsForSEO = async () => {
 
   if (!data) return [];
 
-  const monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 
-    'july', 'august', 'september', 'october', 'november', 'december'];
+  const monthNames = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
+  ];
 
   return data.map((item: { slug: string; date: string }) => ({
     slug: item.slug,
-    year: item.date.split('-')[0],
-    month: monthNames[parseInt(item.date.split('-')[1]) - 1]
+    year: item.date.split("-")[0],
+    month: monthNames[parseInt(item.date.split("-")[1]) - 1],
   }));
 };
 
@@ -386,4 +417,39 @@ export const getSqueezesForSEO = async () => {
   if (!data) return [];
 
   return data;
+};
+
+export const getPrimaryLocation = async () => {
+  const query = `*[_type == "locations"] | order(_createdAt asc) [0] {
+    "slug": slug.current
+  }`;
+  const data = await client.fetch(query);
+  return data?.slug || "florida-prison-injury-lawyer";
+};
+
+export const getAreasForSEO = async () => {
+  const data = await client.fetch(getAreasForSEOQuery);
+  if (!data) return [];
+  return data.map((item: { slug: string; locations: { slug: string }[] }) => ({
+    slug: item.slug,
+    primaryLocation: item.locations[0]?.slug,
+  }));
+};
+
+export const getSubAreasForSEO = async () => {
+  const data = await client.fetch(getSubAreasForSEOQuery);
+  if (!data) return [];
+  return data.map(
+    (item: {
+      slug: string;
+      parentArea: {
+        slug: string;
+        locations: { slug: string }[];
+      };
+    }) => ({
+      slug: item.slug,
+      parentAreaSlug: item.parentArea.slug,
+      primaryLocation: item.parentArea.locations[0]?.slug,
+    })
+  );
 };

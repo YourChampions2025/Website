@@ -29,4 +29,13 @@ export interface ProfileSEOItem extends SEOItem {
   type: string;
 }
 
-export interface SqueezeSEOItem extends SEOItem {} 
+export interface SqueezeSEOItem extends SEOItem {}
+
+export interface AreaSEOItem extends SEOItem {
+  primaryLocation: string;
+}
+
+export interface SubAreaSEOItem extends SEOItem {
+  primaryLocation: string;
+  parentAreaSlug: string;
+} 

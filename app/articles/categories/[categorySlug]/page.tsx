@@ -19,7 +19,7 @@ export async function generateMetadata({
     return {
       title: `Our Blog Filtered by Category: ${categorySlug.replace(/-/g, " ")} | Fischer Redavid PLLC`,
       description:
-        "Stay up to date with Fischer Redavid PLLC when you follow our blog. Learn about what legal services we provide and what advantages there are to consulting with our attorneys.",
+        `${categorySlug.replace(/-/g, " ")}, stay up to date with Fischer Redavid PLLC when you follow our blog. Learn about what legal services we provide and what advantages there are to consulting with our attorneys.`,
     };
   } catch (error) {
     return {

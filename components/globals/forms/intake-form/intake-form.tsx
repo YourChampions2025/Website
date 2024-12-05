@@ -133,7 +133,7 @@ export default function IntakeForm() {
           <p className={styles.description}>
             An Intake Specialist will be in touch with you soon. If this is an
             urgent matter or an emergency,{" "}
-            <Link href={"tel:8886940708"} className={styles.link}>
+            <Link href={"tel:+19548608434"} className={styles.link}>
               please call 888-694-0708
             </Link>
             to speak with a member of our team.
