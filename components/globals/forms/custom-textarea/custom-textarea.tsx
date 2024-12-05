@@ -27,7 +27,8 @@ const CustomTextarea: React.FC<CustomTextareaProps> = ({
   }
 
   const register = formContext?.register;
-  const contextError = formContext?.formState?.errors?.[name]?.message?.toString();
+  const contextError =
+    formContext?.formState?.errors?.[name]?.message?.toString();
   const error = propError || contextError;
   const hasError = !!error;
 
@@ -47,19 +48,25 @@ const CustomTextarea: React.FC<CustomTextareaProps> = ({
   const paddingTop = label.length > 35 ? 'pt-16' : 'pt-8';
 
   const borderClassName = classNames(
-    'peer block w-full appearance-none bg-[#000] pb-3 pl-5 text-[clamp(18px,1.85vw,20px)] text-white focus:outline-none focus:ring-0 resize-none appearance-none overflow-y-hidden',
+    'peer block w-full appearance-none bg-[#000] pb-3 pl-5 text-[clamp(18px,1.85vw,20px)] text-white focus:outline-none focus:ring-0 resize-none appearance-none overflow-y-hidden rounded-lg',
     borderEffect,
     paddingTop
   );
 
-  const registerProps = register ? (register(name) as UseFormRegisterReturn) : {};
+  const registerProps = register
+    ? (register(name) as UseFormRegisterReturn)
+    : {};
   const textareaProps = register
     ? {
         ...registerProps,
         ref: (e: HTMLTextAreaElement | null) => {
           textareaRef.current = e;
           if ('ref' in registerProps) {
-            (registerProps.ref as (instance: HTMLTextAreaElement | null) => void)(e);
+            (
+              registerProps.ref as (
+                instance: HTMLTextAreaElement | null
+              ) => void
+            )(e);
           }
         },
         value,
@@ -86,9 +93,7 @@ const CustomTextarea: React.FC<CustomTextareaProps> = ({
           {label}
         </label>
       </div>
-      {hasError && (
-        <p className={styles.errorText}>{error}</p>
-      )}
+      {hasError && <p className={styles.errorText}>{error}</p>}
     </div>
   );
 };

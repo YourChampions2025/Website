@@ -149,7 +149,7 @@ export default function ContactUsForm({ event }: Props) {
         <CustomInput name='phone' label='Phone' />
         <CustomInput name='location' label='Location' />
         <CustomTextarea name='message' label='How can we help you?' />
-        <CustomButton className='!w-[100%]' type='submit'>
+        <CustomButton className='!w-[100%] rounded-lg' type='submit'>
           Connect With Fischer Redavid
         </CustomButton>
       </form>
