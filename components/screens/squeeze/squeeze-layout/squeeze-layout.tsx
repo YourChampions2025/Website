@@ -135,7 +135,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
               <div className='w-full flex flex-col'>
                 <div className='w-full h-fit aspect-video hidden sm:block'>
                   <video
-                    className='w-full h-full object-cover border border-[#2DE046] p-3'
+                    className='w-full h-full object-cover border border-[#2DE046] p-3 rounded-lg'
                     src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/fischerRedavid.mp4'
                     playsInline
                     autoPlay
@@ -146,7 +146,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 </div>
 
                 <div className='w-full py-5 border-b border-[#083376] flex items-start justify-between'>
-                  <h2 className='max-w-[520px] w-full text-left text-[clamp(32px,6.22vw,56px)] tracking-[calc(clamp(32px,6.22vw,56px)*0.01)] capitalize font-serif'>
+                  <h2 className='max-w-[90%] w-full text-left text-5xl tracking-[calc(clamp(32px,6.22vw,56px)*0.01)] capitalize font-serif'>
                     {contentTitle}
                   </h2>
 
@@ -157,7 +157,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   />
                 </div>
 
-                <div className='w-full mt-10'>
+                <div className='w-full mt-5'>
                   <PortableTextComponent content={content} />
                 </div>
 
@@ -179,7 +179,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 </div>
               </div>
 
-              <div className='w-full flex flex-col border border-gray-900 p-8 rounded-md'>
+              <div className='w-full flex flex-col border border-gray-900 px-8 py-5 rounded-md'>
                 <p className='text-[clamp(28px,4.88vw,44px)] tracking-[calc(clamp(28px,4.88vw,44px)*0.01)] font-serif text-pretty capitalize mb-5'>
                   {contactTitle}
                 </p>

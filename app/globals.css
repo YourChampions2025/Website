@@ -98,8 +98,8 @@ body::-webkit-scrollbar {
 #portable-text-wrapper > p {
   font-size: clamp(16px, 1.66vw, 18px);
   padding: clamp(4px, 0.74vw, 8px) 0 clamp(8px, 1.11vw, 12px);
-  color: #cecece;
-  opacity: 0.8;
+  color: #fff;
+  opacity: 0.9;
   line-height: 2;
 }
 
