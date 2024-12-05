@@ -61,7 +61,7 @@ export default function ResultsFilter() {
     params.set("limit", "12");
 
     router.push(`/results?${params.toString()}`, { scroll: false });
-  }, [debouncedTitleValue, categoryValue, router, searchParams]);
+  }, [debouncedTitleValue, categoryValue]);
 
   const handleClearInput = (name: keyof IResultsFilter) => {
     setValue(name, "");

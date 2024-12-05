@@ -61,11 +61,23 @@ export default async function BlogListingPage({
   const { blogs, totalBlogs }: { blogs: BlogProps[]; totalBlogs: number } =
     await getFilteredBlogs(parseInt(limit), title, category, year);
 
+  const sortedBlogs = blogs.sort((a, b) => {
+    const isPriorityCategoryA = a.categories.some((cat) =>
+      ["car accidents", "truck accidents"].includes(cat.title.toLowerCase())
+    );
+    const isPriorityCategoryB = b.categories.some((cat) =>
+      ["car accidents", "truck accidents"].includes(cat.title.toLowerCase())
+    );
+
+    if (isPriorityCategoryA && !isPriorityCategoryB) return 1;
+    if (!isPriorityCategoryA && isPriorityCategoryB) return -1;
+    return 0;
+  });
   return (
     <main className="pt-[162px]">
       <PageHeader title="articles" />
       <BlogIndexFilter categoriesForBlogs={categoriesForBlogs} />
-      <BlogIndexListing blogs={blogs} totalBlogs={totalBlogs} />
+      <BlogIndexListing blogs={sortedBlogs} totalBlogs={totalBlogs} />
       <ContactUs />
     </main>
   );
