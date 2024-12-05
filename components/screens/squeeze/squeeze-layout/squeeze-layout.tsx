@@ -237,7 +237,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 <div className='w-full h-fit aspect-video hidden md:block'>
                   <video
                     className='w-full h-full object-cover'
-                    src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/court-loop.mp4'
+                    src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.mp4'
                     playsInline
                     autoPlay
                     controls
