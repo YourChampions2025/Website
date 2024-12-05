@@ -76,7 +76,7 @@ export default function BlogIndexFilter({
     params.set("limit", "12");
 
     router.push(`/articles?${params.toString()}`, { scroll: false });
-  }, [debouncedTitleValue, yearValue, categoryValue, router, searchParams]);
+  }, [debouncedTitleValue, yearValue, categoryValue]);
 
   const handleClearInput = (name: keyof IBlogIndexFilter) => {
     setValue(name, "");

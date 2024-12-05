@@ -72,7 +72,7 @@ export default function TerrysTakesFilter() {
     params.set("limit", "12");
 
     router.push(`/terrys-takes?${params.toString()}`, { scroll: false });
-  }, [debouncedTitleValue, courtValue, categoryValue, router, searchParams]);
+  }, [debouncedTitleValue, courtValue, categoryValue]);
 
   const handleClearInput = (name: keyof ITerrysTakesFilter) => {
     setValue(name, "");
