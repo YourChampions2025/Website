@@ -99,7 +99,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
           <div className='w-full flex flex-col items-center px-4 py-2 sm:py-6 border-y border-[#083376]'>
             <div className='max-w-[1252px] w-full flex items-center justify-between gap-1 md:gap-8 flex-col md:flex-row'>
               <div className='flex items-center gap-3 text-center md:text-left'>
-                <Indicator className='!hidden sm:inline-block' />
+                <Indicator className='!hidden sm:!inline-block' />
                 <h2 className='ml-2.5 text-[clamp(12px,4.75vw,40px)] tracking-[calc(clamp(24px,5.33vw,40px)*0.01)] capitalize font-serif text-white text-balance'>
                   {subTitle}
                 </h2>
@@ -238,6 +238,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   <video
                     className='w-full h-full object-cover'
                     src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.mp4'
+                    poster='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.webp'
                     playsInline
                     autoPlay
                     controls

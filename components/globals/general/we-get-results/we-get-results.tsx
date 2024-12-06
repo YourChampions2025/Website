@@ -1,10 +1,10 @@
-import Link from "next/link";
-import React from "react";
-import { IoTriangle } from "react-icons/io5";
-import styles from "./we-get-results.module.css";
-import type { ResultProps } from "@/types/types";
-import PortableTextComponent from "../portable-text-component/portable-text-component";
-import classNames from "classnames";
+import Link from 'next/link';
+import React from 'react';
+import { IoTriangle } from 'react-icons/io5';
+import styles from './we-get-results.module.css';
+import type { ResultProps } from '@/types/types';
+import PortableTextComponent from '../portable-text-component/portable-text-component';
+import classNames from 'classnames';
 
 interface WeGetResultsProps {
   results: ResultProps[];
@@ -37,28 +37,34 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
 
                 {mainResult.content && (
                   <div
-                    className={classNames(styles.description, "line-clamp-3")}
+                    className={classNames(styles.description, 'line-clamp-3')}
                   >
                     <PortableTextComponent content={mainResult.content} />
                   </div>
                 )}
               </div>
 
-              <Link href="/results" className={styles.link}>
+              <Link href='/results' className={styles.link}>
                 <IoTriangle className={styles.icon} />
                 explore our case results
               </Link>
             </div>
 
             <div className={styles.imageContainer}>
-              <img
-                src="/images/we-get-results.png"
-                alt="photo of Fisher & Redavid lawyers"
+              <video
+                className='w-full h-full object-cover'
+                src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.mp4'
+                poster='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.webp'
+                playsInline
+                autoPlay
+                controls
+                muted
+                loop
               />
             </div>
           </div>
 
-          <div id="results-container" className={styles.resultsContainer}>
+          <div id='results-container' className={styles.resultsContainer}>
             {otherResults.map((result, index) => (
               <div key={index} className={styles.resultItem}>
                 <div className={styles.resultItemHeader}>
@@ -73,7 +79,7 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
                   <div
                     className={classNames(
                       styles.resultItemDescription,
-                      "line-clamp-3"
+                      'line-clamp-3'
                     )}
                   >
                     <PortableTextComponent content={result.content} />
