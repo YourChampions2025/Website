@@ -80,11 +80,16 @@
   display: flex;
   flex-direction: column;
   border-left: 1px solid #083376;
-  gap: 32px;
+  gap: clamp(24px, 2.32vw, 32px);
 }
-
+.headline {
+  font-size: clamp(28px, 2.32vw, 50px);
+  font-family: var(--font-instrument-serif);
+  color: #2de046;
+  text-transform: uppercase;
+}
 .promiseTitle {
-  font-size: 28px;
+  font-size: clamp(18px, 2.32vw, 28px);
   letter-spacing: calc(28px * -0.02);
   text-transform: uppercase;
 }
@@ -94,7 +99,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 16px;
+  font-size: clamp(14px, 1.48vw, 16px);
   letter-spacing: calc(16px * -0.02);
   gap: 28px;
 }
@@ -102,6 +107,7 @@
 .videoContainer {
   width: 100%;
   height: fit-content;
+  position: relative;
 }
 
 .resultsContainer {
@@ -201,28 +207,17 @@
   .buttonsVideo {
     position: absolute;
     left: 16px;
-    bottom: 32px;
+    bottom: 10px;
   }
 }
-@media (max-width: 920px) {
-  .buttonsVideo {
-    position: absolute;
-    bottom: 62px;
-  }
-}
-@media (max-width: 840px) {
-  .buttonsVideo {
-    position: absolute;
-    bottom: 82px;
-  }
-}
+
 @media (max-width: 800px) {
   .gridContainer {
     grid-template-columns: 1fr;
   }
 
   .resultsContainer {
-    padding: 96px 16px;
+    padding: 42px 16px;
   }
 
   .contentWrapper {
@@ -235,7 +230,9 @@
 
   .promiseContent {
     padding-left: 16px;
-    padding-right: 0;
+    padding-right: 16px;
+    padding-bottom: 4px;
+    padding-top: 32px;
   }
   .buttonsVideo {
     position: absolute;
