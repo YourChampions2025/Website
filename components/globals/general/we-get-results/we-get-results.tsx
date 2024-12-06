@@ -79,6 +79,13 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
                     <PortableTextComponent content={result.content} />
                   </div>
                 )}
+                <Link
+                  href={`/results/${result.slug}`}
+                  className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline mt-4"
+                >
+                  <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
+                  read mores
+                </Link>
               </div>
             ))}
           </div>
