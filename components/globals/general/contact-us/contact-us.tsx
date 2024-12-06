@@ -157,7 +157,7 @@ export default function ContactUs({ hasBorderTop }: ContactUsProps) {
               />
             </div>
             <div className="flex gap-10 sm:gap-16 items-center mb-4">
-              {isSmallScreen && (
+              {isSmallScreen ? (
                 <div className="w-full flex flex-col gap-4 mb-4 relative z-10">
                   <h4 className={styles.headline}>
                     connect with fischer redavid
@@ -168,6 +168,12 @@ export default function ContactUs({ hasBorderTop }: ContactUsProps) {
                       Communication. Respect and Compassion.
                     </p>
                   </div>
+                </div>
+              ) : (
+                <div className="w-full flex flex-col gap-4 mb-4 relative z-10">
+                  <h4 className={styles.headline}>
+                    connect with fischer redavid
+                  </h4>
                 </div>
               )}
             </div>
