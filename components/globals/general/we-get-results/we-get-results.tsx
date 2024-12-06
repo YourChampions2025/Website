@@ -5,6 +5,8 @@ import styles from "./we-get-results.module.css";
 import type { ResultProps } from "@/types/types";
 import PortableTextComponent from "../portable-text-component/portable-text-component";
 import classNames from "classnames";
+import weGetResults from "@/public/images/we-get-results.png";
+import Image from "next/image";
 
 interface WeGetResultsProps {
   results: ResultProps[];
@@ -51,8 +53,8 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
             </div>
 
             <div className={styles.imageContainer}>
-              <img
-                src="/images/we-get-results.png"
+              <Image
+                src={weGetResults}
                 alt="photo of Fisher & Redavid lawyers"
               />
             </div>

@@ -1,11 +1,13 @@
+import React from "react";
+import { Metadata } from "next";
+import Image from "next/image";
+import type { ProfileProps } from "@/types/types";
+import { getStaffProfiles } from "@/sanity/lib/api";
+import Vector from "@/public/images/about-vector.svg";
 import ContactUs from "@/components/globals/general/contact-us/contact-us";
 import AboutUsCard from "@/components/screens/about-us/about-us-card/about-us-card";
 import AboutUsLayout from "@/components/screens/about-us/about-us-layout/about-us-layout";
 import AboutUsHero from "@/components/screens/about-us/hero-about-us/about-us-hero";
-import { getStaffProfiles } from "@/sanity/lib/api";
-import type { ProfileProps } from "@/types/types";
-import { Metadata } from "next";
-import React from "react";
 
 export const metadata: Metadata = {
   title: "Our Staff | Fischer Redavid PLLC",
@@ -40,12 +42,7 @@ export default async function AboutUsOurStaffPage() {
             ))}
           </div>
         </AboutUsLayout>
-
-        <img
-          src="/images/about-vector.svg"
-          alt="Vector"
-          className="absolute top-0 right-0"
-        />
+        <Image src={Vector} alt="Vector" className="absolute top-0 right-0" />
       </div>
       <ContactUs />
     </main>

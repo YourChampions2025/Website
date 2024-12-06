@@ -7,7 +7,8 @@ import classNames from "classnames";
 import { BiVolumeMute } from "react-icons/bi";
 import { AiOutlineSound } from "react-icons/ai";
 import { TbReload } from "react-icons/tb";
-
+import Image from "next/image";
+import Vector from "@/public/images/contact-us-vector.svg";
 interface ContactUsProps {
   hasBorderTop?: boolean;
 }
@@ -45,11 +46,7 @@ export default function ContactUs({ hasBorderTop }: ContactUsProps) {
 
       <div className={styles.contentWrapper}>
         <div className={styles.gridContainer}>
-          <img
-            src="/images/contact-us-vector.svg"
-            alt="Vector"
-            className={styles.vectorImage}
-          />
+          <Image src={Vector} alt="Vector" className={styles.vectorImage} />
 
           <div className={styles.promiseContainer}>
             <div className={styles.promiseContent}>
