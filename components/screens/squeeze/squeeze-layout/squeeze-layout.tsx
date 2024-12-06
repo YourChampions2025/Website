@@ -238,6 +238,7 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                   <video
                     className='w-full h-full object-cover'
                     src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.mp4'
+                    poster='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.webp'
                     playsInline
                     autoPlay
                     controls
