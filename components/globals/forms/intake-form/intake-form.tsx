@@ -98,7 +98,9 @@ export default function IntakeForm() {
     setFormSubmitted(true);
 
     try {
-      trackConversions(formData, eventName);
+      const { eventId } = clientInfo;
+      trackConversions(formData, eventName, eventId);
+
       const { token } = await Tracking.getRecaptchaToken();
       await submitContactForm(formData, token, clientInfo, eventName);
 

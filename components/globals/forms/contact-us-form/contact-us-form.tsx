@@ -116,7 +116,8 @@ export default function ContactUsForm({ event }: Props) {
         });
       }
 
-      trackConversions(data, eventName);
+      const { eventId } = clientInfo;
+      trackConversions(data, eventName, eventId);
 
       const { token } = await Tracking.getRecaptchaToken();
       await submitContactForm(data, token, clientInfo, eventName);
