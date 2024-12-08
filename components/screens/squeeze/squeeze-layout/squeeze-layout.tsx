@@ -31,6 +31,9 @@ import { MdPhone } from 'react-icons/md';
 
 import Indicator from '@/components/indicator';
 
+import HomeTestimonials from '@/components/screens/home/home-testimonials/home-testimonials';
+import { getLatestTestimonials } from '@/sanity/lib/api';
+
 const LOGOS_ONE = [
   ImageBadge1,
   ImageBadge2,
@@ -57,7 +60,11 @@ interface SqueezeLayoutProps {
   squeezeItem: SqueezeProps;
 }
 
-export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
+export default async function SqueezeLayout({
+  squeezeItem,
+}: SqueezeLayoutProps) {
+  const testimonials = await getLatestTestimonials();
+
   const {
     title,
     description,
@@ -250,6 +257,8 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
             </div>
           </div>
         </div>
+
+        <HomeTestimonials testimonials={testimonials} />
       </div>
     </main>
   );
