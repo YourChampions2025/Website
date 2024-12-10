@@ -41,12 +41,12 @@ export default defineType({
       type: "text",
     }),
 
-    defineField({
-      name: "fullTake",
-      title: "Full Take",
-      type: "array",
-      of: [defineArrayMember({ type: "block" })],
-    }),
+    // defineField({
+    //   name: "fullTake",
+    //   title: "Full Take",
+    //   type: "array",
+    //   of: [defineArrayMember({ type: "block" })],
+    // }),
 
     defineField({
       name: "date",
