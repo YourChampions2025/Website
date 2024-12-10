@@ -36,6 +36,19 @@ export default defineType({
     }),
 
     defineField({
+      name: "quickTake",
+      title: "Quick Take",
+      type: "text",
+    }),
+
+    defineField({
+      name: "fullTake",
+      title: "Full Take",
+      type: "array",
+      of: [defineArrayMember({ type: "block" })],
+    }),
+
+    defineField({
       name: "date",
       title: "Date",
       description: "Just choose the date of the publication.",
