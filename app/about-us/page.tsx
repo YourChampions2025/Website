@@ -11,6 +11,7 @@ import AboutUsImage from "@/public/images/about-us-image.png";
 import ContactUs from "@/components/globals/general/contact-us/contact-us";
 import AboutUsLayout from "@/components/screens/about-us/about-us-layout/about-us-layout";
 import AboutUsHero from "@/components/screens/about-us/hero-about-us/about-us-hero";
+import CustomButton from "@/components/globals/forms/custom-button/custom-button";
 
 export const metadata: Metadata = {
   title: "About Us | Fischer & Redavid Trial Lawyers",
@@ -66,10 +67,9 @@ export default function AboutUsPage() {
 
             <Link
               href="#contact-us"
-              className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] mt-6 tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline"
+              className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] mt-6 tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty "
             >
-              <IoTriangle className="shrink-0 rotate-90 text-[#2DE046]" />
-              schedule a call
+              <CustomButton color="blue">schedule a call</CustomButton>
             </Link>
           </div>
         </AboutUsLayout>

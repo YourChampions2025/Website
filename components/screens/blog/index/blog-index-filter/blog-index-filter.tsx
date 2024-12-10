@@ -95,19 +95,19 @@ export default function BlogIndexFilter({
       <div className="max-w-[1600px] w-full h-full mx-auto grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] relative z-20 px-4 2xl:px-0">
         <div className="w-full h-full flex items-center justify-center py-10 md:py-12">
           <div className="max-w-4xl w-full flex flex-col items-start text-[#8D8D8D] text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)]">
-            "Champions' Blog" offers insights, updates, and analysis on key
-            topics impacting Florida injury law and other relevant legal
-            matters. Our team of experts, led by Terry P. Roberts, Director of
-            Appellate Practice, shares over two decades of experience to provide
-            high-quality content and keep you well-informed.
+            Welcome to our articles page! Here, you'll find a wealth of
+            information on personal injury law, including insights into wrongful
+            death, medical malpractice, burn injuries, drowning cases, and more.
             <br />
             <br />
-            The latest posts appear below, or you can use the tools below to
-            search by keyword, sort results by date, or explore specific topics.
+            Our goal is to provide valuable resources for individuals, families,
+            and even fellow attorneys seeking to navigate the complexities of
+            these challenging cases.
             <br />
             <br />
-            Send your feedback or suggestions directly to Terry at
-            Terry@YourChampions.com.
+            Whether you're looking for legal tips, case updates, or in-depth
+            analyses, our expertly crafted articles are designed to keep you
+            informed and empowered.
           </div>
         </div>
         <div className="hidden md:flex" />
