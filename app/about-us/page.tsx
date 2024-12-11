@@ -1,17 +1,22 @@
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Metadata } from "next";
+
+import { BASE_URL } from "@/utils/constants";
+import { IoTriangle } from "react-icons/io5";
+import Vector from "@/public/images/about-vector.svg";
+import AboutUsImage from "@/public/images/about-us-image.png";
+
 import ContactUs from "@/components/globals/general/contact-us/contact-us";
 import AboutUsLayout from "@/components/screens/about-us/about-us-layout/about-us-layout";
 import AboutUsHero from "@/components/screens/about-us/hero-about-us/about-us-hero";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { IoTriangle } from "react-icons/io5";
-import AboutUsImage from "@/public/images/about-us-image.png";
-import { Metadata } from "next";
-import { BASE_URL } from "@/utils/constants";
+import CustomButton from "@/components/globals/forms/custom-button/custom-button";
 
 export const metadata: Metadata = {
   title: "About Us | Fischer & Redavid Trial Lawyers",
-  description: "Meet our team of experienced trial attorneys at Fischer & Redavid. Learn about our mission, values, and commitment to justice in FL, GA, and the US Virgin Islands.",
+  description:
+    "Meet our team of experienced trial attorneys at Fischer & Redavid. Learn about our mission, values, and commitment to justice in FL, GA, and the US Virgin Islands.",
   alternates: {
     canonical: `${BASE_URL}/about-us`,
   },
@@ -43,7 +48,7 @@ export default function AboutUsPage() {
               clients. Our aggressive approach, coupled with our client-first
               philosophy, has helped us earn the trust of our clients, the
               respect of our opponents, and the acclaim of some of the legal
-              industries' most highly regarded organizations. 
+              industries' most highly regarded organizations.
               <br />
               <br />
               If you have been injured as a result of someone else's negligent
@@ -62,19 +67,13 @@ export default function AboutUsPage() {
 
             <Link
               href="#contact-us"
-              className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] mt-6 tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline"
+              className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] mt-6 tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty "
             >
-              <IoTriangle className="shrink-0 rotate-90 text-[#2DE046]" />
-              schedule a call
+              <CustomButton color="blue">schedule a call</CustomButton>
             </Link>
           </div>
         </AboutUsLayout>
-
-        <img
-          src="/images/about-vector.svg"
-          alt="Vector"
-          className="absolute top-0 right-0"
-        />
+        <Image alt="Vector" src={Vector} className="absolute top-0 right-0" />
       </div>
       <ContactUs />
     </main>

@@ -1,11 +1,14 @@
+import React from "react";
+import { Metadata } from "next";
+import type { ProfileProps } from "@/types/types";
+
+import { getAttorneysProfiles } from "@/sanity/lib/api";
+import Vector from "@/public/images/about-vector.svg";
 import ContactUs from "@/components/globals/general/contact-us/contact-us";
+import AboutUsHero from "@/components/screens/about-us/hero-about-us/about-us-hero";
 import AboutUsCard from "@/components/screens/about-us/about-us-card/about-us-card";
 import AboutUsLayout from "@/components/screens/about-us/about-us-layout/about-us-layout";
-import AboutUsHero from "@/components/screens/about-us/hero-about-us/about-us-hero";
-import { getAttorneysProfiles } from "@/sanity/lib/api";
-import type { ProfileProps } from "@/types/types";
-import { Metadata } from "next";
-import React from "react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Fischer Redavid PLLC",
@@ -28,11 +31,7 @@ export default async function AboutUsOurAttorneysPage() {
           </div>
         </AboutUsLayout>
 
-        <img
-          src="/images/about-vector.svg"
-          alt="Vector"
-          className="absolute top-0 right-0"
-        />
+        <Image src={Vector} alt="Vector" className="absolute top-0 right-0" />
       </div>
       <ContactUs />
     </main>

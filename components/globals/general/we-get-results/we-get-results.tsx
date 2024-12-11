@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import React from 'react';
-import { IoTriangle } from 'react-icons/io5';
-import styles from './we-get-results.module.css';
-import type { ResultProps } from '@/types/types';
-import PortableTextComponent from '../portable-text-component/portable-text-component';
-import classNames from 'classnames';
+import Link from "next/link";
+import React from "react";
+import { IoTriangle } from "react-icons/io5";
+import styles from "./we-get-results.module.css";
+import type { ResultProps } from "@/types/types";
+import PortableTextComponent from "../portable-text-component/portable-text-component";
+import classNames from "classnames";
 
 interface WeGetResultsProps {
   results: ResultProps[];
@@ -37,14 +37,14 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
 
                 {mainResult.content && (
                   <div
-                    className={classNames(styles.description, 'line-clamp-3')}
+                    className={classNames(styles.description, "line-clamp-3")}
                   >
                     <PortableTextComponent content={mainResult.content} />
                   </div>
                 )}
               </div>
 
-              <Link href='/results' className={styles.link}>
+              <Link href="/results" className={styles.link}>
                 <IoTriangle className={styles.icon} />
                 explore our case results
               </Link>
@@ -52,9 +52,9 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
 
             <div className={styles.imageContainer}>
               <video
-                className='w-full h-full object-cover'
-                src='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.mp4'
-                poster='https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.webp'
+                className="w-full h-full object-cover"
+                src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.mp4"
+                poster="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.webp"
                 playsInline
                 autoPlay
                 controls
@@ -64,7 +64,7 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
             </div>
           </div>
 
-          <div id='results-container' className={styles.resultsContainer}>
+          <div id="results-container" className={styles.resultsContainer}>
             {otherResults.map((result, index) => (
               <div key={index} className={styles.resultItem}>
                 <div className={styles.resultItemHeader}>
@@ -79,12 +79,19 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
                   <div
                     className={classNames(
                       styles.resultItemDescription,
-                      'line-clamp-3'
+                      "line-clamp-3"
                     )}
                   >
                     <PortableTextComponent content={result.content} />
                   </div>
                 )}
+                <Link
+                  href={`/results/${result.slug}`}
+                  className="flex items-center justify-center gap-2 uppercase text-[clamp(14px,2vw,18px)] tracking-[calc(clamp(14px,2vw,18px)*-0.02)] text-pretty underline mt-4"
+                >
+                  <IoTriangle className="shrink-0 rotate-90 text-[#1055C1]" />
+                  read mores
+                </Link>
               </div>
             ))}
           </div>

@@ -40,8 +40,8 @@ export default function TerrysTakesListing({
                 {caseItem.title}
               </h6>
 
-              <p className="text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)] text-[#8D8D8D] text-left line-clamp-4">
-                {caseItem.description}
+              <p className="text-[clamp(16px,2vw,18px)] tracking-[calc(clamp(16px,2vw,18px)*-0.02)] text-[#8D8D8D] text-left line-clamp-8">
+                {caseItem.quickTake || caseItem.description}
               </p>
 
               <Link
