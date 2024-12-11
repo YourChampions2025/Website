@@ -15,7 +15,8 @@ interface fbqData {
 
 export default function trackConversions(
   data: IContactUsForm | IIntakeForm,
-  event_name: string
+  event_name: string,
+  event_id: string
 ) {
   // Google (GA4) Tracking
   window.gtag('event', event_name, data);
@@ -23,7 +24,9 @@ export default function trackConversions(
   // Meta Facebook Tracking
   const fbqData: fbqData = { ...data };
   delete fbqData.phone;
-  window.fbq('trackCustom', event_name, fbqData);
+  window.fbq('trackCustom', event_name, fbqData, {
+    eventID: event_id,
+  });
 
   // Vercel Analytics
   va.track(event_name, data);
