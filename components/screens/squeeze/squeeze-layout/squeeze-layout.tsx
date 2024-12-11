@@ -31,6 +31,9 @@ import { MdPhone } from "react-icons/md";
 
 import Indicator from "@/components/indicator";
 
+import HomeTestimonials from "@/components/screens/home/home-testimonials/home-testimonials";
+import { getLatestTestimonials } from "@/sanity/lib/api";
+
 const LOGOS_ONE = [
   ImageBadge1,
   ImageBadge2,
@@ -57,7 +60,11 @@ interface SqueezeLayoutProps {
   squeezeItem: SqueezeProps;
 }
 
-export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
+export default async function SqueezeLayout({
+  squeezeItem,
+}: SqueezeLayoutProps) {
+  const testimonials = await getLatestTestimonials();
+
   const {
     title,
     description,
@@ -234,10 +241,10 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
                 <div className="mb-10">
                   <ContactUsForm event="Medical Malpractice | Form Submission" />
                 </div>
-                <div className="w-full h-fit aspect-video hidden md:block">
+                <div className="w-full h-fit aspect-video">
                   <video
                     className="w-full h-full object-cover"
-                    src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.mp4"
+                    src="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/court-loop.mp4"
                     poster="https://cg-fischer-redavid.s3.us-east-1.amazonaws.com/squeeze-youtube-fischer-video.webp"
                     playsInline
                     autoPlay
@@ -250,6 +257,8 @@ export default function SqueezeLayout({ squeezeItem }: SqueezeLayoutProps) {
             </div>
           </div>
         </div>
+
+        <HomeTestimonials testimonials={testimonials} />
       </div>
     </main>
   );
