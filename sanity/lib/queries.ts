@@ -53,6 +53,7 @@ export const getFilteredCasesQuery = (
       description,
       "slug": slug.current,
       date,
+      quickTake,
       author,
       court,
       categories

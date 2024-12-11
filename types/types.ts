@@ -35,6 +35,7 @@ export interface CaseProps {
   date: string;
   author: string;
   court?: string;
+  quickTake?: string;
   categories?: string[];
   content: TypedObject | TypedObject[];
   prev?: {
