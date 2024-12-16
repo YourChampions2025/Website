@@ -48,8 +48,8 @@ async function Twilio(
           let description = data[keyName];
           if (!description) return '';
 
-          if (description.length > 100) {
-            description = `${description.substring(0, 100)}...`;
+          if (description.length > 1000) {
+            description = `${description.substring(0, 1000)}...`;
           }
 
           return `${DATA_LABEL_MAP[keyName]}: ${
