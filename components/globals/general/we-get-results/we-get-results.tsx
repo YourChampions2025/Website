@@ -30,11 +30,11 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
                 <h3 className={styles.amount}>{mainResult.title}</h3>
               </div>
 
+              <Link href={`/results/${mainResult.slug}`} className='cursor-pointer'>
               <div className={styles.resultDetails}>
                 <span className={styles.resultInfo}>
                   <span className={styles.grayText}>{mainResult.subtitle}</span>
                 </span>
-
                 {mainResult.content && (
                   <div
                     className={classNames(styles.description, 'line-clamp-3')}
@@ -42,7 +42,10 @@ export default function WeGetResults({ results }: WeGetResultsProps) {
                     <PortableTextComponent content={mainResult.content} />
                   </div>
                 )}
+
               </div>
+              </Link>
+
 
               <Link href='/results' className={styles.link}>
                 <IoTriangle className={styles.icon} />
