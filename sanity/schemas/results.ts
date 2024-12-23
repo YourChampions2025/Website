@@ -38,6 +38,21 @@ export default defineType({
       validation: (Rule) => Rule.required().error("Subtitle is required"),
     }),
     defineField({
+      name: "caseName",
+      title: "Case Name",
+      type: "string",
+    }),
+    defineField({
+      name: "caseType",
+      title: "Case Type",
+      type: "string",
+    }),
+    defineField({
+      name: "caseLocation",
+      title: "Case Location",
+      type: "string",
+    }),
+    defineField({
       name: "description",
       title: "Description",
       type: "text",
