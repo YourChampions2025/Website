@@ -25,6 +25,9 @@ export const getFilteredResultsQuery = (
     }] | order(amount desc) [0..${limit}-1] {
       title,
       subtitle,
+      caseName,
+      caseType,
+      caseLocation,
       description,
       "slug": slug.current,
       categories,

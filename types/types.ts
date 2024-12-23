@@ -26,6 +26,9 @@ export interface ResultProps {
   description?: string;
   categories?: string[];
   content?: TypedObject | TypedObject[];
+  caseName?: string;
+  caseType?: string;
+  caseLocation?: string;
 }
 
 export interface CaseProps {
