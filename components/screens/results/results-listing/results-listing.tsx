@@ -25,11 +25,21 @@ export default function ResultsListing({
               <h6 className="font-serif text-[clamp(32px,6.66vw,60px)] text-center text-pretty">
                 {result.title}
               </h6>
-              {result.subtitle && (
+              {/* {result.subtitle && (
                 <p className="uppercase text-[clamp(16px,2.44vw,22px)] tracking-[calc(clamp(16px,2.44vw,22px)*-0.02)] text-[#CECECE] text-pretty text-center mt-6 mb-8">
                   {result.subtitle}
                 </p>
-              )}
+              )} */}
+
+              <p className="uppercase text-[clamp(16px,2.44vw,22px)] tracking-[calc(clamp(16px,2.44vw,22px)*-0.02)] text-[#2de046] text-pretty text-center mt-6 mb-2">
+                {result.caseName}
+              </p>
+              <p className="uppercase text-[clamp(16px,2.44vw,22px)] tracking-[calc(clamp(16px,2.44vw,22px)*-0.02)] text-[#CECECE] text-pretty text-center mt-2 mb-2">
+                {result.caseType}
+              </p>
+              <p className="uppercase text-[clamp(16px,2.44vw,22px)] tracking-[calc(clamp(16px,2.44vw,22px)*-0.02)] text-[#CECECE] text-pretty text-center mt-2 mb-8">
+                {result.caseLocation}
+              </p>
 
               {result.content && (
                 <Link
