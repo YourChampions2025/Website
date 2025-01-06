@@ -33,12 +33,6 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <head>
-        <meta
-          name='google-site-verification'
-          content='6K5fxOYXteM4dWjtp4tJmDaC9gGp-blu4uXyp9T4c80'
-        />
-      </head>
       <body
         className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased bg-black`}
       >
