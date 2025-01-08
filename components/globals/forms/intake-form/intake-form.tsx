@@ -13,7 +13,10 @@ import Image from "next/image";
 import CustomSelect from "../custom-select/custom-select";
 import CustomRadioGroup from "../custom-radio-group/custom-radio-group";
 import { useGetClientInfo } from "../../../../utils/useGetClientInfo";
-import { submitContactForm } from "../../../../app/actions/forms";
+import {
+  sendDataToZapier,
+  submitContactForm,
+} from "../../../../app/actions/forms";
 import { Tracking } from "@/components/Analytics/Analytics";
 
 export const onIntakeFormSchema = z.object({
@@ -103,6 +106,7 @@ export default function IntakeForm() {
 
       const { token } = await Tracking.getRecaptchaToken();
       await submitContactForm(formData, token, clientInfo, eventName);
+      await sendDataToZapier(formData, clientInfo, token, eventName);
 
       setFormData({
         name: "",

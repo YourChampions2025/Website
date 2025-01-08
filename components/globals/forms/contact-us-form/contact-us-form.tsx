@@ -9,7 +9,10 @@ import CustomTextarea from "@/components/globals/forms/custom-textarea/custom-te
 import CustomButton from "@/components/globals/forms/custom-button/custom-button";
 import { useGetClientInfo } from "../../../../utils/useGetClientInfo";
 import trackConversions from "@/utils/trackConversions";
-import { submitContactForm } from "../../../../app/actions/forms";
+import {
+  sendDataToZapier,
+  submitContactForm,
+} from "../../../../app/actions/forms";
 import { Tracking } from "../../../Analytics/Analytics";
 
 export const onContactUsFormSchema = z.object({
@@ -121,6 +124,7 @@ export default function ContactUsForm({ event }: Props) {
 
       const { token } = await Tracking.getRecaptchaToken();
       await submitContactForm(data, token, clientInfo, eventName);
+      await sendDataToZapier(data, clientInfo, token, eventName);
 
       reset();
     } catch (err) {
