@@ -21,7 +21,7 @@ async function Sendgrid(
   const msg = {
     to: [
       'davin@thecaselygroup.com',
-      'prelit@yourchampions.com',
+      'intake@yourchampions.com',
       // "pedro@thecaselygroup.com",
     ],
     from: 'notifications@thecaselygroup.com',
