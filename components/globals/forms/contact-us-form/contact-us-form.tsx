@@ -143,24 +143,7 @@ export default function ContactUsForm({ event }: Props) {
   }
 
   return (
-    <FormProvider {...methods}>
-      <form
-        ref={formRef}
-        onSubmit={handleSubmit(onSubmitForm)}
-        className="w-full mx-auto flex flex-col gap-3"
-      >
-        <CustomInput name="name" label="Name" />
-        <CustomInput name="email" label="Email" />
-        <CustomInput name="phone" label="Phone" />
-        <CustomInput name="location" label="Location of Incident" />
-        <CustomTextarea name="message" label="How can we help you?" />
-        <CustomButton
-          className="!w-[100%] rounded-lg !text-sm !sm:text-base"
-          type="submit"
-        >
-          Connect With Fischer Redavid
-        </CustomButton>
-      </form>
-    </FormProvider>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbyLViGQxUz9WBVHPwK3dvY8I3j8PNzAsov0wlMYT_l3UJ6g/viewform?embedded=true" width="640" height="1364" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+   
   );
 }
