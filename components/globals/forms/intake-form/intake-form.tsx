@@ -150,6 +150,100 @@ export default function IntakeForm() {
   }
 
   return (
-   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbyLViGQxUz9WBVHPwK3dvY8I3j8PNzAsov0wlMYT_l3UJ6g/viewform?embedded=true">Loading…</iframe>
+    <form ref={formRef} onSubmit={onSubmitForm} className={styles.formContent}>
+      <CustomInput
+        name="name"
+        label="FULL NAME"
+        value={formData.name}
+        onChange={(e) => handleInputChange("name", e.target.value)}
+        error={errors.name}
+      />
+      <CustomInput
+        name="phone"
+        label="PHONE"
+        value={formData.phone}
+        onChange={(e) => handleInputChange("phone", e.target.value)}
+        error={errors.phone}
+      />
+      <CustomInput
+        name="email"
+        label="EMAIL"
+        value={formData.email}
+        onChange={(e) => handleInputChange("email", e.target.value)}
+        error={errors.email}
+      />
+
+      <CustomRadioGroup
+        name="communicationPreference"
+        label="communication preference"
+        value={formData.communicationPreference}
+        onChange={(value) =>
+          handleInputChange("communicationPreference", value)
+        }
+        error={errors.communicationPreference}
+        options={[
+          {
+            label: "Phone Call",
+            value: "phone-call",
+          },
+          {
+            label: "Text",
+            value: "text",
+          },
+          {
+            label: "Email",
+            value: "email",
+          },
+        ]}
+      />
+
+      <div className={styles.formDetails}>
+        <CustomInput
+          name="date"
+          label="Date of Incident"
+          type="date"
+          value={formData.date}
+          onChange={(e) => handleInputChange("date", e.target.value)}
+          error={errors.date}
+        />
+        <CustomInput
+          name="location"
+          label="Location of Incident"
+          value={formData.location}
+          onChange={(e) => handleInputChange("location", e.target.value)}
+          error={errors.location}
+        />
+      </div>
+
+      <CustomTextarea
+        name="message"
+        label="Description of incident and injury"
+        value={formData.message}
+        onChange={(e) => handleInputChange("message", e.target.value)}
+        error={errors.message}
+      />
+
+      <div className="w-full pb-1 pl-3 border border-[#083376]">
+        <CustomSelect
+          backgroundColor="transparent"
+          isFullHeight
+          name="treatment"
+          label="Are you receiving medical treatment for this incident?"
+          options={["Yes", "No"].map((option) => ({
+            value: option,
+            label: option,
+          }))}
+          placeholder=""
+          value={formData.treatment}
+          onChange={(value) => handleInputChange("treatment", value)}
+          onClear={() => handleClearInput("treatment")}
+          error={errors.treatment}
+        />
+      </div>
+
+      <CustomButton type="submit" size="large">
+        send information
+      </CustomButton>
+    </form>
   );
 }
