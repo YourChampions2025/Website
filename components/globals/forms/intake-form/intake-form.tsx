@@ -150,6 +150,6 @@ export default function IntakeForm() {
   }
 
   return (
-   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbyLViGQxUz9WBVHPwK3dvY8I3j8PNzAsov0wlMYT_l3UJ6g/viewform?embedded=true" width="640" height="1375" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbyLViGQxUz9WBVHPwK3dvY8I3j8PNzAsov0wlMYT_l3UJ6g/viewform?embedded=true">Loading…</iframe>
   );
 }
