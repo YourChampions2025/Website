@@ -44,13 +44,13 @@ export async function submitContactForm(
 
   await Promise.all([
     // Twilio
-    Twilio(formData, eventName),
+    // Twilio(formData, eventName),
 
     // Sendgrid
     Sendgrid(formData, eventName),
 
     // Meta Conversions API
-    Conversions_API_Meta(formData, eventName),
+    // Conversions_API_Meta(formData, eventName),
   ]);
 
   // MongoDB
