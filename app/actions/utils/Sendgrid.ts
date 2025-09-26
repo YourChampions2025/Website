@@ -1,9 +1,9 @@
-import { type IContactUsForm } from '../../../components/globals/forms/contact-us-form/contact-us-form';
-import { type ICareersForm } from '../../../components/screens/careers/side-content-careers/side-content-careers';
-import { type IClientInfo } from '../../../utils/useGetClientInfo';
-import Email_Template from './Email_Template';
-import { render } from '@react-email/render';
-const sgMail = require('@sendgrid/mail');
+import { type IContactUsForm } from "../../../components/globals/forms/contact-us-form/contact-us-form";
+import { type ICareersForm } from "../../../components/screens/careers/side-content-careers/side-content-careers";
+import { type IClientInfo } from "../../../utils/useGetClientInfo";
+import Email_Template from "./Email_Template";
+import { render } from "@react-email/render";
+const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 /**
@@ -19,12 +19,8 @@ async function Sendgrid(
   const emailHTML = await render(Email_Template(data), { pretty: true });
 
   const msg = {
-    to: [
-      'davin@thecaselygroup.com',
-      'intake@yourchampions.com',
-      // "pedro@thecaselygroup.com",
-    ],
-    from: 'notifications@thecaselygroup.com',
+    to: ["intake@yourchampions.com", "pedro@thecaselygroup.com"],
+    from: "marketing@yourchampions.com",
     subject: `Fischer and Redavid Lead | ${formName} | ${data.name}`,
     html: emailHTML,
   };
@@ -33,7 +29,7 @@ async function Sendgrid(
   await sgMail
     .send(msg)
     .then(() => {
-      console.log('Email sent');
+      console.log("Email sent");
     })
     .catch((error: any) => {
       console.error(error);
