@@ -9,6 +9,8 @@ import { IIntakeForm } from "@/components/globals/forms/intake-form/intake-form"
 import { IClientInfo } from "../../utils/useGetClientInfo";
 
 async function getReCaptchaScore(token: string) {
+  if (!token) return { score: 0 };
+
   const captcha = await fetch(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
     {

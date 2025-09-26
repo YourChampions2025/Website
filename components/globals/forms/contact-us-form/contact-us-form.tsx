@@ -122,9 +122,9 @@ export default function ContactUsForm({ event }: Props) {
       const { eventId } = clientInfo;
       trackConversions(data, eventName, eventId);
 
-      const { token } = await Tracking.getRecaptchaToken();
-      await submitContactForm(data, token, clientInfo, eventName);
-      await sendDataToZapier(data, clientInfo, token, eventName);
+      // const { token } = await Tracking.getRecaptchaToken();
+      await submitContactForm(data, "", clientInfo, eventName);
+      await sendDataToZapier(data, clientInfo, "", eventName);
 
       reset();
     } catch (err) {

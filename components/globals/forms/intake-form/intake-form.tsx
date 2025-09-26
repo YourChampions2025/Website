@@ -104,9 +104,9 @@ export default function IntakeForm() {
       const { eventId } = clientInfo;
       trackConversions(formData, eventName, eventId);
 
-      const { token } = await Tracking.getRecaptchaToken();
-      await submitContactForm(formData, token, clientInfo, eventName);
-      await sendDataToZapier(formData, clientInfo, token, eventName);
+      // const { token } = await Tracking.getRecaptchaToken();
+      await submitContactForm(formData, "", clientInfo, eventName);
+      await sendDataToZapier(formData, clientInfo, "", eventName);
 
       setFormData({
         name: "",
