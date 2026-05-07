@@ -1,3 +1,4 @@
+
 import { MdPerson } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
@@ -17,8 +18,14 @@ export default defineType({
           { title: "Staff", value: "Staff" },
         ],
       },
-      validation: (Rule) => Rule.required().error("A type is required"),
+      validation: (Rule) => Rule.required().error("A type is required"),}),
+        defineField({
+      name: 'displayOrder',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Controls the order on the page. 1 appears first, 2 second, etc.',
     }),
+    
 
     defineField({
       name: "name",
