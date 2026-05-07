@@ -40,6 +40,10 @@ export default defineType({
     }),
 
     defineField({
+      name: 'displayOrder',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Controls the order on the page. 1 appears first, 2 second, etc.',
       name: "role",
       title: "Role",
       description: "Ex: Founding Partner",
