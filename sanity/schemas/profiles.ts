@@ -1,4 +1,3 @@
-
 import { MdPerson } from "react-icons/md";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
@@ -18,15 +17,14 @@ export default defineType({
           { title: "Staff", value: "Staff" },
         ],
       },
-      validation: (Rule) => Rule.required().error("A type is required"),}),
-        defineField({
-      name: 'displayOrder',
-      title: 'Display Order',
-      type: 'number',
-      description: 'Controls the order on the page. 1 appears first, 2 second, etc.',
+      validation: (Rule) => Rule.required().error("A type is required"),
     }),
-    
-
+    defineField({
+      name: "displayOrder",
+      title: "Display Order",
+      type: "number",
+      description: "Controls the order on the page. 1 appears first, 2 second, etc.",
+    }),
     defineField({
       name: "name",
       title: "Name",
@@ -37,27 +35,20 @@ export default defineType({
     defineField({
       name: "slug",
       title: "Slug",
-      description:
-        "After entering the value in the name field, click on the generate button.",
+      description: "After entering the value in the name field, click on the generate button.",
       type: "slug",
       options: {
         source: "name",
       },
       validation: (Rule) => Rule.required().error("Slug is required"),
     }),
-
     defineField({
-      name: 'displayOrder',
-      title: 'Display Order',
-      type: 'number',
-      description: 'Controls the order on the page. 1 appears first, 2 second, etc.',
       name: "role",
       title: "Role",
       description: "Ex: Founding Partner",
       type: "string",
       validation: (Rule) => Rule.required().error("Role is required"),
     }),
-
     defineField({
       name: "image",
       title: "Image",
@@ -67,7 +58,6 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().error("Image is required"),
     }),
-
     defineField({
       name: "video",
       title: "Video",
@@ -76,7 +66,6 @@ export default defineType({
         accept: "video/*",
       },
     }),
-
     defineField({
       name: "content",
       title: "Content",
@@ -109,7 +98,6 @@ export default defineType({
         }),
       ],
     }),
-
     defineField({
       name: "barAdmission",
       title: "Bar Admission",
@@ -130,7 +118,6 @@ export default defineType({
         }),
       ],
     }),
-
     defineField({
       name: "education",
       title: "Education",
@@ -157,7 +144,6 @@ export default defineType({
         }),
       ],
     }),
-
     defineField({
       name: "awards",
       title: "Awards",
