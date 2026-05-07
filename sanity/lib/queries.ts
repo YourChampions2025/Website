@@ -337,12 +337,13 @@ export const getVideoCenterBySlugQuery = groq`
 
 export const getAttorneysProfilesQuery = groq`
   *[_type == "profiles" && type == "Attorneys"]
-  | order(name asc) {  
-    type,
-    name,
-    "slug": slug.current,
-    role,
-    "imageUrl": image.asset->url
+ | order(displayOrder asc, name asc) { 
+   type,
+   name,
+  displayOrder,
+  "slug": slug.current,
+  role,
+  "imageUrl": image.asset->url
   }
 `;
 
